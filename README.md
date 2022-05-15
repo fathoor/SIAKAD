@@ -1,10 +1,22 @@
-# IS184412 - Rancang Bangun Perangkat Lunak [C]
+# <center> IS184412 - Rancang Bangun Perangkat Lunak [C]
 
-<p align="center"><a href="https://github.com/fathoor/SIAKAD"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p  align="center"><a  href="https://github.com/fathoor/SIAKAD"><img  src="https://cdn.discordapp.com/attachments/743754613085437954/975007681456791642/SIAKADAsset_22x.png"  width="600"></a></p>
 
-## Sistem Informasi Akademik
+## <center> Sistem Informasi Akademik
 
-Website **SIAKAD** yang dibuat oleh **Kelompok 1** sebagai proyek *Tugas Akhir* dari mata kuliah ```Rancang Bangun Perangkat Lunak [C]```
+Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai proyek *Tugas Akhir* dari mata kuliah ```Rancang Bangun Perangkat Lunak [C]```
+
+**Anggota :**
+5026201007 - Faraz Nurdini
+5026201045 - Theodorus Revonso Prananta
+5026201054 - Ernando Taufiq Nur Hidayat
+5026201068 - Cecilia Melva Natania
+5026201091 - Aliyya Zahra Nurulhusna
+5026201096 - Bonaventura Daiva Putra
+5026201109 - Alana Nabihah Thufailah
+5026201115 - Benediktus Pandu Budhiwicaksana
+5026201139 - Muhammad Fathurrahman
+5026201141 - Abraham Mauritz Talakua
 
 ***
 
