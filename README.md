@@ -1,12 +1,12 @@
-<center> <h1>IS184412 - Rancang Bangun Perangkat Lunak [C]</h1> </center>
+# <p  align="center"> IS184412 - Rancang Bangun Perangkat Lunak [C] </p>
 
-<p  align="center"><a  href="https://github.com/fathoor/SIAKAD"><img  src="https://cdn.discordapp.com/attachments/743754613085437954/975007681456791642/SIAKADAsset_22x.png"  width="400"></a></p>
+<br><p  align="center"> [![SIAKAD ITS](/public/img/siakad_putih.png)](https://github.com/fathoor/SIAKAD)</p>
 
-<center> <h2>Sistem Informasi Akademik</h2> </center>
+## <p  align="center"> Sistem Informasi Akademik </p>
 
 Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai proyek *Tugas Akhir* dari mata kuliah ```Rancang Bangun Perangkat Lunak [C]```
 
-**Anggota :**
+## Authors
 1. 5026201007 - Faraz Nurdini
 2. 5026201045 - Theodorus Revonso Prananta
 3. 5026201054 - Ernando Taufiq Nur Hidayat
@@ -17,6 +17,37 @@ Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai pr
 8. 5026201115 - Benediktus Pandu Budhiwicaksana
 9. 5026201139 - Muhammad Fathurrahman
 10. 5026201141 - Abraham Mauritz Talakua
+
+## Prerequisites
+- **PHP** `8.1.5` or above, get it from [here](https://www.apachefriends.org/download.html)
+- **Laravel** `9.2` or above
+> **Composer** `2.3.5` or above is also required to build the webpage, get it from [here](https://getcomposer.org/download/)
+
+## Installation
+### Build the webpage
+- Create new `.env`
+```
+cp .env.example .env
+```
+- Set new `APP_KEY`
+```
+php artisan key:generate
+```
+- Clear config cache
+
+```
+php artisan config:cache
+```
+- Install dependencies
+```
+composer install
+```
+
+### Run Laravel
+- Start local server
+```
+php artisan serve
+```
 
 ***
 
