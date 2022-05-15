@@ -19,7 +19,5 @@
     {{-- Title Halaman --}}
     <title>SIAKAD ITS - @yield('title')</title>
 </head>
-<body>
-    @yield('content') 
-</body>
+@yield('content') 
 </html>
