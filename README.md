@@ -15,8 +15,8 @@ Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai pr
 6. 5026201096 - Bonaventura Daiva Putra
 7. 5026201109 - Alana Nabihah Thufailah
 8. 5026201115 - Benediktus Pandu Budhiwicaksana
-9. 5026201139 - Muhammad Fathurrahman
-10. 5026201130 - Ellion Blessan
+9. 5026201130 - Ellion Blessan
+10. 5026201139 - Muhammad Fathurrahman
 11. 5026201141 - Abraham Mauritz Talakua
 
 ## Prerequisites
