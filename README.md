@@ -16,7 +16,8 @@ Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai pr
 7. 5026201109 - Alana Nabihah Thufailah
 8. 5026201115 - Benediktus Pandu Budhiwicaksana
 9. 5026201139 - Muhammad Fathurrahman
-10. 5026201141 - Abraham Mauritz Talakua
+10. 5026201130 - Ellion Blessan
+11. 5026201141 - Abraham Mauritz Talakua
 
 ## Prerequisites
 - **PHP** `8.1.5` or above, get it from [here](https://www.apachefriends.org/download.html)
