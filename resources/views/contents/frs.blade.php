@@ -1,21 +1,13 @@
-@extends('layouts.main')
+@extends('dashboard')
 
-{{-- Title --}}
-@section('title', 'Transkrip')
-
-{{-- Body --}}
-@section('bg', 'bg-white text-dark')
+@section('title', 'FRS')
 
 {{-- Content --}}
-@section('content')
+@section('main')
 
-    <div class="container">
-        {{-- Header --}}
-        @include('components.header')
+<div class="content">
+    {{-- Content --}}
 
-        {{-- Content --}}
+</div>
 
-        {{-- Footer --}}
-        @include('components.footer')
-    </div>
 @endsection
