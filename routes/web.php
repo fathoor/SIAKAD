@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('contents.profile');
 });
+
+Route::get('/frs', function () {
+    return view('contents.frs');
+});
+
+Route::get('/transkrip', function () {
+    return view('contents.transkrip');
+});
