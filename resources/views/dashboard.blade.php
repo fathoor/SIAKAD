@@ -16,7 +16,8 @@
 
     {{-- Content --}}
     <main class="content">
-        Kosong
+        {{-- /view/contents/ --}}
+        @yield('main')
     </main>
 
     {{-- Footer --}}
