@@ -1,6 +1,13 @@
 @extends('dashboard')
 
+@section('title', 'Profile')
+
+{{-- Content --}}
 @section('main')
-{{-- Langsung isi dibawah --}}
-Work in progress...
+
+<div class="content">
+    {{-- Content --}}
+    Work in progress...
+</div>
+
 @endsection

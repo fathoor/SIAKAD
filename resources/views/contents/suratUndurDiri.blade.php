@@ -1,6 +1,13 @@
 @extends('dashboard')
 
+@section('title', 'Surat Undur Diri')
+
+{{-- Content --}}
 @section('main')
-{{-- Langsung isi dibawah --}}
+
+<div class="content">
+    {{-- Content --}}
+
+</div>
 
 @endsection
