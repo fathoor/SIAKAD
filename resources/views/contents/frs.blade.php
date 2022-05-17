@@ -1,6 +1,21 @@
-@extends('dashboard')
+@extends('layouts.main')
 
-@section('main')
-{{-- Langsung isi dibawah --}}
+{{-- Title --}}
+@section('title', 'Transkrip')
 
+{{-- Body --}}
+@section('bg', 'bg-white text-dark')
+
+{{-- Content --}}
+@section('content')
+
+    <div class="container">
+        {{-- Header --}}
+        @include('components.header')
+
+        {{-- Content --}}
+
+        {{-- Footer --}}
+        @include('components.footer')
+    </div>
 @endsection
