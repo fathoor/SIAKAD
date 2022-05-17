@@ -42,9 +42,9 @@ a:hover {
 .header {
     display: flex;
     flex-grow: 0;
-    position: fixed;
-    left: 0;
-    top: 0;
+    position: sticky;
+    /* left: 0;
+    top: 0; */
     width: 100vw;
     padding: 10px 20px;
     align-items: center;
@@ -98,10 +98,10 @@ a:hover {
 .footer {
     display: flex;
     flex-grow: 0;
-    position: fixed;
+    /* position: fixed;
     left: 0;
     bottom: 0;
-    width: 100vw;
+    width: 100vw; */
     padding: 40px 20px;
     text-align: center;
 }

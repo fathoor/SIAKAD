@@ -11,16 +11,16 @@
         </button>
         {{-- Navs --}}
         <div class=" collapse navbar-collapse" id="mobileDropdown">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-center">
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link mx-3" href="#" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-stack fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
-                        <li><a class="dropdown-item" href="#">Formulir Rencana Studi</a></li>
+                        <li><a class="dropdown-item" href="/frs">Formulir Rencana Studi</a></li>
                         <li><a class="dropdown-item" href="#">Kurikulum Semester</a></li>
-                        <li><a class="dropdown-item" href="#">Transkrip Nilai</a></li>
+                        <li><a class="dropdown-item" href="/transkrip">Transkrip Nilai</a></li>
                         <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
                     </ul>
                 </li>
