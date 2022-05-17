@@ -10,16 +10,18 @@
 {{-- Content --}}
 @section('content')
 
-<div class="container">
-    {{-- Header --}}
-    @include('components.header')
+{{-- Header --}}
+@include('components.header')
 
+<div class="container">
     {{-- Content --}}
     <main class="content">
         {{-- /view/contents/ --}}
         @yield('main')
     </main>
-
-    {{-- Footer --}}
-    @include('components.footer')
 </div>
+
+{{-- Footer --}}
+@include('components.footer')
+
+@endsection
