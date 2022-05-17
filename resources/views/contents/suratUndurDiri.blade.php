@@ -2,3 +2,5 @@
 
 @section('main')
 {{-- Langsung isi dibawah --}}
+
+@endsection
