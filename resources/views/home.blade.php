@@ -39,6 +39,9 @@
         </div>
     </div>
 
-    {{-- Footer --}}
-    @include('components.footer')
 </div>
+
+{{-- Footer --}}
+@include('components.footer')
+
+@endsection
