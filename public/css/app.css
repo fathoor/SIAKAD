@@ -85,16 +85,20 @@ a:hover {
     /* margin: 0; */
     padding: 20px;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center
 }
 
 .content {
     display: flex;
+    max-width: 992px;
+    padding: 20px;
     flex: 1 auto;
     flex-direction: column;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    text-align: justify
 }
 
 .form {

@@ -15,7 +15,7 @@
 
 <div class="container">
     {{-- Content --}}
-    <main class="content">
+    <main>
         {{-- /view/contents/ --}}
         @yield('main')
     </main>
