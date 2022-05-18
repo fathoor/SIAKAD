@@ -63,9 +63,12 @@ a:hover {
 	max-width: 100%
 }
 
-.navbar > .collapse {
-    margin-top: 15px;
+@media screen and (max-width: 992px) {
+    .navbar > .collapse {
+        margin-top: 15px;
+    }
 }
+
 
 /* Body */
 .bg-white {
