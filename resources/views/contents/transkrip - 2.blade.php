@@ -2,10 +2,11 @@
 
 @section('title', 'Transkrip')
 
+
 {{-- Content --}}
 @section('main')
 
-<div class="container">
+<div class="container" style="justify-content: flex-start">
     {{-- Content --}}
     <main>
         {{-- /view/contents/ --}}
