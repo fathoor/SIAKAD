@@ -20,24 +20,24 @@
             <div>
                 <h3 class="fw-semibold my-2">NRP</h3>
             </div>
-            <div class="d-flex flex-col">
-                <span class="d-flex flex-row my-2 mx-3">
+            <div class="d-flex flex-row">
+                <span class="d-flex flex-col my-2 mx-3">
                     <a class="nav-link" href="#" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-stack fs-1"></i>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
                         <li><a class="dropdown-item" href="/frs">Formulir Rencana Studi</a></li>
-                        <li><a class="dropdown-item" href="#">Kurikulum Semester</a></li>
+                        <li><a class="dropdown-item" href="/kurikulum">Kurikulum Semester</a></li>
                         <li><a class="dropdown-item" href="/transkrip">Transkrip Nilai</a></li>
                         <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
                     </ul>
                 </span>
-                <span class="d-flex flex-row my-2 mx-3">
+                <span class="d-flex flex-col my-2 mx-3">
                     <a class="nav-link" href="#">
                         <i class="bi bi-receipt-cutoff fs-1"></i>
                     </a>
                 </span>
-                <span class="d-flex flex-row my-2 mx-3">
+                <span class="d-flex flex-col my-2 mx-3">
                     <a class="nav-link" href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-megaphone fs-1"></i>
                     </a>
