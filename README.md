@@ -30,6 +30,10 @@ Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai pr
 ```
 cp .env.example .env
 ```
+- Install dependencies
+```
+composer install
+```
 - Set new `APP_KEY`
 ```
 php artisan key:generate
@@ -39,16 +43,13 @@ php artisan key:generate
 ```
 php artisan config:cache
 ```
-- Install dependencies
-```
-composer install
-```
 
 ### Run Laravel
 - Start local server
 ```
 php artisan serve
 ```
+> By default, local server will be deployed on `localhost:8000`
 
 ***
 
