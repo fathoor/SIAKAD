@@ -13,13 +13,8 @@
 {{-- Header --}}
 @include('components.header')
 
-<div class="container">
-    {{-- Content --}}
-    <main>
-        {{-- /view/contents/ --}}
-        @yield('main')
-    </main>
-</div>
+{{-- Main Content --}}
+@yield('main')
 
 {{-- Footer --}}
 @include('components.footer')
