@@ -28,3 +28,7 @@ Route::get('/frs', function () {
 Route::get('/transkrip', function () {
     return view('contents.transkrip');
 });
+
+Route::get('/kurikulum', function () {
+    return view('contents.kurikulum');
+});

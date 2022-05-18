@@ -19,7 +19,7 @@
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
                         <li><a class="dropdown-item" href="/frs">Formulir Rencana Studi</a></li>
-                        <li><a class="dropdown-item" href="#">Kurikulum Semester</a></li>
+                        <li><a class="dropdown-item" href="/kurikulum">Kurikulum Semester</a></li>
                         <li><a class="dropdown-item" href="/transkrip">Transkrip Nilai</a></li>
                         <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
                     </ul>
