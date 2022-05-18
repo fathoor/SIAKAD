@@ -11,14 +11,16 @@
         <h2 class="text-start text-dark mb-4">
             <strong> Transkrip Mata Kuliah </strong>
         </h2>
-        <table class="table table-borderless">
+        <table width="600px" class="table table-borderless">
             <tr>
-                <td>Nama</td>
-                <td>:</td>
+                <td width="100px">Nama</td>
+                <td width="50px">:</td>
+                <td width="450px"></td>
             </tr>
             <tr>
-                <td>NRP</td>
-                <td>:</td>
+                <td width="100px">NRP</td>
+                <td width="50px">:</td>
+                <td width="450px"></td>
             </tr>
         </table>
         <button type="button" class="btn btn-primary">
