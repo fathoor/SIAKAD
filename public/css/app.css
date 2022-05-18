@@ -63,6 +63,10 @@ a:hover {
 	max-width: 100%
 }
 
+.navbar > .collapse {
+    margin-top: 15px;
+}
+
 /* Body */
 .bg-white {
     background-color: var(--white)
@@ -98,6 +102,7 @@ a:hover {
 .footer {
     display: flex;
     flex-grow: 0;
+    flex-direction: column;
     /* position: fixed;
     left: 0;
     bottom: 0;
