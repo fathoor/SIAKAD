@@ -14,7 +14,7 @@
             <ul class="navbar-nav ms-auto align-items-center">
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3" href="#" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ (request()->is('frs*', 'kurikulum*', 'transkrip*')) ? 'active' : '' }}" href="#" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-stack fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
@@ -32,7 +32,7 @@
                 </li>
                 {{-- Layanan --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3" href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ (request()->is('suratmahasiswa*', 'suratundurdiri*')) ? 'active' : '' }}" href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-megaphone fs-5"></i> <span class="fs-5 ms-2">Layanan</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="layananDropdown">
@@ -43,11 +43,12 @@
                 </li>
                 {{-- Profil --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 active" href="/dashboard" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ (request()->is('dashboard*', 'biodata*')) ? 'active' : '' }}" href="/dashboard" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi-person-circle fs-2"></i>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="profileDropdown">
-                        <li><a class="dropdown-item" href="/biodata">Profil</a></li>
+                        <li><a class="dropdown-item" href="/biodata">Biodata</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li>
                             <form action="/logout" method="POST">
                                 @csrf
