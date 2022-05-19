@@ -36,3 +36,7 @@ Route::get('/kurikulum', function () {
 Route::get('/suratundurdiri', function () {
     return view('contents.suratundurdiri');
 });
+
+Route::get('/suratmahasiswa', function () {
+    return view('contents.suratMahasiswa');
+});
