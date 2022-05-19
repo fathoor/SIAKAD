@@ -40,3 +40,7 @@ Route::get('/suratundurdiri', function () {
 Route::get('/suratmahasiswa', function () {
     return view('contents.suratMahasiswa');
 });
+
+Route::get('/biodata', function () {
+    return view('contents.biodata');
+});
