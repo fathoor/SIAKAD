@@ -42,11 +42,20 @@
                     </ul>
                 </li>
                 {{-- Profil --}}
-                <li class="nav-item">
-                    <a class="nav-link mx-3 active" href="/dashboard">
+                <li class="nav-item dropdown">
+                    <a class="nav-link mx-3 active" href="/dashboard" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi-person-circle fs-2"></i>
                     </a>
-              </li>
+                    <ul class="dropdown-menu text-left" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li>
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

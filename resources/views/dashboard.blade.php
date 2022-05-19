@@ -1,3 +1,6 @@
+{{-- Auth --}}
+@auth
+
 {{-- Layout --}}
 @extends('layouts.main')
 
@@ -20,3 +23,5 @@
 @include('components.footer')
 
 @endsection
+
+@endauth
