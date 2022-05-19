@@ -32,3 +32,7 @@ Route::get('/transkrip', function () {
 Route::get('/kurikulum', function () {
     return view('contents.kurikulum');
 });
+
+Route::get('/suratundurdiri', function () {
+    return view('contents.suratundurdiri');
+});
