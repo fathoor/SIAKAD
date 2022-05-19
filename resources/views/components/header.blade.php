@@ -36,7 +36,7 @@
                         <i class="bi bi-megaphone fs-5"></i> <span class="fs-5 ms-2">Layanan</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="layananDropdown">
-                        <li><a class="dropdown-item" href="#">Surat Mahasiswa Aktif</a></li>
+                        <li><a class="dropdown-item" href="/suratmahasiswa">Surat Mahasiswa Aktif</a></li>
                         <li><a class="dropdown-item" href="#">Surat Cuti</a></li>
                         <li><a class="dropdown-item" href="/suratundurdiri">Surat Mengundurkan Diri</a></li>
                     </ul>
@@ -47,7 +47,7 @@
                         <i class="bi-person-circle fs-2"></i>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="profileDropdown">
-                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="/biodata">Profil</a></li>
                         <li>
                             <form action="/logout" method="POST">
                                 @csrf
