@@ -19,6 +19,9 @@
                     <i class="bi bi-person-circle" style="font-size: 10rem"></i>
                 </div>
                 <div class="col-lg-8 text-center">
+                    <div class="text-start text-muted mb-3">
+                        Last updated: {{ Carbon\Carbon::now() }} WIB
+                    </div>
                     <form>
                         @csrf
                         <div class="input-group form-floating mb-3">
@@ -28,6 +31,14 @@
                         <div class="input-group form-floating mb-3">
                             <input type="text" id="namaMahasiswa" name="namaMahasiswa" class="form-control" value="{{ auth()->user()->namaMahasiswa }}" disabled>
                             <label for="namaMahasiswa" class="form-label">Nama Lengkap</label>
+                        </div>
+                        <div class="input-group form-floating mb-3">
+                            <input type="text" id="email" name="email" class="form-control" value="{{ auth()->user()->email }}" disabled>
+                            <label for="email" class="form-label">Email</label>
+                        </div>
+                        <div class="input-group form-floating mb-3">
+                            <input type="text" id="nomorTelp" name="nomorTelp" class="form-control" value="{{ auth()->user()->nomorTelp }}" disabled>
+                            <label for="nomorTelp" class="form-label">Nomor Telepon</label>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group form-floating col me-2">
