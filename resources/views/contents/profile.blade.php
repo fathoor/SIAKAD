@@ -42,7 +42,7 @@
                         <i class="bi bi-megaphone fs-1"></i>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="layananDropdown">
-                        <li><a class="dropdown-item" href="/suratmahasiswa">Surat Mahasiswa Aktif</a></li>
+                        <li><a class="dropdown-item" href="/suratMahasiswa2">Surat Mahasiswa Aktif</a></li>
                         <li><a class="dropdown-item" href="#">Surat Cuti</a></li>
                         <li><a class="dropdown-item" href="/suratundurdiri">Surat Mengundurkan Diri</a></li>
                     </ul>

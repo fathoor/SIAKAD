@@ -37,7 +37,11 @@ Route::get('/suratundurdiri', function () {
     return view('contents.suratundurdiri');
 });
 
-Route::get('/suratmahasiswa', function () {
+Route::get('/suratMahasiswa2', function () {
+    return view('contents.suratMahasiswa-2');
+});
+
+Route::get('/suratMahasiswa', function () {
     return view('contents.suratMahasiswa');
 });
 
