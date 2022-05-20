@@ -48,3 +48,11 @@ Route::get('/suratMahasiswa', function () {
 Route::get('/biodata', function () {
     return view('contents.biodata');
 });
+
+Route::get('/ukt', function () {
+    return view('contents.ukt');
+});
+
+Route::get('/ukt-2', function () {
+    return view('contents.ukt-2');
+});

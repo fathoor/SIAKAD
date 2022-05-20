@@ -26,7 +26,7 @@
                 </li>
                 {{-- Finansial --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3" href="#">
+                    <a class="nav-link mx-3" href="/ukt">
                         <i class="bi bi-receipt-cutoff fs-5"></i> <span class="fs-5 ms-2">Finansial</span>
                     </a>
                 </li>
