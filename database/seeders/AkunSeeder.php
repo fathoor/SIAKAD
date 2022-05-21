@@ -35,6 +35,19 @@ class AkunSeeder extends Seeder
             ]);
         */
         DB::table('akun')->insert([
+            // Default User
+            [
+                'NRP' => 5026201000,
+                'nama' => 'Mahasiswa',
+                'password' => Hash::make('password'),
+                'NIK' => 3578000101000000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '2000-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'mahasiswa@gmail.com',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Kampus ITS'
+            ],
             [
                 'NRP' => 5026201139,
                 'nama' => 'Muhammad Fathurrahman',
