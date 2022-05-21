@@ -15,7 +15,7 @@
                 <i class="bi bi-person-circle" style="font-size: 8rem"></i>
             </div>
             <div>
-                <h1 class="display-3 fw-bold my-2">{{ auth()->user()->namaMahasiswa }}</h1>
+                <h1 class="display-3 fw-bold my-2">{{ auth()->user()->nama }}</h1>
             </div>
             <div>
                 <h3 class="fw-semibold my-2">{{ auth()->user()->NRP }}</h3>
