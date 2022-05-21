@@ -13,20 +13,28 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswa', function (Blueprint $table) {
+        /*
+            php artisan make:migration namaTabel
+
+            Schema::create('Nama Tabel', function (Blueprint $table) {
+                $table->id(); -- Wajib Ada
+                $table->{Tipe Data}('Nama Kolom');
+
+                ->unique() kalau perlu
+            });
+        */
+        Schema::create('akun', function (Blueprint $table) {
             $table->id();
-            $table->string('namaMahasiswa');
-            $table->string('NRP')->unique();
+            $table->bigInteger('NRP')->unique();
+            $table->string('nama');
             $table->string('password');
-            $table->string('NIK');
+            $table->bigInteger('NIK');
             $table->string('tempatLahir');
             $table->date('tanggalLahir');
-            $table->string('nomorTelp');
+            $table->bigInteger('nomorTelp');
             $table->string('email');
             $table->integer('tahunMasuk');
             $table->string('alamat');
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
 
@@ -37,6 +45,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswa');
+        /*
+            Schema::dropIfExists('Nama Tabel');
+        */
+        Schema::dropIfExists('akun');
     }
 };

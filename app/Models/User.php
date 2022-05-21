@@ -15,9 +15,8 @@ class User extends Authenticatable
     protected $guarded = ['id'];
 
     protected $hidden = [
-        'password',
-        'remember_token'
+        'password'
     ];
 
-    protected $table = 'mahasiswa';
+    protected $table = 'akun';
 }
