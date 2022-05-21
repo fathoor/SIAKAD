@@ -95,6 +95,18 @@ class AkunSeeder extends Seeder
                 'email' => 'ernando.taufiq29@gmail.com',
                 'tahunMasuk' => 2020,
                 'alamat' => 'Jl. Pahlawan No.37'
+            ],
+            [
+                'NRP' => 5026201045,
+                'nama' => 'Theodorus Revonsio Prananta',
+                'password' => Hash::make('admin'),
+                'NIK' => 3515181209020003,
+                'tempatLahir' => 'Sidoarjo',
+                'tanggalLahir' => '2002-09-12',
+                'nomorTelp' => 81230215394,
+                'email' => 'revonsio12@gmail.com',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Graha Tirta - Dahlia Nomor 82'
             ]
         ]);
     }
