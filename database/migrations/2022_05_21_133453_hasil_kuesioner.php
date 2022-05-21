@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('hasil_kuesioner', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('NIP');
-            $table->char('kodeMK', 8);
+            $table->bigInteger('NIP')->unique();
+            $table->char('kodeMK', 8)->unique();
             $table->tinyInteger('jawaban1');
             $table->tinyInteger('jawaban2');
             $table->tinyInteger('jawaban3');
