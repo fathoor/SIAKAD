@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
 
 /*
