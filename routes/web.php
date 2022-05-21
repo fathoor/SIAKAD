@@ -15,12 +15,15 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+// Homepage Route
 Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+// Dashboard Route
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
+// Akademik Route
 Route::get('/frs', function () {
     return view('contents.frs');
 });
@@ -33,6 +36,16 @@ Route::get('/kurikulum', function () {
     return view('contents.kurikulum');
 });
 
+// Finansial Route
+Route::get('/ukt', function () {
+    return view('contents.ukt');
+});
+
+Route::get('/ukt-2', function () {
+    return view('contents.ukt-2');
+});
+
+// Layanan Route
 Route::get('/suratundurdiri', function () {
     return view('contents.suratundurdiri');
 });
@@ -49,14 +62,5 @@ Route::get('/suratMahasiswa', function () {
     return view('contents.suratMahasiswa');
 });
 
-Route::get('/biodata', function () {
-    return view('contents.biodata');
-});
-
-Route::get('/ukt', function () {
-    return view('contents.ukt');
-});
-
-Route::get('/ukt-2', function () {
-    return view('contents.ukt-2');
-});
+// Profile Route
+Route::get('/biodata', [BiodataController::class, 'index']);
