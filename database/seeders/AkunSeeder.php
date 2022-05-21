@@ -83,6 +83,18 @@ class AkunSeeder extends Seeder
                 'email' => 'abraham.mauritz2603@gmail.com',
                 'tahunMasuk' => 2020,
                 'alamat' => 'Baruk Barat 2'
+            ],
+            [
+                'NRP' => 5026201054,
+                'nama' => 'Ernando Taufiq Nur Hidayat',
+                'password' => Hash::make('admin'),
+                'NIK' => 3515162909030002,
+                'tempatLahir' => 'Sidoarjo',
+                'tanggalLahir' => '2003-09-03',
+                'nomorTelp' => 81339524992,
+                'email' => 'ernando.taufiq29@gmail.com',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Jl. Pahlawan No.37'
             ]
         ]);
     }
