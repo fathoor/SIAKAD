@@ -28,12 +28,12 @@
                                 </div>
                             </div>
                             <div class="form-group row mb-3">
-                                <label for="namaMahasiswa" class="col-3 col-form-label">Nama</label>
-                                <label for="namaMahasiswa" class="col-1 col-form-label">:</label>
+                                <label for="nama" class="col-3 col-form-label">Nama</label>
+                                <label for="nama" class="col-1 col-form-label">:</label>
                                 <div class="col-8">
-                                    <input type="text" id="namaMahasiswa" name="namaMahasiswa"
+                                    <input type="text" id="nama" name="nama"
                                         class="form-control bg-transparent border-white"
-                                        value="{{ auth()->user()->namaMahasiswa }}" disabled>
+                                        value="{{ auth()->user()->nama }}" disabled>
                                 </div>
                             </div>
                         </form>
