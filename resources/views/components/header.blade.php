@@ -15,7 +15,7 @@
             <ul class="navbar-nav ms-auto align-items-center">
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('frs*', 'kurikulum*', 'transkrip*') ? 'active' : '' }}"
+                    <a class="nav-link mx-3 {{ request()->is('frs*', 'kurikulum*', 'transkrip*', 'kuesioner*') ? 'active' : '' }}"
                         href="#" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-stack fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
@@ -23,7 +23,7 @@
                         <li><a class="dropdown-item" href="/frs">Formulir Rencana Studi</a></li>
                         <li><a class="dropdown-item" href="/kurikulum">Kurikulum Semester</a></li>
                         <li><a class="dropdown-item" href="/transkrip">Transkrip Nilai</a></li>
-                        <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
+                        <li><a class="dropdown-item" href="/kuesioner">Kuesioner Dosen & MK</a></li>
                     </ul>
                 </li>
                 {{-- Finansial --}}

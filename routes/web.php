@@ -63,6 +63,14 @@ Route::get('/suratMahasiswa', function () {
     return view('contents.suratMahasiswa');
 });
 
+Route::get('/kuesioner', function () {
+    return view('contents.kuesioner');
+});
+
+Route::get('/kuesioner-2', function () {
+    return view('contents.kuesioner-2');
+});
+
 // Profile Route
 Route::get('/biodata', [BiodataController::class, 'index']);
 Route::get('/biodata/edit', [BiodataController::class, 'edit']);

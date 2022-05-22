@@ -29,7 +29,7 @@
                         <li><a class="dropdown-item" href="/frs">Formulir Rencana Studi</a></li>
                         <li><a class="dropdown-item" href="/kurikulum">Kurikulum Semester</a></li>
                         <li><a class="dropdown-item" href="/transkrip">Transkrip Nilai</a></li>
-                        <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
+                        <li><a class="dropdown-item" href="/kuesioner">Kuesioner Dosen & MK</a></li>
                     </ul>
                 </span>
                 <span class="d-flex flex-col my-2 mx-3">
