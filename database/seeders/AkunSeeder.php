@@ -107,7 +107,19 @@ class AkunSeeder extends Seeder
                 'email' => 'revonsio12@gmail.com',
                 'tahunMasuk' => 2020,
                 'alamat' => 'Graha Tirta - Dahlia Nomor 82'
-            ]
+            ],
+            [
+                'NRP' => 5026201115,
+                'nama' => 'Benediktus Pandu Budhiwicaksono',
+                'password' => Hash::make('admin'),
+                'NIK' => 3273070306020002,
+                'tempatLahir' => 'Bandung',
+                'tanggalLahir' => '2002-06-03',
+                'nomorTelp' => 87712356300,
+                'email' => 'beneedictpandu@gmail.com',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Hidrodinamika III T87'
+                ]
         ]);
     }
 }
