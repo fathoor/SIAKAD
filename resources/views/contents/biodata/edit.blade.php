@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-lg-8 text-center">
                     <div class="text-start text-muted mb-3">
-                        Pastikan data sudah terisi dengan sesuai!
+                        Pastikan data terisi dengan sesuai!
                     </div>
                     <form action="/biodata/update" method="POST">
                         @csrf

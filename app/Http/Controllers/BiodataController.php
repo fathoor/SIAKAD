@@ -11,14 +11,14 @@ class BiodataController extends Controller
     {
         $akun = DB::table('akun')->get();
 
-        return view('contents.biodata', ['akun' => $akun]);
+        return view('contents.biodata.index', ['akun' => $akun]);
     }
 
     public function edit()
     {
         $akun = DB::table('akun')->where('NRP', auth()->user()->NRP)->get();
 
-        return view('contents.biodataEdit', ['akun' => $akun]);
+        return view('contents.biodata.edit', ['akun' => $akun]);
     }
 
     public function update(Request $request)
