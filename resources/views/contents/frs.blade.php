@@ -42,26 +42,26 @@
                                 <tr>
                                     <td width="110px"><strong>NRP</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="330px">5026201045</td>
+                                    <td width="330px"><input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-white" value="{{ auth()->user()->NRP }}" disabled></td>
                                     <td width="110px"><strong>Dosen Wali</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="330px">Retno Aulia Vinarti, S.Kom., M.Kom</td>
+                                    <td width="330px"></td>
                                 </tr>
                                 <tr>
                                     <td width="110px"><strong>Nama</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="330px">THEODORUS REVONSIO PRANANTA</td>
+                                    <td width="330px"><input type="text" id="nama" name="nama" class="form-control bg-transparent border-white" value="{{ auth()->user()->nama }}" disabled></td>
                                     <td width="110px"><strong>Batas / Sisa</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="330px">24 / 3 SKS</td>
+                                    <td width="330px"></td>
                                 </tr>
                                 <tr>
                                     <td width="110px"><strong>IPS</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="330px">3,62</td>
+                                    <td width="330px"></td>
                                     <td width="110px"><strong>IPK</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="330px">3,73</td>
+                                    <td width="330px"></td>
                                 </tr>
                             </tbody>
                         </table>
