@@ -5,7 +5,7 @@
 {{-- Content --}}
 @section('main')
 
-<div class="container">
+<div class="container justify-content-center">
     {{-- Content --}}
     <main>
         {{-- /view/contents/ --}}
