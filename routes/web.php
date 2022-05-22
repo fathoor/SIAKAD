@@ -65,3 +65,5 @@ Route::get('/suratMahasiswa', function () {
 
 // Profile Route
 Route::get('/biodata', [BiodataController::class, 'index']);
+Route::get('/biodata/edit', [BiodataController::class, 'edit']);
+Route::post('/biodata/update', [BiodataController::class, 'update']);

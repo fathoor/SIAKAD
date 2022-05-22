@@ -20,12 +20,12 @@
                 </div>
                 <div class="col-lg-8 text-center">
                     <div class="text-start text-muted mb-3">
-                        Pastikan biodata sudah terisi sesuai!
+                        Pastikan data sudah terisi dengan sesuai!
                     </div>
                     <form action="/biodata/update" method="POST">
                         @csrf
                         <div class="input-group form-floating mb-3">
-                            <input type="text" id="NIK" name="NIK" class="form-control" value="{{ auth()->user()->NIK }}" required>
+                            <input type="number" id="NIK" name="NIK" class="form-control" value="{{ auth()->user()->NIK }}" required>
                             <label for="NIK" class="form-label">NIK</label>
                         </div>
                         <div class="input-group form-floating mb-3">
@@ -33,11 +33,11 @@
                             <label for="nama" class="form-label">Nama Lengkap</label>
                         </div>
                         <div class="input-group form-floating mb-3">
-                            <input type="text" id="email" name="email" class="form-control" value="{{ auth()->user()->email }}" required>
+                            <input type="email" id="email" name="email" class="form-control" value="{{ auth()->user()->email }}" required>
                             <label for="email" class="form-label">Email</label>
                         </div>
                         <div class="input-group form-floating mb-3">
-                            <input type="text" id="nomorTelp" name="nomorTelp" class="form-control" value="+62 {{ auth()->user()->nomorTelp }}" required>
+                            <input type="number" id="nomorTelp" name="nomorTelp" class="form-control" value="{{ auth()->user()->nomorTelp }}" required>
                             <label for="nomorTelp" class="form-label">Nomor Telepon</label>
                         </div>
                         <div class="input-group mb-3">
@@ -50,15 +50,20 @@
                                 <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
                             </div>
                         </div>
-                        <div class="input-group form-floating">
+                        <div class="input-group form-floating mb-3">
                             <textarea class="form-control" name="alamat" required>{{ auth()->user()->alamat }}</textarea>
                             <label for="alamat" class="form-label">Alamat</label>
                         </div>
-                        <a class="nav-link mt-4">
-                            <button class="btn btn-success" type="submit">
-                                <i class="bi bi-pencil-square fs-5"></i><span class="fs-5 ms-2">Update</span>
+                        <div class="mt-4">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="bi bi-save fs-5"></i><span class="fs-5 ms-2">Update</span>
                             </button>
-                        </a>
+                            <a href="/biodata">
+                                <button class="btn btn-danger">
+                                    <i class="bi bi-arrow-counterclockwise fs-5"></i>
+                                </button>
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>

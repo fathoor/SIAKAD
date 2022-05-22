@@ -25,7 +25,7 @@
                     <form>
                         @csrf
                         <div class="input-group form-floating mb-3">
-                            <input type="text" id="NIK" name="NIK" class="form-control" value="{{ auth()->user()->NIK }}" disabled>
+                            <input type="number" id="NIK" name="NIK" class="form-control" value="{{ auth()->user()->NIK }}" disabled>
                             <label for="NIK" class="form-label">NIK</label>
                         </div>
                         <div class="input-group form-floating mb-3">
@@ -33,7 +33,7 @@
                             <label for="nama" class="form-label">Nama Lengkap</label>
                         </div>
                         <div class="input-group form-floating mb-3">
-                            <input type="text" id="email" name="email" class="form-control" value="{{ auth()->user()->email }}" disabled>
+                            <input type="email" id="email" name="email" class="form-control" value="{{ auth()->user()->email }}" disabled>
                             <label for="email" class="form-label">Email</label>
                         </div>
                         <div class="input-group form-floating mb-3">
@@ -55,11 +55,18 @@
                             <label for="alamat" class="form-label">Alamat</label>
                         </div>
                     </form>
-                    <a class="nav-link mt-4" href="/biodata/edit">
-                        <button class="btn btn-secondary">
-                            <i class="bi bi-pencil-square fs-5"></i><span class="fs-5 ms-2">Edit</span>
-                        </button>
-                    </a>
+                    <div class="mt-4">
+                        <a href="/biodata/edit">
+                            <button class="btn btn-warning">
+                                <i class="bi bi-pencil-square fs-5"></i><span class="fs-5 ms-2">Edit</span>
+                            </button>
+                        </a>
+                        <a href="/biodata">
+                            <button class="btn btn-success">
+                                <i class="bi bi-arrow-repeat fs-5"></i>
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
