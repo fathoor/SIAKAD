@@ -16,13 +16,33 @@
 
                 </div>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg text-start">
-                            <h6 class="fw-bold">Tahun Semester :</h6>
-                            <h6 class="fw-bold">Status Pembayaran :</h6>
-                            <h6 class="fw-bold">Bank :</h6>
-                            <h6 class="fw-bold">Tanggal Pembayaran :</h6>
-                        </div>
+                    <div class="container bg-light my-4" style="padding: 1">
+                        <table width="440px" class="table table-borderless text-start small table-responsive-sm"
+                            style="margin: 0">
+                            <tbody>
+                                <tr>
+                                    <td width="150px"><strong>Tahun Semester</strong></td>
+                                    <td width="10px"><strong>:</strong></td>
+                                    <td width="290px">5026201045</td>
+                                </tr>
+                                <tr>
+                                    <td width="150px"><strong>Status Pembayaran</strong></td>
+                                    <td width="10px"><strong>:</strong></td>
+                                    <td width="290px">THEODORUS REVONSIO PRANANTA</td>
+                                </tr>
+                                <tr>
+                                    <td width="150px"><strong>Bank</strong></td>
+                                    <td width="10px"><strong>:</strong></td>
+                                    <td width="290px">3,62</td>
+                                </tr>
+                                <tr>
+                                    <td width="150px"><strong>Tanggal Pembayaran</strong></td>
+                                    <td width="10px"><strong>:</strong></td>
+                                    <td width="290px">3,62</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="container">
@@ -87,7 +107,7 @@
                                 <div class="input-group form-floating col ms-2">
                                     <input type="text" id="TunggakanKPENYEGARAN" name="TunggakanKPENYEGARAN"
                                         class="form-control" value="x" disabled>
-                                    <label for="TunggakanKPENYEGARAN" class="form-label">TunggakanKPENYEGARAN</label>
+                                    <label for="TunggakanKPENYEGARAN" class="form-label">Tunggakan KPENYEGARAN</label>
                                 </div>
                             </div>
                         </form>
