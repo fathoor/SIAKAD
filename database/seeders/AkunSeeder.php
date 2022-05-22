@@ -109,6 +109,18 @@ class AkunSeeder extends Seeder
                 'alamat' => 'Graha Tirta - Dahlia Nomor 82'
             ],
             [
+                'NRP' => 5026201115,
+                'nama' => 'Benediktus Pandu Budhiwicaksono',
+                'password' => Hash::make('admin'),
+                'NIK' => 3273070306020002,
+                'tempatLahir' => 'Bandung',
+                'tanggalLahir' => '2002-06-03',
+                'nomorTelp' => 87712356300,
+                'email' => 'beneedictpandu@gmail.com',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Hidrodinamika III T87'
+            ],
+            [
                 'NRP' => 5026201096,
                 'nama' => 'Bonaventura Daiva Putra',
                 'password' => Hash::make('admin'),
@@ -120,7 +132,6 @@ class AkunSeeder extends Seeder
                 'tahunMasuk' => 2020,
                 'alamat' => 'Puri Surya Jaya i3 no.12'
             ],
-
         ]);
     }
 }
