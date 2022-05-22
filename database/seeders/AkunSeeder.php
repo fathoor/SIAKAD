@@ -107,7 +107,20 @@ class AkunSeeder extends Seeder
                 'email' => 'revonsio12@gmail.com',
                 'tahunMasuk' => 2020,
                 'alamat' => 'Graha Tirta - Dahlia Nomor 82'
-            ]
+            ],
+            [
+                'NRP' => 5026201096,
+                'nama' => 'Bonaventura Daiva Putra',
+                'password' => Hash::make('admin'),
+                'NIK' => 3515161504020002,
+                'tempatLahir' => 'Surabaya',
+                'tanggalLahir' => '2002-04-15',
+                'nomorTelp' => 81216214615,
+                'email' => '205026.bonaventura@mhs.its.ac.id',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Puri Surya Jaya i3 no.12'
+            ],
+
         ]);
     }
 }
