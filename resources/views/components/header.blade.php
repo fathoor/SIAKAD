@@ -28,13 +28,13 @@
                 </li>
                 {{-- Finansial --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3" href="/ukt">
+                    <a class="nav-link mx-3 {{ request()->is('ukt*') ? 'active' : '' }}" href="/ukt">
                         <i class="bi bi-receipt-cutoff fs-5"></i> <span class="fs-5 ms-2">Finansial</span>
                     </a>
                 </li>
                 {{-- Layanan --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('suratmahasiswa*', 'suratundurdiri*') ? 'active' : '' }}"
+                    <a class="nav-link mx-3 {{ request()->is('surat*') ? 'active' : '' }}"
                         href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-megaphone fs-5"></i> <span class="fs-5 ms-2">Layanan</span>
                     </a>
