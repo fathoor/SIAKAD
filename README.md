@@ -22,6 +22,7 @@ Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai pr
 ## Prerequisites
 - **PHP** `8.1.5` or above, get it from [here](https://www.apachefriends.org/download.html)
 - **Laravel** `9.2` or above
+- **MySQL**
 > **Composer** `2.3.5` or above is also required to build the webpage, get it from [here](https://getcomposer.org/download/)
 
 ## Installation
@@ -43,6 +44,13 @@ php artisan key:generate
 ```
 php artisan config:cache
 ```
+
+### Migrate Database
+- Migrate and seed the database
+```
+php artisan migrate:fresh --seed
+```
+> Expecting you already have `siakad` schema on your local database
 
 ### Run Laravel
 - Start local server
