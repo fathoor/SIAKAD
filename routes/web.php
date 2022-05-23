@@ -68,14 +68,10 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
         return view('contents.suratundurdiri-2');
     });
 
-    Route::get('/suratMahasiswa2', function () {
-        return view('contents.suratMahasiswa-2');
-    });
-
-    Route::get('/suratMahasiswa', function () {
-        return view('contents.suratMahasiswa');
-    });
-
+    Route::get('/suratAktif', [SuratAktifController::class, 'index']);
+    Route::get('/suratAktif/add', [SuratAktifController::class, 'add']);
+    Route::post('/suratAktif/store', [SuratAktifController::class, 'store']);
+    
     Route::get('/suratCuti', function () {
         return view('contents.suratCuti');
     });
