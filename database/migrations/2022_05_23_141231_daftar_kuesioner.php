@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kuesioner', function (Blueprint $table) {
+        Schema::create(('daftar_kuesioner'), function (Blueprint $table){
             $table->id();
-            $table->char('kodeKuesioner', 5)->unique();
-            $table->date('awalPengisian');
-            $table->date('akhirPengisian');
+            $table->char('kodeKuesioner', 5);
+            $table->bigInteger('NRP');
+            $table->string('kodeMK');
+            $table->bigInteger('dosenNRP');
+            $table->boolean('status');
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kuesioner');
+        Schema::dropIfExists('daftar_kuesioner');
     }
 };

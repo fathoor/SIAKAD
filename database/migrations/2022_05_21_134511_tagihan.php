@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('tagihan', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('NRP');
+            $table->string('periodeTagihan');
+            $table->boolean('status');
+            $table->char('bank', 5);
+            $table->date('tanggal');
             $table->bigInteger('SPP');
             $table->bigInteger('pelayaran');
             $table->bigInteger('tunggakPelayaran');

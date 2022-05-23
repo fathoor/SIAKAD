@@ -17,39 +17,39 @@ class HasilKuesionerSeeder extends Seeder
     {
         DB::table('hasil_kuesioner')->insert([
             [
-                'NIP' => '3456789',
-                'kodeMK' => 'IS184101',
+                'dosenNRP' => '5026201',
+                'kodeMK' => 'IS184412',
                 'jawaban1' => 5,
                 'jawaban2' => 5,
                 'jawaban3' => 5,
                 'feedback' => 'Mengajar dengan baik dan memuaskan'
             ],
             [
-                'NIP' => '4127712',
-                'kodeMK' => 'IS184101',
+                'dosenNRP' => '5026202',
+                'kodeMK' => 'IS184410',
                 'jawaban1' => 4,
                 'jawaban2' => 4,
                 'jawaban3' => 4,
                 'feedback' => 'Mengajar dengan baik'
             ],
             [
-                'NIP' => '4029129',
-                'kodeMK' => 'IS184307',
+                'dosenNRP' => '5026203',
+                'kodeMK' => 'IS184411',
                 'jawaban1' => 5,
                 'jawaban2' => 5,
                 'jawaban3' => 5,
                 'feedback' => 'Mengajar dengan sangat baik'
             ],
             [
-                'NIP' => '6626121',
-                'kodeMK' => 'IS184414',
+                'dosenNRP' => '5026204',
+                'kodeMK' => 'IS184413',
                 'jawaban1' => 5,
                 'jawaban2' => 5,
                 'jawaban3' => 4,
                 'feedback' => 'Mengajar dengan baik dan memuaskan'
             ],
             [
-                'NIP' => '3673811',
+                'dosenNRP' => '5026205',
                 'kodeMK' => 'IS184414',
                 'jawaban1' => 5,
                 'jawaban2' => 4,
@@ -57,8 +57,8 @@ class HasilKuesionerSeeder extends Seeder
                 'feedback' => 'Mengajar dengan sangat memuaskan'
             ],
             [
-                'NIP' => '4371202',
-                'kodeMK' => 'IS184412',
+                'dosenNRP' => '5026206',
+                'kodeMK' => 'IS184415',
                 'jawaban1' => 5,
                 'jawaban2' => 5,
                 'jawaban3' => 5,

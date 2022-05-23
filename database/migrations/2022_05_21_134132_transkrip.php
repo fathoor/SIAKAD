@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('transkrip', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('NRP')->unique();
             $table->float('IPS1');
             $table->float('IPS2');
             $table->float('IPS3');

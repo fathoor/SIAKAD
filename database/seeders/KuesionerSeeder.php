@@ -18,23 +18,23 @@ class KuesionerSeeder extends Seeder
         DB::table('kuesioner')->insert([
             [
                 'kodeKuesioner' => '2020A',
-                'tanggalPengisian' => '2020-11-09',
-                'status' => true
+                'awalPengisian' => '2020-11-09',
+                'akhirPengisian' => '2020-11-16',
             ],
             [
                 'kodeKuesioner' => '2020B',
-                'tanggalPengisian' => '2021-05-09',
-                'status' => true
+                'awalPengisian' => '2021-05-09',
+                'akhirPengisian' => '2021-05-17',
             ],
             [
                 'kodeKuesioner' => '2021A',
-                'tanggalPengisian' => '2021-11-09',
-                'status' => true
+                'awalPengisian' => '2021-11-09',
+                'akhirPengisian' => '2021-11-17',
             ],
             [
                 'kodeKuesioner' => '2021B',
-                'tanggalPengisian' => '2022-05-09',
-                'status' => false
+                'awalPengisian' => '2022-05-09',
+                'akhirPengisian' => '2022-05-17',
             ]
         ]);
     }
