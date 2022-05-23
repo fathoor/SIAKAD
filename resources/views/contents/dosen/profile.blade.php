@@ -23,7 +23,12 @@
             <div class="d-flex flex-row">
                 <span class="d-flex flex-col my-2 mx-3">
                     <a class="nav-link" href="/dashboard/dosen">
-                        <i class="bi bi-folder fs-1"></i>
+                        <i class="bi bi-mortarboard fs-1"></i>
+                    </a>
+                </span>
+                <span class="d-flex flex-col my-2 mx-3">
+                    <a class="nav-link" href="/dashboard/dosen">
+                        <i class="bi bi-shield fs-1"></i>
                     </a>
                 </span>
             </div>
