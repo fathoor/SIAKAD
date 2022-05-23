@@ -50,20 +50,6 @@ class AkunSeeder extends Seeder
                 'alamat' => 'Kampus ITS',
                 'type' => 0
             ],
-            // Default User Dosen
-            [
-                'NRP' => 5026,
-                'nama' => 'Dosen',
-                'password' => Hash::make('dosen'),
-                'NIK' => 3578000101800000,
-                'tempatLahir' => 'Jakarta',
-                'tanggalLahir' => '1980-01-01',
-                'nomorTelp' => 81000000000,
-                'email' => 'dosen@gmail.com',
-                'tahunMasuk' => 2000,
-                'alamat' => 'Kampus ITS',
-                'type' => 1
-            ],
             // Mahasiswa
             [
                 'NRP' => 5026201139,
@@ -156,16 +142,95 @@ class AkunSeeder extends Seeder
                 'alamat' => 'Puri Surya Jaya i3 no.12',
                 'type' => 0
             ],
-            // Dosen
+            // Default User Dosen
             [
-                'NRP' => 3028402,
-                'nama' => 'Radityo Prasetianto Wibowo',
+                'NRP' => 5026200,
+                'nama' => 'Dosen',
                 'password' => Hash::make('dosen'),
                 'NIK' => 3578000101800000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '1980-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'dosen@gmail.com',
+                'tahunMasuk' => 2000,
+                'alamat' => 'Kampus ITS',
+                'type' => 1
+            ],
+            // Dosen
+            [
+                'NRP' => 5026201,
+                'nama' => 'Radityo Prasetianto Wibowo',
+                'password' => Hash::make('dosen'),
+                'NIK' => 3578000101000000,
                 'tempatLahir' => 'Jakarta',
                 'tanggalLahir' => '1990-01-01',
                 'nomorTelp' => 81000000000,
                 'email' => 'radityo_pw@is.its.ac.id',
+                'tahunMasuk' => 2000,
+                'alamat' => 'Kampus ITS',
+                'type' => 1
+            ],
+            [
+                'NRP' => 5026202,
+                'nama' => 'Mahendrawathi',
+                'password' => Hash::make('dosen'),
+                'NIK' => 3578000101000000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '1990-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'mahendra_w@is.its.ac.id',
+                'tahunMasuk' => 2000,
+                'alamat' => 'Kampus ITS',
+                'type' => 1
+            ],
+            [
+                'NRP' => 5026203,
+                'nama' => 'Bekti Cahyo Hidayanto',
+                'password' => Hash::make('dosen'),
+                'NIK' => 3578000101000000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '1990-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'bekticahyo@is.its.ac.id',
+                'tahunMasuk' => 2000,
+                'alamat' => 'Kampus ITS',
+                'type' => 1
+            ],
+            [
+                'NRP' => 5026204,
+                'nama' => 'Nisfu Asrul Sani',
+                'password' => Hash::make('dosen'),
+                'NIK' => 3578000101000000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '1990-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'soni@is.its.ac.id',
+                'tahunMasuk' => 2000,
+                'alamat' => 'Kampus ITS',
+                'type' => 1
+            ],
+            [
+                'NRP' => 5026205,
+                'nama' => 'Faizal Johan Atletiko',
+                'password' => Hash::make('dosen'),
+                'NIK' => 3578000101000000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '1990-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'faisal@is.its.ac.id',
+                'tahunMasuk' => 2000,
+                'alamat' => 'Kampus ITS',
+                'type' => 1
+            ],
+            [
+                'NRP' => 5026206,
+                'nama' => 'Faizal Mahananto',
+                'password' => Hash::make('dosen'),
+                'NIK' => 3578000101000000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '1990-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'fmahananto@is.its.ac.id',
                 'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 1

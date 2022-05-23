@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('surat_mahasiswa', function (Blueprint $table) {
+        Schema::create('dosen', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('suratMahasiswaNRP');
-            $table->string('tipeSurat');
-            $table->string('kodeSurat');
-            $table->date('tanggalAjuan');
-            $table->boolean('status')->default(true);
+            $table->bigInteger('dosenNRP');
+            $table->string('dosenNama');
+            $table->string('dosenKodeMK');
+            $table->boolean('isWali')->default(true);
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('surat_mahasiswa');
+        Schema::dropIfExists('dosen');
     }
 };
