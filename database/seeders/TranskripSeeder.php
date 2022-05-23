@@ -99,6 +99,18 @@ class TranskripSeeder extends Seeder
                 'IPS7' => 0,
                 'IPS8' => 0,
                 'IPK' => 4.00
+            ],
+            [
+                'NRP' => 5026201109,
+                'IPS1' => 4.00,
+                'IPS2' => 4.00,
+                'IPS3' => 4.00,
+                'IPS4' => 0,
+                'IPS5' => 0,
+                'IPS6' => 0,
+                'IPS7' => 0,
+                'IPS8' => 0,
+                'IPK' => 4.00
             ]
         ]);
     }
