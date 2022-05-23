@@ -30,13 +30,13 @@
                             <label for="namaMahasiswa" class="col-3 col-form-label">Nama</label>
                             <label for="namaMahasiswa" class="col-1 col-form-label">:</label>
                             <div class="col-8">
-                                <input type="text" id="namaMahasiswa" name="namaMahasiswa" class="form-control bg-transparent border-white" value="{{ auth()->user()->namaMahasiswa }}" disabled>
+                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-white" value="{{ auth()->user()->nama }}" disabled>
                             </div>
                         </div>
                     </form>
                 </div>
 
-                <a href="/contents.suratMahasiswa" class="btn btn-primary"> + Ajukan Surat</a>
+                <a href="/suratCuti-2" class="btn btn-primary"> + Ajukan Surat</a>
                 <br/>
                 <br/>
 

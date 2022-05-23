@@ -44,7 +44,7 @@
                                 </form>
                             </li>
                         </ul>
-                    </li> 
+                    </li>
                 @else
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
@@ -71,7 +71,7 @@
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="layananDropdown">
                         <li><a class="dropdown-item" href="/suratMahasiswa2">Surat Mahasiswa Aktif</a></li>
-                        <li><a class="dropdown-item" href="#">Surat Cuti</a></li>
+                        <li><a class="dropdown-item" href="/suratCuti">Surat Cuti</a></li>
                         <li><a class="dropdown-item" href="/suratundurdiri2">Surat Mengundurkan Diri</a></li>
                     </ul>
                 </li>
@@ -92,7 +92,7 @@
                             </form>
                         </li>
                     </ul>
-                </li>       
+                </li>
                 @endif
             </ul>
         </div>
