@@ -19,7 +19,16 @@ class SuratAktifSeeder extends Seeder
             [
                 'suratAktifNRP' => '5026201000',
                 'periodeAktif' => 'GENAP 2022',
-                'keperluanSurat' => 'Lomba'
+                'tanggalAjuan' => '2022-05-12',
+                'keperluanSurat' => 'Lomba',
+                'status' => true
+            ],
+            [
+                'suratAktifNRP' => '5026201139',
+                'periodeAktif' => 'GENAP 2022',
+                'tanggalAjuan' => '2022-05-12',
+                'keperluanSurat' => 'Lomba',
+                'status' => true
             ],
         ]);
     }

@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('suratAktifNRP');
             $table->string('periodeAktif');
+            $table->date('tanggalAjuan');
             $table->string('keperluanSurat');
+            $table->boolean('status')->default(true);
         });
     }
 
