@@ -31,23 +31,40 @@ class AkunSeeder extends Seeder
                 'email' => '...',
                 'tahunMasuk' => YYYY,
                 'alamat' => '...'
+                'type' => '0/1' 0 : Mahasiswa, 1 : Dosen
                 ]
             ]);
         */
         DB::table('akun')->insert([
-            // Default User
+            // Default User Mahasiswa
             [
                 'NRP' => 5026201000,
                 'nama' => 'Mahasiswa',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('mahasiswa'),
                 'NIK' => 3578000101000000,
                 'tempatLahir' => 'Jakarta',
                 'tanggalLahir' => '2000-01-01',
                 'nomorTelp' => 81000000000,
                 'email' => 'mahasiswa@gmail.com',
                 'tahunMasuk' => 2020,
-                'alamat' => 'Kampus ITS'
+                'alamat' => 'Kampus ITS',
+                'type' => 0
             ],
+            // Default User Dosen
+            [
+                'NRP' => 5026,
+                'nama' => 'Dosen',
+                'password' => Hash::make('dosen'),
+                'NIK' => 3578000101800000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '1980-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'dosen@gmail.com',
+                'tahunMasuk' => 2000,
+                'alamat' => 'Kampus ITS',
+                'type' => 1
+            ],
+            // Mahasiswa
             [
                 'NRP' => 5026201139,
                 'nama' => 'Muhammad Fathurrahman',
@@ -58,7 +75,8 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81231977440,
                 'email' => 'mfathoor@gmail.com',
                 'tahunMasuk' => 2020,
-                'alamat' => 'Jl Kebonsari Elveka VII No 7'
+                'alamat' => 'Jl Kebonsari Elveka VII No 7',
+                'type' => 0
             ],
             [
                 'NRP' => 5026201130,
@@ -70,7 +88,8 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 82306071010,
                 'email' => 'ellionblessan@gmail.com',
                 'tahunMasuk' => 2020,
-                'alamat' => 'Sidosermo 2'
+                'alamat' => 'Sidosermo 2',
+                'type' => 0
             ],
             [
                 'NRP' => 5026201141,
@@ -82,7 +101,8 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81232557720,
                 'email' => 'abraham.mauritz2603@gmail.com',
                 'tahunMasuk' => 2020,
-                'alamat' => 'Baruk Barat 2'
+                'alamat' => 'Baruk Barat 2',
+                'type' => 0
             ],
             [
                 'NRP' => 5026201054,
@@ -94,7 +114,8 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81339524992,
                 'email' => 'ernando.taufiq29@gmail.com',
                 'tahunMasuk' => 2020,
-                'alamat' => 'Jl. Pahlawan No.37'
+                'alamat' => 'Jl. Pahlawan No.37',
+                'type' => 0
             ],
             [
                 'NRP' => 5026201045,
@@ -106,7 +127,8 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81230215394,
                 'email' => 'revonsio12@gmail.com',
                 'tahunMasuk' => 2020,
-                'alamat' => 'Graha Tirta - Dahlia Nomor 82'
+                'alamat' => 'Graha Tirta - Dahlia Nomor 82',
+                'type' => 0
             ],
             [
                 'NRP' => 5026201115,
@@ -118,7 +140,8 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 87712356300,
                 'email' => 'beneedictpandu@gmail.com',
                 'tahunMasuk' => 2020,
-                'alamat' => 'Hidrodinamika III T87'
+                'alamat' => 'Hidrodinamika III T87',
+                'type' => 0
             ],
             [
                 'NRP' => 5026201096,
@@ -130,7 +153,22 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81216214615,
                 'email' => '205026.bonaventura@mhs.its.ac.id',
                 'tahunMasuk' => 2020,
-                'alamat' => 'Puri Surya Jaya i3 no.12'
+                'alamat' => 'Puri Surya Jaya i3 no.12',
+                'type' => 0
+            ],
+            // Dosen
+            [
+                'NRP' => 3028402,
+                'nama' => 'Radityo Prasetianto Wibowo',
+                'password' => Hash::make('dosen'),
+                'NIK' => 3578000101800000,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '1990-01-01',
+                'nomorTelp' => 81000000000,
+                'email' => 'radityo_pw@is.its.ac.id',
+                'tahunMasuk' => 2000,
+                'alamat' => 'Kampus ITS',
+                'type' => 1
             ],
         ]);
     }
