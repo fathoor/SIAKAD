@@ -1,8 +1,8 @@
-# <p  align="center"> IS184412 - Rancang Bangun Perangkat Lunak [C] </p>
+# <p align="center"> IS184412 - Rancang Bangun Perangkat Lunak [C] </p>
 
-<br><p  align="center"> [![SIAKAD ITS](/public/img/siakad_putih.png)](https://github.com/fathoor/SIAKAD)</p>
+<br><p align="center"> [![SIAKAD ITS](/public/img/siakad_putih.png)](https://github.com/fathoor/SIAKAD)</p>
 
-## <p  align="center"> Sistem Informasi Akademik </p>
+## <p align="center"> Sistem Informasi Akademik </p>
 
 Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai proyek *Tugas Akhir* dari mata kuliah ```Rancang Bangun Perangkat Lunak [C]```
 
@@ -22,10 +22,11 @@ Website **Sistem Informasi Akademik** yang dibuat oleh **Kelompok 1** sebagai pr
 ## Prerequisites
 - **PHP** `8.1.5` or above, get it from [here](https://www.apachefriends.org/download.html)
 - **Laravel** `9.2` or above
+- **MySQL**
 > **Composer** `2.3.5` or above is also required to build the webpage, get it from [here](https://getcomposer.org/download/)
 
 ## Installation
-### Build the webpage
+### Build Application
 - Create new `.env`
 ```
 cp .env.example .env
@@ -38,11 +39,23 @@ composer install
 ```
 php artisan key:generate
 ```
+- Clear application cache
+
+```
+php artisan cache:clear
+```
 - Clear config cache
 
 ```
 php artisan config:cache
 ```
+
+### Migrate Database
+- Migrate and seed
+```
+php artisan migrate:fresh --seed
+```
+> Expecting you already have `siakad` schema on your local database
 
 ### Run Laravel
 - Start local server

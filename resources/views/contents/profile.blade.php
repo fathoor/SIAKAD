@@ -5,7 +5,7 @@
 {{-- Content --}}
 @section('main')
 
-<div class="container">
+<div class="container justify-content-center">
     {{-- Content --}}
     <main>
         {{-- /view/contents/ --}}
@@ -15,7 +15,7 @@
                 <i class="bi bi-person-circle" style="font-size: 8rem"></i>
             </div>
             <div>
-                <h1 class="display-3 fw-bold my-2">{{ auth()->user()->namaMahasiswa }}</h1>
+                <h1 class="display-3 fw-bold my-2">{{ auth()->user()->nama }}</h1>
             </div>
             <div>
                 <h3 class="fw-semibold my-2">{{ auth()->user()->NRP }}</h3>
@@ -29,11 +29,11 @@
                         <li><a class="dropdown-item" href="/frs">Formulir Rencana Studi</a></li>
                         <li><a class="dropdown-item" href="/kurikulum">Kurikulum Semester</a></li>
                         <li><a class="dropdown-item" href="/transkrip">Transkrip Nilai</a></li>
-                        <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
+                        <li><a class="dropdown-item" href="/kuesioner">Kuesioner Dosen & MK</a></li>
                     </ul>
                 </span>
                 <span class="d-flex flex-col my-2 mx-3">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/ukt">
                         <i class="bi bi-receipt-cutoff fs-1"></i>
                     </a>
                 </span>
