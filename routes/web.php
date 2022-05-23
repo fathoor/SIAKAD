@@ -22,6 +22,11 @@ Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('g
 Route::post('/', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+// Error Route
+Route::get('/restricted', function () {
+    return view('restricted');
+})->name('error');
+
 // Profile Route
 Route::get('/biodata', [BiodataController::class, 'index']);
 Route::get('/biodata/edit', [BiodataController::class, 'edit']);
