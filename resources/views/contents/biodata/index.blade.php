@@ -20,7 +20,10 @@
                 </div>
                 <div class="col-lg-8 text-center">
                     <div class="text-start text-muted mb-3">
-                        Last updated: {{ Carbon\Carbon::now() }} WIB
+                        Updated: {{ Carbon\Carbon::now() }} WIB
+                        <a class="ms-2" href="/biodata">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </a>
                     </div>
                     <form>
                         @csrf
@@ -59,11 +62,6 @@
                         <a href="/biodata/edit">
                             <button class="btn btn-warning">
                                 <i class="bi bi-pencil-square fs-5"></i><span class="fs-5 ms-2">Edit</span>
-                            </button>
-                        </a>
-                        <a href="/biodata">
-                            <button class="btn btn-success">
-                                <i class="bi bi-arrow-repeat fs-5"></i>
                             </button>
                         </a>
                     </div>
