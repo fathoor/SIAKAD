@@ -1,9 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SuratAktifController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +73,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::get('/suratAktif', [SuratAktifController::class, 'index']);
     Route::get('/suratAktif/add', [SuratAktifController::class, 'add']);
     Route::post('/suratAktif/store', [SuratAktifController::class, 'store']);
-    
+
     Route::get('/suratCuti', function () {
         return view('contents.suratCuti');
     });
