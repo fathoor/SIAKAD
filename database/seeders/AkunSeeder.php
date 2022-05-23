@@ -142,6 +142,19 @@ class AkunSeeder extends Seeder
                 'alamat' => 'Puri Surya Jaya i3 no.12',
                 'type' => 0
             ],
+            [
+                'NRP' => 5026201109,
+                'nama' => 'Alana Nabihah Thufailah',
+                'password' => Hash::make('admin'),
+                'NIK' => 3275105608010011,
+                'tempatLahir' => 'Jakarta',
+                'tanggalLahir' => '2001-08-16',
+                'nomorTelp' => 81317090159,
+                'email' => 'alanathufailah.205026@mhs.its.ac.id                ',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Citra Grand 01 no. 011',
+                'type' => 0
+            ],
             // Default User Dosen
             [
                 'NRP' => 5026200,
