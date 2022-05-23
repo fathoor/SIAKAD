@@ -28,7 +28,6 @@ class DatabaseSeeder extends Seeder
             TagihanSeeder::class,
 
             // Layanan
-            SuratMahasiswaSeeder::class,
             SuratAktifSeeder::class,
             SuratCutiSeeder::class,
             SuratUndurDiriSeeder::class,
