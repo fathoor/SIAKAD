@@ -155,6 +155,19 @@ class AkunSeeder extends Seeder
                 'alamat' => 'Citra Grand 01 no. 011',
                 'type' => 0
             ],
+            [
+                'NRP' => 5026201007,
+                'nama' => 'Faraz Nurdini',
+                'password' => Hash::make('admin'),
+                'NIK' => 6474025705020006,
+                'tempatLahir' => 'Bontang',
+                'tanggalLahir' => '2002-05-17',
+                'nomorTelp' => 82299795389,
+                'email' => 'faraz.205026@mhs.its.ac.id',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Jln Gunung Krakatau no 18, HOP 2',
+                'type' => 0
+            ],
             // Default User Dosen
             [
                 'NRP' => 5026200,
