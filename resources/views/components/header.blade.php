@@ -1,10 +1,17 @@
 {{-- Navbar --}}
 <header class="header shadow">
     <nav class="navbar navbar-expand-lg navbar-dark p-3">
+        @if(auth()->user()->type == 'dosen')
         {{-- Logo --}}
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/dashboard/dosen">
             <img src="/img/siakad_logo.png" height="30">
         </a>
+        @else
+        {{-- Logo --}}
+        <a class="navbar-brand" href="/dashboard">
+            <img src="/img/siakad_logo.png" height="30">
+        </a>
+        @endif
         {{-- Button untuk mode mobile --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileDropdown"
             aria-controls="mobileDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,10 +20,35 @@
         {{-- Navs --}}
         <div class=" collapse navbar-collapse" id="mobileDropdown">
             <ul class="navbar-nav ms-auto align-items-center">
+                @if(auth()->user()->type == 'dosen')
+                    {{-- Akademik --}}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/dashboard/dosen">
+                            <i class="bi bi-folder fs-5"></i> <span class="fs-5 ms-2">File</span>
+                        </a>
+                    </li>
+                    {{-- Profil --}}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 {{ request()->is('dashboard*', 'biodata*') ? 'active' : '' }}" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi-person-circle fs-2"></i>
+                        </a>
+                        <ul class="dropdown-menu text-left" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="/biodata">Biodata</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li> 
+                @else
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('frs*', 'kurikulum*', 'transkrip*', 'kuesioner*') ? 'active' : '' }}"
-                        href="#" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('frs*', 'kurikulum*', 'transkrip*', 'kuesioner*') ? 'active' : '' }}" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-stack fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
@@ -34,8 +66,7 @@
                 </li>
                 {{-- Layanan --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('surat*') ? 'active' : '' }}"
-                        href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('surat*') ? 'active' : '' }}" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-megaphone fs-5"></i> <span class="fs-5 ms-2">Layanan</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="layananDropdown">
@@ -46,9 +77,7 @@
                 </li>
                 {{-- Profil --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('dashboard*', 'biodata*') ? 'active' : '' }}"
-                        href="/dashboard" id="profileDropdown" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('dashboard*', 'biodata*') ? 'active' : '' }}" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi-person-circle fs-2"></i>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="profileDropdown">
@@ -63,7 +92,8 @@
                             </form>
                         </li>
                     </ul>
-                </li>
+                </li>       
+                @endif
             </ul>
         </div>
     </nav>
