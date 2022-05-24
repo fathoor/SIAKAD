@@ -23,8 +23,8 @@
                         <div class="col-8">
                             <select class="form-select" name="periode" required>
                                 <option selected disabled value="">Pilih</option>
-                                <option value="GANJIL 2022">Ganjil</option>
-                                <option value="GENAP 2022">Genap</option>
+                                <option value="Ganjil 2022">Ganjil</option>
+                                <option value="Genap 2022">Genap</option>
                             </select>
                         </div>
                     </div>
@@ -56,7 +56,11 @@
                 </form>
                 <div class="row text-center">
                     <div class="mt-3">
-                        <button class="btn btn-primary" type="submit" form="input">Ajukan Surat</button>
+                        <a>
+                            <button class="btn btn-primary" type="submit" form="input">
+                                <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Ajukan Surat</span>
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

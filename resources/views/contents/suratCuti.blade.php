@@ -15,7 +15,7 @@
                 <h2 class="fw-bold">Surat Cuti</h2>
             </div>
             <div class="row mb-4">
-                <form class="form-inline" id="input" action="">
+                <form class="form-inline" id="input">
                     @csrf
                     <div class="form-group row mb-3">
                         <label for="NRP" class="col-2 col-form-label">NRP</label>
@@ -34,9 +34,13 @@
                 </form>
             </div>
             <div class="row mb-5">
-                <a href="/suratCuti/add" class="btn btn-primary"> + Ajukan Surat</a>
+                <a href="/suratCuti/add">
+                    <button class="btn btn-primary">
+                        <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Ajukan Surat</span>
+                    </button>
+                </a>
             </div>
-            <table class="table table-striped text-center">
+            <table class="table table-striped table-bordered text-center">
                 <tr>
                     <th>No</th>
                     <th>Periode</th>
@@ -44,7 +48,7 @@
                     <th>Diajukan</th>
                     <th>Alasan</th>
                     <th>Status</th>
-                    <th>Cetak</th> {{-- Ini tolong dikasi tombol aja --}}
+                    <th>Cetak</th>
                 </tr>
                 @foreach($cuti as $c)
                 <tr>
@@ -55,10 +59,11 @@
                     <td>{{ $c->alasanCuti }}</td>
                     @if($c->status == true)
                     <td>Disetujui</td>
+                    <td>Cetak</td> {{-- Ini tolong dikasi tombol aja --}}
                     @else
                     <td>Menunggu</td>
+                    <td>Cetak</td> {{-- Ini juga tombol tapi disabled --}}
                     @endif
-                    <td>Cetak</td>
                 </tr>
                 @endforeach
             </table>

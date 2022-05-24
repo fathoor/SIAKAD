@@ -18,7 +18,7 @@ class SuratCutiSeeder extends Seeder
         DB::table('surat_cuti')->insert([
             [
                 'suratCutiNRP' => '5026201000',
-                'periodeCuti' => 'GENAP 2022',
+                'periodeCuti' => 'Genap 2022',
                 'jumlahSemesterCuti' => 1,
                 'tanggalAjuan' => '2022-05-10',
                 'alasanCuti' => 'Sakit',
@@ -26,7 +26,7 @@ class SuratCutiSeeder extends Seeder
             ],
             [
                 'suratCutiNRP' => '5026201139',
-                'periodeCuti' => 'GENAP 2022',
+                'periodeCuti' => 'Ganjil 2022',
                 'jumlahSemesterCuti' => 1,
                 'tanggalAjuan' => '2022-05-10',
                 'alasanCuti' => 'Sakit',
