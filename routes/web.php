@@ -93,3 +93,9 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/dosen', [DashboardController::class, 'indexDosen'])->name('dashboard.dosen');
 });
+
+// Staff Route
+Route::middleware(['auth', 'role:staff'])->group(function () {
+    // Dashboard Route
+    Route::get('/dashboard/staff', [DashboardController::class, 'indexStaff'])->name('dashboard.staff');
+});
