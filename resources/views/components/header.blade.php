@@ -33,7 +33,7 @@
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
                         <li><a class="dropdown-item" href="#">Mata Kuliah</a></li>
-                        <li><a class="dropdown-item" href="#">Kurikulum Semester</a></li>
+                        <li><a class="dropdown-item" href="/dosen/kurikulum">Kurikulum Semester</a></li>
                         <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
                     </ul>
                 </li>
@@ -69,9 +69,14 @@
                 @elseif(auth()->user()->type == 'staff')
                 {{-- File --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('staff/*') ? 'active' : '' }}" href="/dashboard/staff">
-                        <i class="bi bi-clipboard2 fs-5"></i> <span class="fs-5 ms-2">gatau</span>
+                    <a class="nav-link mx-3 {{ request()->is('staff/*') ? 'active' : '' }}" href="/dashboard/staff" id="staffDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-clipboard2 fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
+                    <ul class="dropdown-menu text-left" aria-labelledby="staffDropdown">
+                        <li><a class="dropdown-item" href="/staff/kurikulum">Kurikulum</a></li>
+                        <li><a class="dropdown-item" href="#">Nilai Mahasiswa</a></li>
+                        <li><a class="dropdown-item" href="#">Formulir Rencana Studi</a></li>
+                    </ul>
                 </li>
                 {{-- Profil --}}
                 <li class="nav-item dropdown">

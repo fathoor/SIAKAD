@@ -52,7 +52,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     });
 
     //Kurikulum Route
-    Route::get('/kurikulum', [KurikulumController::class, 'index']);
+    Route::get('/kurikulum', [KurikulumController::class, 'indexMahasiswa']);
 
     Route::get('/kuesioner', [DaftarKuesionerController::class, 'index']);
 
@@ -91,10 +91,12 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
 Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/dosen', [DashboardController::class, 'indexDosen'])->name('dashboard.dosen');
+    Route::get('/dosen/kurikulum', [KurikulumController::class, 'indexDosen']);
 });
 
 // Staff Route
 Route::middleware(['auth', 'role:staff'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/staff', [DashboardController::class, 'indexStaff'])->name('dashboard.staff');
+    Route::get('/staff/kurikulum', [KurikulumController::class, 'indexStaff']);
 });
