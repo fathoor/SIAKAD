@@ -36,6 +36,10 @@ class LoginController extends Controller
             {
                 return redirect()->route('dashboard.dosen');
             }
+            else if (auth()->user()->type == 'staff') 
+            {
+                return redirect()->route('dashboard.staff');
+            }
             else
             {
                 return redirect()->route('/');

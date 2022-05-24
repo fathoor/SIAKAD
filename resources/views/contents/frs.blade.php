@@ -36,38 +36,87 @@
                             <button type="button" class="btn btn-primary">Ganti</button>
                         </div>
                     </div>
-                    <div class="container bg-light my-4" style="padding: 1">
-                        <table width="440px" class="table table-borderless text-start small table-responsive-sm" style="margin: 0">
-                            <tbody>
-                                <tr>
-                                    <td width="110px"><strong>NRP</strong></td>
-                                    <td width="10px"><strong>:</strong></td>
-                                    <td width="330px"><input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-white" value="{{ auth()->user()->NRP }}" disabled></td>
-                                    <td width="110px"><strong>Dosen Wali</strong></td>
-                                    <td width="10px"><strong>:</strong></td>
-                                    <td width="330px"></td>
-                                </tr>
-                                <tr>
-                                    <td width="110px"><strong>Nama</strong></td>
-                                    <td width="10px"><strong>:</strong></td>
-                                    <td width="330px"><input type="text" id="nama" name="nama" class="form-control bg-transparent border-white" value="{{ auth()->user()->nama }}" disabled></td>
-                                    <td width="110px"><strong>Batas / Sisa</strong></td>
-                                    <td width="10px"><strong>:</strong></td>
-                                    <td width="330px"></td>
-                                </tr>
-                                <tr>
-                                    <td width="110px"><strong>IPS</strong></td>
-                                    <td width="10px"><strong>:</strong></td>
-                                    <td width="330px"></td>
-                                    <td width="110px"><strong>IPK</strong></td>
-                                    <td width="10px"><strong>:</strong></td>
-                                    <td width="330px"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
                 </div>
+                <div class="container bg-dark bg-opacity-10 my-4" style="padding: 1">
+                    <table width="440px" class="table table-borderless text-start small table-responsive-sm"
+                        style="margin: 0">
+                        <tbody>
+                            <tr>
+                                <td width="110px"><strong>NRP</strong></td>
+                                <td width="10px"><strong>:</strong></td>
+                                <td width="330px"><input type="text" id="NRP" name="NRP"
+                                        class="form-control bg-transparent border-white" value="{{ auth()->user()->NRP }}"
+                                        disabled></td>
+                                <td width="110px"><strong>Dosen Wali</strong></td>
+                                <td width="10px"><strong>:</strong></td>
+                                <td width="330px"></td>
+                            </tr>
+                            <tr>
+                                <td width="110px"><strong>Nama</strong></td>
+                                <td width="10px"><strong>:</strong></td>
+                                <td width="330px"><input type="text" id="nama" name="nama"
+                                        class="form-control bg-transparent border-white"
+                                        value="{{ auth()->user()->nama }}" disabled></td>
+                                <td width="110px"><strong>Batas / Sisa</strong></td>
+                                <td width="10px"><strong>:</strong></td>
+                                <td width="330px"></td>
+                            </tr>
+                            <tr>
+                                <td width="110px"><strong>IPS</strong></td>
+                                <td width="10px"><strong>:</strong></td>
+                                <td width="330px"></td>
+                                <td width="110px"><strong>IPK</strong></td>
+                                <td width="10px"><strong>:</strong></td>
+                                <td width="330px"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container my-4 text-center" style="padding: 0">
+                    <table class="table table-bordered table-hover table-striped" style="margin: 0">
+                        <thead class="bg-primary bg-opacity-75">
+                            <tr>
+                                <th scope="col">Kode</th>
+                                <th scope="col">Mata Kuliah</th>
+                                <th scope="col">SKS</th>
+                                <th scope="col">Kelas</th>
+                                <th scope="col">Alih Kredit</th>
+                                <th scope="col">Dosen</th>
+                                <th scope="col">Nilai</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-warning">
+                            <tr>
+                                <td>IS184412</td>
+                                <td>Rancang Bangun Perangkat Lunak</td>
+                                <td>4</td>
+                                <td>C</td>
+                                <td>-</td>
+                                <td>Radityo Prasetianto Wibowo, S.Kom., M.Kom</td>
+                                <td>*</td>
+                            </tr>
+                            <tr>
+                                <td>IS184412</td>
+                                <td>Rancang Bangun Perangkat Lunak</td>
+                                <td>4</td>
+                                <td>C</td>
+                                <td>-</td>
+                                <td>Radityo Prasetianto Wibowo, S.Kom., M.Kom</td>
+                                <td>*</td>
+                            </tr>
+                            <tr>
+                                <td>IS184412</td>
+                                <td>Rancang Bangun Perangkat Lunak</td>
+                                <td>4</td>
+                                <td>C</td>
+                                <td>-</td>
+                                <td>Radityo Prasetianto Wibowo, S.Kom., M.Kom</td>
+                                <td>*</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
         </main>
     </div>
 

@@ -18,17 +18,12 @@
                 <h1 class="display-3 fw-bold my-2">{{ auth()->user()->nama }}</h1>
             </div>
             <div>
-                <h3 class="fw-semibold my-2">{{ auth()->user()->NRP }}</h3>
+                <h3 class="fw-semibold my-2">{{ auth()->user()->departemen }}</h3>
             </div>
             <div class="d-flex flex-row">
                 <span class="d-flex flex-col my-2 mx-3">
-                    <a class="nav-link" href="/dashboard/dosen">
-                        <i class="bi bi-mortarboard fs-1"></i>
-                    </a>
-                </span>
-                <span class="d-flex flex-col my-2 mx-3">
-                    <a class="nav-link" href="/dashboard/dosen">
-                        <i class="bi bi-shield fs-1"></i>
+                    <a class="nav-link" href="/dashboard/staff">
+                        <i class="bi bi-clipboard2 fs-1"></i>
                     </a>
                 </span>
             </div>

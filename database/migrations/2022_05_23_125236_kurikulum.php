@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('surat_cuti', function (Blueprint $table) {
+        Schema::create('kurikulum', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('suratCutiNRP');
-            $table->string('periodeCuti');
-            $table->integer('jumlahSemesterCuti');
-            $table->date('tanggalAjuan');
-            $table->string('alasanCuti');
-            $table->boolean('status')->default(false);
+            $table->integer('tahunKurikulum');
+            $table->boolean('isActive')->default(true);
         });
     }
 
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('surat_cuti');
+        Schema::dropIfExists('kurikulum');
     }
 };

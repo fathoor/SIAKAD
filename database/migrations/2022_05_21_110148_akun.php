@@ -33,7 +33,7 @@ return new class extends Migration
             $table->date('tanggalLahir');
             $table->bigInteger('nomorTelp');
             $table->string('email');
-            $table->integer('tahunMasuk');
+            $table->string('departemen');
             $table->string('alamat');
             $table->integer('type')->default(0);
         });

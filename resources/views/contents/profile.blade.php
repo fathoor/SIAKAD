@@ -23,7 +23,7 @@
             <div class="d-flex flex-row">
                 <span class="d-flex flex-col my-2 mx-3">
                     <a class="nav-link" href="#" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-stack fs-1"></i>
+                        <i class="bi bi-mortarboard fs-1"></i>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
                         <li><a class="dropdown-item" href="/frs">Formulir Rencana Studi</a></li>

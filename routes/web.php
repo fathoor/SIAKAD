@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SuratCutiController;
 use App\Http\Controllers\SuratAktifController;
 use App\Http\Controllers\DaftarKuesionerController;
+use App\Http\Controllers\KurikulumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +51,13 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
         return view('contents.transkrip');
     });
 
-    Route::get('/kurikulum', function () {
-        return view('contents.kurikulum');
+    //Kurikulum Route
+    Route::get('/kurikulum', [KurikulumController::class, 'index']);
+
+    Route::get('/kuesioner', [DaftarKuesionerController::class, 'index']);
+
+    Route::get('/kuesioner-2', function () {
+        return view('contents.kuesioner-2');
     });
 
     // Finansial Route
@@ -75,23 +82,19 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::get('/suratAktif/add', [SuratAktifController::class, 'add']);
     Route::post('/suratAktif/store', [SuratAktifController::class, 'store']);
 
-    Route::get('/suratCuti', function () {
-        return view('contents.suratCuti');
-    });
-
-    Route::get('/suratCuti-2', function () {
-        return view('contents.suratCuti-2');
-    });
-
-    Route::get('/kuesioner', [DaftarKuesionerController::class, 'index']);
-
-    Route::get('/kuesioner-2', function () {
-        return view('contents.kuesioner-2');
-    });
+    Route::get('/suratCuti', [SuratCutiController::class, 'index']);
+    Route::get('/suratCuti/add', [SuratCutiController::class, 'add']);
+    Route::post('/suratCuti/store', [SuratCutiController::class, 'store']);
 });
 
 // Dosen Route
 Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/dosen', [DashboardController::class, 'indexDosen'])->name('dashboard.dosen');
+});
+
+// Staff Route
+Route::middleware(['auth', 'role:staff'])->group(function () {
+    // Dashboard Route
+    Route::get('/dashboard/staff', [DashboardController::class, 'indexStaff'])->name('dashboard.staff');
 });

@@ -20,4 +20,9 @@ class DashboardController extends Controller
     {
         return view('contents.dosen.profile');
     }
+
+    public function indexStaff()
+    {
+        return view('contents.staff.profile');
+    }
 }
