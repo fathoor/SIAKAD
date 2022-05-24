@@ -24,6 +24,9 @@ class DatabaseSeeder extends Seeder
             HasilKuesionerSeeder::class,
             TranskripSeeder::class,
 
+            //Kurikulum
+            MataKuliahSeeder::class,
+
             // Finansial
             TagihanSeeder::class,
 
