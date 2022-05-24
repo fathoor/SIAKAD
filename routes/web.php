@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SuratCutiController;
 use App\Http\Controllers\SuratAktifController;
 
 /*
@@ -52,6 +53,14 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
         return view('contents.kurikulum');
     });
 
+    Route::get('/kuesioner', function () {
+        return view('contents.kuesioner');
+    });
+
+    Route::get('/kuesioner-2', function () {
+        return view('contents.kuesioner-2');
+    });
+
     // Finansial Route
     Route::get('/ukt', function () {
         return view('contents.ukt');
@@ -74,21 +83,9 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::get('/suratAktif/add', [SuratAktifController::class, 'add']);
     Route::post('/suratAktif/store', [SuratAktifController::class, 'store']);
 
-    Route::get('/suratCuti', function () {
-        return view('contents.suratCuti');
-    });
-
-    Route::get('/suratCuti-2', function () {
-        return view('contents.suratCuti-2');
-    });
-
-    Route::get('/kuesioner', function () {
-        return view('contents.kuesioner');
-    });
-
-    Route::get('/kuesioner-2', function () {
-        return view('contents.kuesioner-2');
-    });
+    Route::get('/suratCuti', [SuratCutiController::class, 'index']);
+    Route::get('/suratCuti/add', [SuratCutiController::class, 'add']);
+    Route::post('/suratCuti/store', [SuratCutiController::class, 'store']);
 });
 
 // Dosen Route

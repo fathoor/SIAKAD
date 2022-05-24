@@ -19,8 +19,18 @@ class SuratCutiSeeder extends Seeder
             [
                 'suratCutiNRP' => '5026201000',
                 'periodeCuti' => 'GENAP 2022',
+                'jumlahSemesterCuti' => 1,
+                'tanggalAjuan' => '2022-05-10',
                 'alasanCuti' => 'Sakit',
-                'jumlahSemesterCuti' => 1
+                'status' => true
+            ],
+            [
+                'suratCutiNRP' => '5026201139',
+                'periodeCuti' => 'GENAP 2022',
+                'jumlahSemesterCuti' => 1,
+                'tanggalAjuan' => '2022-05-10',
+                'alasanCuti' => 'Sakit',
+                'status' => true
             ],
         ]);
     }

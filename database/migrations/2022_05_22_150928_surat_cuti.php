@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('suratCutiNRP');
             $table->string('periodeCuti');
-            $table->string('alasanCuti');
             $table->integer('jumlahSemesterCuti');
+            $table->date('tanggalAjuan');
+            $table->string('alasanCuti');
+            $table->boolean('status')->default(false);
         });
     }
 
