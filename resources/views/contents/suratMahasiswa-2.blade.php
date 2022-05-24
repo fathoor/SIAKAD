@@ -34,16 +34,20 @@
                 </form>
             </div>
             <div class="row mb-5">
-                <a href="/suratAktif/add" class="btn btn-primary"> + Ajukan Surat</a>
+                <a href="/suratAktif/add">
+                    <button class="btn btn-primary">
+                        <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Ajukan Surat</span>
+                    </button>
+                </a>
             </div>
-            <table class="table table-striped text-center">
+            <table class="table table-striped table-bordered text-center">
                 <tr>
                     <th>No</th>
                     <th>Periode</th>
                     <th>Diajukan</th>
                     <th>Keperluan</th>
                     <th>Status</th>
-                    <th>Cetak</th> {{-- Ini tolong dikasi tombol aja --}}
+                    <th>Cetak</th>
                 </tr>
                 @foreach($aktif as $a)
                 <tr>
@@ -53,10 +57,11 @@
                     <td>{{ $a->keperluanSurat }}</td>
                     @if($a->status == true)
                     <td>Disetujui</td>
+                    <td>Cetak</td> {{-- Ini tolong dikasi tombol aja --}}
                     @else
-                    <td>Ditolak</td>
+                    <td>Menunggu</td>
+                    <td>Cetak</td> {{-- Ini juga tombol tapi disabled --}}
                     @endif
-                    <td>Cetak</td>
                 </tr>
                 @endforeach
             </table>

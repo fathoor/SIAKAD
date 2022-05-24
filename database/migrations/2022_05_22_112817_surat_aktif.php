@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('periodeAktif');
             $table->date('tanggalAjuan');
             $table->string('keperluanSurat');
-            $table->boolean('status')->default(true);
+            $table->boolean('status')->default(false);
         });
     }
 

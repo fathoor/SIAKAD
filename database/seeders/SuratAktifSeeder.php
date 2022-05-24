@@ -18,17 +18,17 @@ class SuratAktifSeeder extends Seeder
         DB::table('surat_aktif')->insert([
             [
                 'suratAktifNRP' => '5026201000',
-                'periodeAktif' => 'GENAP 2022',
+                'periodeAktif' => 'Genap 2022',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Lomba',
-                'status' => true
+                'status' => false
             ],
             [
                 'suratAktifNRP' => '5026201139',
-                'periodeAktif' => 'GENAP 2022',
+                'periodeAktif' => 'Genap 2022',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Lomba',
-                'status' => true
+                'status' => false
             ],
         ]);
     }

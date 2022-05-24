@@ -29,7 +29,7 @@ class SuratAktifController extends Controller
             'periodeAktif' => $request->periode,
             'tanggalAjuan' => $today,
             'keperluanSurat' => $request->keperluan,
-            'status' => true
+            'status' => false
         ]);
 
         return redirect('/suratAktif');
