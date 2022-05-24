@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('kodeMataKuliah');
             $table->string('namaMataKuliah');
             $table->integer('sks');
+            $table->integer('tahunKurikulum');
+            $table->integer('semester');
+
         });
     }
 

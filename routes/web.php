@@ -7,6 +7,7 @@ use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SuratCutiController;
 use App\Http\Controllers\SuratAktifController;
+use App\Http\Controllers\KurikulumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,9 +50,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
         return view('contents.transkrip');
     });
 
-    Route::get('/kurikulum', function () {
-        return view('contents.kurikulum');
-    });
+    //Kurikulum Route
+    Route::get('/kurikulum', [KurikulumController::class, 'index']);
 
     Route::get('/kuesioner', function () {
         return view('contents.kuesioner');
