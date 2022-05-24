@@ -24,6 +24,10 @@
             <a href="/dashboard">
                 <i class="bi bi-house" style="font-size: 3rem"></i>
             </a>
+            @elseif(auth()->user()->type == 'staff')
+            <a href="/dashboard/staff">
+                <i class="bi bi-house" style="font-size: 3rem"></i>
+            </a>
             @else
             <a href="/dashboard/dosen">
                 <i class="bi bi-house" style="font-size: 3rem"></i>
