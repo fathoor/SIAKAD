@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SuratAktifController;
+use App\Http\Controllers\DaftarKuesionerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,9 +83,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
         return view('contents.suratCuti-2');
     });
 
-    Route::get('/kuesioner', function () {
-        return view('contents.kuesioner');
-    });
+    Route::get('/kuesioner', [DaftarKuesionerController::class, 'index']);
 
     Route::get('/kuesioner-2', function () {
         return view('contents.kuesioner-2');

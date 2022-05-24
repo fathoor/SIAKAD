@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             // Akademik
             KuesionerSeeder::class,
             HasilKuesionerSeeder::class,
+            DaftarKuesionerSeeder::class,
             TranskripSeeder::class,
 
             // Finansial

@@ -5,6 +5,12 @@
 {{-- Content --}}
 @section('main')
 
+    <?php
+        $period = $daftarKuesioner->kodeKuesioner;
+        $tahun = Str::substr($period, 0, 4);
+        $semester = Str::substr($period, 4, 1);
+    ?>
+
     <div class="container">
         {{-- Content --}}
         <main>
@@ -16,7 +22,23 @@
                 </div>
                 <div class="d-flex flex-row">
                     <div class="d-flex flex-col mx-3">
-                        <h5 class="fw-semibold my-2">Periode : Gasal 2022 </h5>
+                        <h5 class="fw-semibold my-2">
+                            <span>Periode</span>
+                            <span>
+                                @switch($semester)
+                                    @case('A')
+                                        Ganjil -
+                                    @break
+
+                                    @case('B')
+                                        Genap -
+                                    @break
+                                @endswitch
+                            </span>
+                            <span>
+                                {{ $tahun }}
+                            </span>
+                        </h5>
                     </div>
                 </div>
                 <div class="my-3" style="color: red"> Mohon mengisi kuesioner sebelum 30 Juni 2022 </div>
