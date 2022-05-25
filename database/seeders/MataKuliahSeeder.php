@@ -18,6 +18,7 @@ class MataKuliahSeeder extends Seeder
         DB::table('mata_kuliah')->insert([
             [
                 'kodeMataKuliah' => 'IS184101',
+                'kodeKelas' => 'SI1101',
                 'namaMataKuliah' => 'Konsep Sistem Informasi',
                 'sks' => 2,
                 'tahunKurikulum' => 2018,
@@ -25,6 +26,7 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IS184203',
+                'kodeKelas' => 'SI1102',
                 'namaMataKuliah' => 'Algoritma & Pemrograman',
                 'sks' => 3,
                 'tahunKurikulum' => 2018,
@@ -32,6 +34,7 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IS184204',
+                'kodeKelas' => 'SI1201',
                 'namaMataKuliah' => 'Organisasi dan Fungsional Bisnis',
                 'sks' => 3,
                 'tahunKurikulum' => 2018,
@@ -39,6 +42,7 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IS184308',
+                'kodeKelas' => 'SI1202',
                 'namaMataKuliah' => 'Manajemen & Proses TI',
                 'sks' => 3,
                 'tahunKurikulum' => 2018,
@@ -46,6 +50,7 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IS184310',
+                'kodeKelas' => 'SI2101',
                 'namaMataKuliah' => 'Manajemen Proses Bisnis',
                 'sks' => 4,
                 'tahunKurikulum' => 2018,
@@ -53,6 +58,7 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IS184307',
+                'kodeKelas' => 'SI2102',
                 'namaMataKuliah' => 'Pemrograman Web',
                 'sks' => 3,
                 'tahunKurikulum' => 2018,
@@ -60,6 +66,7 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IS184309',
+                'kodeKelas' => 'SI2201',
                 'namaMataKuliah' => 'Rekayasa Kebutuhan Perangkat Lunak',
                 'sks' => 3,
                 'tahunKurikulum' => 2018,
@@ -67,6 +74,7 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IW184301',
+                'kodeKelas' => 'SI2202',
                 'namaMataKuliah' => 'Sistem Basis Data',
                 'sks' => 4,
                 'tahunKurikulum' => 2018,
@@ -74,6 +82,7 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IS184412',
+                'kodeKelas' => 'SI4101',
                 'namaMataKuliah' => 'Rancang Bangun Perangkat Lunak',
                 'sks' => 4,
                 'tahunKurikulum' => 2018,
@@ -81,12 +90,13 @@ class MataKuliahSeeder extends Seeder
             ],
             [
                 'kodeMataKuliah' => 'IS184414',
+                'kodeKelas' => 'SI4102',
                 'namaMataKuliah' => 'Sistem Enterprise',
                 'sks' => 4,
                 'tahunKurikulum' => 2018,
                 'semester' => 4
             ],
-            
+
         ]);
     }
 }
