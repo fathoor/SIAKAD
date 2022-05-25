@@ -15,10 +15,8 @@ return new class extends Migration
     {
         Schema::create(('daftar_kuesioner'), function (Blueprint $table){
             $table->id();
-            $table->char('kodeKuesioner', 5);
             $table->bigInteger('NRP');
             $table->string('kodeMK');
-            $table->bigInteger('dosenNRP');
             $table->boolean('status');
         });
     }

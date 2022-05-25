@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="my-3" style="color: red">
-                    @if (($periode->awalPengisian < date('Y-m-d')) && ($periode->akhirPengisian > date('Y-m-d')))
+                    @if ($k->awalPengisian < date('Y-m-d') && $k->akhirPengisian > date('Y-m-d'))
                         Mohon mengisi kuesioner sebelum {{ $akhir }}
                     @else
                         Belum dalam masa pengisian

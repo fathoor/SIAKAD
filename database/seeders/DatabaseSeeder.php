@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             DosenSeeder::class,
 
             // Akademik
-            KuesionerSeeder::class,
             HasilKuesionerSeeder::class,
             DaftarKuesionerSeeder::class,
             TranskripSeeder::class,

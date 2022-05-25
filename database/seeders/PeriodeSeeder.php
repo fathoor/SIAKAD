@@ -19,23 +19,31 @@ class PeriodeSeeder extends Seeder
             [
                 [
                     'periode' => '2020A',
-                    'tglAwal' => '2020-09-21',
-                    'tglAkhir' => '2021-02-01'
+                    'tglAwal' => '2020-08-23',
+                    'tglAkhir' => '2020-12-30',
+                    'awalPengisian' => '2020-11-23',
+                    'akhirPengisian' => '2020-12-23',
                 ],
                 [
                     'periode' => '2020B',
-                    'tglAwal' => '2021-03-01',
-                    'tglAkhir' => '2021-07-23'
+                    'tglAwal' => '2021-01-31',
+                    'tglAkhir' => '2021-06-29',
+                    'awalPengisian' => '2021-05-23',
+                    'akhirPengisian' => '2021-06-22',
                 ],
                 [
                     'periode' => '2021A',
                     'tglAwal' => '2021-08-23',
-                    'tglAkhir' => '2021-12-31'
+                    'tglAkhir' => '2021-12-30',
+                    'awalPengisian' => '2021-11-23',
+                    'akhirPengisian' => '2021-12-23',
                 ],
                 [
-                    'periode' => '2020A',
+                    'periode' => '2021B',
                     'tglAwal' => '2022-01-31',
-                    'tglAkhir' => '2022-06-15'
+                    'tglAkhir' => '2022-06-29',
+                    'awalPengisian' => '2022-05-23',
+                    'akhirPengisian' => '2022-06-22',
                 ]
             ]
         );

@@ -17,213 +17,53 @@ class DaftarKuesionerSeeder extends Seeder
     {
         DB::table('daftar_kuesioner')->insert([
             [
-                'NRP' => '5026201139',
-                'kodeKuesioner' => '2020A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'NRP' => '5026201130',
+                'kodeMK' => 'IS184101',
                 'status' => true
             ],
             [
                 'NRP' => '5026201130',
-                'kodeKuesioner' => '2020A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201141',
-                'kodeKuesioner' => '2020A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201054',
-                'kodeKuesioner' => '2020A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201045',
-                'kodeKuesioner' => '2020A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201115',
-                'kodeKuesioner' => '2020A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201096',
-                'kodeKuesioner' => '2020A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201139',
-                'kodeKuesioner' => '2020B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'kodeMK' => 'IS184203',
                 'status' => true
             ],
             [
                 'NRP' => '5026201130',
-                'kodeKuesioner' => '2020B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201141',
-                'kodeKuesioner' => '2020B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201054',
-                'kodeKuesioner' => '2020B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201045',
-                'kodeKuesioner' => '2020B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201115',
-                'kodeKuesioner' => '2020B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201096',
-                'kodeKuesioner' => '2020B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201139',
-                'kodeKuesioner' => '2021A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'kodeMK' => 'IS184204',
                 'status' => true
             ],
             [
                 'NRP' => '5026201130',
-                'kodeKuesioner' => '2021A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'kodeMK' => 'IS184308',
                 'status' => true
             ],
             [
-                'NRP' => '5026201141',
-                'kodeKuesioner' => '2021A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'NRP' => '5026201130',
+                'kodeMK' => 'IS184310',
                 'status' => true
             ],
             [
-                'NRP' => '5026201054',
-                'kodeKuesioner' => '2021A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'NRP' => '5026201130',
+                'kodeMK' => 'IS184307',
                 'status' => true
             ],
             [
-                'NRP' => '5026201045',
-                'kodeKuesioner' => '2021A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'NRP' => '5026201130',
+                'kodeMK' => 'IS184309',
                 'status' => true
             ],
             [
-                'NRP' => '5026201115',
-                'kodeKuesioner' => '2021A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'NRP' => '5026201130',
+                'kodeMK' => 'IW184301',
                 'status' => true
             ],
             [
-                'NRP' => '5026201096',
-                'kodeKuesioner' => '2021A',
+                'NRP' => '5026201130',
                 'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201109',
-                'kodeKuesioner' => '2021A',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201139',
-                'kodeKuesioner' => '2021B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
                 'status' => false
             ],
             [
                 'NRP' => '5026201130',
-                'kodeKuesioner' => '2021B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => false
-            ],
-            [
-                'NRP' => '5026201141',
-                'kodeKuesioner' => '2021B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => false
-            ],
-            [
-                'NRP' => '5026201054',
-                'kodeKuesioner' => '2021B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => false
-            ],
-            [
-                'NRP' => '5026201045',
-                'kodeKuesioner' => '2021B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => false
-            ],
-            [
-                'NRP' => '5026201115',
-                'kodeKuesioner' => '2021B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => false
-            ],
-            [
-                'NRP' => '5026201096',
-                'kodeKuesioner' => '2021B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
-                'status' => false
-            ],
-            [
-                'NRP' => '5026201109',
-                'kodeKuesioner' => '2021B',
-                'kodeMK' => 'IS184412',
-                'dosenNRP' => 5026201,
+                'kodeMK' => 'IS184414',
                 'status' => false
             ],
         ]);

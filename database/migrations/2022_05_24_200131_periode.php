@@ -18,6 +18,8 @@ return new class extends Migration
             $table->char('periode', 5);
             $table->date('tglAwal');
             $table->date('tglAkhir');
+            $table->date('awalPengisian');
+            $table->date('akhirPengisian');
         });
     }
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\SuratCutiController;
 use App\Http\Controllers\SuratAktifController;
 use App\Http\Controllers\SuratUndurDiriController;
+use App\Http\Controllers\KuesionerController;
 use App\Http\Controllers\DaftarKuesionerController;
 
 /*
@@ -21,6 +22,7 @@ use App\Http\Controllers\DaftarKuesionerController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
 
 // Homepage Route
@@ -55,8 +57,9 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     //Kurikulum Route
     Route::get('/kurikulum', [KurikulumController::class, 'indexMahasiswa']);
 
-    Route::get('/kuesioner', [DaftarKuesionerController::class, 'index']);
-
+    //Kuesioner Route
+    Route::get('/kuesioner', [KuesionerController::class, 'index']);
+    Route::post('/kuesioner/gantiPeriode', [KuesionerController::class, 'ganti']);
     Route::get('/kuesioner-2', function () {
         return view('contents.kuesioner-2');
     });
