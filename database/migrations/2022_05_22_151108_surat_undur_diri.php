@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('suratUndurDiriNRP');
             $table->string('periodeMundur');
+            $table->date('tanggalAjuan');
             $table->string('alasanMundur');
+            $table->boolean('status')->default(false);
         });
     }
 

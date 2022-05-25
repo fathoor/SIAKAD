@@ -5,10 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\SuratCutiController;
 use App\Http\Controllers\SuratAktifController;
+use App\Http\Controllers\SuratUndurDiriController;
 use App\Http\Controllers\DaftarKuesionerController;
-use App\Http\Controllers\KurikulumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,14 +71,6 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     });
 
     // Layanan Route
-    Route::get('/suratundurdiri', function () {
-        return view('contents.suratundurdiri');
-    });
-
-    Route::get('/suratundurdiri2', function () {
-        return view('contents.suratundurdiri-2');
-    });
-
     Route::get('/suratAktif', [SuratAktifController::class, 'index']);
     Route::get('/suratAktif/add', [SuratAktifController::class, 'add']);
     Route::post('/suratAktif/store', [SuratAktifController::class, 'store']);
@@ -85,6 +78,10 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::get('/suratCuti', [SuratCutiController::class, 'index']);
     Route::get('/suratCuti/add', [SuratCutiController::class, 'add']);
     Route::post('/suratCuti/store', [SuratCutiController::class, 'store']);
+
+    Route::get('/suratUndurDiri', [SuratUndurDiriController::class, 'index']);
+    Route::get('/suratUndurDiri/add', [SuratUndurDiriController::class, 'add']);
+    Route::post('/suratUndurDiri/store', [SuratUndurDiriController::class, 'store']);
 });
 
 // Dosen Route
