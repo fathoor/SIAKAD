@@ -34,6 +34,7 @@ return new class extends Migration
             $table->bigInteger('nomorTelp');
             $table->string('email');
             $table->string('departemen');
+            $table->integer('tahunMasuk');
             $table->string('alamat');
             $table->integer('type')->default(0);
         });

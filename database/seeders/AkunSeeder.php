@@ -30,6 +30,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => Nomor tanpa 0,
                 'email' => '...',
                 'departemen' => '...',
+                'tahunMasuk' => ...,
                 'alamat' => '...'
                 'type' => '0/1' 0 : Mahasiswa, 1 : Dosen
                 ]
@@ -47,6 +48,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'mahasiswa@gmail.com',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Kampus ITS',
                 'type' => 0
             ],
@@ -61,6 +63,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81231977440,
                 'email' => 'mfathoor@gmail.com',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Jl Kebonsari Elveka VII No 7',
                 'type' => 0
             ],
@@ -74,6 +77,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 82306071010,
                 'email' => 'ellionblessan@gmail.com',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Sidosermo 2',
                 'type' => 0
             ],
@@ -87,6 +91,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81232557720,
                 'email' => 'abraham.mauritz2603@gmail.com',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Baruk Barat 2',
                 'type' => 0
             ],
@@ -100,6 +105,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81339524992,
                 'email' => 'ernando.taufiq29@gmail.com',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Jl. Pahlawan No.37',
                 'type' => 0
             ],
@@ -113,6 +119,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81230215394,
                 'email' => 'revonsio12@gmail.com',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Graha Tirta - Dahlia Nomor 82',
                 'type' => 0
             ],
@@ -126,6 +133,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 87712356300,
                 'email' => 'beneedictpandu@gmail.com',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Hidrodinamika III T87',
                 'type' => 0
             ],
@@ -139,6 +147,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81216214615,
                 'email' => '205026.bonaventura@mhs.its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Puri Surya Jaya i3 no.12',
                 'type' => 0
             ],
@@ -152,6 +161,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81317090159,
                 'email' => 'alanathufailah.205026@mhs.its.ac.id                ',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Citra Grand 01 no. 011',
                 'type' => 0
             ],
@@ -165,6 +175,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 82299795389,
                 'email' => 'faraz.205026@mhs.its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
                 'alamat' => 'Jln Gunung Krakatau no 18, HOP 2',
                 'type' => 0
             ],
@@ -179,6 +190,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'dosen@its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 1
             ],
@@ -193,6 +205,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'radityo_pw@is.its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 1
             ],
@@ -206,6 +219,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'mahendra_w@is.its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 1
             ],
@@ -219,6 +233,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'bekticahyo@is.its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 1
             ],
@@ -232,6 +247,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'soni@is.its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 1
             ],
@@ -245,6 +261,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'faisal@is.its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 1
             ],
@@ -258,6 +275,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'fmahananto@is.its.ac.id',
                 'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 1
             ],
@@ -272,6 +290,7 @@ class AkunSeeder extends Seeder
                 'nomorTelp' => 81000000000,
                 'email' => 'staff@its.ac.id',
                 'departemen' => 'Institut Teknologi Sepuluh Nopember',
+                'tahunMasuk' => 2000,
                 'alamat' => 'Kampus ITS',
                 'type' => 2
             ],
