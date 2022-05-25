@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create(('nilai_mk'), function (Blueprint $table) {
             $table->id();
             $table->bigInteger('NRP');
-            $table->char('kodeMK', 6);
+            $table->char('kodeMK', 8);
             $table->integer('nilaiAngka');
         });
     }
