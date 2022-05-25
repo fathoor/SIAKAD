@@ -43,7 +43,7 @@
                         <i class="bi bi-shield fs-5"></i> <span class="fs-5 ms-2">Mahasiswa</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="mahasiswaDropdown">
-                        <li><a class="dropdown-item" href="#">Daftar Mahasiswa</a></li>
+                        <li><a class="dropdown-item" href="/dosen/daftarMahasiswa">Daftar Mahasiswa</a></li>
                         <li><a class="dropdown-item" href="#">Nilai Mahasiswa</a></li>
                         <li><a class="dropdown-item" href="#">Formulir Rencana Studi</a></li>
                     </ul>

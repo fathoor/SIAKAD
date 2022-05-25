@@ -89,6 +89,9 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/dosen', [DashboardController::class, 'indexDosen'])->name('dashboard.dosen');
     Route::get('/dosen/kurikulum', [KurikulumController::class, 'indexDosen']);
+    Route::get('/dosen/daftarMahasiswa', function () {
+        return view('contents.dosen.daftarMahasiswa');
+    });
 });
 
 // Staff Route
