@@ -25,11 +25,11 @@ class DaftarKelasSeeder extends Seeder
                 'kapasitas' => '40',
             ],
             [
-                'kodeKelas' => 'SI2101',
+                'kodeKelas' => 'SI1201',
                 'kapasitas' => '40',
             ],
             [
-                'kodeKelas' => 'SI2102',
+                'kodeKelas' => 'SI1202',
                 'kapasitas' => '40',
             ],
             [

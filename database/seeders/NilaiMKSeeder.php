@@ -53,7 +53,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201130',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '70',
             ],
             [
@@ -103,7 +103,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201141',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '87',
             ],
             [
@@ -153,7 +153,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201139',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '86',
             ],
             [
@@ -203,7 +203,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201054',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '94',
             ],
             [
@@ -253,7 +253,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201045',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '97',
             ],
             [
@@ -303,7 +303,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201115',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '87',
             ],
             [
@@ -353,7 +353,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201096',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '90',
             ],
             [
@@ -403,7 +403,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201109',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '91',
             ],
             [
@@ -453,7 +453,7 @@ class NilaiMKSeeder extends Seeder
             ],
             [
                 'NRP' => '5026201007',
-                'kodeMK' => 'IS184301',
+                'kodeMK' => 'IW184301',
                 'nilaiAngka' => '93',
             ],
             [
