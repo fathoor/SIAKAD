@@ -5,34 +5,58 @@
 {{-- Content --}}
 @section('main')
 
-<div class="container">
-    {{-- Content --}}
-    <main>
-        {{-- /view/contents/ --}}
-        <div class="content">
-            {{-- Isi disini --}}
-            <div class="container text-start">
-                <h2 class="text-start text-dark mb-4">
+    <div class="container">
+        {{-- Content --}}
+        <main>
+            {{-- /view/contents/ --}}
+            <div class="content">
+                {{-- Isi disini --}}
+                <h2 class="text-center text-dark mb-4">
                     <strong> Transkrip Mata Kuliah </strong>
                 </h2>
-                <table width="600px" class="table table-borderless">
-                    <tr>
-                        <td width="100px">Nama</td>
-                        <td width="50px">:</td>
-                        <td width="450px"></td>
-                    </tr>
-                    <tr>
-                        <td width="100px">NRP</td>
-                        <td width="50px">:</td>
-                        <td width="450px"></td>
-                    </tr>
-                </table>
+                <form class="form-inline" id="input">
+                    @csrf
+                        <div class="row align-items-center form-group">
+                            <div class="col-2">
+                                <label for="NRP" class="col-form-label">NRP</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-9">
+                                <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-white"
+                                    value="{{ auth()->user()->NRP }}" disabled>
+                            </div>
+                        </div>
+                        <div class="row align-items-center form-group">
+                            <div class="col-2">
+                                <label for="namaMahasiswa" class="col-form-label">Nama</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-9">
+                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-white"
+                                    value="{{ auth()->user()->nama }}" disabled>
+                            </div>
+                        </div>
+                        <div class="row align-items-center form-group">
+                            <div class="col-2">
+                                <label for="format" class="col-form-label">Format</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-9">
+                                ...
+                            </div>
+                        </div>
+                </form>
                 <button type="button" class="btn btn-primary">
                     Lihat Transkrip
                 </button>
             </div>
-        </div>
-    </main>
-</div>
+        </main>
+    </div>
 
 @endsection
