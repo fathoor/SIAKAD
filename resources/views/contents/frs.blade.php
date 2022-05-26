@@ -37,40 +37,76 @@
                         </div>
                     </div>
                 </div>
-                <div class="container bg-dark bg-opacity-10 my-4" style="padding: 1">
-                    <table width="440px" class="table table-borderless text-start small table-responsive-sm"
-                        style="margin: 0">
-                        <tbody>
-                            <tr>
-                                <td width="110px"><strong>NRP</strong></td>
-                                <td width="10px"><strong>:</strong></td>
-                                <td width="330px"><input type="text" id="NRP" name="NRP"
-                                        class="form-control bg-transparent border-white" value="{{ auth()->user()->NRP }}"
-                                        disabled></td>
-                                <td width="110px"><strong>Dosen Wali</strong></td>
-                                <td width="10px"><strong>:</strong></td>
-                                <td width="330px"></td>
-                            </tr>
-                            <tr>
-                                <td width="110px"><strong>Nama</strong></td>
-                                <td width="10px"><strong>:</strong></td>
-                                <td width="330px"><input type="text" id="nama" name="nama"
-                                        class="form-control bg-transparent border-white"
-                                        value="{{ auth()->user()->nama }}" disabled></td>
-                                <td width="110px"><strong>Batas / Sisa</strong></td>
-                                <td width="10px"><strong>:</strong></td>
-                                <td width="330px"></td>
-                            </tr>
-                            <tr>
-                                <td width="110px"><strong>IPS</strong></td>
-                                <td width="10px"><strong>:</strong></td>
-                                <td width="330px"></td>
-                                <td width="110px"><strong>IPK</strong></td>
-                                <td width="10px"><strong>:</strong></td>
-                                <td width="330px"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="container bg-dark bg-opacity-10 my-4" style="padding: 1; width: 1100px; padding:10">
+                    <form class="form-inline mb-3" id="input" style="width: 1000px">
+                        @csrf
+                        <div class="row align-items-center form-group">
+                            <div class="col-1">
+                                <label for="NRP" class="col-form-label">NRP</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-0"
+                                    value="{{ auth()->user()->NRP }}" disabled>
+                            </div>
+                            <div class="col-1">
+                                <label for="NRP" class="col-form-label">NRP</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-0"
+                                    value="{{ auth()->user()->NRP }}" disabled>
+                            </div>
+                        </div>
+                        <div class="row align-items-center form-group">
+                            <div class="col-1">
+                                <label for="namaMahasiswa" class="col-form-label">Nama</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
+                                    value="{{ auth()->user()->nama }}" disabled>
+                            </div>
+                            <div class="col-1">
+                                <label for="namaMahasiswa" class="col-form-label">Nama</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
+                                    value="{{ auth()->user()->nama }}" disabled>
+                            </div>
+                        </div>
+                        <div class="row align-items-center form-group">
+                            <div class="col-1">
+                                <label for="namaMahasiswa" class="col-form-label">Nama</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
+                                    value="{{ auth()->user()->nama }}" disabled>
+                            </div>
+                            <div class="col-1">
+                                <label for="namaMahasiswa" class="col-form-label">Nama</label>
+                            </div>
+                            <div class="col-1">
+                                :
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
+                                    value="{{ auth()->user()->nama }}" disabled>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="container my-4 text-center" style="padding: 0">
                     <table class="table table-bordered table-hover table-striped" style="margin: 0">
