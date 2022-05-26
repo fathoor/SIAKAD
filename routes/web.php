@@ -5,11 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KuesionerController;
 use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\SuratCutiController;
 use App\Http\Controllers\SuratAktifController;
+use App\Http\Controllers\DaftarKelasController;
 use App\Http\Controllers\SuratUndurDiriController;
-use App\Http\Controllers\KuesionerController;
 use App\Http\Controllers\DaftarKuesionerController;
 
 /*
@@ -54,10 +55,10 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
         return view('contents.transkrip');
     });
 
-    //Kurikulum Route
+    // Kurikulum Route
     Route::get('/kurikulum', [KurikulumController::class, 'indexMahasiswa']);
 
-    //Kuesioner Route
+    // Kuesioner Route
     Route::get('/kuesioner', [KuesionerController::class, 'index']);
     Route::post('/kuesioner/gantiPeriode', [KuesionerController::class, 'ganti']);
     Route::get('/kuesioner-2', function () {
@@ -91,7 +92,12 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
 Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/dosen', [DashboardController::class, 'indexDosen'])->name('dashboard.dosen');
+    
+    // Akademik
     Route::get('/dosen/kurikulum', [KurikulumController::class, 'indexDosen']);
+    Route::get('/dosen/mataKuliah', [DaftarKelasController::class, 'index']);
+
+    // Mahasiswa
     Route::get('/dosen/daftarMahasiswa', function () {
         return view('contents.dosen.daftarMahasiswa');
     });
