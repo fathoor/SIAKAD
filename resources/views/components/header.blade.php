@@ -28,18 +28,18 @@
                 @if(auth()->user()->type == 'dosen')
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('dosen/*') ? 'active' : '' }}" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('dosen/mataKuliah*', 'dosen/kurikulum*', 'dosen/kuesioner*') ? 'active' : '' }}" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-mortarboard fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
-                        <li><a class="dropdown-item" href="#">Mata Kuliah</a></li>
+                        <li><a class="dropdown-item" href="/dosen/mataKuliah">Mata Kuliah</a></li>
                         <li><a class="dropdown-item" href="/dosen/kurikulum">Kurikulum Semester</a></li>
                         <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
                     </ul>
                 </li>
                 {{-- Mahasiswa --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('dosen/*') ? 'active' : '' }}" id="mahasiswaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('dosen/daftarMahasiswa*', 'dosen/nilaiMahasiswa*', 'dosen/frs*') ? 'active' : '' }}" id="mahasiswaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-shield fs-5"></i> <span class="fs-5 ms-2">Mahasiswa</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="mahasiswaDropdown">
