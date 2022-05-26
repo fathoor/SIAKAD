@@ -24,7 +24,7 @@
                             :
                         </div>
                         <div class="col-9">
-                            <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-white"
+                            <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-0"
                                 value="{{ auth()->user()->NRP }}" disabled>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                             :
                         </div>
                         <div class="col-9">
-                            <input type="text" id="nama" name="nama" class="form-control bg-transparent border-white"
+                            <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
                                 value="{{ auth()->user()->nama }}" disabled>
                         </div>
                     </div>
