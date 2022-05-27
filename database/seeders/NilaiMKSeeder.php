@@ -172,7 +172,7 @@ class NilaiMKSeeder extends Seeder
                 'nilaiAngka' => '78',
             ],
             [
-                'NRP' => '50262011054',
+                'NRP' => '5026201054',
                 'kodeMK' => 'IS184203',
                 'nilaiAngka' => '88',
             ],
@@ -357,7 +357,7 @@ class NilaiMKSeeder extends Seeder
                 'nilaiAngka' => '90',
             ],
             [
-                'NRP' => '50262011096',
+                'NRP' => '5026201096',
                 'kodeMK' => 'IS184412',
                 'nilaiAngka' => '76',
             ],
