@@ -96,6 +96,7 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Akademik
     Route::get('/dosen/kurikulum', [KurikulumController::class, 'indexDosen']);
     Route::get('/dosen/mataKuliah', [DaftarKelasController::class, 'index']);
+    Route::get('/dosen/mataKuliah/{kodeMK}', [DaftarKelasController::class, 'kelas']);
 
     // Mahasiswa
     Route::get('/dosen/daftarMahasiswa', function () {

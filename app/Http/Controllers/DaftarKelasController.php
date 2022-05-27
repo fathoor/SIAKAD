@@ -26,4 +26,26 @@ class DaftarKelasController extends Controller
             'dosen' => $dosen
         ]);
     }
+
+    public function kelas($kodeMK)
+    {
+        $peserta = DB::table('nilai_mk')
+        ->leftjoin('akun', 'akun.NRP', '=', 'nilai_mk.NRP')
+        ->where('kodeMK', $kodeMK)
+        ->orderBy('nilai_mk.NRP', 'asc')
+        ->get();
+
+        $mk = DB::table('mata_kuliah')
+        ->leftjoin('daftar_kelas', 'daftar_kelas.kodeKelas', '=', 'mata_kuliah.kodeKelas')
+        ->get();
+
+        $dosen = DB::table('dosen')->get();
+
+        return view('contents.dosen.kelas', [
+            'peserta' => $peserta,
+            'mk' => $mk,
+            'kode' => $kodeMK,
+            'dosen' => $dosen
+        ]);
+    }
 }
