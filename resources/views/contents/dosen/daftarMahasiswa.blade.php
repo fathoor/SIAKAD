@@ -10,58 +10,36 @@
     <main>
         {{-- /view/contents/ --}}
         <div class="content">
-            <div class="container text-center">
+            <div class="text-center">
                 <h2 class="fw-bold">Daftar Mahasiswa</h2>
             </div>
-            <div class="d-flex justify-content-end mb-3">
-                <div class="p-2">
-                    <select name="tahun" class="custom-select mb-3">
-                        <option selected>Tahun</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                      </select>
-                </div>
-                <div class="p-2"></div>
-                <div class="p-2">
-                    <select name="departemen" class="custom-select mb-3">
-                        <option selected>Departemen</option>
-                        <option value="sisfor">Sistem Informasi</option>
-                      </select>
-                </div>
+            <div class="row mt-1">
+                <form class="form" action="/dosen/daftarMahasiswa/search" method="GET">
+                    <input type="search" class="form-control" placeholder="Cari..." name="search" value="{{ old('search') }}">
+                </form>
             </div>
             <div class="container">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>NRP</th>
-                      <th>Nama</th>
-                      <th>Departemen</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
+                <table class="table table-bordered table-hover table-striped align-middle text-center">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th>No</th>
+                            <th>NRP</th>
+                            <th>Nama</th>
+                            <th>Departemen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($mahasiswa as $m)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $m->NRP }}</td>
+                            <td>{{ $m->nama }}</td>
+                            <td>{{ $m->departemen }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                 </table>
-              </div>
-
-
-
-
+            </div>
         </div>
     </main>
 </div>

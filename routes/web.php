@@ -12,6 +12,7 @@ use App\Http\Controllers\SuratAktifController;
 use App\Http\Controllers\DaftarKelasController;
 use App\Http\Controllers\SuratUndurDiriController;
 use App\Http\Controllers\DaftarKuesionerController;
+use App\Http\Controllers\DaftarMahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,9 +100,8 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     Route::get('/dosen/mataKuliah/{kodeMK}', [DaftarKelasController::class, 'kelas']);
 
     // Mahasiswa
-    Route::get('/dosen/daftarMahasiswa', function () {
-        return view('contents.dosen.daftarMahasiswa');
-    });
+    Route::get('/dosen/daftarMahasiswa', [DaftarMahasiswaController::class, 'index']);
+    Route::get('/dosen/daftarMahasiswa/search', [DaftarMahasiswaController::class, 'search']);
 });
 
 // Staff Route
