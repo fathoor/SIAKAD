@@ -30,7 +30,7 @@
                                             ->isoFormat('DD MMMM YYYY');
                                         ?>
                                         <option value="{{ $k->periode }}"
-                                            {{ $k->tglAwal < date('Y-m-d') && $k->tglAkhir > date('Y-m-d') ? 'selected' : '' }}>
+                                            {{ $k->periode == $smtper->periode ? 'selected' : '' }}>
                                             @switch($semester)
                                                 @case('A')
                                                     Ganjil - {{ $tahun }}
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="my-3" style="color: red">
-                    @if (($periode->awalPengisian < date('Y-m-d')) && ($periode->akhirPengisian > date('Y-m-d')))
+                    @if ($periode->awalPengisian < date('Y-m-d') && $periode->akhirPengisian > date('Y-m-d'))
                         Mohon mengisi kuesioner sebelum {{ $akhir }}
                     @else
                         Belum dalam masa pengisian

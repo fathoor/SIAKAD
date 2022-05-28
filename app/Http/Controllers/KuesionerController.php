@@ -11,29 +11,37 @@ class KuesionerController extends Controller
 {
     public function index()
     {
+        $ganti = false;
         $periode = Periode::orderBy('id', 'desc')->first();
         $kuesioner = Periode::all();
-        $matkul = DB::table('daftar_kuesioner')
-            ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->join('dosen', 'daftar_kuesioner.kodeMK', '=', 'dosen.dosenKodeMK')
-            ->where('daftar_kuesioner.NRP', auth()->user()->NRP)
-            ->get();
-        return view('contents.kuesioner', ['periode' => $periode, 'matkul' => $matkul, 'kuesioner' => $kuesioner]);
-    }
-
-    public function ganti(Request $request)
-    {
-        $periode = Periode::orderBy('id', 'desc')->first();
-        $kuesioner = Periode::all();
-        $smt = Periode::where('periode', $request->period)->first()->id;
+        $smtper = Periode::latest('id')->first();
+        $smt = $smtper->id;
         $matkul = DB::table('daftar_kuesioner')
             ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
             ->join('dosen', 'daftar_kuesioner.kodeMK', '=', 'dosen.dosenKodeMK')
             ->where([
-                ['daftar_kuesioner.NRP', auth()->user()->NRP].
-                ['daftar_kuesioner.semester', $smt]
+                ['daftar_kuesioner.NRP', auth()->user()->NRP],
+                ['mata_kuliah.semester', '=', $smt]
             ])
             ->get();
-        return view('contents.kuesioner', ['kuesioner' => $kuesioner, 'matkul' => $matkul, 'periode' => $periode]);
+        return view('contents.kuesioner', ['smtper' => $smtper, 'periode' => $periode, 'matkul' => $matkul, 'kuesioner' => $kuesioner, $ganti]);
+    }
+
+    public function ganti(Request $request)
+    {
+        $ganti = true;
+        $periode = Periode::orderBy('id', 'desc')->first();
+        $kuesioner = Periode::all();
+        $smtper = Periode::where('periode', $request->periode)->first();
+        $smt = $smtper->id;
+        $matkul = DB::table('daftar_kuesioner')
+            ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+            ->join('dosen', 'daftar_kuesioner.kodeMK', '=', 'dosen.dosenKodeMK')
+            ->where([
+                ['daftar_kuesioner.NRP', auth()->user()->NRP],
+                ['mata_kuliah.semester','=', $smt]
+            ])
+            ->get();
+        return view('contents.kuesioner', ['smtper' => $smtper, 'kuesioner' => $kuesioner, 'matkul' => $matkul, 'periode' => $periode, $ganti]);
     }
 }
