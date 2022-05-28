@@ -23,7 +23,7 @@
             <div class="d-flex flex-row">
                 {{-- Akun --}}
                 <span class="d-flex flex-col my-2 mx-3">
-                    <a class="nav-link" href="/staff/akun">
+                    <a class="nav-link" href="/staff/civitas">
                         <i class="bi bi-shield-lock fs-1"></i>
                     </a>
                 </span>

@@ -21,6 +21,8 @@ class User extends Authenticatable
 
     protected $table = 'akun';
 
+    public $timestamps = false;
+
     protected function type(): Attribute
     {
         return new Attribute(
