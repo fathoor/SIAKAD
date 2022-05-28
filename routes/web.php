@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FRSController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
@@ -102,6 +103,7 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Mahasiswa
     Route::get('/dosen/daftarMahasiswa', [DaftarMahasiswaController::class, 'index']);
     Route::get('/dosen/daftarMahasiswa/search', [DaftarMahasiswaController::class, 'search']);
+    Route::get('/dosen/FRS', [FRSController::class, 'indexDosen']);
 });
 
 // Staff Route
