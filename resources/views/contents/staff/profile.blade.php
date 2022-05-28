@@ -21,9 +21,32 @@
                 <h3 class="fw-semibold my-2">{{ auth()->user()->departemen }}</h3>
             </div>
             <div class="d-flex flex-row">
+                {{-- Akun --}}
                 <span class="d-flex flex-col my-2 mx-3">
-                    <a class="nav-link" href="/dashboard/staff">
-                        <i class="bi bi-clipboard2 fs-1"></i>
+                    <a class="nav-link" href="/staff/akun">
+                        <i class="bi bi-shield-lock fs-1"></i>
+                    </a>
+                </span>
+                {{-- Akademik --}}
+                <span class="d-flex flex-col my-2 mx-3">
+                    <a class="nav-link" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-mortarboard fs-1"></i>
+                    </a>
+                    <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
+                        <li><a class="dropdown-item" href="/staff/kurikulum">Kurikulum</a></li>
+                        <li><a class="dropdown-item" href="/staff/kelas">Kelas</a></li>
+                    </ul>
+                </span>
+                {{-- Finansial --}}
+                <span class="d-flex flex-col my-2 mx-3">
+                    <a class="nav-link" href="/staff/ukt">
+                        <i class="bi bi-receipt-cutoff fs-1"></i>
+                    </a>
+                </span>
+                {{-- Surat --}}
+                <span class="d-flex flex-col my-2 mx-3">
+                    <a class="nav-link" href="/staff/surat">
+                        <i class="bi bi-megaphone fs-1"></i>
                     </a>
                 </span>
             </div>

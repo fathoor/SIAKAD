@@ -67,16 +67,33 @@
                     </ul>
                 </li>
                 @elseif(auth()->user()->type == 'staff')
-                {{-- File --}}
+                {{-- Akun --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('staff/*') ? 'active' : '' }}" href="/dashboard/staff" id="staffDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-clipboard2 fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
+                    <a class="nav-link mx-3 {{ request()->is('staff/akun*') ? 'active' : '' }}" href="/staff/akun">
+                        <i class="bi bi-shield-lock fs-5"></i> <span class="fs-5 ms-2">Civitas</span>
+                    </a>
+                </li>
+                {{-- Akademik --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link mx-3 {{ request()->is('staff/kurikulum*, staff/kelas*, ') ? 'active' : '' }}" id="staffDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-mortarboard fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="staffDropdown">
                         <li><a class="dropdown-item" href="/staff/kurikulum">Kurikulum</a></li>
-                        <li><a class="dropdown-item" href="#">Nilai Mahasiswa</a></li>
-                        <li><a class="dropdown-item" href="#">Formulir Rencana Studi</a></li>
+                        <li><a class="dropdown-item" href="/staff/kelas">Kelas</a></li>
                     </ul>
+                </li>
+                {{-- Finansial --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link mx-3 {{ request()->is('staff/ukt*') ? 'active' : '' }}" href="/staff/ukt">
+                        <i class="bi bi-receipt-cutoff fs-5"></i> <span class="fs-5 ms-2">Finansial</span>
+                    </a>
+                </li>
+                {{-- Surat --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link mx-3 {{ request()->is('staff/surat*') ? 'active' : '' }}" href="/staff/surat">
+                        <i class="bi bi-megaphone fs-5"></i> <span class="fs-5 ms-2">Layanan</span>
+                    </a>
                 </li>
                 {{-- Profil --}}
                 <li class="nav-item dropdown">
