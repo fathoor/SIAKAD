@@ -38,7 +38,7 @@
                     <ul class="dropdown-menu text-left" aria-labelledby="mahasiswaDropdown">
                         <li><a class="dropdown-item" href="/dosen/daftarMahasiswa">Daftar Mahasiswa</a></li>
                         <li><a class="dropdown-item" href="#">Nilai Mahasiswa</a></li>
-                        <li><a class="dropdown-item" href="#">Formulir Rencana Studi</a></li>
+                        <li><a class="dropdown-item" href="/dosen/FRS">Formulir Rencana Studi</a></li>
                     </ul>
                 </span>
             </div>

@@ -39,13 +39,13 @@
                 </li>
                 {{-- Mahasiswa --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('dosen/daftarMahasiswa*', 'dosen/nilaiMahasiswa*', 'dosen/frs*') ? 'active' : '' }}" id="mahasiswaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('dosen/daftarMahasiswa*', 'dosen/nilaiMahasiswa*', 'dosen/FRS*') ? 'active' : '' }}" id="mahasiswaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-shield fs-5"></i> <span class="fs-5 ms-2">Mahasiswa</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="mahasiswaDropdown">
                         <li><a class="dropdown-item" href="/dosen/daftarMahasiswa">Daftar Mahasiswa</a></li>
                         <li><a class="dropdown-item" href="#">Nilai Mahasiswa</a></li>
-                        <li><a class="dropdown-item" href="#">Formulir Rencana Studi</a></li>
+                        <li><a class="dropdown-item" href="/dosen/FRS">Formulir Rencana Studi</a></li>
                     </ul>
                 </li>
                 {{-- Profil --}}
