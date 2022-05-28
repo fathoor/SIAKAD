@@ -28,14 +28,14 @@ return new class extends Migration
             $table->bigInteger('NRP')->unique();
             $table->string('nama');
             $table->string('password');
-            $table->bigInteger('NIK');
-            $table->string('tempatLahir');
-            $table->date('tanggalLahir');
-            $table->bigInteger('nomorTelp');
+            $table->bigInteger('NIK')->nullable();
+            $table->string('tempatLahir')->nullable();
+            $table->date('tanggalLahir')->nullable();
+            $table->bigInteger('nomorTelp')->nullable();
             $table->string('email');
-            $table->string('departemen');
-            $table->integer('tahunMasuk');
-            $table->string('alamat');
+            $table->string('departemen')->nullable();
+            $table->integer('tahunMasuk')->nullable();
+            $table->string('alamat')->nullable();
             $table->integer('type')->default(0);
         });
     }
