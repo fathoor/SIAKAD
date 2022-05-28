@@ -55,7 +55,7 @@ class KurikulumController extends Controller
     }
     public function indexStaff()
     {
-        $mk = DB::table('mata_kuliah')->get();
+        $mk = DB::table('mata_kuliah')->paginate(10);
         return view('contents.staff.kurikulum', ['mk' => $mk]);
     }
 }

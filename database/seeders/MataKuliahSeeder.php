@@ -96,23 +96,6 @@ class MataKuliahSeeder extends Seeder
                 'tahunKurikulum' => 2018,
                 'semester' => 3
             ],
-
-            [
-                'kodeMataKuliah' => 'IS184412',
-                'kodeKelas' => 'SI4101',
-                'namaMataKuliah' => 'Rancang Bangun Perangkat Lunak',
-                'sks' => 4,
-                'tahunKurikulum' => 2018,
-                'semester' => 4
-            ],
-            [
-                'kodeMataKuliah' => 'IS184414',
-                'kodeKelas' => 'SI4102',
-                'namaMataKuliah' => 'Sistem Enterprise',
-                'sks' => 4,
-                'tahunKurikulum' => 2018,
-                'semester' => 4
-            ],
             [
                 'kodeMataKuliah' => 'IS184411',
                 'kodeKelas' => 'SI4102',
@@ -128,6 +111,22 @@ class MataKuliahSeeder extends Seeder
                 'sks' => 4,
                 'tahunKurikulum' => 2018,
                 'semester' => 3
+            ],
+            [
+                'kodeMataKuliah' => 'IS184412',
+                'kodeKelas' => 'SI4101',
+                'namaMataKuliah' => 'Rancang Bangun Perangkat Lunak',
+                'sks' => 4,
+                'tahunKurikulum' => 2018,
+                'semester' => 4
+            ],
+            [
+                'kodeMataKuliah' => 'IS184414',
+                'kodeKelas' => 'SI4102',
+                'namaMataKuliah' => 'Sistem Enterprise',
+                'sks' => 4,
+                'tahunKurikulum' => 2018,
+                'semester' => 4
             ],
             [
                 'kodeMataKuliah' => 'IS184413',
