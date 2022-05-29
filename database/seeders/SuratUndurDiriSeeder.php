@@ -18,6 +18,7 @@ class SuratUndurDiriSeeder extends Seeder
         DB::table('surat_undur_diri')->insert([
             [
                 'suratUndurDiriNRP' => '5026201000',
+                'type' => 'Surat Mengundurkan Diri',
                 'periodeMundur' => 'Genap 2022',
                 'tanggalAjuan' => '2022-05-10',
                 'alasanMundur' => 'Kerja',
@@ -25,6 +26,7 @@ class SuratUndurDiriSeeder extends Seeder
             ],
             [
                 'suratUndurDiriNRP' => '5026201139',
+                'type' => 'Surat Mengundurkan Diri',
                 'periodeMundur' => 'Genap 2022',
                 'tanggalAjuan' => '2022-05-10',
                 'alasanMundur' => 'Kerja',

@@ -53,6 +53,7 @@
                                     <td>{{ $p->tahunKurikulum }}</td>
                                     <td>{{ $p->semester }}</td>
                                     <td>
+                                        
                                         <a class="bi bi-pencil-square" id="tombolEdit" data-bs-toggle="modal"
                                             data-bs-target="#editModal"></a>
                                         <div class="modal fade" id="editModal" tabindex="-1"
@@ -105,6 +106,7 @@
                         </table>
                     </div>
                 </div>
+                {{ $mk->links() }}
         </main>
     </div>
 

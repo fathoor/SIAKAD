@@ -26,6 +26,7 @@ class SuratAktifController extends Controller
 
         SuratAktif::create([
             'suratAktifNRP' => auth()->user()->NRP,
+            'type' => 'Surat Keterangan Aktif',
             'periodeAktif' => $request->periode,
             'tanggalAjuan' => $today,
             'keperluanSurat' => $request->keperluan,

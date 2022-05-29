@@ -99,6 +99,57 @@
                         </tr>
                         @endforeach
                     </table>
+                    <table class="table table-hover table-bordered align-middle text-center">
+                        <tr class="table-secondary">
+                            <th colspan="3">Semester 5</th>
+                        </tr>
+                        <tr class="table-secondary">
+                            <th width="150px">Kode</th>
+                            <th width="200px">Mata Kuliah</th>
+                            <th width="50px">SKS</th>
+                        </tr>
+                        @foreach($mk5 as $p)
+                        <tr>
+                            <td>{{ $p->kodeMataKuliah }}</td>
+                            <td>{{ $p->namaMataKuliah }}</td>
+                            <td>{{ $p->sks }}</td>
+                        </tr>
+                        @endforeach
+                    </table>
+                    <table class="table table-hover table-bordered align-middle text-center">
+                        <tr class="table-secondary">
+                            <th colspan="3">Semester 6</th>
+                        </tr>
+                        <tr class="table-secondary">
+                            <th width="150px">Kode</th>
+                            <th width="200px">Mata Kuliah</th>
+                            <th width="50px">SKS</th>
+                        </tr>
+                        @foreach($mk6 as $p)
+                        <tr>
+                            <td>{{ $p->kodeMataKuliah }}</td>
+                            <td>{{ $p->namaMataKuliah }}</td>
+                            <td>{{ $p->sks }}</td>
+                        </tr>
+                        @endforeach
+                    </table>
+                    <table class="table table-hover table-bordered align-middle text-center">
+                        <tr class="table-secondary">
+                            <th colspan="3">Semester 7</th>
+                        </tr>
+                        <tr class="table-secondary">
+                            <th width="150px">Kode</th>
+                            <th width="200px">Mata Kuliah</th>
+                            <th width="50px">SKS</th>
+                        </tr>
+                        @foreach($mk7 as $p)
+                        <tr>
+                            <td>{{ $p->kodeMataKuliah }}</td>
+                            <td>{{ $p->namaMataKuliah }}</td>
+                            <td>{{ $p->sks }}</td>
+                        </tr>
+                        @endforeach
+                    </table>
                 </div>
             </div>
         </main>

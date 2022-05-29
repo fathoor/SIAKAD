@@ -22,7 +22,7 @@
                     <div class="text-start text-muted mb-3">
                         Pastikan data terisi dengan sesuai!
                     </div>
-                    <form action="/biodata/update" method="POST">
+                    <form action="/biodata/update" id="biodata" method="POST">
                         @csrf
                         <div class="input-group form-floating mb-3">
                             <input type="number" id="NIK" name="NIK" class="form-control" value="{{ auth()->user()->NIK }}" required>
@@ -54,17 +54,17 @@
                             <textarea class="form-control" name="alamat" required>{{ auth()->user()->alamat }}</textarea>
                             <label for="alamat" class="form-label">Alamat</label>
                         </div>
-                        <div class="mt-4">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="bi bi-save fs-5"></i><span class="fs-5 ms-2">Update</span>
-                            </button>
-                            <a href="/biodata">
-                                <button class="btn btn-danger">
-                                    <i class="bi bi-arrow-counterclockwise fs-5"></i>
-                                </button>
-                            </a>
-                        </div>
                     </form>
+                    <div class="mt-4">
+                        <button class="btn btn-primary" type="submit" form="biodata">
+                            <i class="bi bi-save fs-5"></i><span class="fs-5 ms-2">Update</span>
+                        </button>
+                        <a href="/biodata">
+                            <button class="btn btn-danger">
+                                <i class="bi bi-arrow-counterclockwise fs-5"></i>
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -13,6 +13,9 @@ class KurikulumController extends Controller
         $mk2 = DB::table('mata_kuliah')->where('semester', '2')->get();
         $mk3 = DB::table('mata_kuliah')->where('semester', '3')->get();
         $mk4 = DB::table('mata_kuliah')->where('semester', '4')->get();
+        $mk5 = DB::table('mata_kuliah')->where('semester', '5')->get();
+        $mk6 = DB::table('mata_kuliah')->where('semester', '6')->get();
+        $mk7 = DB::table('mata_kuliah')->where('semester', '7')->get();
 
         return view(
             'contents.kurikulum',
@@ -20,7 +23,10 @@ class KurikulumController extends Controller
                 'mk1' => $mk1,
                 'mk2' => $mk2,
                 'mk3' => $mk3,
-                'mk4' => $mk4
+                'mk4' => $mk4,
+                'mk5' => $mk5,
+                'mk6' => $mk6,
+                'mk7' => $mk7,
             ]
         );
     }
@@ -30,6 +36,9 @@ class KurikulumController extends Controller
         $mk2 = DB::table('mata_kuliah')->where('semester', '2')->get();
         $mk3 = DB::table('mata_kuliah')->where('semester', '3')->get();
         $mk4 = DB::table('mata_kuliah')->where('semester', '4')->get();
+        $mk5 = DB::table('mata_kuliah')->where('semester', '5')->get();
+        $mk6 = DB::table('mata_kuliah')->where('semester', '6')->get();
+        $mk7 = DB::table('mata_kuliah')->where('semester', '7')->get();
 
         return view(
             'contents.dosen.kurikulum',
@@ -37,13 +46,16 @@ class KurikulumController extends Controller
                 'mk1' => $mk1,
                 'mk2' => $mk2,
                 'mk3' => $mk3,
-                'mk4' => $mk4
+                'mk4' => $mk4,
+                'mk5' => $mk5,
+                'mk6' => $mk6,
+                'mk7' => $mk7,
             ]
         );
     }
     public function indexStaff()
     {
-        $mk = DB::table('mata_kuliah')->get();
+        $mk = DB::table('mata_kuliah')->paginate(10);
         return view('contents.staff.kurikulum', ['mk' => $mk]);
     }
 }
