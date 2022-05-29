@@ -61,4 +61,21 @@ class KurikulumController extends Controller
         $mk = \App\Models\MataKuliah::sortable()->paginate(10);
         return view('contents.staff.kurikulum', ['mk' => $mk]);
     }
+
+    public function create(Request $request){
+        \App\Models\MataKuliah::create($request -> all());
+        return redirect('/staff/kurikulum');
+    }
+
+    public function update(Request $request,$id){
+        $mk = \App\Models\MataKuliah::findOrFail($id);
+        $mk->update($request -> all());
+        return redirect('/staff/kurikulum');
+    }
+
+    public function delete($id){
+        $mk = \App\Models\MataKuliah::find($id);
+        $mk -> delete($mk);
+        return redirect('/staff/kurikulum');
+    }
 }

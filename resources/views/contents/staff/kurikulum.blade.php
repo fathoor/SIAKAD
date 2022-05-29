@@ -29,7 +29,8 @@
                 </div>
                 <div class="my-4">
                     <div class="card-body">
-                        <a href="/kurikulum/tambah" class="btn btn-primary">Input Mata Kuliah Baru</a>
+                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createData">Input Mata Kuliah
+                            Baru</a>
                         <br />
                         <br />
                         <table class="table table-hover table-bordered align-middle text-center">
@@ -37,74 +38,195 @@
                                 <th colspan="7">Mata Kuliah</th>
                             </tr>
                             <tr class="table-secondary">
-                                <th width="150px">@sortablelink('kodeMataKuliah','Kode')</th>
-                                <th width="200px">@sortablelink('namaMataKuliah','Matakuliah')</th>
-                                <th width="50px">@sortablelink('sks','SKS')</th>
-                                <th width="100px">@sortablelink('tahunKurikulum','Tahun')</th>
+                                <th width="150px">@sortablelink('kodeMataKuliah', 'Kode')</th>
+                                <th width="200px">@sortablelink('namaMataKuliah', 'Matakuliah')</th>
+                                <th width="50px">@sortablelink('sks', 'SKS')</th>
+                                <th width="100px">@sortablelink('tahunKurikulum', 'Tahun')</th>
                                 <th width="100px">@sortablelink('semester', 'Semester')</th>
                                 <th colspan="2">Opsi</th>
                             </tr>
-                            @if($mk->count())
-                            @foreach ($mk  as $p )
-                                <tr>
-                                    <td>{{ $p->kodeMataKuliah }}</td>
-                                    <td>{{ $p->namaMataKuliah }}</td>
-                                    <td>{{ $p->sks }}</td>
-                                    <td>{{ $p->tahunKurikulum }}</td>
-                                    <td>{{ $p->semester }}</td>
-                                    <td>
-                                        
-                                        <a class="bi bi-pencil-square" id="tombolEdit" data-bs-toggle="modal"
-                                            data-bs-target="#editModal"></a>
-                                        <div class="modal fade" id="editModal" tabindex="-1"
-                                            aria-labelledby="editModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="editModalLabel">Modal title</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form class="form-inline" id="input" action="">
-                                                            @csrf
-                                                            <div class="form-group row mb-3">
-                                                                <label for="Kode" class="col-2 col-form-label">Kode</label>
-                                                                <label for="Kode" class="col-1 col-form-label">:</label>
-                                                                <div class="col-9">
-                                                                    <input type="text" id="Kode" name="Kode"
-                                                                        class="form-control bg-transparent border-white"
-                                                                        value="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row mb-3">
-                                                                <label for="nama" class="col-2 col-form-label">Nama</label>
-                                                                <label for="nama" class="col-1 col-form-label">:</label>
-                                                                <div class="col-9">
-                                                                    <input type="text" id="nama" name="nama"
-                                                                        class="form-control bg-transparent border-white"
-                                                                        value="">
-                                                                </div>
-                                                            </div>
-                                                        </form>
+                            @if ($mk->count())
+                                @foreach ($mk as $p)
+                                    <tr>
+                                        <td>{{ $p->kodeMataKuliah }}</td>
+                                        <td>{{ $p->namaMataKuliah }}</td>
+                                        <td>{{ $p->sks }}</td>
+                                        <td>{{ $p->tahunKurikulum }}</td>
+                                        <td>{{ $p->semester }}</td>
+                                        <td>
 
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save
-                                                            changes</button>
+                                            <a class="bi bi-pencil-square" id="tombolEdit" data-bs-toggle="modal"
+                                                data-bs-target="#editModal{{ $p -> id }}"></a>
+                                            <div class="modal fade" id="editModal{{ $p -> id }}" tabindex="-1"
+                                                aria-labelledby="editModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="editModalLabel">Modal title</h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="form-inline" id="input" action="/staff/kurikulum/update{{ $p -> id }}" method="POST">
+                                                                @csrf
+                                                                <div class="form-group row mb-3">
+                                                                    <label for="kodeMataKuliah"
+                                                                        class="col-2 col-form-label">Kode</label>
+                                                                    <label for="kodeMataKuliah"
+                                                                        class="col-1 col-form-label">:</label>
+                                                                    <div class="col-9">
+                                                                        <input type="text" id="kodeMataKuliah"
+                                                                            name="kodeMataKuliah"
+                                                                            class="form-control bg-transparent border-white"
+                                                                            value="{{ $p -> kodeMataKuliah }}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row mb-3">
+                                                                    <label for="namaMataKuliah"
+                                                                        class="col-2 col-form-label">Nama</label>
+                                                                    <label for="namaMataKuliah"
+                                                                        class="col-1 col-form-label">:</label>
+                                                                    <div class="col-9">
+                                                                        <input type="text" id="namaMataKuliah"
+                                                                            name="namaMataKuliah"
+                                                                            class="form-control bg-transparent border-white"
+                                                                            value="{{ $p -> namaMataKuliah }}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row mb-3">
+                                                                    <label for="sks"
+                                                                        class="col-2 col-form-label">SKS</label>
+                                                                    <label for="sks" class="col-1 col-form-label">:</label>
+                                                                    <div class="col-9">
+                                                                        <input type="text" id="sks" name="sks"
+                                                                            class="form-control bg-transparent border-white"
+                                                                            value="{{ $p -> sks }}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row mb-3">
+                                                                    <label for="tahunKurikulum"
+                                                                        class="col-2 col-form-label">Tahun</label>
+                                                                    <label for="tahunKurikulum"
+                                                                        class="col-1 col-form-label">:</label>
+                                                                    <div class="col-9">
+                                                                        <input type="text" id="tahunKurikulum"
+                                                                            name="tahunKurikulum"
+                                                                            class="form-control bg-transparent border-white"
+                                                                            value="{{ $p -> tahunKurikulum }}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row mb-3">
+                                                                    <label for="semester"
+                                                                        class="col-2 col-form-label">Semester</label>
+                                                                    <label for="semester"
+                                                                        class="col-1 col-form-label">:</label>
+                                                                    <div class="col-9">
+                                                                        <input type="text" id="semester" name="semester"
+                                                                            class="form-control bg-transparent border-white"
+                                                                            value="{{ $p -> semester }}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row mb-3">
+                                                                    <label for="kodeKelas"
+                                                                        class="col-2 col-form-label">Kelas</label>
+                                                                    <label for="kodeKelas"
+                                                                        class="col-1 col-form-label">:</label>
+                                                                    <div class="col-9">
+                                                                        <input type="text" id="kodeKelas" name="kodeKelas"
+                                                                            class="form-control bg-transparent border-white"
+                                                                            value="{{ $p -> kodeKelas }}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Save
+                                                                        changes</button>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                    </td>
-                                    <td><a href="/kurikulum/hapus/{{ $p->id }}" class="bi bi-archive-fill"></a></td>
-                                </tr>
-                            @endforeach
+                                        </td>
+                                        <td><a href="/staff/kurikulum/delete/{{ $p->id }}" class="bi bi-archive-fill" onclick="return confirm('Yakin untuk menghapus?')"></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             @endif
                         </table>
+                        <div class="modal fade" id="createData" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Mata Kuliah</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/staff/kurikulum/add" method="POST">
+                                            @csrf
+                                            <div class="form-group row mb-3">
+                                                <label for="kodeMataKuliah" class="col-2 col-form-label">Kode</label>
+                                                <label for="kodeMataKuliah" class="col-1 col-form-label">:</label>
+                                                <div class="col-9">
+                                                    <input type="text" id="kodeMataKuliah" name="kodeMataKuliah"
+                                                        class="form-control bg-transparent border-white" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="namaMataKuliah" class="col-2 col-form-label">Nama</label>
+                                                <label for="namaMataKuliah" class="col-1 col-form-label">:</label>
+                                                <div class="col-9">
+                                                    <input type="text" id="namaMataKuliah" name="namaMataKuliah"
+                                                        class="form-control bg-transparent border-white" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="sks" class="col-2 col-form-label">SKS</label>
+                                                <label for="sks" class="col-1 col-form-label">:</label>
+                                                <div class="col-9">
+                                                    <input type="text" id="sks" name="sks"
+                                                        class="form-control bg-transparent border-white" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="tahunKurikulum" class="col-2 col-form-label">Tahun</label>
+                                                <label for="tahunKurikulum" class="col-1 col-form-label">:</label>
+                                                <div class="col-9">
+                                                    <input type="text" id="tahunKurikulum" name="tahunKurikulum"
+                                                        class="form-control bg-transparent border-white" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="semester" class="col-2 col-form-label">Semester</label>
+                                                <label for="semester" class="col-1 col-form-label">:</label>
+                                                <div class="col-9">
+                                                    <input type="text" id="semester" name="semester"
+                                                        class="form-control bg-transparent border-white" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="kodeKelas" class="col-2 col-form-label">Kelas</label>
+                                                <label for="kodeKelas" class="col-1 col-form-label">:</label>
+                                                <div class="col-9">
+                                                    <input type="text" id="kodeKelas" name="kodeKelas"
+                                                        class="form-control bg-transparent border-white" value="">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {!! $mk->appends(\Request::except('page'))->render() !!}

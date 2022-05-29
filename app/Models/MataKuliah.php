@@ -16,7 +16,7 @@ class MataKuliah extends Model
 
     protected $table = 'mata_kuliah';
 
-    protected $fillable = ['KodeMataKuliah','kodeKelas','namaMataKuliah','sks','tahunKurikulum','semester'];
+    protected $fillable = ['kodeMataKuliah','kodeKelas','namaMataKuliah','sks','tahunKurikulum','semester'];
 
     public $timestamps = false;
 

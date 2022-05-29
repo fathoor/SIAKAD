@@ -111,6 +111,10 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/staff', [DashboardController::class, 'indexStaff'])->name('dashboard.staff');
     Route::get('/staff/kurikulum', [KurikulumController::class, 'indexStaff']);
+    Route::post('/staff/kurikulum/add', [KurikulumController::class, 'create']);
+    Route::post('/staff/kurikulum/update{id}',[KurikulumController::class, 'update']);
+    Route::get('/staff/kurikulum/delete/{id}',[KurikulumController::class, 'delete']);
+
 
     // Civitas
     Route::get('/staff/civitas', [CivitasController::class, 'index']);
