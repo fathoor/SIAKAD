@@ -20,7 +20,16 @@ return new class extends Migration
             $table->tinyInteger('jawaban1');
             $table->tinyInteger('jawaban2');
             $table->tinyInteger('jawaban3');
-            $table->longText('feedback');
+            $table->tinyInteger('jawaban4');
+            $table->tinyInteger('jawaban5');
+            $table->tinyInteger('jawaban6');
+            $table->tinyInteger('jawaban7');
+            $table->tinyInteger('jawaban8');
+            $table->tinyInteger('jawaban9');
+            $table->tinyInteger('jawaban10');
+            $table->tinyInteger('jawaban11');
+            $table->tinyInteger('jawaban12');
+            $table->longText('komentar');
         });
     }
 

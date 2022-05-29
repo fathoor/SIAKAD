@@ -63,9 +63,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     // Kuesioner Route
     Route::get('/kuesioner', [KuesionerController::class, 'index']);
     Route::post('/kuesioner/gantiPeriode', [KuesionerController::class, 'ganti']);
-    Route::get('/kuesioner-2', function () {
-        return view('contents.kuesioner-2');
-    });
+    Route::post('/isi-kuesioner', [KuesionerController::class, 'isi']);
+    Route::post('/submit-kuesioner', [KuesionerController::class, 'submit']);
 
     // Finansial Route
     Route::get('/ukt', function () {
@@ -94,7 +93,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
 Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/dosen', [DashboardController::class, 'indexDosen'])->name('dashboard.dosen');
-    
+
     // Akademik
     Route::get('/dosen/kurikulum', [KurikulumController::class, 'indexDosen']);
     Route::get('/dosen/mataKuliah', [DaftarKelasController::class, 'index']);

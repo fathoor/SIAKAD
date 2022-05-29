@@ -67,17 +67,28 @@
                                 <td>{{ $mk->namaMataKuliah }}</td>
                                 <td>{{ $mk->dosenNama }}</td>
                                 <td>
-                                    @if ($mk->status == '0')
-                                        <i class="bi bi-x-square" style="color:red; margin-right:20px"></i>
-                                        <button type="button" class="btn btn-warning btn-sm">
-                                            <a href="/kuesioner-2">Isi</a>
-                                        </button>
-                                    @else
-                                        <i class="bi bi-v-square" style="color:red; margin-right:20px"></i>
-                                        <button type="button" class="btn btn-success btn-sm">
-                                            <a href="/kuesioner-2">Isi</a>
-                                        </button>
-                                    @endif
+                                    <form action="/isi-kuesioner" method="POST">
+                                        @csrf
+                                        <input name="isiDosen" type="hidden" value={{ $mk->dosenNRP }}>
+                                        <select name="periode" hidden>
+                                            @foreach ($kuesioner as $k)
+                                                <option value="{{ $k->periode }}"
+                                                    {{ $k->periode == $smtper->periode ? 'selected' : '' }}>
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @if ($mk->status == '0')
+                                            <i class="bi bi-x-square" style="color:red; margin-right:20px"></i>
+                                            <button type="submit" class="btn btn-warning btn-sm">
+                                                Isi
+                                            </button>
+                                        @else
+                                            <i class="bi bi-v-square" style="color:red; margin-right:20px"></i>
+                                            <button type="submit" disabled class="btn btn-success btn-sm">
+                                                Isi
+                                            </button>
+                                        @endif
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

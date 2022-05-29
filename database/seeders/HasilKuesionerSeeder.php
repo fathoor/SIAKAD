@@ -22,7 +22,16 @@ class HasilKuesionerSeeder extends Seeder
                 'jawaban1' => 5,
                 'jawaban2' => 5,
                 'jawaban3' => 5,
-                'feedback' => 'Mengajar dengan baik dan memuaskan'
+                'jawaban4' => 4,
+                'jawaban5' => 3,
+                'jawaban6' => 2,
+                'jawaban7' => 1,
+                'jawaban8' => 1,
+                'jawaban9' => 2,
+                'jawaban10' => 3,
+                'jawaban11' => 4,
+                'jawaban12' => 5,
+                'komentar' => 'Mengajar dengan baik dan memuaskan'
             ],
             [
                 'dosenNRP' => '5026202',
@@ -30,7 +39,16 @@ class HasilKuesionerSeeder extends Seeder
                 'jawaban1' => 4,
                 'jawaban2' => 4,
                 'jawaban3' => 4,
-                'feedback' => 'Mengajar dengan baik'
+                'jawaban4' => 4,
+                'jawaban5' => 3,
+                'jawaban6' => 2,
+                'jawaban7' => 1,
+                'jawaban8' => 1,
+                'jawaban9' => 2,
+                'jawaban10' => 3,
+                'jawaban11' => 4,
+                'jawaban12' => 5,
+                'komentar' => 'Mengajar dengan baik'
             ],
             [
                 'dosenNRP' => '5026203',
@@ -38,7 +56,16 @@ class HasilKuesionerSeeder extends Seeder
                 'jawaban1' => 5,
                 'jawaban2' => 5,
                 'jawaban3' => 5,
-                'feedback' => 'Mengajar dengan sangat baik'
+                'jawaban4' => 4,
+                'jawaban5' => 3,
+                'jawaban6' => 2,
+                'jawaban7' => 1,
+                'jawaban8' => 1,
+                'jawaban9' => 2,
+                'jawaban10' => 3,
+                'jawaban11' => 4,
+                'jawaban12' => 5,
+                'komentar' => 'Mengajar dengan sangat baik'
             ],
             [
                 'dosenNRP' => '5026204',
@@ -46,7 +73,16 @@ class HasilKuesionerSeeder extends Seeder
                 'jawaban1' => 5,
                 'jawaban2' => 5,
                 'jawaban3' => 4,
-                'feedback' => 'Mengajar dengan baik dan memuaskan'
+                'jawaban4' => 4,
+                'jawaban5' => 3,
+                'jawaban6' => 2,
+                'jawaban7' => 1,
+                'jawaban8' => 1,
+                'jawaban9' => 2,
+                'jawaban10' => 3,
+                'jawaban11' => 4,
+                'jawaban12' => 5,
+                'komentar' => 'Mengajar dengan baik dan memuaskan'
             ],
             [
                 'dosenNRP' => '5026205',
@@ -54,7 +90,16 @@ class HasilKuesionerSeeder extends Seeder
                 'jawaban1' => 5,
                 'jawaban2' => 4,
                 'jawaban3' => 4,
-                'feedback' => 'Mengajar dengan sangat memuaskan'
+                'jawaban4' => 4,
+                'jawaban5' => 3,
+                'jawaban6' => 2,
+                'jawaban7' => 1,
+                'jawaban8' => 1,
+                'jawaban9' => 2,
+                'jawaban10' => 3,
+                'jawaban11' => 4,
+                'jawaban12' => 5,
+                'komentar' => 'Mengajar dengan sangat memuaskan'
             ],
             [
                 'dosenNRP' => '5026206',
@@ -62,7 +107,16 @@ class HasilKuesionerSeeder extends Seeder
                 'jawaban1' => 5,
                 'jawaban2' => 5,
                 'jawaban3' => 5,
-                'feedback' => 'Mengajar dengan baik dan memuaskan, pelajaran dapat dipahami'
+                'jawaban4' => 4,
+                'jawaban5' => 3,
+                'jawaban6' => 2,
+                'jawaban7' => 1,
+                'jawaban8' => 1,
+                'jawaban9' => 2,
+                'jawaban10' => 3,
+                'jawaban11' => 4,
+                'jawaban12' => 5,
+                'komentar' => 'Mengajar dengan baik dan memuaskan, pelajaran dapat dipahami'
             ]
         ]);
     }
