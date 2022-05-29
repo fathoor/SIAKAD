@@ -12,12 +12,20 @@
         <div class="content">
             {{-- Isi disini --}}
             <div class="container">
+                <div class="row mb-5">
+                    <a href="">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Input Nilai</span>
+                        </button>
+                    </a>
+                </div>
                 <table class="table table-bordered table-hover table-striped align-middle text-center">
                     <thead>
                         <tr class="table-secondary">
                             <th>No</th>
                             <th>Mata Kuliah</th>
                             <th>SKS</th>
+                            <th>NRP</th>
                             <th>Nilai Angka</th>
                             <th>Nilai Huruf</th>
                             <th>Bobot</th>
@@ -28,11 +36,12 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $n->matakuliah }}</td>
-                            <td>{{ $m->sks }}</td>
-                            <td>{{ $m->nilaiangka }}</td>
+                            <td>{{ $n->sks }}</td>
+                            <td>{{ $n->nrp }}</td>
+                            <td>{{ $n->nilaiangka }}</td>
                             <td>
                                 <?php
-                                if($n->NilaiAngka <=40){
+                                if($n->nilaiangka <=40){
                                     echo "D";
                                 } elseif ($n->nilaiangka >=41 && $n->nilaiangka <=60) {
                                     echo "C";
@@ -45,7 +54,7 @@
                             </td>
                             <td>
                                 <?php
-                                $bobot = $n->NilaiAngka * $n->SKS;
+                                $bobot = $n->nilaiangka * $n->sks;
                                 echo $bobot;
                                 ?>
                             </td>
