@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('surat_undur_diri', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('suratUndurDiriNRP');
+            $table->string('type');
             $table->string('periodeMundur');
             $table->date('tanggalAjuan');
             $table->string('alasanMundur');

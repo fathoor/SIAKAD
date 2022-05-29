@@ -52,7 +52,7 @@
                                     value="{{ auth()->user()->NRP }}" disabled>
                             </div>
                             <div class="col-1">
-                                <label for="NRP" class="col-form-label">NRP</label>
+                                <label for="NRP" class="col-form-label">Dosen Wali</label>
                             </div>
                             <div class="col-1">
                                 :
@@ -74,85 +74,50 @@
                                     value="{{ auth()->user()->nama }}" disabled>
                             </div>
                             <div class="col-1">
-                                <label for="namaMahasiswa" class="col-form-label">Nama</label>
+                                <label for="namaMahasiswa" class="col-form-label">IPS</label>
                             </div>
                             <div class="col-1">
                                 :
                             </div>
                             <div class="col-4">
-                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
-                                    value="{{ auth()->user()->nama }}" disabled>
+                                ---
                             </div>
                         </div>
                         <div class="row align-items-center form-group">
                             <div class="col-1">
-                                <label for="namaMahasiswa" class="col-form-label">Nama</label>
+                                <label for="namaMahasiswa" class="col-form-label">IPK</label>
                             </div>
                             <div class="col-1">
                                 :
                             </div>
                             <div class="col-4">
-                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
-                                    value="{{ auth()->user()->nama }}" disabled>
+                                ---
                             </div>
                             <div class="col-1">
-                                <label for="namaMahasiswa" class="col-form-label">Nama</label>
+                                <label for="namaMahasiswa" class="col-form-label">Batas / Sisa</label>
                             </div>
                             <div class="col-1">
                                 :
                             </div>
                             <div class="col-4">
-                                <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
-                                    value="{{ auth()->user()->nama }}" disabled>
+                                ---
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="container my-4 text-center" style="padding: 0">
-                    <table class="table table-bordered table-hover table-striped" style="margin: 0">
-                        <thead class="bg-primary bg-opacity-75">
-                            <tr>
-                                <th scope="col">Kode</th>
-                                <th scope="col">Mata Kuliah</th>
-                                <th scope="col">SKS</th>
-                                <th scope="col">Kelas</th>
-                                <th scope="col">Alih Kredit</th>
-                                <th scope="col">Dosen</th>
-                                <th scope="col">Nilai</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-warning">
-                            <tr>
-                                <td>IS184412</td>
-                                <td>Rancang Bangun Perangkat Lunak</td>
-                                <td>4</td>
-                                <td>C</td>
-                                <td>-</td>
-                                <td>Radityo Prasetianto Wibowo, S.Kom., M.Kom</td>
-                                <td>*</td>
-                            </tr>
-                            <tr>
-                                <td>IS184412</td>
-                                <td>Rancang Bangun Perangkat Lunak</td>
-                                <td>4</td>
-                                <td>C</td>
-                                <td>-</td>
-                                <td>Radityo Prasetianto Wibowo, S.Kom., M.Kom</td>
-                                <td>*</td>
-                            </tr>
-                            <tr>
-                                <td>IS184412</td>
-                                <td>Rancang Bangun Perangkat Lunak</td>
-                                <td>4</td>
-                                <td>C</td>
-                                <td>-</td>
-                                <td>Radityo Prasetianto Wibowo, S.Kom., M.Kom</td>
-                                <td>*</td>
-                            </tr>
-                        </tbody>
+                <div class="container my-4 text-center">
+                    <table class="table table-responsive table-striped table-bordered table-fixed text-center">
+                        <tr class="table-secondary">
+                            <th scope="col">Kode</th>
+                            <th scope="col">Mata Kuliah</th>
+                            <th scope="col">SKS</th>
+                            <th scope="col">Kelas</th>
+                            <th scope="col">Alih Kredit</th>
+                            <th scope="col">Dosen</th>
+                            <th scope="col">Nilai</th>
+                        </tr>
                     </table>
                 </div>
-
         </main>
     </div>
 

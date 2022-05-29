@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FRSController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\CivitasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KuesionerController;
 use App\Http\Controllers\KurikulumController;
@@ -63,9 +64,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     // Kuesioner Route
     Route::get('/kuesioner', [KuesionerController::class, 'index']);
     Route::post('/kuesioner/gantiPeriode', [KuesionerController::class, 'ganti']);
-    Route::get('/kuesioner-2', function () {
-        return view('contents.kuesioner-2');
-    });
+    Route::post('/isi-kuesioner', [KuesionerController::class, 'isi']);
+    Route::post('/submit-kuesioner', [KuesionerController::class, 'submit']);
 
     // Finansial Route
     Route::get('/ukt', function () {
@@ -94,7 +94,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
 Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/dosen', [DashboardController::class, 'indexDosen'])->name('dashboard.dosen');
-    
+
     // Akademik
     Route::get('/dosen/kurikulum', [KurikulumController::class, 'indexDosen']);
     Route::get('/dosen/mataKuliah', [DaftarKelasController::class, 'index']);
@@ -111,4 +111,9 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard/staff', [DashboardController::class, 'indexStaff'])->name('dashboard.staff');
     Route::get('/staff/kurikulum', [KurikulumController::class, 'indexStaff']);
+
+    // Civitas
+    Route::get('/staff/civitas', [CivitasController::class, 'index']);
+    Route::post('/staff/civitas/store', [CivitasController::class, 'store']);
+    Route::get('/staff/civitas/delete/{NRP}', [CivitasController::class, 'delete']);
 });

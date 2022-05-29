@@ -26,6 +26,7 @@ class SuratCutiController extends Controller
 
         SuratCuti::create([
             'suratCutiNRP' => auth()->user()->NRP,
+            'type' => 'Surat Cuti',
             'periodeCuti' => $request->periode,
             'jumlahSemesterCuti' => $request->semester,
             'tanggalAjuan' => $today,

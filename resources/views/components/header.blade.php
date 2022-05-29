@@ -69,13 +69,13 @@
                 @elseif(auth()->user()->type == 'staff')
                 {{-- Akun --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('staff/akun*') ? 'active' : '' }}" href="/staff/akun">
+                    <a class="nav-link mx-3 {{ request()->is('staff/civitas*') ? 'active' : '' }}" href="/staff/civitas">
                         <i class="bi bi-shield-lock fs-5"></i> <span class="fs-5 ms-2">Civitas</span>
                     </a>
                 </li>
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('staff/kurikulum*, staff/kelas*, ') ? 'active' : '' }}" id="staffDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('staff/kurikulum*', 'staff/kelas*') ? 'active' : '' }}" id="staffDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-mortarboard fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="staffDropdown">

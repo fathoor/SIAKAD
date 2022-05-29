@@ -18,6 +18,7 @@ class SuratAktifSeeder extends Seeder
         DB::table('surat_aktif')->insert([
             [
                 'suratAktifNRP' => '5026201000',
+                'type' => 'Surat Keterangan Aktif',
                 'periodeAktif' => 'Genap 2022',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Lomba',
@@ -25,6 +26,7 @@ class SuratAktifSeeder extends Seeder
             ],
             [
                 'suratAktifNRP' => '5026201139',
+                'type' => 'Surat Keterangan Aktif',
                 'periodeAktif' => 'Genap 2022',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Lomba',
