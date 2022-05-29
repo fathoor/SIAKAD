@@ -116,4 +116,13 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::get('/staff/civitas', [CivitasController::class, 'index']);
     Route::post('/staff/civitas/store', [CivitasController::class, 'store']);
     Route::get('/staff/civitas/delete/{NRP}', [CivitasController::class, 'delete']);
+
+    // Finansial
+    Route::get('staff/ukt', function () {
+        return view('contents.staff.ukt');
+    });
+    Route::get('staff/ukt-2', function () {
+        return view('contents.staff.ukt-2');
+    });
+
 });
