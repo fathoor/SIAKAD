@@ -123,8 +123,8 @@
                             <div class="container">
                                 <H5>VERIFIKASI</H5>
                                 <div class="row">
-                                    <button type="submit" class="btn form-floating btn-danger col me-2">BELUM
-                                        LUNAS</button>
+                                    <button type="button" class="btn form-floating btn-danger col me-2"><a href="/staff/ukt">BELUM
+                                        LUNAS</a></button>
                                     <button type="submit" class="btn form-floating btn-success col ms-2">
                                         LUNAS</button>
                                 </div>
