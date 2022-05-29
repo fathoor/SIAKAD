@@ -16,30 +16,31 @@
 
                 </div>
                 <div class="container">
-                    <div class="container bg-light my-4" style="padding: 1">
+                    <div class="container bg-light my-2" style="padding: 1">
                         <table width="440px" class="table table-borderless text-start small table-responsive-sm"
                             style="margin: 0">
                             <tbody>
                                 <tr>
                                     <td width="150px"><strong>Tahun Semester</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="290px">5026201045</td>
+                                    <td width="290px">GENAP 2022</td>
                                 </tr>
                                 <tr>
                                     <td width="150px"><strong>Status Pembayaran</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="290px">THEODORUS REVONSIO PRANANTA</td>
+                                    <td width="290px">BELUM DIVERIFIKASI</td>
                                 </tr>
                                 <tr>
                                     <td width="150px"><strong>Bank</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="290px">3,62</td>
+                                    <td width="290px">BRI</td>
                                 </tr>
                                 <tr>
                                     <td width="150px"><strong>Tanggal Pembayaran</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="290px">3,62</td>
+                                    <td width="290px">20 April 2022</td>
                                 </tr>
+
 
                             </tbody>
                         </table>
@@ -114,11 +115,9 @@
                     </div>
                 </div>
             </div>
-
+        </main>
     </div>
 
-    </div>
-    </main>
-    </div>
+
 
 @endsection
