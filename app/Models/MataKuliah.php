@@ -20,5 +20,5 @@ class MataKuliah extends Model
 
     public $timestamps = false;
 
-    public $sortable = ['kodeMataKuliah','namaMataKuliah','semester','sks'];
+    public $sortable =['KodeMataKuliah','kodeKelas','namaMataKuliah','sks','tahunKurikulum','semester'];
 }

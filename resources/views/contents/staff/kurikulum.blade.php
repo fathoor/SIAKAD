@@ -37,10 +37,10 @@
                                 <th colspan="7">Mata Kuliah</th>
                             </tr>
                             <tr class="table-secondary">
-                                <th width="150px">Kode</th>
-                                <th width="200px">Mata Kuliah</th>
+                                <th width="150px">@sortablelink('kodeMataKuliah','Kode')</th>
+                                <th width="200px">@sortablelink('namaMataKuliah','Matakuliah')</th>
                                 <th width="50px">@sortablelink('sks','SKS')</th>
-                                <th width="100px">Tahun</th>
+                                <th width="100px">@sortablelink('tahunKurikulum','Tahun')</th>
                                 <th width="100px">@sortablelink('semester', 'Semester')</th>
                                 <th colspan="2">Opsi</th>
                             </tr>
