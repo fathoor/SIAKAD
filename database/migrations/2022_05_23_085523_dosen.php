@@ -18,7 +18,6 @@ return new class extends Migration
             $table->bigInteger('dosenNRP');
             $table->string('dosenNama');
             $table->string('dosenKodeMK');
-            $table->boolean('isWali')->default(true);
         });
     }
 

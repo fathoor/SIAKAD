@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('surat_cuti', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('suratCutiNRP');
+            $table->string('type');
             $table->string('periodeCuti');
             $table->integer('jumlahSemesterCuti');
             $table->date('tanggalAjuan');

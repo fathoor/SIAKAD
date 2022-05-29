@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('surat_aktif', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('suratAktifNRP');
+            $table->string('type');
             $table->string('periodeAktif');
             $table->date('tanggalAjuan');
             $table->string('keperluanSurat');
