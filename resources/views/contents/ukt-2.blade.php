@@ -28,7 +28,7 @@
                                 <tr>
                                     <td width="150px"><strong>Status Pembayaran</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="290px">BELUM DIVERIFIKASI</td>
+                                    <td width="290px" style="color: red">BELUM DIVERIFIKASI</td>
                                 </tr>
                                 <tr>
                                     <td width="150px"><strong>Bank</strong></td>
