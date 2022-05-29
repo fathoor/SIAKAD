@@ -53,7 +53,13 @@
                                 <tr>
                                     <td width="150px"><strong>Tanggal Pembayaran</strong></td>
                                     <td width="10px"><strong>:</strong></td>
-                                    <td width="290px">{{ $tanggal }}</td>
+                                    <td width="290px">
+                                        @if ($detail->status == 0)
+                                            -
+                                        @else
+                                            {{ $tanggal }}
+                                        @endif
+                                    </td>
                                 </tr>
 
 

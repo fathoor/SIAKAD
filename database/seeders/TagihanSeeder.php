@@ -390,6 +390,23 @@ class TagihanSeeder extends Seeder
                 'tunggakIPITS' => 0,
                 'tunggakPenyegaran' => 0
             ],
+            [
+                'NRP' => 5026201130,
+                'periodeTagihan' => '2022 - Ganjil',
+                'status' => false,
+                'bank' => 'BRI',
+                'tanggal' => '0001-01-01',
+                'SPP' => 2500000,
+                'pelayaran' => 0,
+                'tunggakPelayaran' => 0,
+                'SPI' => 0,
+                'IPITS' => 0,
+                'penyegaran' => 0,
+                'tunggakSPP' => 0,
+                'tunggakSPI' => 0,
+                'tunggakIPITS' => 0,
+                'tunggakPenyegaran' => 0
+            ],
         ]);
     }
 }
