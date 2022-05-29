@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Kyslik\ColumnSortable\Sortable;
+
+
 
 class KurikulumController extends Controller
 {
@@ -55,7 +58,7 @@ class KurikulumController extends Controller
     }
     public function indexStaff()
     {
-        $mk = DB::table('mata_kuliah')->paginate(10);
+        $mk = \App\Models\MataKuliah::sortable()->paginate(10);
         return view('contents.staff.kurikulum', ['mk' => $mk]);
     }
 }

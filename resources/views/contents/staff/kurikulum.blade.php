@@ -39,13 +39,13 @@
                             <tr class="table-secondary">
                                 <th width="150px">Kode</th>
                                 <th width="200px">Mata Kuliah</th>
-                                <th width="50px">SKS</th>
+                                <th width="50px">@sortablelink('sks','SKS')</th>
                                 <th width="100px">Tahun</th>
-                                <th width="100px">Semester</th>
+                                <th width="100px">@sortablelink('semester', 'Semester')</th>
                                 <th colspan="2">Opsi</th>
                             </tr>
-
-                            @foreach ($mk as $p)
+                            @if($mk->count())
+                            @foreach ($mk  as $p )
                                 <tr>
                                     <td>{{ $p->kodeMataKuliah }}</td>
                                     <td>{{ $p->namaMataKuliah }}</td>
@@ -103,10 +103,11 @@
                                     <td><a href="/kurikulum/hapus/{{ $p->id }}" class="bi bi-archive-fill"></a></td>
                                 </tr>
                             @endforeach
+                            @endif
                         </table>
                     </div>
                 </div>
-                {{ $mk->links() }}
+                {!! $mk->appends(\Request::except('page'))->render() !!}
         </main>
     </div>
 
