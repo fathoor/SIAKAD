@@ -14,7 +14,7 @@
                 <h2 class="text-center text-dark mb-4">
                     <strong> Transkrip Mata Kuliah </strong>
                 </h2>
-                <form class="form-inline mb-3" id="input" style="width: 400px">
+                <form class="form-inline mb-3" id="input" style="width: 400px" action="/view-transkrip" method="POST">
                     @csrf
                     <div class="row align-items-center form-group">
                         <div class="col-2">
@@ -56,10 +56,10 @@
                             </select>
                         </div>
                     </div>
+                    <button type="submit" class="btn bg-blue text-white">
+                        Lihat Transkrip
+                    </button>
                 </form>
-                <button type="button" class="btn bg-blue text-white">
-                    Lihat Transkrip
-                </button>
             </div>
         </main>
     </div>

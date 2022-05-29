@@ -15,6 +15,8 @@ use App\Http\Controllers\DaftarKelasController;
 use App\Http\Controllers\SuratUndurDiriController;
 use App\Http\Controllers\DaftarKuesionerController;
 use App\Http\Controllers\DaftarMahasiswaController;
+use App\Http\Controllers\TranskripController;
+use App\Http\Controllers\TagihanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,9 +56,11 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
         return view('contents.frs');
     });
 
+    // Transkrip Route
     Route::get('/transkrip', function () {
         return view('contents.transkrip');
     });
+    Route::post('/view-transkrip', [TranskripController::class, 'view']);
 
     // Kurikulum Route
     Route::get('/kurikulum', [KurikulumController::class, 'indexMahasiswa']);
@@ -67,14 +71,9 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::post('/isi-kuesioner', [KuesionerController::class, 'isi']);
     Route::post('/submit-kuesioner', [KuesionerController::class, 'submit']);
 
-    // Finansial Route
-    Route::get('/ukt', function () {
-        return view('contents.ukt');
-    });
-
-    Route::get('/ukt-2', function () {
-        return view('contents.ukt-2');
-    });
+    // Tagihan Route
+    Route::get('/ukt', [TagihanController::class, 'index']);
+    Route::post('/detail', [TagihanController::class, 'detail']);
 
     // Layanan Route
     Route::get('/suratAktif', [SuratAktifController::class, 'index']);
