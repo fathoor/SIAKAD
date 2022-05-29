@@ -27,6 +27,7 @@ class SuratUndurDiriController extends Controller
 
         SuratUndurDiri::create([
             'suratUndurDiriNRP' => auth()->user()->NRP,
+            'type' => 'Surat Mengundurkan Diri',
             'periodeMundur' => $request->periode,
             'tanggalAjuan' => $today,
             'alasanCuti' => $request->alasan,
