@@ -27,12 +27,9 @@
                                         $period = $k->periode;
                                         $tahun = Str::substr($period, 0, 4);
                                         $semester = Str::substr($period, 4, 1);
-                                        $akhir = Carbon::parse($k->akhirPengisian)
-                                            ->locale('id')
-                                            ->isoFormat('DD MMMM YYYY');
                                         ?>
                                         <option value="{{ $k->periode }}"
-                                            {{ $k->tglAwal < date('Y-m-d') && $k->tglAkhir > date('Y-m-d') ? 'selected' : '' }}>
+                                            {{ $k->periode == $smtper->periode ? 'selected' : '' }}>
                                             @switch($semester)
                                                 @case('A')
                                                     Ganjil - {{ $tahun }}
@@ -50,30 +47,39 @@
                     </div>
                 </div>
 
+                <div class="my-3" style="color: red">
+                    @if ($periode->awalPengisian < date('Y-m-d') && $periode->akhirPengisian > date('Y-m-d'))
+                        Masa pengisian kuesioner belum selesai
+                    @endif
+                </div>
+
                 <div>
                     <table class="table table-hover table-bordered align-middle text-center small">
                         <tr class="table-secondary">
-                            <th width="250px">Kode Mata Kuliah</th>
-                            <th width="130px">Pertanyaan 1</th>
-                            <th width="130px">Pertanyaan 2</th>
-                            <th width="130px">Pertanyaan 3</th>
+                            <th width="250px">Mata Kuliah</th>
+                            <th width="130px">Kuesioner</th>
                         </tr>
-                        @foreach ($hasil as $h)
-                            <?php
-                    $d = auth()->user()->NRP;
-                    ?>
-                            @if ($h->dosenNRP == $d)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $h->kodeMK }}</td>
-
-                                    {{-- Isian Kuisioner --}}
-
-                                    <td>{{ $h->jawaban1 }}</td>
-                                    <td>{{ $h->jawaban2 }}</td>
-                                    <td>{{ $h->jawaban3 }}</td>
-                                </tr>
-                            @endif
+                        @foreach ($matkul as $mk)
+                            <tr>
+                                <td>{{ $mk->namaMataKuliah }}</td>
+                                <td>
+                                    <form action="/hasil-kuesioner" method="POST">
+                                        @csrf
+                                        <select name="periode" hidden>
+                                            @foreach ($kuesioner as $k)
+                                                <option value="{{ $k->periode }}"
+                                                    {{ $k->periode == $smtper->periode ? 'selected' : '' }}>
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <input type="hidden" name="kodeMK" value="{{ $mk->kodeMataKuliah }}">
+                                        <button type="submit" {{ $tersedia == false ? 'disabled' : '' }}
+                                            class="btn btn-warning btn-sm">
+                                            Hasil
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
                         @endforeach
                     </table>
                 </div>

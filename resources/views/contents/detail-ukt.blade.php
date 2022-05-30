@@ -74,61 +74,61 @@
                             <div class="input-group mb-1">
                                 <div class="input-group form-floating col me-2">
                                     <input type="text" id="TagihanSPP" name="TagihanSPP" class="form-control"
-                                        value={{ $detail->SPP }} disabled>
+                                        value="@rupiah($detail->SPP)" disabled>
                                     <label for="TagihanSPP" class="form-label">Tagihan SPP</label>
                                 </div>
                                 <div class="input-group form-floating col ms-2">
                                     <input type="text" id="TagihanPelayaran" name="TagihanPelayaran" class="form-control"
-                                        value={{ $detail->pelayaran }} disabled>
+                                        value="@rupiah($detail->pelayaran)" disabled>
                                     <label for="TagihanPelayaran" class="form-label">Tagihan Pelayaran</label>
                                 </div>
                             </div>
                             <div class="input-group mb-1">
                                 <div class="input-group form-floating col me-2">
                                     <input type="text" id="TunggakanPelayaran" name="TunggakanPelayaran"
-                                        class="form-control" value={{ $detail->tunggakPelayaran }} disabled>
+                                        class="form-control" value="@rupiah($detail->tunggakPelayaran)" disabled>
                                     <label for="TunggakanPelayaran" class="form-label">Tunggakan Pelayaran</label>
                                 </div>
                                 <div class="input-group form-floating col ms-2">
                                     <input type="text" id="TagihanSPI" name="TagihanSPI" class="form-control"
-                                        value={{ $detail->SPI }} disabled>
+                                        value="@rupiah($detail->SPI)" disabled>
                                     <label for="TagihanSPI" class="form-label">Tagihan SPI</label>
                                 </div>
                             </div>
                             <div class="input-group mb-1">
                                 <div class="input-group form-floating col me-2">
                                     <input type="text" id="TagihanIPITS" name="TagihanIPITS" class="form-control"
-                                        value={{ $detail->IPITS }} disabled>
+                                        value="@rupiah($detail->IPITS)" disabled>
                                     <label for="TagihanIPITS" class="form-label">Tagihan IPITS</label>
                                 </div>
 
                                 <div class="input-group form-floating col ms-2">
                                     <input type="text" id="TagihanKPENYEGARAN" name="TagihanKPENYEGARAN"
-                                        class="form-control" value={{ $detail->penyegaran }} disabled>
+                                        class="form-control" value="@rupiah($detail->penyegaran)" disabled>
                                     <label for="TagihanKPENYEGARAN" class="form-label">Tagihan KPENYEGARAN</label>
                                 </div>
                             </div>
                             <div class="input-group mb-1">
                                 <div class="input-group form-floating col me-2">
                                     <input type="text" id="TunggakanSPP" name="TunggakanSPP" class="form-control"
-                                        value={{ $detail->tunggakSPP }} disabled>
+                                        value="@rupiah($detail->tunggakSPP)" disabled>
                                     <label for="TunggakanSPP" class="form-label">Tunggakan SPP</label>
                                 </div>
                                 <div class="input-group form-floating col ms-2">
                                     <input type="text" id="TunggakanSPI" name="TunggakanSPI" class="form-control"
-                                        value={{ $detail->tunggakSPI }} disabled>
+                                        value="@rupiah($detail->tunggakSPI)" disabled>
                                     <label for="TunggakanSPI" class="form-label">Tunggakan SPI</label>
                                 </div>
                             </div>
                             <div class="input-group mb-1">
                                 <div class="input-group form-floating col me-2">
                                     <input type="text" id="TunggakanIPITS" name="TunggakanIPITS" class="form-control"
-                                        value={{ $detail->tunggakIPITS }} disabled>
+                                        value="@rupiah($detail->tunggakIPITS)" disabled>
                                     <label for="TunggakanIPITS" class="form-label">Tunggakan IPITS</label>
                                 </div>
                                 <div class="input-group form-floating col ms-2">
                                     <input type="text" id="TunggakanKPENYEGARAN" name="TunggakanKPENYEGARAN"
-                                        class="form-control" value={{ $detail->tunggakPenyegaran }} disabled>
+                                        class="form-control" value="@rupiah($detail->tunggakPenyegaran)" disabled>
                                     <label for="TunggakanKPENYEGARAN" class="form-label">Tunggakan KPENYEGARAN</label>
                                 </div>
                             </div>

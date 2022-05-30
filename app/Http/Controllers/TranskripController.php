@@ -8,6 +8,7 @@ class TranskripController extends Controller
 {
     public function view(Request $request)
     {
+
         return view('contents.view-transkrip');
     }
 }

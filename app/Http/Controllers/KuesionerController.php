@@ -11,7 +11,6 @@ class KuesionerController extends Controller
 {
     public function index()
     {
-        $ganti = false;
         $periode = Periode::orderBy('id', 'desc')->first();
         $kuesioner = Periode::all();
         $smtper = Periode::latest('id')->first();
@@ -24,12 +23,11 @@ class KuesionerController extends Controller
                 ['mata_kuliah.semester', '=', $smt]
             ])
             ->get();
-        return view('contents.kuesioner', ['smtper' => $smtper, 'periode' => $periode, 'matkul' => $matkul, 'kuesioner' => $kuesioner, $ganti]);
+        return view('contents.kuesioner', ['smtper' => $smtper, 'periode' => $periode, 'matkul' => $matkul, 'kuesioner' => $kuesioner]);
     }
 
     public function ganti(Request $request)
     {
-        $ganti = true;
         $periode = Periode::orderBy('id', 'desc')->first();
         $kuesioner = Periode::all();
         $smtper = Periode::where('periode', $request->periode)->first();
@@ -42,7 +40,7 @@ class KuesionerController extends Controller
                 ['mata_kuliah.semester', '=', $smt]
             ])
             ->get();
-        return view('contents.kuesioner', ['smtper' => $smtper, 'kuesioner' => $kuesioner, 'matkul' => $matkul, 'periode' => $periode, $ganti]);
+        return view('contents.kuesioner', ['smtper' => $smtper, 'kuesioner' => $kuesioner, 'matkul' => $matkul, 'periode' => $periode]);
     }
 
     public function isi(Request $request)
@@ -61,6 +59,7 @@ class KuesionerController extends Controller
         DB::table('hasil_kuesioner')
             ->insert([
                 'dosenNRP' => $request->dosenNRP,
+                'periode' => $request->periode,
                 'kodeMK' => $request->kodeMK,
                 'jawaban1' => $request->pertanyaan1,
                 'jawaban2' => $request->pertanyaan2,

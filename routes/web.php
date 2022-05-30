@@ -13,10 +13,10 @@ use App\Http\Controllers\SuratCutiController;
 use App\Http\Controllers\SuratAktifController;
 use App\Http\Controllers\DaftarKelasController;
 use App\Http\Controllers\SuratUndurDiriController;
-use App\Http\Controllers\DaftarKuesionerController;
 use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\TranskripController;
 use App\Http\Controllers\TagihanController;
+use App\Http\Controllers\HasilKuesionerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +99,11 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     Route::get('/dosen/mataKuliah', [DaftarKelasController::class, 'index']);
     Route::get('/dosen/mataKuliah/{kodeMK}', [DaftarKelasController::class, 'kelas']);
 
+    // Kuesioner
+    Route::get('/dosen/kuesioner', [HasilKuesionerController::class, 'index']);
+    Route::post('/dosen/kuesioner/gantiPeriode', [HasilKuesionerController::class, 'ganti']);
+    Route::post('/hasil-kuesioner', [HasilKuesionerController::class, 'hasil']);
+
     // Mahasiswa
     Route::get('/dosen/daftarMahasiswa', [DaftarMahasiswaController::class, 'index']);
     Route::get('/dosen/daftarMahasiswa/search', [DaftarMahasiswaController::class, 'search']);
@@ -111,8 +116,8 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::get('/dashboard/staff', [DashboardController::class, 'indexStaff'])->name('dashboard.staff');
     Route::get('/staff/kurikulum', [KurikulumController::class, 'indexStaff']);
     Route::post('/staff/kurikulum/add', [KurikulumController::class, 'create']);
-    Route::post('/staff/kurikulum/update{id}',[KurikulumController::class, 'update']);
-    Route::get('/staff/kurikulum/delete/{id}',[KurikulumController::class, 'delete']);
+    Route::post('/staff/kurikulum/update{id}', [KurikulumController::class, 'update']);
+    Route::get('/staff/kurikulum/delete/{id}', [KurikulumController::class, 'delete']);
 
 
     // Civitas
@@ -127,5 +132,4 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::get('staff/ukt-2', function () {
         return view('contents.staff.ukt-2');
     });
-
 });

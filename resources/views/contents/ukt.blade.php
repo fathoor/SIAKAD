@@ -19,9 +19,6 @@
                 <div class="my-4">
                     <table class="table table-hover table-bordered align-middle text-center">
                         <tr class="table-secondary">
-                            <th colspan="4">Semester 1</th>
-                        </tr>
-                        <tr class="table-secondary">
                             <th width="150px">Tahun Semester</th>
                             <th width="150px">Total Tagihan</th>
                             <th width="150px">Status</th>
@@ -30,7 +27,8 @@
                         @foreach ($tagihan as $t)
                             <tr>
                                 <td>{{ $t->periodeTagihan }}</td>
-                                <td>{{ $t->SPP + $t->pelayaran + $t->tunggakPelayaran + $t->SPI + $t->IPITS + $t->penyegaran + $t->tunggakSPP + $t->tunggakSPI + $t->tunggakIPITS + $t->tunggakPenyegaran }}
+                                <td>
+                                    @rupiah($t->SPP + $t->pelayaran + $t->tunggakPelayaran + $t->SPI + $t->IPITS + $t->penyegaran + $t->tunggakSPP + $t->tunggakSPI + $t->tunggakIPITS + $t->tunggakPenyegaran)
                                 </td>
                                 @switch($t->status)
                                     @case(1)

@@ -49,6 +49,7 @@
                     <form action="/submit-kuesioner" method="POST">
                         @csrf
                         <input type="hidden" name="dosenNRP" value="{{ $dosen->dosenNRP }}">
+                        <input type="hidden" name="periode" value="{{ $periode }}">
                         <input type="hidden" name="kodeMK" value="{{ $dosen->kodeMataKuliah }}">
                         <table class="table table-hover table-bordered align-middle text-center small my-4">
                             <tr class="table-secondary">

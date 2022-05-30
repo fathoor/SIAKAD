@@ -20,7 +20,7 @@
                     <tr>
                         <td>NRP/Nama</td>
                         <td>:</td>
-                        <td></td>
+                        <td>{{ auth()->user()->NRP }}/{{ auth()->user()->nama }}</td>
                     </tr>
                     <tr>
                         <td>SKS Tempuh / SKS Normal</td>
