@@ -123,6 +123,7 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     // Civitas
     Route::get('/staff/civitas', [CivitasController::class, 'index']);
     Route::post('/staff/civitas/store', [CivitasController::class, 'store']);
+    Route::post('/staff/civitas/update/{NRP}', [CivitasController::class, 'update']);
     Route::get('/staff/civitas/delete/{NRP}', [CivitasController::class, 'delete']);
 
     // Finansial

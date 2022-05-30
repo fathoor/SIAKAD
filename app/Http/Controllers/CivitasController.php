@@ -35,6 +35,26 @@ class CivitasController extends Controller
         return redirect('/staff/civitas');
     }
 
+    public function update(Request $request, $NRP)
+    {
+        User::where('NRP', $NRP)->update([
+            'NRP' => $request->NRP,
+            'nama' => $request->nama,
+            'password' => Hash::make($request->password),
+            'NIK' => null,
+            'tempatLahir' => null,
+            'tanggalLahir' => null,
+            'nomorTelp' => null,
+            'email' => $request->email,
+            'departemen' => 'Sistem Informasi',
+            'tahunMasuk' => null,
+            'alamat' => null,
+            'type' => $request->type
+        ]);
+
+        return redirect('/staff/civitas');
+    }
+
     public function delete($NRP)
     {
         User::where('NRP', $NRP)->delete();

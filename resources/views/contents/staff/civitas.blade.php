@@ -65,7 +65,7 @@
                             <th style="width: 100px">NRP</th>
                             <th style="width: 300px">Nama Lengkap</th>
                             <th style="width: 250px">Email</th>
-                            <th style="width: 72px">Option</th>
+                            <th style="width: 100px">Option</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -75,6 +75,52 @@
                             <td>{{ $a->nama }}</td>
                             <td>{{ $a->email }}</td>
                             <td>
+                                <div class="badge text-bg-warning shadow-sm me-1">
+                                    <a data-bs-toggle="modal" data-bs-target="#edit{{ $a ->NRP }}">
+                                        <i class="bi bi-gear-fill"></i>
+                                    </a>
+                                </div>
+                                <div class="modal fade"id="edit{{ $a->NRP }}" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content text-center">
+                                            <form action="/staff/civitas/update/{{ $a->NRP }}" id="input" method="POST">
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number" id="NRP" name="NRP" class="form-control" value="{{ $a->NRP }}" disabled required>
+                                                        <label for="NRP" class="form-label">NRP</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" id="nama" name="nama" class="form-control" value="{{ $a->nama }}" required>
+                                                        <label for="nama" class="form-label">Nama Lengkap</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="password" id="password" name="password" class="form-control" required>
+                                                        <label for="password" class="form-label">Password</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" id="email" name="email" class="form-control" value="{{ $a->email }}" required>
+                                                        <label for="email" class="form-label">Email</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <select class="form-select" id="type" name="type" required>
+                                                            <option value="" disabled>Tipe</option>
+                                                            <option value="0" {{ $a->type == 'mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
+                                                            <option value="1" {{ $a->type == 'dosen' ? 'selected' : '' }}>Dosen</option>
+                                                            <option value="2" {{ $a->type == 'staff' ? 'selected' : '' }}>Staff</option>
+                                                        </select>
+                                                        <label for="type">Tipe</label>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer justify-content-center">
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <i class="bi bi-save fs-6"></i>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="badge text-bg-danger shadow-sm"><a href="/staff/civitas/delete/{{ $a->NRP }}"><i class="bi bi-trash-fill"></i></a></div>
                             </td>
                         </tr>
