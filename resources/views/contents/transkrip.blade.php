@@ -40,7 +40,7 @@
                                 value="{{ auth()->user()->nama }}" disabled>
                         </div>
                     </div>
-                    <div class="row align-items-center form-group">
+                    <div class="row align-items-center form-group mb-2">
                         <div class="col-2">
                             <label for="format" class="col-form-label">Format</label>
                         </div>
@@ -56,7 +56,7 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn bg-blue text-white">
+                    <button type="submit" class="btn btn-primary">
                         Lihat Transkrip
                     </button>
                 </form>
