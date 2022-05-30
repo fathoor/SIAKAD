@@ -106,16 +106,25 @@
                     </form>
                 </div>
                 <div class="container my-4 text-center">
-                    <table class="table table-responsive table-striped table-bordered table-fixed text-center">
+                    <table class="table table-responsive table-striped table-bordered text-center table-hover align-middle">
                         <tr class="table-secondary">
-                            <th scope="col">Kode</th>
-                            <th scope="col">Mata Kuliah</th>
-                            <th scope="col">SKS</th>
-                            <th scope="col">Kelas</th>
-                            <th scope="col">Alih Kredit</th>
-                            <th scope="col">Dosen</th>
-                            <th scope="col">Nilai</th>
+                            <th width="150px">Kode</th>
+                            <th width="300px">Mata Kuliah</th>
+                            <th width="50px">SKS</th>
+                            <th width="50px">Kelas</th>
+                            <th width="300px">Dosen</th>
+                            <th width="100px">Nilai</th>
                         </tr>
+                        @foreach($mk3 as $p)
+                        <tr>
+                            <td>{{ $p->kodeMataKuliah }}</td>
+                            <td>{{ $p->namaMataKuliah }}</td>
+                            <td>{{ $p->sks }}</td>
+                            <td>{{ $p->kelas }}</td>
+                            <td>{{ $p->dosen }}</td>
+                            <td>{{ $p->nilai }}</td>
+                        </tr>
+                        @endforeach
                     </table>
                 </div>
         </main>
