@@ -31,7 +31,15 @@
                         </div>
                         <div class="card-text mb-1">
                             <div class="mb-2">{{ $m->nama }}</div>
+                            @foreach($status as $s)
+                            @if($s->NRP == $m->NRP)
+                            @if($s->status == false)
                             <div class="badge text-bg-danger shadow-sm">Belum Disetujui</div>
+                            @else
+                            <div class="badge text-bg-success shadow-sm">Disetujui</div>
+                            @endif
+                            @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -47,23 +55,53 @@
                         </tr>
                         @foreach($frs as $f)
                         @if($f->NRP == $m->NRP)
-                        <tr>
+                        <tr class="{{ $f->matkulAtas == true ? 'table-danger' : '' }}">
                             <td>{{ $f->kodeMataKuliah }}</td>
                             <td>{{ $f->namaMataKuliah }}</td>
                             <td>{{ $f->sks }}</td>
                             <td>{{ $f->kelas }}</td>
                             <td>{{ $f->dosenNama }}</td>
-                            @foreach($nilai as $n)
-                            @if($n->NRP == $m->NRP && $n->kodeMK == $f->kodeMK)
-                            <td>{{ $n->nilaiAngka }}</td>
-                            @endif
-                            @endforeach
+                            <td>
+                                @if($f->nilai == 0)
+                                *
+                                @elseif(0 < $f->nilai && $f->nilai <= 40)
+                                E
+                                @elseif(40 < $f->nilai && $f->nilai <= 55)
+                                D
+                                @elseif(55 < $f->nilai && $f->nilai <= 60)
+                                C
+                                @elseif(60 < $f->nilai && $f->nilai <= 65)
+                                BC
+                                @elseif(65 < $f->nilai && $f->nilai <= 75)
+                                B
+                                @elseif(75 < $f->nilai && $f->nilai <= 85)
+                                AB
+                                @elseif(85 < $f->nilai && $f->nilai <= 100)
+                                A
+                                @endif
+                            </td>
                         </tr>
                         @endif
                         @endforeach
                     </table>
                     <div class="text-center">
-                        <a class="badge text-bg-primary shadow-sm" href="#">Setujui</a>
+                        @foreach($mahasiswa as $m)
+                        @foreach($status as $s)
+                        @if($s->NRP == $m->NRP)
+                        <div>
+                            <form action="/dosen/FRS/accept{{ $m->NRP }}" method="POST">
+                                @csrf
+                                <button class="btn btn-success shadow-sm me-2" type="submit" name="accept" value="1">
+                                    <i class="bi bi-check-lg"></i>
+                                </button>
+                                <button class="btn btn-danger shadow-sm" type="submit" name="accept" value="0">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            </form>
+                        </div>
+                        @endif
+                        @endforeach
+                        @endforeach
                     </div>
                 </div>
             </div>

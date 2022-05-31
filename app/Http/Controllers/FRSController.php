@@ -18,17 +18,29 @@ class FRSController extends Controller
 
         $frs = DB::table('frs')
         ->leftjoin('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
-        ->leftjoin('dosen', 'dosen.dosenKodeMK', '=', 'frs.kodeMK')
+        ->leftjoin('dosen', function($join){
+            $join->on('dosen.dosenKodeMK', '=', 'frs.kodeMK');
+            $join->on('dosen.dosenNRP', '=', 'frs.dosenNRP');})
         ->orderBy('kodeMK', 'asc')
         ->get();
 
-        $nilai = DB::table('nilai_mk')->get();
+        $status = DB::table('frs_status')->get();
 
         return view('contents.dosen.frs', [
             'dosen' => $dosen,
             'mahasiswa' => $mahasiswa,
             'frs' => $frs,
-            'nilai' => $nilai
+            'status' => $status
         ]);
+    }
+
+    public function accept(Request $request, $NRP)
+    {
+        DB::table('frs_status')->where('NRP', $NRP)->update([
+            'NRP' => $NRP,
+            'status' => $request->input('accept')
+        ]);
+
+        return redirect('/dosen/FRS');
     }
 }
