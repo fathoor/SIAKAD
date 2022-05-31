@@ -62,10 +62,10 @@
                 <table class="table table-responsive table-striped table-hover table-bordered text-center">
                     <thead>
                         <tr class="table-secondary">
-                            <th style="width: 100px">NRP</th>
+                            <th style="width: 130px">NRP</th>
                             <th style="width: 300px">Nama Lengkap</th>
-                            <th style="width: 250px">Email</th>
-                            <th style="width: 100px">Option</th>
+                            <th style="width: 300px">Email</th>
+                            <th colspan="2" style="width: 100px">Option</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -75,9 +75,9 @@
                             <td>{{ $a->nama }}</td>
                             <td>{{ $a->email }}</td>
                             <td>
-                                <div class="badge text-bg-warning shadow-sm me-1">
+                                <div class="badge text-bg-warning shadow-sm">
                                     <a data-bs-toggle="modal" data-bs-target="#edit{{ $a ->NRP }}">
-                                        <i class="bi bi-gear-fill"></i>
+                                        <i class="bi bi-pencil-fill"></i>
                                     </a>
                                 </div>
                                 <div class="modal fade"id="edit{{ $a->NRP }}" tabindex="-1" aria-hidden="true">
@@ -121,6 +121,8 @@
                                         </div>
                                     </div>
                                 </div>
+                            </td>
+                            <td>
                                 <div class="badge text-bg-danger shadow-sm"><a href="/staff/civitas/delete/{{ $a->NRP }}"><i class="bi bi-trash-fill"></i></a></div>
                             </td>
                         </tr>
