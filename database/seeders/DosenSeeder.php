@@ -66,6 +66,26 @@ class DosenSeeder extends Seeder
                 'dosenNama' => 'Ir. Achmad Holil Noor Ali, M.Kom.',
                 'dosenKodeMK' => 'IS184308'
             ],
+            [
+                'dosenNRP' => 5026210,
+                'dosenNama' => 'Ir. Achmad Holil Noor Ali, M.Kom.',
+                'dosenKodeMK' => 'IS184413'
+            ],
+            [
+                'dosenNRP' => 5026211,
+                'dosenNama' => 'Andre Parvian Aristio, S.Kom, M.Sc',
+                'dosenKodeMK' => 'IS184414'
+            ],
+            [
+                'dosenNRP' => 5026212,
+                'dosenNama' => 'Faizal Mahananto, S.Kom., M.Eng., Ph.D.',
+                'dosenKodeMK' => 'IS184621'
+            ],
+            [
+                'dosenNRP' => 5026213,
+                'dosenNama' => 'Reny Nadlifatin, S.Kom., MBA., Ph.D',
+                'dosenKodeMK' => 'IS184624'
+            ],
         ]);
     }
 }

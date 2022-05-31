@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             NilaiMKSeeder::class,
             DaftarKelasSeeder::class,
             FRSSeeder::class,
+            FRSStatusSeeder::class,
             WaliSeeder::class,
 
             //Kurikulum
