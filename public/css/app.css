@@ -33,7 +33,7 @@ a {
 }
 
 a:hover {
-    color:inherit; 
+    color:inherit;
     text-decoration:none;
     cursor:pointer
 }
@@ -77,6 +77,10 @@ a:hover {
 
 .bg-blue {
     background-color: var(--blue)
+}
+
+.text-blue {
+    color: var(--blue);
 }
 
 .container {
