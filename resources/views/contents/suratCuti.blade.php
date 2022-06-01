@@ -59,10 +59,18 @@
                     <td>{{ $c->alasanCuti }}</td>
                     @if($c->status == true)
                     <td>Disetujui</td>
-                    <td>Cetak</td> {{-- Ini tolong dikasi tombol aja --}}
+                    <td>
+                        <button class="btn btn-outline-light bg-transparent">
+                            <img src="https://png.pngtree.com/png-vector/20190129/ourlarge/pngtree-printer-vector-icon-png-image_355796.jpg" width="30 px" height="30 px" alt="h">
+                        </button>
+                    </td> {{-- Ini tolong dikasi tombol aja --}}
                     @else
                     <td>Menunggu</td>
-                    <td>Cetak</td> {{-- Ini juga tombol tapi disabled --}}
+                    <td>
+                        <button class="btn btn-outline-light bg-transparent" disabled>
+                            <img src="https://png.pngtree.com/png-vector/20190129/ourlarge/pngtree-printer-vector-icon-png-image_355796.jpg" width="30 px" height="30 px" alt="h">
+                        </button>
+                    </td> {{-- Ini juga tombol tapi disabled --}}
                     @endif
                 </tr>
                 @endforeach
