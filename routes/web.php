@@ -120,6 +120,10 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::post('/staff/kurikulum/update{id}', [KurikulumController::class, 'update']);
     Route::get('/staff/kurikulum/delete/{id}', [KurikulumController::class, 'delete']);
 
+    //Akademik
+    Route::get('/staff/kelas', function () {
+        return view('contents.staff.kelas');
+    });
 
     // Civitas
     Route::get('/staff/civitas', [CivitasController::class, 'index']);
