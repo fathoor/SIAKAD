@@ -55,9 +55,10 @@
                                         <td>{{ $p->semester }}</td>
                                         <td>
 
-                                            <a class="bi bi-pencil-square" id="tombolEdit" data-bs-toggle="modal"
-                                                data-bs-target="#editModal{{ $p -> id }}"></a>
-                                            <div class="modal fade" id="editModal{{ $p -> id }}" tabindex="-1"
+                                            <a class=" badge text-bg-warning shadow-sm" id="tombolEdit"
+                                                data-bs-toggle="modal" data-bs-target="#editModal{{ $p->id }}">
+                                                <i class="bi bi-pencil-fill"></i></a>
+                                            <div class="modal fade" id="editModal{{ $p->id }}" tabindex="-1"
                                                 aria-labelledby="editModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -67,7 +68,9 @@
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form class="form-inline" id="input" action="/staff/kurikulum/update{{ $p -> id }}" method="POST">
+                                                            <form class="form-inline" id="input"
+                                                                action="/staff/kurikulum/update{{ $p->id }}"
+                                                                method="POST">
                                                                 @csrf
                                                                 <div class="form-group row mb-3">
                                                                     <label for="kodeMataKuliah"
@@ -78,7 +81,7 @@
                                                                         <input type="text" id="kodeMataKuliah"
                                                                             name="kodeMataKuliah"
                                                                             class="form-control bg-transparent border-white"
-                                                                            value="{{ $p -> kodeMataKuliah }}">
+                                                                            value="{{ $p->kodeMataKuliah }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row mb-3">
@@ -90,7 +93,7 @@
                                                                         <input type="text" id="namaMataKuliah"
                                                                             name="namaMataKuliah"
                                                                             class="form-control bg-transparent border-white"
-                                                                            value="{{ $p -> namaMataKuliah }}">
+                                                                            value="{{ $p->namaMataKuliah }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row mb-3">
@@ -100,7 +103,7 @@
                                                                     <div class="col-9">
                                                                         <input type="text" id="sks" name="sks"
                                                                             class="form-control bg-transparent border-white"
-                                                                            value="{{ $p -> sks }}">
+                                                                            value="{{ $p->sks }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row mb-3">
@@ -112,7 +115,7 @@
                                                                         <input type="text" id="tahunKurikulum"
                                                                             name="tahunKurikulum"
                                                                             class="form-control bg-transparent border-white"
-                                                                            value="{{ $p -> tahunKurikulum }}">
+                                                                            value="{{ $p->tahunKurikulum }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row mb-3">
@@ -123,7 +126,7 @@
                                                                     <div class="col-9">
                                                                         <input type="text" id="semester" name="semester"
                                                                             class="form-control bg-transparent border-white"
-                                                                            value="{{ $p -> semester }}">
+                                                                            value="{{ $p->semester }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row mb-3">
@@ -134,7 +137,7 @@
                                                                     <div class="col-9">
                                                                         <input type="text" id="kodeKelas" name="kodeKelas"
                                                                             class="form-control bg-transparent border-white"
-                                                                            value="{{ $p -> kodeKelas }}">
+                                                                            value="{{ $p->kodeKelas }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">
@@ -146,13 +149,16 @@
                                                             </form>
 
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
 
                                         </td>
-                                        <td><a href="/staff/kurikulum/delete/{{ $p->id }}" class="bi bi-archive-fill" onclick="return confirm('Yakin untuk menghapus?')"></a>
+                                        <td><a href="/staff/kurikulum/delete/{{ $p->id }}"
+                                                class="badge text-bg-danger shadow-sm"
+                                                onclick="return confirm('Yakin untuk menghapus?')">
+                                                <i class="bi bi-trash-fill"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
