@@ -19,6 +19,13 @@
                     <form class="form-inline" id="input" action="" method="POST">
                         @csrf
                         <div class="form-group row mb-3">
+                            <label for="nrp" class="col-3 col-form-label">NRP</label>
+                            <label for="nrp" class="col-1 col-form-label">:</label>
+                            <div class="col-8">
+                                <input class="form-control" type="text" name="nrp" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
                             <label for="matakuliah" class="col-3 col-form-label">Mata Kuliah</label>
                             <label for="matakuliah" class="col-1 col-form-label">:</label>
                             <div class="col-8">
@@ -30,13 +37,6 @@
                                     <option value="mpti">Manajemen Proyek TI</option>
                                     <option value="dmjk">Desain Manajemen Perangkat Lunak</option>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-3">
-                            <label for="nrp" class="col-3 col-form-label">NRP</label>
-                            <label for="nrp" class="col-1 col-form-label">:</label>
-                            <div class="col-8">
-                                <input class="form-control" type="text" name="nrp" required>
                             </div>
                         </div>
                         <div class="form-group row mb-3">

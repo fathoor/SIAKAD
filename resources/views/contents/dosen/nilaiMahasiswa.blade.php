@@ -64,6 +64,15 @@
                                 echo $bobot;
                                 ?>
                             </td>
+                            <td>
+                                <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+                                <a href="#" class="btn btn-primary btn-lg">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-lg">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
