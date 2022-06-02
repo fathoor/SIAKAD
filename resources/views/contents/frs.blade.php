@@ -43,13 +43,15 @@
                 <form class="form-inline mb-3" id="input" style="width: 1000px">
                     @csrf
                     <div class="row align-items-center form-group">
+                        <div class="col-2">
+                        </div>
                         <div class="col-1">
                             <label for="NRP" class="col-form-label">NRP</label>
                         </div>
                         <div class="col-1">
                             :
                         </div>
-                        <div class="col-4">
+                        <div class="col-2">
                             <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-0"
                                 value="{{ auth()->user()->NRP }}" disabled>
                         </div>
@@ -65,13 +67,15 @@
                         </div>
                     </div>
                     <div class="row align-items-center form-group">
+                        <div class="col-2">
+                        </div>
                         <div class="col-1">
                             <label for="namaMahasiswa" class="col-form-label">Nama</label>
                         </div>
                         <div class="col-1">
                             :
                         </div>
-                        <div class="col-4">
+                        <div class="col-2">
                             <input type="text" id="nama" name="nama" class="form-control bg-transparent border-0"
                                 value="{{ auth()->user()->nama }}" disabled>
                         </div>
@@ -86,13 +90,15 @@
                         </div>
                     </div>
                     <div class="row align-items-center form-group">
+                        <div class="col-2">
+                        </div>
                         <div class="col-1">
                             <label for="namaMahasiswa" class="col-form-label">IPK</label>
                         </div>
                         <div class="col-1">
                             :
                         </div>
-                        <div class="col-4">
+                        <div class="col-2">
                             ---
                         </div>
                         <div class="col-1">
