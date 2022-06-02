@@ -163,6 +163,7 @@
                                     @endforeach
                                 @endif
                             </table>
+                            {{ $mk->links('pagination::bootstrap-5') }}
                         </div>
                         <div class="modal fade" id="createData" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -235,7 +236,6 @@
                         </div>
                     </div>
                 </div>
-                {{ $mk->links('pagination::bootstrap-5') }}
         </main>
     </div>
 
