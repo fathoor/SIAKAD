@@ -4,39 +4,49 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Dosen;
+use App\Models\Wali;
+use App\Models\FRS;
+use App\Models\FRSStatus;
 
 class FRSController extends Controller
 {
-    public function indexDosen()
+    public function indexDosen(Request $request)
     {
-        $dosen = DB::table('dosen')->get();
+        if ($request->periode != ''){
+            $periode = $request->periode;
+        }else{
+            $periode = 'Genap 2021';
+        }
 
-        $mahasiswa = DB::table('wali')
-        ->where('dosenNRP', auth()->user()->NRP)
-        ->leftjoin('akun', 'akun.NRP', '=', 'wali.mahasiswaNRP')
+        $dosen = Dosen::get();
+
+        $mahasiswa = Wali::where('dosenNRP', auth()->user()->NRP)
+        ->join('akun', 'akun.NRP', '=', 'wali.mahasiswaNRP')
+        ->join('frs_status', 'frs_status.NRP', '=', 'wali.mahasiswaNRP')
         ->get();
 
-        $frs = DB::table('frs')
-        ->leftjoin('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
-        ->leftjoin('dosen', function($join){
+        $frs = FRS::join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
+        ->join('dosen', function($join){
             $join->on('dosen.dosenKodeMK', '=', 'frs.kodeMK');
             $join->on('dosen.dosenNRP', '=', 'frs.dosenNRP');})
         ->orderBy('kodeMK', 'asc')
         ->get();
 
-        $status = DB::table('frs_status')->get();
+        $status = FRSStatus::where('periode', $periode)->get();
 
         return view('contents.dosen.frs', [
             'dosen' => $dosen,
             'mahasiswa' => $mahasiswa,
             'frs' => $frs,
-            'status' => $status
+            'status' => $status,
+            'periode' => $periode
         ]);
     }
 
     public function accept(Request $request, $NRP)
     {
-        DB::table('frs_status')->where('NRP', $NRP)->update([
+        FRSStatus::where('NRP', $NRP)->update([
             'NRP' => $NRP,
             'status' => $request->input('accept')
         ]);

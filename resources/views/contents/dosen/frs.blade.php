@@ -21,7 +21,23 @@
                 @endif
                 @endforeach
             </div>
+            <form class="row mb-4 justify-content-center" action="/dosen/FRS" method="POST">
+                @csrf
+                <div class="col-9">
+                    <select class="form-select" name="periode">
+                        <option value="" disabled selected>Periode</option>
+                        <option value="Genap 2021">Genap 2021</option>
+                        <option value="Ganjil 2021">Ganjil 2021</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <button type="submit" class="btn btn-primary">
+                        Ganti
+                    </button>
+                </div>
+            </form>
             @foreach($mahasiswa as $m)
+            @if($m->periode == $periode)
             <div class="row justify-content-center mb-4">
                 <div class="card shadow-sm mb-4" style="width: 20rem">
                     <div class="card-body text-center">
@@ -85,7 +101,6 @@
                         @endforeach
                     </table>
                     <div class="text-center">
-                        @foreach($mahasiswa as $m)
                         @foreach($status as $s)
                         @if($s->NRP == $m->NRP)
                         <div>
@@ -101,10 +116,10 @@
                         </div>
                         @endif
                         @endforeach
-                        @endforeach
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
     </main>

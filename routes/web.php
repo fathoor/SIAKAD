@@ -108,6 +108,7 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     Route::get('/dosen/daftarMahasiswa', [DaftarMahasiswaController::class, 'index']);
     Route::get('/dosen/daftarMahasiswa/search', [DaftarMahasiswaController::class, 'search']);
     Route::get('/dosen/FRS', [FRSController::class, 'indexDosen']);
+    Route::post('/dosen/FRS', [FRSController::class, 'indexDosen']);
     Route::post('/dosen/FRS/accept{NRP}', [FRSController::class, 'accept']);
 
     //Nilai Mahasiswa
