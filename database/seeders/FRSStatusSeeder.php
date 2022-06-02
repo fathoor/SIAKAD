@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\FRSStatus;
 
 class FRSStatusSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class FRSStatusSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('frs_status')->insert([
+        FRSStatus::insert([
             [
                 'NRP' => 5026201139,
                 'periode' => 'Genap 2021',
@@ -23,6 +23,51 @@ class FRSStatusSeeder extends Seeder
             ],
             [
                 'NRP' => 5026201000,
+                'periode' => 'Genap 2021',
+                'status' => true
+            ],
+            [
+                'NRP' => 5026201007,
+                'periode' => 'Genap 2021',
+                'status' => false
+            ],
+            [
+                'NRP' => 5026201045,
+                'periode' => 'Genap 2021',
+                'status' => false
+            ],
+            [
+                'NRP' => 5026201054,
+                'periode' => 'Genap 2021',
+                'status' => false
+            ],
+            [
+                'NRP' => 5026201068,
+                'periode' => 'Genap 2021',
+                'status' => false
+            ],
+            [
+                'NRP' => 5026201091,
+                'periode' => 'Genap 2021',
+                'status' => false
+            ],
+            [
+                'NRP' => 5026201096,
+                'periode' => 'Genap 2021',
+                'status' => false
+            ],
+            [
+                'NRP' => 5026201115,
+                'periode' => 'Genap 2021',
+                'status' => false
+            ],
+            [
+                'NRP' => 5026201130,
+                'periode' => 'Genap 2021',
+                'status' => false
+            ],
+            [
+                'NRP' => 5026201141,
                 'periode' => 'Genap 2021',
                 'status' => false
             ],

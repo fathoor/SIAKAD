@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Dosen;
 
 class DosenSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class DosenSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('dosen')->insert([
+        Dosen::insert([
             [
                 'dosenNRP' => 5026201,
                 'dosenNama' => 'Radityo Prasetianto Wibowo, S.Kom, M.Kom.',
@@ -29,7 +29,7 @@ class DosenSeeder extends Seeder
             [
                 'dosenNRP' => 5026203,
                 'dosenNama' => 'Bekti Cahyo Hidayanto, S.Si., M.Kom.',
-                'dosenKodeMK' => 'IS184309'
+                'dosenKodeMK' => 'IS184411'
             ],
             [
                 'dosenNRP' => 5026204,
