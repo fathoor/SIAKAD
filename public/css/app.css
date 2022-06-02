@@ -43,8 +43,6 @@ a:hover {
     display: flex;
     flex-grow: 0;
     position: sticky;
-    /* left: 0;
-    top: 0; */
     width: 100vw;
     padding: 10px 20px;
     align-items: center;
@@ -69,7 +67,6 @@ a:hover {
     }
 }
 
-
 /* Body */
 .bg-white {
     background-color: var(--white)
@@ -86,7 +83,6 @@ a:hover {
 .container {
     display: flex;
     flex: 1 auto;
-    /* margin: 0; */
     padding: 20px;
     flex-direction: column;
     align-items: center;
@@ -109,15 +105,17 @@ a:hover {
     max-width: 320px
 }
 
+.table {
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
 /* Footer */
 .footer {
     display: flex;
     flex-grow: 0;
     flex-direction: column;
-    /* position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100vw; */
     padding: 40px 20px;
     text-align: center;
 }
