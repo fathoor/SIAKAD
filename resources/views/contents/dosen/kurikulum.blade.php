@@ -16,15 +16,7 @@
                 </div>
                 <div class="d-flex flex-row">
                     <div class="d-flex flex-col mx-3">
-                        <h5 class="fw-semibold my-2">Tahun Kurikulum</h5>
-                    </div>
-                    <div class="d-flex flex-col mx-3">
-                        <select class="form-select " aria-label="Default select example">
-                            <option selected>Tahun</option>
-                            <option value="1">2018</option>
-                            <option value="2">2019</option>
-                            <option value="3">2020</option>
-                        </select>
+                        <h5 class="fw-semibold my-2">Tahun Kurikulum 2018</h5>
                     </div>
                 </div>
                 <div class="my-4">
@@ -33,17 +25,17 @@
                             <th colspan="3">Semester 1</th>
                         </tr>
                         <tr class="table-secondary">
-                            <th width="150px">Kode</th>
-                            <th width="200px">Mata Kuliah</th>
-                            <th width="50px">SKS</th>
+                            <th width="100px">Kode</th>
+                            <th width="350px">Mata Kuliah</th>
+                            <th width="60px">SKS</th>
                         </tr>
-                        @foreach($mk1 as $p)
-                        <tr>
-                            <td>{{ $p->kodeMataKuliah }}</td>
-                            <td>{{ $p->namaMataKuliah }}</td>
-                            <td>{{ $p->sks }}</td>
-                            
-                        </tr>
+                        @foreach ($mk1 as $p)
+                            <tr>
+                                <td>{{ $p->kodeMataKuliah }}</td>
+                                <td>{{ $p->namaMataKuliah }}</td>
+                                <td>{{ $p->sks }}</td>
+
+                            </tr>
                         @endforeach
                     </table>
                     <table class="table table-hover table-bordered align-middle text-center">
@@ -51,17 +43,17 @@
                             <th colspan="3">Semester 2</th>
                         </tr>
                         <tr class="table-secondary">
-                            <th width="150px">Kode</th>
-                            <th width="200px">Mata Kuliah</th>
-                            <th width="50px">SKS</th>
+                            <th width="100px">Kode</th>
+                            <th width="350px">Mata Kuliah</th>
+                            <th width="60px">SKS</th>
                         </tr>
-                        @foreach($mk2 as $p)
-                        <tr>
-                            <td>{{ $p->kodeMataKuliah }}</td>
-                            <td>{{ $p->namaMataKuliah }}</td>
-                            <td>{{ $p->sks }}</td>
-                            
-                        </tr>
+                        @foreach ($mk2 as $p)
+                            <tr>
+                                <td>{{ $p->kodeMataKuliah }}</td>
+                                <td>{{ $p->namaMataKuliah }}</td>
+                                <td>{{ $p->sks }}</td>
+
+                            </tr>
                         @endforeach
                     </table>
                     <table class="table table-hover table-bordered align-middle text-center">
@@ -69,17 +61,17 @@
                             <th colspan="3">Semester 3</th>
                         </tr>
                         <tr class="table-secondary">
-                            <th width="150px">Kode</th>
-                            <th width="200px">Mata Kuliah</th>
-                            <th width="50px">SKS</th>
+                            <th width="100px">Kode</th>
+                            <th width="350px">Mata Kuliah</th>
+                            <th width="60px">SKS</th>
                         </tr>
-                        @foreach($mk3 as $p)
-                        <tr>
-                            <td>{{ $p->kodeMataKuliah }}</td>
-                            <td>{{ $p->namaMataKuliah }}</td>
-                            <td>{{ $p->sks }}</td>
-                            
-                        </tr>
+                        @foreach ($mk3 as $p)
+                            <tr>
+                                <td>{{ $p->kodeMataKuliah }}</td>
+                                <td>{{ $p->namaMataKuliah }}</td>
+                                <td>{{ $p->sks }}</td>
+
+                            </tr>
                         @endforeach
                     </table>
                     <table class="table table-hover table-bordered align-middle text-center">
@@ -87,16 +79,16 @@
                             <th colspan="3">Semester 4</th>
                         </tr>
                         <tr class="table-secondary">
-                            <th width="150px">Kode</th>
-                            <th width="200px">Mata Kuliah</th>
-                            <th width="50px">SKS</th>
+                            <th width="100px">Kode</th>
+                            <th width="350px">Mata Kuliah</th>
+                            <th width="60px">SKS</th>
                         </tr>
-                        @foreach($mk4 as $p)
-                        <tr>
-                            <td>{{ $p->kodeMataKuliah }}</td>
-                            <td>{{ $p->namaMataKuliah }}</td>
-                            <td>{{ $p->sks }}</td>
-                        </tr>
+                        @foreach ($mk4 as $p)
+                            <tr>
+                                <td>{{ $p->kodeMataKuliah }}</td>
+                                <td>{{ $p->namaMataKuliah }}</td>
+                                <td>{{ $p->sks }}</td>
+                            </tr>
                         @endforeach
                     </table>
                     <table class="table table-hover table-bordered align-middle text-center">
@@ -104,16 +96,16 @@
                             <th colspan="3">Semester 5</th>
                         </tr>
                         <tr class="table-secondary">
-                            <th width="150px">Kode</th>
-                            <th width="200px">Mata Kuliah</th>
-                            <th width="50px">SKS</th>
+                            <th width="100px">Kode</th>
+                            <th width="350px">Mata Kuliah</th>
+                            <th width="60px">SKS</th>
                         </tr>
-                        @foreach($mk5 as $p)
-                        <tr>
-                            <td>{{ $p->kodeMataKuliah }}</td>
-                            <td>{{ $p->namaMataKuliah }}</td>
-                            <td>{{ $p->sks }}</td>
-                        </tr>
+                        @foreach ($mk5 as $p)
+                            <tr>
+                                <td>{{ $p->kodeMataKuliah }}</td>
+                                <td>{{ $p->namaMataKuliah }}</td>
+                                <td>{{ $p->sks }}</td>
+                            </tr>
                         @endforeach
                     </table>
                     <table class="table table-hover table-bordered align-middle text-center">
@@ -121,16 +113,16 @@
                             <th colspan="3">Semester 6</th>
                         </tr>
                         <tr class="table-secondary">
-                            <th width="150px">Kode</th>
-                            <th width="200px">Mata Kuliah</th>
-                            <th width="50px">SKS</th>
+                            <th width="100px">Kode</th>
+                            <th width="350px">Mata Kuliah</th>
+                            <th width="60px">SKS</th>
                         </tr>
-                        @foreach($mk6 as $p)
-                        <tr>
-                            <td>{{ $p->kodeMataKuliah }}</td>
-                            <td>{{ $p->namaMataKuliah }}</td>
-                            <td>{{ $p->sks }}</td>
-                        </tr>
+                        @foreach ($mk6 as $p)
+                            <tr>
+                                <td>{{ $p->kodeMataKuliah }}</td>
+                                <td>{{ $p->namaMataKuliah }}</td>
+                                <td>{{ $p->sks }}</td>
+                            </tr>
                         @endforeach
                     </table>
                     <table class="table table-hover table-bordered align-middle text-center">
@@ -138,16 +130,16 @@
                             <th colspan="3">Semester 7</th>
                         </tr>
                         <tr class="table-secondary">
-                            <th width="150px">Kode</th>
-                            <th width="200px">Mata Kuliah</th>
-                            <th width="50px">SKS</th>
+                            <th width="100px">Kode</th>
+                            <th width="350px">Mata Kuliah</th>
+                            <th width="60px">SKS</th>
                         </tr>
-                        @foreach($mk7 as $p)
-                        <tr>
-                            <td>{{ $p->kodeMataKuliah }}</td>
-                            <td>{{ $p->namaMataKuliah }}</td>
-                            <td>{{ $p->sks }}</td>
-                        </tr>
+                        @foreach ($mk7 as $p)
+                            <tr>
+                                <td>{{ $p->kodeMataKuliah }}</td>
+                                <td>{{ $p->namaMataKuliah }}</td>
+                                <td>{{ $p->sks }}</td>
+                            </tr>
                         @endforeach
                     </table>
                 </div>
