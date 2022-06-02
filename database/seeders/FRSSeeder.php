@@ -21,7 +21,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201000,
                 'kodeMK' => 'IS184411',
                 'kelas' => 'A',
-                'dosenNRP' => 5026203,
+                'dosenNRP' => 5026212,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -30,7 +30,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201000,
                 'kodeMK' => 'IS184412',
                 'kelas' => 'A',
-                'dosenNRP' => 5026201,
+                'dosenNRP' => 5026203,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -39,7 +39,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201000,
                 'kodeMK' => 'IS184413',
                 'kelas' => 'A',
-                'dosenNRP' => 5026210,
+                'dosenNRP' => 5026207,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -48,7 +48,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201000,
                 'kodeMK' => 'IS184414',
                 'kelas' => 'A',
-                'dosenNRP' => 5026211,
+                'dosenNRP' => 5026234,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -57,7 +57,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201000,
                 'kodeMK' => 'IS184621',
                 'kelas' => 'A',
-                'dosenNRP' => 5026212,
+                'dosenNRP' => 5026226,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -76,7 +76,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201139,
                 'kodeMK' => 'IS184413',
                 'kelas' => 'B',
-                'dosenNRP' => 5026210,
+                'dosenNRP' => 5026214,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -85,7 +85,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201139,
                 'kodeMK' => 'IS184414',
                 'kelas' => 'A',
-                'dosenNRP' => 5026211,
+                'dosenNRP' => 5026234,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -94,7 +94,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201139,
                 'kodeMK' => 'IS184621',
                 'kelas' => 'C',
-                'dosenNRP' => 5026212,
+                'dosenNRP' => 5026221,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -103,7 +103,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201139,
                 'kodeMK' => 'IS184624',
                 'kelas' => 'C',
-                'dosenNRP' => 5026213,
+                'dosenNRP' => 5026237,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => true
@@ -122,7 +122,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201054,
                 'kodeMK' => 'IS184413',
                 'kelas' => 'B',
-                'dosenNRP' => 5026210,
+                'dosenNRP' => 5026214,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -131,7 +131,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201054,
                 'kodeMK' => 'IS184414',
                 'kelas' => 'A',
-                'dosenNRP' => 5026211,
+                'dosenNRP' => 5026234,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -140,7 +140,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201054,
                 'kodeMK' => 'IS184621',
                 'kelas' => 'C',
-                'dosenNRP' => 5026212,
+                'dosenNRP' => 5026221,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -149,7 +149,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201054,
                 'kodeMK' => 'IS184624',
                 'kelas' => 'C',
-                'dosenNRP' => 5026213,
+                'dosenNRP' => 5026237,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => true
@@ -168,7 +168,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201115,
                 'kodeMK' => 'IS184413',
                 'kelas' => 'C',
-                'dosenNRP' => 5026210,
+                'dosenNRP' => 5026207,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -177,7 +177,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201115,
                 'kodeMK' => 'IS184414',
                 'kelas' => 'A',
-                'dosenNRP' => 5026211,
+                'dosenNRP' => 5026234,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -186,7 +186,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201115,
                 'kodeMK' => 'IS184621',
                 'kelas' => 'B',
-                'dosenNRP' => 5026212,
+                'dosenNRP' => 5026226,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false
@@ -195,7 +195,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201115,
                 'kodeMK' => 'IS184624',
                 'kelas' => 'C',
-                'dosenNRP' => 5026213,
+                'dosenNRP' => 5026237,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => true

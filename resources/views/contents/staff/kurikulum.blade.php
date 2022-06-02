@@ -16,15 +16,7 @@
                 </div>
                 <div class="d-flex flex-row">
                     <div class="d-flex flex-col mx-3">
-                        <h5 class="fw-semibold my-2">Tahun Kurikulum</h5>
-                    </div>
-                    <div class="d-flex flex-col mx-3">
-                        <select class="form-select " aria-label="Default select example">
-                            <option selected>Tahun</option>
-                            <option value="1">2018</option>
-                            <option value="2">2019</option>
-                            <option value="3">2020</option>
-                        </select>
+                        <h5 class="fw-semibold my-2">Tahun Kurikulum 2018</h5>
                     </div>
                 </div>
                 <div class="my-4">
@@ -42,9 +34,9 @@
                                     <th colspan="7">Mata Kuliah</th>
                                 </tr>
                                 <tr class="table-secondary">
-                                    <th width="150px">@sortablelink('kodeMataKuliah', 'Kode')</th>
-                                    <th width="200px">@sortablelink('namaMataKuliah', 'Matakuliah')</th>
-                                    <th width="50px">@sortablelink('sks', 'SKS')</th>
+                                    <th width="100px">@sortablelink('kodeMataKuliah', 'Kode')</th>
+                                    <th width="350px">@sortablelink('namaMataKuliah', 'Matakuliah')</th>
+                                    <th width="60px">@sortablelink('sks', 'SKS')</th>
                                     <th width="100px">@sortablelink('tahunKurikulum', 'Tahun')</th>
                                     <th width="100px">@sortablelink('semester', 'Semester')</th>
                                     <th colspan="2">Opsi</th>
@@ -171,6 +163,7 @@
                                     @endforeach
                                 @endif
                             </table>
+                            {{ $mk->links('pagination::bootstrap-5') }}
                         </div>
                         <div class="modal fade" id="createData" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -243,7 +236,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $mk->appends(\Request::except('page'))->render() !!}
         </main>
     </div>
 

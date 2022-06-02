@@ -28,14 +28,14 @@
                             <td>{{ auth()->user()->NRP }}</td>
                         </tr>
                         <tr>
-                            <td>SKS Tempuh / SKS Normal</td>
+                            <td>SKS Tempuh / SKS Lulus</td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $sksTempuh }}/{{ $sksLulus }}</td>
                         </tr>
                         <tr>
                             <td>Status</td>
                             <td>:</td>
-                            <td></td>
+                            <td>Normal</td>
                         </tr>
                     </table>
                 </div>
@@ -105,14 +105,17 @@
                     <form class="form-inline" id="input">
                         @csrf
                         <div class="form-group row mb-2">
-                            <label for="" class="col-9 col-form-label">Total Sks</label>
+                            <label for="" class="col-4 col-form-label">Total Sks</label>
                             <label for="" class="col-1 col-form-label">: </label>
-                            <div class="col-2"></div>
+                            <div class="col-7"></div>
                         </div>
                         <div class="form-group row mb-2">
-                            <label for="" class="col-9 col-form-label">IPK</label>
+                            <label for="" class="col-4   col-form-label">IPK</label>
                             <label for="" class="col-1 col-form-label">: </label>
-                            <div class="col-2"></div>
+                            <div class="col-7">
+                                <input type="text" id="IPK" name="IPK" class="form-control bg-transparent border-0"
+                                value="{{ auth()->user()->ipk }}" disabled>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -15,11 +15,7 @@
                 <h2 class="fw-bold">Formulir Rencana Studi</h2>
             </div>
             <div class="row mb-4">
-                @foreach($dosen as $d)
-                @if($d->dosenNRP == auth()->user()->NRP)
-                <span class="badge text-bg-light shadow-sm">{{ $d->dosenNama }}</span>
-                @endif
-                @endforeach
+                <span class="badge text-bg-light shadow-sm">{{ $dosen->dosenNama }}</span>
             </div>
             <form class="row mb-4 justify-content-center" action="/dosen/FRS" method="POST">
                 @csrf
@@ -71,7 +67,7 @@
                         </tr>
                         @foreach($frs as $f)
                         @if($f->NRP == $m->NRP)
-                        <tr class="{{ $f->matkulAtas == true ? 'table-danger' : '' }}">
+                        <tr class="{{ $f->matkulAtas == true ? 'table-warning' : '' }}">
                             <td>{{ $f->kodeMataKuliah }}</td>
                             <td>{{ $f->namaMataKuliah }}</td>
                             <td>{{ $f->sks }}</td>

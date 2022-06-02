@@ -19,7 +19,7 @@ class FRSController extends Controller
             $periode = 'Genap 2021';
         }
 
-        $dosen = Dosen::get();
+        $dosen = Dosen::where('dosenNRP', auth()->user()->NRP)->first();
 
         $mahasiswa = Wali::where('dosenNRP', auth()->user()->NRP)
         ->join('akun', 'akun.NRP', '=', 'wali.mahasiswaNRP')

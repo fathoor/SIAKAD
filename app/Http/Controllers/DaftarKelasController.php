@@ -4,48 +4,51 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\MataKuliah;
+use App\Models\DaftarKelas;
+use App\Models\Dosen;
+use App\Models\FRS;
+use App\Models\FRSStatus;
 
 class DaftarKelasController extends Controller
 {
     public function index()
     {
-        $mk = DB::table('mata_kuliah')
-        ->leftjoin('daftar_kelas', 'daftar_kelas.kodeKelas', '=', 'mata_kuliah.kodeKelas')
-        ->get();
+        $mk = MataKuliah::orderByRaw('semester ASC, kodeMataKuliah ASC')->paginate(6);
 
-        $kapasitas = DB::table('nilai_mk')
+        $peserta = FRSStatus::where([['frs_status.periode', 'Genap 2021'], ['status', true]])
+        ->join('frs', 'frs.NRP', '=', 'frs_status.NRP')
         ->select('kodeMK', DB::raw('count(*) as total'))
         ->groupBy('kodeMK')
         ->get();
 
-        $dosen = DB::table('dosen')->get();
+        $dosen = Dosen::get();
 
         return view('contents.dosen.mataKuliah', [
             'mk' => $mk,
-            'kapasitas' => $kapasitas,
+            'peserta' => $peserta,
             'dosen' => $dosen
         ]);
     }
 
-    public function kelas($kodeMK)
+    public function kelas($kodeMK, $kelas)
     {
-        $peserta = DB::table('nilai_mk')
-        ->leftjoin('akun', 'akun.NRP', '=', 'nilai_mk.NRP')
-        ->where('kodeMK', $kodeMK)
-        ->orderBy('nilai_mk.NRP', 'asc')
+        $peserta = FRS::join('akun', 'akun.NRP', '=', 'frs.NRP')
+        ->join('frs_status', 'frs_status.NRP', '=', 'frs.NRP')
+        ->where([['kodeMK', $kodeMK], ['kelas', $kelas], ['frs_status.periode', 'Genap 2021'], ['status', true]])
+        ->orderBy('frs.NRP', 'asc')
         ->get();
 
-        $mk = DB::table('mata_kuliah')
-        ->leftjoin('daftar_kelas', 'daftar_kelas.kodeKelas', '=', 'mata_kuliah.kodeKelas')
-        ->get();
-
-        $dosen = DB::table('dosen')->get();
+        $mk = MataKuliah::join('daftar_kelas', 'daftar_kelas.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+        ->join('dosen', 'dosen.dosenkodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+        ->where([['kodeMataKuliah', $kodeMK], ['kelas', $kelas]])
+        ->first();
 
         return view('contents.dosen.kelas', [
             'peserta' => $peserta,
             'mk' => $mk,
             'kode' => $kodeMK,
-            'dosen' => $dosen
+            'kelas' => $kelas
         ]);
     }
 }
