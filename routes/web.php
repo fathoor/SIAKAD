@@ -109,6 +109,11 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     Route::get('/dosen/daftarMahasiswa/search', [DaftarMahasiswaController::class, 'search']);
     Route::get('/dosen/FRS', [FRSController::class, 'indexDosen']);
     Route::post('/dosen/FRS/accept{NRP}', [FRSController::class, 'accept']);
+
+    //Nilai Mahasiswa
+    Route::get('dosen/nilaiMahasiswa2', function () {
+        return view('contents.dosen.nilaiMahasiswa2');
+    });
 });
 
 // Staff Route

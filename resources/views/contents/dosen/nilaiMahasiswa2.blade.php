@@ -19,6 +19,13 @@
                     <form class="form-inline" id="input" action="" method="POST">
                         @csrf
                         <div class="form-group row mb-3">
+                            <label for="nrp" class="col-3 col-form-label">NRP</label>
+                            <label for="nrp" class="col-1 col-form-label">:</label>
+                            <div class="col-8">
+                                <input class="form-control" type="text" name="nrp" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
                             <label for="matakuliah" class="col-3 col-form-label">Mata Kuliah</label>
                             <label for="matakuliah" class="col-1 col-form-label">:</label>
                             <div class="col-8">
@@ -36,33 +43,11 @@
                             <label for="sks" class="col-3 col-form-label">SKS</label>
                             <label for="sks" class="col-1 col-form-label">:</label>
                             <div class="col-8">
-                                <input type="number" name="sks" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group row mb-3">
-                            <label for="semester" class="col-3 col-form-label">Semester</label>
-                            <label for="semester" class="col-1 col-form-label">:</label>
-                            <div class="col-8">
-                                <select class="form-select" name="semester" required>
+                                <select class="form-select" name="sks" required>
                                     <option selected disabled value="">Pilih</option>
-                                    <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-3">
-                            <label for="nrp" class="col-3 col-form-label">NRP</label>
-                            <label for="nrp" class="col-1 col-form-label">:</label>
-                            <div class="col-8">
-                                <select class="form-select" name="nrp" required>
-                                    <option selected disabled value="">Pilih</option>
-                                    <option value="5026201001">5026201001</option>
-                                    <option value="5026201002">5026201002</option>
-                                    <option value="5026201003">5026201003</option>
                                 </select>
                             </div>
                         </div>
@@ -70,7 +55,7 @@
                             <label for="nilaiangka" class="col-3 col-form-label">Nilai Angka</label>
                             <label for="nilaiangka" class="col-1 col-form-label">:</label>
                             <div class="col-8">
-                                <input type="number" name="nilaiangka" required="required">
+                                <input  class="form-control" type="number" name="nilaiangka" required>
                             </div>
                         </div>
                     </form>

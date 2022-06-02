@@ -23,9 +23,9 @@
                     <thead>
                         <tr class="table-secondary">
                             <th>No</th>
+                            <th>NRP</th>
                             <th>Mata Kuliah</th>
                             <th>SKS</th>
-                            <th>NRP</th>
                             <th>Nilai Angka</th>
                             <th>Nilai Huruf</th>
                             <th>Bobot</th>
@@ -35,18 +35,24 @@
                         @foreach($nilaikuliah as $n)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
+                            <td>{{ $n->nrp }}</td>
                             <td>{{ $n->matakuliah }}</td>
                             <td>{{ $n->sks }}</td>
-                            <td>{{ $n->nrp }}</td>
                             <td>{{ $n->nilaiangka }}</td>
                             <td>
                                 <?php
                                 if($n->nilaiangka <=40){
+                                    echo "E";
+                                } elseif ($n->nilaiangka >=41 && $n->nilaiangka <=55) {
                                     echo "D";
-                                } elseif ($n->nilaiangka >=41 && $n->nilaiangka <=60) {
+                                } elseif ($n->nilaiangka >=56 && $n->nilaiangka <=60) {
                                     echo "C";
-                                } elseif ($n->nilaiangka >=61 && $n->nilaiangka <=75) {
+                                } elseif ($n->nilaiangka >=61 && $n->nilaiangka <=65) {
+                                    echo "BC";
+                                } elseif ($n->nilaiangka >=66 && $n->nilaiangka <=75) {
                                     echo "B";
+                                } elseif ($n->nilaiangka >=76 && $n->nilaiangka <=85) {
+                                    echo "AB";
                                 } else{
                                     echo "A";
                                 }
@@ -57,6 +63,15 @@
                                 $bobot = $n->nilaiangka * $n->sks;
                                 echo $bobot;
                                 ?>
+                            </td>
+                            <td>
+                                <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+                                <a href="#" class="btn btn-primary btn-lg">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-lg">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </a>
                             </td>
                         </tr>
                         @endforeach
