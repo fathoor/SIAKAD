@@ -15,28 +15,22 @@
                     <h2><strong>Formulir Rencana Studi (FRS)</strong></h2>
                     <form id="input" action="" method="POST">
                         <div class="row g-3 my-2">
+                            <div class="col-1 text-end"></div>
                             <div class="col-3 text-end">
-                                <label for="inputTahunKurikulum" class="col-form-label"><strong>Tahun
-                                        Kurikulum:</strong></label>
+                                <label for="inputTahunKurikulum" class="col-form-label"><strong>Periode:</strong></label>
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <select class="form-select" aria-label="Default select example">
-                                    <option value="1">Gasal</option>
-                                    <option value="2">Genap</option>
-                                </select>
-                            </div>
-                            <div class="col-3">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="1">2018</option>
-                                    <option value="2">2019</option>
-                                    <option value="3">2020</option>
-                                    <option value="4">2021</option>
-                                    <option value="5">2022</option>
+                                    <option value="2020A">Gasal - 2020</option>
+                                    <option value="2020B">Genap - 2020</option>
+                                    <option value="2021A">Gasal - 2021</option>
+                                    <option value="2021B">Genap - 2018</option>
                                 </select>
                             </div>
                             <div class="col-3 text-start">
                                 <button type="button" class="btn btn-primary">Ganti</button>
                             </div>
+                            <div class="col-1 text-end"></div>
                         </div>
                     </form>
                 </div>
@@ -106,6 +100,22 @@
                         </div>
                     </div>
                 </form>
+                <div class="bg-secondary bg-opacity-25 p-3">
+                    <form class="form-inline" id="input" style="width: 700px">
+                        @csrf
+                        <label for="" class="mb-3">Daftar Mata Kuliah:</label>
+                        <select class="form-select mb-4" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-light me-md-2" type="button">Ambil</button>
+                            <button class="btn btn-light" type="button">Peserta</button>
+                        </div>
+                    </form>
+                </div>
                 <div class="container my-4 text-center">
                     <table class="table table-responsive table-striped table-bordered text-center table-hover align-middle">
                         <tr class="table-secondary">

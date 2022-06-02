@@ -26,20 +26,20 @@
                                 @csrf
                                 <form>
                                     <div class="row mb-3">
-                                        <label for="" class="col-sm-3 col-form-label">Kode Kelas</label>
-                                        <div class="col-sm-9">
+                                        <label for="" class="col-sm-4 col-form-label">Kode Mata Kuliah</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" id="" required>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="" class="col-sm-3 col-form-label">Mata Kuliah</label>
-                                        <div class="col-sm-9">
+                                        <label for="" class="col-sm-4 col-form-label">Mata Kuliah</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" id="" required>
                                         </div>
                                     </div>
                                     <div class="row mb-3 text-start">
-                                        <label for="" class="col-sm-3 form-label-inline text-center">SKS</label>
-                                        <div class="col-sm-9">
+                                        <label for="" class="col-sm-4 form-label-inline text-center">SKS</label>
+                                        <div class="col-sm-8">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                                     id="inlineRadio2" value="option2" required>
@@ -58,8 +58,8 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="" class="col-sm-3 col-form-label">Kelas</label>
-                                        <div class="col-sm-9">
+                                        <label for="" class="col-sm-4 col-form-label">Kelas</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" id="" required>
                                         </div>
                                     </div>
