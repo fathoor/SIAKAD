@@ -1,6 +1,6 @@
 @extends('dashboard')
 
-@section('title', 'Kelas ' . $kode)
+@section('title', 'Kelas ' . $kode . $kelas)
 
 {{-- Content --}}
 @section('main')
@@ -11,27 +11,19 @@
         {{-- /view/contents/ --}}
         <div class="content">
             {{-- Isi disini --}}
-            @foreach($mk as $m)
-            @if($m->kodeMataKuliah == $kode)
             <div class="row text-center">
-                <h2 class="fw-bold">{{ $m->namaMataKuliah }}</h2>
+                <h2 class="fw-bold">{{ $mk->namaMataKuliah }} [{{ $kelas }}]</h2>
             </div>
-            @foreach($dosen as $d)
-            @if($d->dosenKodeMK == $m->kodeMataKuliah)
             <div class="mb-4">
-                <span class="badge text-bg-light shadow-sm">{{ $d->dosenNama }}</span>
+                <span class="badge text-bg-light shadow-sm">{{ $mk->dosenNama }}</span>
             </div>
-            @endif
-            @endforeach
-            @endif
-            @endforeach
             <div>
                 <table class="table table-hover table-striped table-bordered align-middle text-center">
                     <thead>
                         <tr class="table-secondary">
-                            <th>No</th>
-                            <th>NRP</th>
-                            <th>Nama Mahasiswa</th>
+                            <th style="width: 50px">No</th>
+                            <th style="width: 130px">NRP</th>
+                            <th style="width: 300px">Nama Mahasiswa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,7 +40,7 @@
             <div>
                 <a href="/dosen/mataKuliah">
                     <button class="btn btn-danger">
-                        <i class="bi bi-arrow-counterclockwise fs-5"></i>
+                        <i class="bi bi-arrow-counterclockwise fs-6"></i>
                     </button>
                 </a>
             </div>

@@ -40,7 +40,7 @@
                                         <span class="badge text-bg-primary shadow-sm">{{ $m->kodeKelas }}</span>
                                         @foreach($peserta as $p)
                                         @if($p->kodeMK == $m->kodeMataKuliah)
-                                        <span class="badge text-bg-warning shadow-sm">{{ $p->total }}</span>
+                                        <span class="badge text-bg-secondary shadow-sm">{{ $p->total }}</span>
                                         @endif
                                         @endforeach
                                     </div>
@@ -50,11 +50,11 @@
                     </div>
                     <div class="collapse" id="collapse{{ $m->kodeMataKuliah }}">
                         <div class="text-center mt-4">
-                            <a class="btn btn-warning me-2 shadow-sm" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/A">A</a>
-                            <a class="btn btn-warning me-2 shadow-sm" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/B">B</a>
-                            <a class="btn btn-warning me-2 shadow-sm" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/C">C</a>
-                            <a class="btn btn-warning me-2 shadow-sm" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/D">D</a>
-                            <a class="btn btn-warning me-2 shadow-sm" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/I">IUP</a>
+                            <a class="btn btn-light me-2 shadow-sm fw-bold" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/A">A</a>
+                            <a class="btn btn-light me-2 shadow-sm fw-bold" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/B">B</a>
+                            <a class="btn btn-light me-2 shadow-sm fw-bold" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/C">C</a>
+                            <a class="btn btn-light me-2 shadow-sm fw-bold" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/D">D</a>
+                            <a class="btn btn-light me-2 shadow-sm fw-bold" href="/dosen/mataKuliah/{{ $m->kodeMataKuliah }}/I">IUP</a>
                         </div>
                     </div>
                 </div>

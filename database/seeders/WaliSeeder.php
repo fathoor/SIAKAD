@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Wali;
 
 class WaliSeeder extends Seeder
 {
@@ -15,38 +15,38 @@ class WaliSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('wali')->insert([
+        Wali::insert([
             [
                 'mahasiswaNRP' => 5026201139,
                 'dosenNRP' => 5026201
             ],
             [
                 'mahasiswaNRP' => 5026201130,
-                'dosenNRP' => 5026202
+                'dosenNRP' => 5026201
             ],
             [
                 'mahasiswaNRP' => 5026201141,
-                'dosenNRP' => 5026203
+                'dosenNRP' => 5026201
             ],
             [
                 'mahasiswaNRP' => 5026201054,
-                'dosenNRP' => 5026204
+                'dosenNRP' => 5026201
             ],
             [
                 'mahasiswaNRP' => 5026201045,
-                'dosenNRP' => 5026205
+                'dosenNRP' => 5026201
             ],
             [
                 'mahasiswaNRP' => 5026201115,
-                'dosenNRP' => 5026206
+                'dosenNRP' => 5026201
             ],
             [
                 'mahasiswaNRP' => 5026201096,
-                'dosenNRP' => 5026207
+                'dosenNRP' => 5026202
             ],
             [
                 'mahasiswaNRP' => 5026201109,
-                'dosenNRP' => 5026208
+                'dosenNRP' => 5026202
             ],
             [
                 'mahasiswaNRP' => 5026201007,
@@ -54,7 +54,7 @@ class WaliSeeder extends Seeder
             ],
             [
                 'mahasiswaNRP' => 5026201000,
-                'dosenNRP' => 5026201
+                'dosenNRP' => 5026202
             ],
         ]);
     }
