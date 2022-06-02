@@ -48,7 +48,7 @@
                             :
                         </div>
                         <div class="col-9">
-                            <select class="form-select form-select-sm" aria-label="Default select example">
+                            <select name="format" class="form-select form-select-sm" aria-label="Default select example">
                                 <option value="1">Webpage</option>
                                 <option value="2">Plain HTML</option>
                                 <option value="3">Microsoft Word Document</option>

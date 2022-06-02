@@ -28,14 +28,14 @@
                             <td>{{ auth()->user()->NRP }}</td>
                         </tr>
                         <tr>
-                            <td>SKS Tempuh / SKS Normal</td>
+                            <td>SKS Tempuh / SKS Lulus</td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $sksTempuh }}/{{ $sksLulus }}</td>
                         </tr>
                         <tr>
                             <td>Status</td>
                             <td>:</td>
-                            <td></td>
+                            <td>Normal</td>
                         </tr>
                     </table>
                 </div>
