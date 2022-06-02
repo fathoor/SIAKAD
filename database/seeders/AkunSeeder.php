@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class AkunSeeder extends Seeder
 {
@@ -16,32 +16,12 @@ class AkunSeeder extends Seeder
      */
     public function run()
     {
-        /*
-            php artisan make:seeder NamaSeeder
-
-            DB::table('Nama Tabel')->insert([
-                [
-                'NRP' => NRP,
-                'nama' => 'Nama Lengkap',
-                'password' => Hash::make('password'),
-                'NIK' => NIK,
-                'tempatLahir' => '...',
-                'tanggalLahir' => 'YYYY-MM-DD',
-                'nomorTelp' => Nomor tanpa 0,
-                'email' => '...',
-                'departemen' => '...',
-                'tahunMasuk' => ...,
-                'alamat' => '...'
-                'type' => '0/1' 0 : Mahasiswa, 1 : Dosen
-                ]
-            ]);
-        */
-        DB::table('akun')->insert([
+        User::insert([
             // Default User Mahasiswa
             [
                 'NRP' => 5026201000,
                 'nama' => 'Mahasiswa',
-                'password' => Hash::make('mahasiswa'),
+                'password' => Hash::make('admin'),
                 'NIK' => null,
                 'tempatLahir' => null,
                 'tanggalLahir' => null,
@@ -159,7 +139,7 @@ class AkunSeeder extends Seeder
                 'tempatLahir' => 'Jakarta',
                 'tanggalLahir' => '2001-08-16',
                 'nomorTelp' => 81317090159,
-                'email' => 'alanathufailah.205026@mhs.its.ac.id                ',
+                'email' => 'alanathufailah.205026@mhs.its.ac.id',
                 'departemen' => 'Sistem Informasi',
                 'tahunMasuk' => 2020,
                 'alamat' => 'Citra Grand 01 no. 011',
@@ -179,22 +159,8 @@ class AkunSeeder extends Seeder
                 'alamat' => 'Jln Gunung Krakatau no 18, HOP 2',
                 'type' => 0
             ],
-            // Default User Dosen
-            [
-                'NRP' => 5026200,
-                'nama' => 'Dosen',
-                'password' => Hash::make('dosen'),
-                'NIK' => null,
-                'tempatLahir' => null,
-                'tanggalLahir' => null,
-                'nomorTelp' => null,
-                'email' => 'dosen@its.ac.id',
-                'departemen' => 'Sistem Informasi',
-                'tahunMasuk' => null,
-                'alamat' => null,
-                'type' => 1
-            ],
             // Dosen
+            // ADDI
             [
                 'NRP' => 5026201,
                 'nama' => 'Radityo Prasetianto Wibowo',
@@ -211,13 +177,13 @@ class AkunSeeder extends Seeder
             ],
             [
                 'NRP' => 5026202,
-                'nama' => 'Mahendrawathi Er.',
+                'nama' => 'Renny Pradina',
                 'password' => Hash::make('dosen'),
                 'NIK' => null,
                 'tempatLahir' => null,
                 'tanggalLahir' => null,
                 'nomorTelp' => null,
-                'email' => 'mahendra_w@is.its.ac.id',
+                'email' => 'renny@is.its.ac.id',
                 'departemen' => 'Sistem Informasi',
                 'tahunMasuk' => null,
                 'alamat' => null,
@@ -225,34 +191,6 @@ class AkunSeeder extends Seeder
             ],
             [
                 'NRP' => 5026203,
-                'nama' => 'Bekti Cahyo Hidayanto',
-                'password' => Hash::make('dosen'),
-                'NIK' => null,
-                'tempatLahir' => null,
-                'tanggalLahir' => null,
-                'nomorTelp' => null,
-                'email' => 'bekticahyo@is.its.ac.id',
-                'departemen' => 'Sistem Informasi',
-                'tahunMasuk' => null,
-                'alamat' => null,
-                'type' => 1
-            ],
-            [
-                'NRP' => 5026204,
-                'nama' => 'Ika Nurkasanah',
-                'password' => Hash::make('dosen'),
-                'NIK' => null,
-                'tempatLahir' => null,
-                'tanggalLahir' => null,
-                'nomorTelp' => null,
-                'email' => 'ika@is.its.ac.id',
-                'departemen' => 'Sistem Informasi',
-                'tahunMasuk' => null,
-                'alamat' => null,
-                'type' => 1
-            ],
-            [
-                'NRP' => 5026205,
                 'nama' => 'Faizal Johan Atletiko',
                 'password' => Hash::make('dosen'),
                 'NIK' => null,
@@ -265,81 +203,11 @@ class AkunSeeder extends Seeder
                 'alamat' => null,
                 'type' => 1
             ],
-            [
-                'NRP' => 5026206,
-                'nama' => 'Faizal Mahananto',
-                'password' => Hash::make('dosen'),
-                'NIK' => null,
-                'tempatLahir' => null,
-                'tanggalLahir' => null,
-                'nomorTelp' => null,
-                'email' => 'fmahananto@is.its.ac.id',
-                'departemen' => 'Sistem Informasi',
-                'tahunMasuk' => null,
-                'alamat' => null,
-                'type' => 1
-            ],
-            [
-                'NRP' => 5026207,
-                'nama' => 'Retno Aulia Vinarti',
-                'password' => Hash::make('dosen'),
-                'NIK' => null,
-                'tempatLahir' => null,
-                'tanggalLahir' => null,
-                'nomorTelp' => null,
-                'email' => 'zahra_17@is.its.ac.id',
-                'departemen' => 'Sistem Informasi',
-                'tahunMasuk' => null,
-                'alamat' => null,
-                'type' => 1
-            ],
-            [
-                'NRP' => 5026208,
-                'nama' => 'Ahmad Mukhlason',
-                'password' => Hash::make('dosen'),
-                'NIK' => null,
-                'tempatLahir' => null,
-                'tanggalLahir' => null,
-                'nomorTelp' => null,
-                'email' => 'mukhlason@is.its.ac.id',
-                'departemen' => 'Sistem Informasi',
-                'tahunMasuk' => null,
-                'alamat' => null,
-                'type' => 1
-            ],
-            [
-                'NRP' => 5026209,
-                'nama' => 'Edwin Riksakomara',
-                'password' => Hash::make('dosen'),
-                'NIK' => null,
-                'tempatLahir' => null,
-                'tanggalLahir' => null,
-                'nomorTelp' => null,
-                'email' => 'erk@is.its.ac.id',
-                'departemen' => 'Sistem Informasi',
-                'tahunMasuk' => null,
-                'alamat' => null,
-                'type' => 1
-            ],
-            [
-                'NRP' => 5026210,
-                'nama' => 'Achmad Holil Noor Ali',
-                'password' => Hash::make('dosen'),
-                'NIK' => null,
-                'tempatLahir' => null,
-                'tanggalLahir' => null,
-                'nomorTelp' => null,
-                'email' => 'holil@is.its.ac.id',
-                'departemen' => 'Sistem Informasi',
-                'tahunMasuk' => null,
-                'alamat' => null,
-                'type' => 1
-            ],
             // Default User Staff
             [
                 'NRP' => 5026,
                 'nama' => 'Staff',
-                'password' => Hash::make('staff'),
+                'password' => Hash::make('admin'),
                 'NIK' => null,
                 'tempatLahir' => null,
                 'tanggalLahir' => null,

@@ -99,7 +99,7 @@ class MataKuliahSeeder extends Seeder
             [
                 'kodeMataKuliah' => 'IS184411',
                 'kodeKelas' => 'SI4102',
-                'namaMataKuliah' => 'Desain & Manajemen Jaringan',
+                'namaMataKuliah' => 'Desain & Manajemen Jaringan Komputer',
                 'sks' => 4,
                 'tahunKurikulum' => 2018,
                 'semester' => 3
@@ -163,7 +163,7 @@ class MataKuliahSeeder extends Seeder
             [
                 'kodeMataKuliah' => 'IS184519',
                 'kodeKelas' => 'SI4102',
-                'namaMataKuliah' => 'Perencanaan strategis TI',
+                'namaMataKuliah' => 'Perencanaan Strategis TI',
                 'sks' => 3,
                 'tahunKurikulum' => 2018,
                 'semester' => 5
