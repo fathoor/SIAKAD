@@ -38,11 +38,29 @@
                 </table>
             </div>
             <div>
-                <a href="/dosen/mataKuliah">
-                    <button class="btn btn-danger">
-                        <i class="bi bi-arrow-counterclockwise fs-6"></i>
-                    </button>
-                </a>
+                @switch(auth()->user()->type)
+                    @case('mahasiswa')
+                        <a href="/dashboard">
+                            <button class="btn btn-danger">
+                                <i class="bi bi-arrow-counterclockwise fs-6"></i>
+                            </button>
+                        </a>
+                        @break
+                    @case('dosen')
+                        <a href="/dosen/mataKuliah">
+                            <button class="btn btn-danger">
+                                <i class="bi bi-arrow-counterclockwise fs-6"></i>
+                            </button>
+                        </a>
+                        @break
+                    @case('staff')
+                        <a href="/dashboard/staff">
+                            <button class="btn btn-danger">
+                                <i class="bi bi-arrow-counterclockwise fs-6"></i>
+                            </button>
+                        </a>
+                        @break
+                @endswitch
             </div>
         </div>
     </main>

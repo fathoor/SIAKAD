@@ -37,15 +37,20 @@ Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('g
 Route::post('/', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-// Error Route
-Route::get('/restricted', function () {
-    return view('restricted');
-})->name('error');
-
-// Profile Route
-Route::get('/biodata', [BiodataController::class, 'index']);
-Route::get('/biodata/edit', [BiodataController::class, 'edit']);
-Route::post('/biodata/update', [BiodataController::class, 'update']);
+Route::middleware('auth')->group(function () {
+    // Error Route
+    Route::get('/restricted', function () {
+        return view('restricted');
+    })->name('error');
+    
+    // Profile Route
+    Route::get('/biodata', [BiodataController::class, 'index']);
+    Route::get('/biodata/edit', [BiodataController::class, 'edit']);
+    Route::post('/biodata/update', [BiodataController::class, 'update']);
+    
+    // Peserta Route
+    Route::get('/peserta/{kodeMK}/{kelas}', [DaftarKelasController::class, 'kelas']);
+});
 
 // Mahasiswa Route
 Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
@@ -91,7 +96,6 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Akademik
     Route::get('/dosen/kurikulum', [KurikulumController::class, 'indexDosen']);
     Route::get('/dosen/mataKuliah', [DaftarKelasController::class, 'index']);
-    Route::get('/dosen/mataKuliah/{kodeMK}/{kelas}', [DaftarKelasController::class, 'kelas']);
 
     // Kuesioner
     Route::get('/dosen/kuesioner', [HasilKuesionerController::class, 'index']);

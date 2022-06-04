@@ -18,6 +18,7 @@ class DaftarKelasController extends Controller
 
         $peserta = FRSStatus::where([['frs_status.periode', 'Genap 2021'], ['status', true]])
         ->join('frs', 'frs.NRP', '=', 'frs_status.NRP')
+        ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->select('kodeMK', DB::raw('count(*) as total'))
         ->groupBy('kodeMK')
         ->get();
