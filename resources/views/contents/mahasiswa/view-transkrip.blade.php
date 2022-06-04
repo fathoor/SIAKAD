@@ -48,8 +48,7 @@
                                 <th width="150px">Kode</th>
                                 <th width="300px">Mata Kuliah</th>
                                 <th width="50px">SKS</th>
-                                <th width="50px">Kelas</th>
-                                <th width="300px">Dosen</th>
+                                <th width="150px">Historis Nilai</th>
                                 <th width="100px">Nilai</th>
                             </tr>
                         </table>
@@ -79,8 +78,7 @@
                                 <th width="150px">Kode</th>
                                 <th width="300px">Mata Kuliah</th>
                                 <th width="50px">SKS</th>
-                                <th width="50px">Kelas</th>
-                                <th width="300px">Dosen</th>
+                                <th width="150px">Historis Nilai</th>
                                 <th width="100px">Nilai</th>
                             </tr>
                         </table>
