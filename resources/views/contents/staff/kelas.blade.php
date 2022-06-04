@@ -14,9 +14,9 @@
                 <div class="text-center mb-3">
                     <h2 class="fw-bold">Daftar Kelas</h2>
                 </div>
-                <div>
+                <div class="mb-3">
                     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal">
-                        <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Tambah</span>
+                        <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2 mb-2">Tambah</span>
                     </button>
                 </div>
                 <div class="modal fade" id="modal" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="my-3">
-                    <table class="table table-responsive table-striped table-bordered text-center table-hover align-middle">
+                    <table class="table table-responsive table-striped table-bordered text-center table-hover align-middle mb-5">
                         <thead>
                             <tr class="table-secondary">
                                 <th width="150px">Kode MK</th>
