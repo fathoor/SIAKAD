@@ -21,10 +21,9 @@
                             </div>
                             <div class="col-4">
                                 <select class="form-select" aria-label="Default select example">
-                                    <option value="2020A">Gasal - 2020</option>
-                                    <option value="2020B">Genap - 2020</option>
-                                    <option value="2021A">Gasal - 2021</option>
-                                    <option value="2021B">Genap - 2018</option>
+                                    <option value="2021A" disabled selected>Periode</option>
+                                    <option value="2021A">Ganjil - 2021</option>
+                                    <option value="2021B">Genap - 2021</option>
                                 </select>
                             </div>
                             <div class="col-3 text-start">
