@@ -40,42 +40,45 @@
                     </button>
                 </a>
             </div>
-            <table class="table table-striped table-bordered text-center">
-                <tr>
-                    <th>No</th>
-                    <th>Periode</th>
-                    <th>Diajukan</th>
-                    <th>Keperluan</th>
-                    <th>Status</th>
-                    <th>Cetak</th>
-                </tr>
-                @foreach($aktif as $a)
-                <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $a->periodeAktif }}</td>
-                    <td>{{ $a->tanggalAjuan }}</td>
-                    <td>{{ $a->keperluanSurat }}</td>
-                    @if($a->status == true)
-                    <td>Disetujui</td>
-                    <td>
-                        <button class="btn btn-outline-light bg-transparent">
-                            <img src="https://png.pngtree.com/png-vector/20190129/ourlarge/pngtree-printer-vector-icon-png-image_355796.jpg" width="30 px" height="30 px" alt="h">
-                        </button>
-                    </td> {{-- Ini tolong dikasi tombol aja --}}
-                    @else
-                    <td>Menunggu</td>
-                    <td>
-                        <button class="btn btn-outline-light bg-transparent" disabled>
-                            <img src="https://png.pngtree.com/png-vector/20190129/ourlarge/pngtree-printer-vector-icon-png-image_355796.jpg" width="30 px" height="30 px" alt="h">
-                        </button>
-                    </td> {{-- Ini juga tombol tapi disabled --}}
-                    @endif
-                </tr>
-                @endforeach
+            <table class="table table-responsive table-striped table-hover table-bordered text-center align-middle">
+                <thead>
+                    <tr class="table-secondary">
+                        <th style="width: 50px">No</th>
+                        <th style="width: 100px">Periode</th>
+                        <th style="width: 150px">Pengajuan</th>
+                        <th style="width: 300px">Keperluan</th>
+                        <th style="width: 100px">Status</th>
+                        <th style="width: 100px">Cetak</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($aktif as $a)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $a->periodeAktif }}</td>
+                        <td>{{ $a->tanggalAjuan }}</td>
+                        <td>{{ $a->keperluanSurat }}</td>
+                        @if($a->status == true)
+                        <td><span class="badge text-bg-success shadow-sm">Disetujui</span></td>
+                        <td>
+                            <a href="/suratAktif/cetak">
+                                <span><i class="bi bi-printer-fill fs-4"></i></span>
+                            </a>
+                        </td>
+                        @else
+                        <td><span class="badge text-bg-danger shadow-sm">Menunggu</span></td>
+                        <td>
+                            <a>
+                                <span><i class="bi bi-printer fs-4"></i></span>
+                            </a>
+                        </td>
+                        @endif
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </main>
 </div>
-
 
 @endsection

@@ -4,19 +4,20 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FRSController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SuratController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\CivitasController;
+use App\Http\Controllers\TagihanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KuesionerController;
 use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\SuratCutiController;
+use App\Http\Controllers\TranskripController;
 use App\Http\Controllers\SuratAktifController;
 use App\Http\Controllers\DaftarKelasController;
+use App\Http\Controllers\HasilKuesionerController;
 use App\Http\Controllers\SuratUndurDiriController;
 use App\Http\Controllers\DaftarMahasiswaController;
-use App\Http\Controllers\TranskripController;
-use App\Http\Controllers\TagihanController;
-use App\Http\Controllers\HasilKuesionerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,17 +77,10 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::post('/detail', [TagihanController::class, 'detail']);
 
     // Layanan Route
-    Route::get('/suratAktif', [SuratAktifController::class, 'index']);
-    Route::get('/suratAktif/add', [SuratAktifController::class, 'add']);
-    Route::post('/suratAktif/store', [SuratAktifController::class, 'store']);
-
-    Route::get('/suratCuti', [SuratCutiController::class, 'index']);
-    Route::get('/suratCuti/add', [SuratCutiController::class, 'add']);
-    Route::post('/suratCuti/store', [SuratCutiController::class, 'store']);
-
-    Route::get('/suratUndurDiri', [SuratUndurDiriController::class, 'index']);
-    Route::get('/suratUndurDiri/add', [SuratUndurDiriController::class, 'add']);
-    Route::post('/suratUndurDiri/store', [SuratUndurDiriController::class, 'store']);
+    Route::get('/surat{type}', [SuratController::class, 'index']);
+    Route::get('/surat{type}/add', [SuratController::class, 'add']);
+    Route::post('/surat{type}/store', [SuratController::class, 'store']);
+    Route::get('/surat{type}/cetak', [SuratController::class, 'cetak']);
 });
 
 // Dosen Route

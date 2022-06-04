@@ -40,40 +40,44 @@
                     </button>
                 </a>
             </div>
-            <table class="table table-striped table-bordered text-center">
-                <tr>
-                    <th>No</th>
-                    <th>Periode</th>
-                    <th>Jumlah Semester</th>
-                    <th>Diajukan</th>
-                    <th>Alasan</th>
-                    <th>Status</th>
-                    <th>Cetak</th>
-                </tr>
-                @foreach($cuti as $c)
-                <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $c->periodeCuti }}</td>
-                    <td>{{ $c->jumlahSemesterCuti }}</td>
-                    <td>{{ $c->tanggalAjuan }}</td>
-                    <td>{{ $c->alasanCuti }}</td>
-                    @if($c->status == true)
-                    <td>Disetujui</td>
-                    <td>
-                        <button class="btn btn-outline-light bg-transparent">
-                            <img src="https://png.pngtree.com/png-vector/20190129/ourlarge/pngtree-printer-vector-icon-png-image_355796.jpg" width="30 px" height="30 px" alt="h">
-                        </button>
-                    </td> {{-- Ini tolong dikasi tombol aja --}}
-                    @else
-                    <td>Menunggu</td>
-                    <td>
-                        <button class="btn btn-outline-light bg-transparent" disabled>
-                            <img src="https://png.pngtree.com/png-vector/20190129/ourlarge/pngtree-printer-vector-icon-png-image_355796.jpg" width="30 px" height="30 px" alt="h">
-                        </button>
-                    </td> {{-- Ini juga tombol tapi disabled --}}
-                    @endif
-                </tr>
-                @endforeach
+            <table class="table table-responsive table-striped table-hover table-bordered text-center align-middle">
+                <thead>
+                    <tr class="table-secondary">
+                        <th style="width: 50px">No</th>
+                        <th style="width: 100px">Periode</th>
+                        <th style="width: 150px">Jumlah Semester</th>
+                        <th style="width: 150px">Diajukan</th>
+                        <th style="width: 300px">Alasan</th>
+                        <th style="width: 100px">Status</th>
+                        <th style="width: 100px">Cetak</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($cuti as $c)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $c->periodeCuti }}</td>
+                        <td>{{ $c->jumlahSemesterCuti }}</td>
+                        <td>{{ $c->tanggalAjuan }}</td>
+                        <td>{{ $c->alasanCuti }}</td>
+                        @if($c->status == true)
+                        <td><span class="badge text-bg-success shadow-sm">Disetujui</span></td>
+                        <td>
+                            <a href="/suratCuti/cetak">
+                                <span><i class="bi bi-printer-fill fs-4"></i></span>
+                            </a>
+                        </td>
+                        @else
+                        <td><span class="badge text-bg-danger shadow-sm">Menunggu</span></td>
+                        <td>
+                            <a>
+                                <span><i class="bi bi-printer fs-4"></i></span>
+                            </a>
+                        </td>
+                        @endif
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </main>

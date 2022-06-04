@@ -22,8 +22,8 @@
                     <div class="col-8">
                         <select class="form-select" name="periode" required>
                             <option selected disabled value="">Pilih</option>
-                            <option value="Ganjil 2022">Ganjil</option>
-                            <option value="Genap 2022">Genap</option>
+                            <option value="Ganjil 2022">Ganjil 2022</option>
+                            <option value="Genap 2021">Genap 2021</option>
                         </select>
                     </div>
                 </div>
@@ -33,14 +33,14 @@
                     <div class="col-8">
                         <select class="form-select" name="keperluan" required>
                             <option selected disabled value="">Pilih</option>
-                            <option value="Gaji Orangtua">Mengurus tunjangan gaji orang tua / To request a statement of parental salary</option>
-                            <option value="Pensiun Orangtua">Mengurus tunjangan pensiun orang tua / To request a statement of parental pension fund</option>
-                            <option value="BPJS">Mengurus BPJS/asuransi kesehatan / To propose BPJS/health insurance</option>
+                            <option value="Tunjangan gaji orang tua">Mengurus tunjangan gaji orang tua / To request a statement of parental salary</option>
+                            <option value="Tunjangan pensiun orang tua">Mengurus tunjangan pensiun orang tua / To request a statement of parental pension fund</option>
+                            <option value="BPJS / Asuransi Kesehatan">Mengurus BPJS/Asuransi Kesehatan / To propose BPJS/Health Insurance</option>
                             <option value="Beasiswa">Mengurus beasiswa / For applying scholarship</option>
-                            <option value="Hilang KTM">Mengurus kehilangan KTM / To file a report for missing student ID card</option>
-                            <option value="Lamar Kerja">Melamar pekerjaan / For applying for a job</option>
-                            <option value="Laporan Hilang">Mengurus laporan kehilangan ke kepolisian / To file a report for missing property</option>
-                            <option value="VISA">Mengurus visa / To apply for a visa</option>
+                            <option value="Kehilangan KTM">Mengurus kehilangan KTM / To file a report for missing student ID card</option>
+                            <option value="Pekerjaan">Melamar pekerjaan / For applying for a job</option>
+                            <option value="Laporan kehilangan kepolisian">Mengurus laporan kehilangan ke kepolisian / To file a report for missing property</option>
+                            <option value="VISA">Mengurus VISA / To apply for a VISA</option>
                             <option value="Lomba">Mengikuti lomba / For following a competition</option>
                         </select>
                     </div>

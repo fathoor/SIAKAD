@@ -22,8 +22,8 @@
                     <div class="col-7">
                         <select class="form-select" required>
                             <option selected disabled value="">Pilih</option>
-                            <option value="Ganjil 2022">Ganjil</option>
-                            <option value="Genap 2022">Genap</option>
+                            <option value="Ganjil 2022">Ganjil 2022</option>
+                            <option value="Genap 2021">Genap 2021</option>
                         </select>
                     </div>
                 </div>
