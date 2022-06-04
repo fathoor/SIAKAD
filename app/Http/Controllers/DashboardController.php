@@ -13,7 +13,7 @@ class DashboardController extends Controller
     
     public function index()
     {
-        return view('contents.profile');
+        return view('contents.mahasiswa.profile');
     }
 
     public function indexDosen()

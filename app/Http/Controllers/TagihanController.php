@@ -10,7 +10,7 @@ class TagihanController extends Controller
     public function index()
     {
         $tagihan = Tagihan::where('NRP', auth()->user()->NRP)->get();
-        return view('contents.ukt', ['tagihan' => $tagihan]);
+        return view('contents.mahasiswa.ukt', ['tagihan' => $tagihan]);
     }
 
     public function detail(Request $request)
@@ -19,6 +19,6 @@ class TagihanController extends Controller
             ['NRP', auth()->user()->NRP],
             ['periodeTagihan', $request->periode]
         ])->first();
-        return view('contents.detail-ukt', ['detail' => $detail]);
+        return view('contents.mahasiswa.detail-ukt', ['detail' => $detail]);
     }
 }

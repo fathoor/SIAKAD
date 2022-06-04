@@ -53,12 +53,12 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
 
     // Akademik Route
     Route::get('/frs', function () {
-        return view('contents.frs');
+        return view('contents.mahasiswa.frs');
     });
 
     // Transkrip Route
     Route::get('/transkrip', function () {
-        return view('contents.transkrip');
+        return view('contents.mahasiswa.transkrip');
     });
     Route::post('/view-transkrip', [TranskripController::class, 'view']);
 

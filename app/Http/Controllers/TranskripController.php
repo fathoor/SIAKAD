@@ -18,16 +18,16 @@ class TranskripController extends Controller
         $sksLulus = $mkSKS->where('nilai', '>', '0')->sum('sks');
         switch($format) {
             case '1':
-                return view('contents.view-transkrip', ['sksTempuh' => $sksTempuh, 'sksLulus' => $sksLulus]);
+                return view('contents.mahasiswa.view-transkrip', ['sksTempuh' => $sksTempuh, 'sksLulus' => $sksLulus]);
                 break;
             case '2':
-                return view('contents.transkrip.excel');
+                return view('contents.mahasiswa.transkrip.excel');
                 break;
             case '3':
-                return view('contents.transkrip.pdf');
+                return view('contents.mahasiswa.transkrip.pdf');
                 break;
             case '4':
-                return view('contents.transkrip.word');
+                return view('contents.mahasiswa.transkrip.word');
                 break;
         }
     }

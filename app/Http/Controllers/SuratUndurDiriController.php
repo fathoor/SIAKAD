@@ -13,12 +13,12 @@ class SuratUndurDiriController extends Controller
         $undur = SuratUndurDiri::where('suratUndurDiriNRP', auth()->user()->NRP)->get();
         $ada = SuratUndurDiri::where('suratUndurDiriNRP', auth()->user()->NRP)->exists();
 
-        return view('contents.suratUndurDiri-2', ['undur' => $undur, 'ada' => $ada]);
+        return view('contents.mahasiswa.suratUndurDiri-2', ['undur' => $undur, 'ada' => $ada]);
     }
 
     public function add()
     {
-        return view('contents.suratUndurDiri');
+        return view('contents.mahasiswa.suratUndurDiri');
     }
 
     public function store(Request $request)

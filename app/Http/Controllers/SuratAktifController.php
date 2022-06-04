@@ -12,12 +12,12 @@ class SuratAktifController extends Controller
     {
         $aktif = SuratAktif::where('suratAktifNRP', auth()->user()->NRP)->get();
 
-        return view('contents.suratMahasiswa-2', ['aktif' => $aktif]);
+        return view('contents.mahasiswa.suratMahasiswa-2', ['aktif' => $aktif]);
     }
 
     public function add()
     {
-        return view('contents.suratMahasiswa');
+        return view('contents.mahasiswa.suratMahasiswa');
     }
 
     public function store(Request $request)

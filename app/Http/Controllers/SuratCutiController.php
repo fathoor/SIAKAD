@@ -12,12 +12,12 @@ class SuratCutiController extends Controller
     {
         $cuti = SuratCuti::where('suratCutiNRP', auth()->user()->NRP)->get();
 
-        return view('contents.suratCuti', ['cuti' => $cuti]);
+        return view('contents.mahasiswa.suratCuti', ['cuti' => $cuti]);
     }
 
     public function add()
     {
-        return view('contents.suratCuti-2');
+        return view('contents.mahasiswa.suratCuti-2');
     }
 
     public function store(Request $request)
