@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Tagihan;
 
 class TagihanSeeder extends Seeder
 {
@@ -15,7 +15,58 @@ class TagihanSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tagihan')->insert([
+        Tagihan::insert([
+            [
+                'NRP' => 502620100,
+                'periodeTagihan' => '2020 - Ganjil',
+                'status' => true,
+                'bank' => 'BCA',
+                'tanggal' => '2020-05-05',
+                'SPP' => 3500000,
+                'pelayaran' => 0,
+                'tunggakPelayaran' => 0,
+                'SPI' => 0,
+                'IPITS' => 0,
+                'penyegaran' => 0,
+                'tunggakSPP' => 0,
+                'tunggakSPI' => 0,
+                'tunggakIPITS' => 0,
+                'tunggakPenyegaran' => 0
+            ],
+            [
+                'NRP' => 502620100,
+                'periodeTagihan' => '2020 - Genap',
+                'status' => true,
+                'bank' => 'BCA',
+                'tanggal' => '2020-05-05',
+                'SPP' => 3500000,
+                'pelayaran' => 0,
+                'tunggakPelayaran' => 0,
+                'SPI' => 0,
+                'IPITS' => 0,
+                'penyegaran' => 0,
+                'tunggakSPP' => 0,
+                'tunggakSPI' => 0,
+                'tunggakIPITS' => 0,
+                'tunggakPenyegaran' => 0
+            ],
+            [
+                'NRP' => 502620100,
+                'periodeTagihan' => '2021 - Ganjil',
+                'status' => true,
+                'bank' => 'BCA',
+                'tanggal' => '2020-05-05',
+                'SPP' => 3500000,
+                'pelayaran' => 0,
+                'tunggakPelayaran' => 0,
+                'SPI' => 0,
+                'IPITS' => 0,
+                'penyegaran' => 0,
+                'tunggakSPP' => 0,
+                'tunggakSPI' => 0,
+                'tunggakIPITS' => 0,
+                'tunggakPenyegaran' => 0
+            ],
             [
                 'NRP' => 5026201139,
                 'periodeTagihan' => '2020 - Ganjil',

@@ -77,9 +77,9 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::post('/isi-kuesioner', [KuesionerController::class, 'isi']);
     Route::post('/submit-kuesioner', [KuesionerController::class, 'submit']);
 
-    // Tagihan Route
+    // Finansial Route
     Route::get('/ukt', [TagihanController::class, 'index']);
-    Route::post('/detail', [TagihanController::class, 'detail']);
+    Route::post('/ukt/detail', [TagihanController::class, 'detail']);
 
     // Layanan Route
     Route::get('/surat{type}', [SuratController::class, 'index']);
