@@ -40,9 +40,9 @@ class DaftarKelasController extends Controller
         ->orderBy('frs.NRP', 'asc')
         ->get();
 
-        $mk = MataKuliah::join('daftar_kelas', 'daftar_kelas.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-        ->join('dosen', 'dosen.dosenkodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-        ->where([['kodeMataKuliah', $kodeMK], ['kelas', $kelas]])
+        $mk = DaftarKelas::join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'daftar_kelas.kodeMK')
+        ->join('dosen', 'dosen.dosenNRP', '=', 'daftar_kelas.dosenNRP')
+        ->where([['kodeMK', $kodeMK], ['kelas', $kelas]])
         ->first();
 
         return view('contents.dosen.kelas', [
