@@ -18,7 +18,7 @@ use App\Http\Controllers\DaftarKelasController;
 use App\Http\Controllers\HasilKuesionerController;
 use App\Http\Controllers\SuratUndurDiriController;
 use App\Http\Controllers\DaftarMahasiswaController;
-
+use App\Http\Controllers\KelasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -121,9 +121,10 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::get('/staff/kurikulum/delete/{id}', [KurikulumController::class, 'delete']);
 
     //Akademik
-    Route::get('/staff/kelas', function () {
-        return view('contents.staff.kelas');
-    });
+    Route::get('/staff/kelas', [KelasController::class, 'index']);
+    Route::post('/staff/kelas/store', [KelasController::class, 'store']);
+    Route::post('/staff/kelas/update/{kodeMK}', [KelasController::class, 'update']);
+    Route::get('/staff/kelas/delete/{kodeMK}/{kelas}', [KelasController::class, 'delete']);
 
     // Civitas
     Route::get('/staff/civitas', [CivitasController::class, 'index']);
