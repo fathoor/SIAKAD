@@ -110,10 +110,12 @@
                         @csrf
                         <label for="" class="mb-3">Daftar Mata Kuliah:</label>
                         <select class="form-select mb-4" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option hidden>Silahkan Pilih</option>
+                            @foreach ( $matakuliah as $mk)
+                            <option value="{{ $mk -> kodeMataKuliah }}" >{{$mk -> namaMataKuliah}}</option>
+                            {{-- <option value="2">Two</option>
+                            <option value="3">Three</option> --}}
+                            @endforeach
                         </select>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button class="btn btn-light me-md-2" type="button">Ambil</button>

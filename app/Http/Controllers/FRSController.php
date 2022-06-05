@@ -70,9 +70,12 @@ class FRSController extends Controller
 
         $nilai = DB::table('nilai_mk')->get();
 
+        $matakuliah = DB::table('mata_kuliah')->get();
+
         return view('contents.mahasiswa.frs', [
             'frs' => $frs,
             'nilai' => $nilai,
+            'matakuliah' => $matakuliah
         ]);
         
     }
