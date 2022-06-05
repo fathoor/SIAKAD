@@ -52,9 +52,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Akademik Route
-    Route::get('/frs', function () {
-        return view('contents.frs');
-    });
+    Route::get('/frs',  [FRSController::class, 'indexMahasiswa']);
 
     // Transkrip Route
     Route::get('/transkrip', function () {

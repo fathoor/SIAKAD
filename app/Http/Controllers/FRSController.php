@@ -53,4 +53,27 @@ class FRSController extends Controller
 
         return redirect('/dosen/FRS');
     }
+
+
+    public function indexMahasiswa()
+    {
+        // $mahasiswa = DB::table('wali')
+        // ->where('dosenNRP', auth()->user()->NRP)
+        // ->leftjoin('akun', 'akun.NRP', '=', 'wali.mahasiswaNRP')
+        // ->get();
+
+        $frs = DB::table('frs')
+        ->leftjoin('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
+        ->leftjoin('dosen', 'dosen.dosenKodeMK', '=', 'frs.kodeMK')
+        ->orderBy('kodeMK', 'asc')
+        ->get();
+
+        $nilai = DB::table('nilai_mk')->get();
+
+        return view('contents.frs', [
+            'frs' => $frs,
+            'nilai' => $nilai,
+        ]);
+        
+    }
 }
