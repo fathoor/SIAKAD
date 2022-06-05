@@ -11,8 +11,8 @@
         {{-- /view/contents/ --}}
         <div class="content">
             {{-- Isi disini --}}
-            <div class="row mb-4">
-                <h2 class="fw-bold">Surat Cuti</h2>
+            <div class="container mb-3">
+                <h2 class="fw-bold">Surat Permohonan Cuti</h2>
             </div>
             <div>
                 <form class="form-inline" id="input" action="/suratCuti/store" method="POST">
