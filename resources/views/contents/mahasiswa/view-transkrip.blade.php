@@ -16,7 +16,7 @@
                     <h2 class="text-center text-dark mb-4">
                         <strong> Transkrip Mata Kuliah </strong>
                     </h2>
-                    <table class="table table-borderless text-start">
+                    <table class="table table-borderless text-start" style="box-shadow: 0 0">
                         <tr>
                             <td>Nama</td>
                             <td>:</td>
@@ -39,9 +39,10 @@
                         </tr>
                     </table>
                 </div>
-                <div class="card text-bg-light mb-3">
+                <div class="card text-bg-light mb-4">
                     <div class="card-body">
-                        <h4 class="card-title text-center">Tahap: <span class="text-blue"><strong>Persiapan</strong></span></h4>
+                        <h4 class="card-title text-center">Tahap: <span
+                                class="text-blue"><strong>Persiapan</strong></span></h4>
                         <table
                             class="table table-responsive table-striped table-bordered text-center table-hover align-middle">
                             <tr class="table-secondary">
@@ -55,23 +56,23 @@
                     </div>
                 </div>
                 <div class="row mb-4 bg-secondary bg-opacity-25">
-                    <form class="form-inline" id="input">
-                        @csrf
-                        <div class="form-group row mb-2">
-                            <label for="" class="col-9 col-form-label">Total Sks Tahap Persiapan</label>
-                            <label for="" class="col-1 col-form-label">: </label>
-                            <div class="col-2"></div>
-                        </div>
-                        <div class="form-group row mb-2">
-                            <label for="" class="col-9 col-form-label">IP Tahap Persiapan</label>
-                            <label for="" class="col-1 col-form-label">: </label>
-                            <div class="col-2"></div>
-                        </div>
-                    </form>
+                    <table class="table table-borderless text-start" style="margin: 0">
+                        <tr>
+                            <td>Total Sks Tahap Persiapan</td>
+                            <td>:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>IP Tahap Persiapan</td>
+                            <td>:</td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="card text-bg-light mb-3">
+                <div class="card text-bg-light mb-4">
                     <div class="card-body">
-                        <h4 class="card-title text-center">Tahap: <span class="text-blue"><strong>Sarjana</strong></span></h4>
+                        <h4 class="card-title text-center">Tahap: <span
+                                class="text-blue"><strong>Sarjana</strong></span></h4>
                         <table
                             class="table table-responsive table-striped table-bordered text-center table-hover align-middle">
                             <tr class="table-secondary">
@@ -85,37 +86,33 @@
                     </div>
                 </div>
                 <div class="row mb-4 bg-secondary bg-opacity-25">
-                    <form class="form-inline" id="input">
-                        @csrf
-                        <div class="form-group row mb-2">
-                            <label for="" class="col-9 col-form-label">Total Sks Tahap Sarjana</label>
-                            <label for="" class="col-1 col-form-label">: </label>
-                            <div class="col-2"></div>
-                        </div>
-                        <div class="form-group row mb-2">
-                            <label for="" class="col-9 col-form-label">IP Tahap Sarjana</label>
-                            <label for="" class="col-1 col-form-label">: </label>
-                            <div class="col-2"></div>
-                        </div>
-                    </form>
+                    <table class="table table-borderless text-start" style="margin: 0">
+                        <tr>
+                            <td>Total Sks Tahap Sarjana</td>
+                            <td>:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>IP Tahap Sarjana</td>
+                            <td>:</td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="row mb-4 bg-secondary bg-opacity-25">
-                    <form class="form-inline" id="input">
-                        @csrf
-                        <div class="form-group row mb-2">
-                            <label for="" class="col-4 col-form-label">Total Sks</label>
-                            <label for="" class="col-1 col-form-label">: </label>
-                            <div class="col-7"></div>
-                        </div>
-                        <div class="form-group row mb-2">
-                            <label for="" class="col-4   col-form-label">IPK</label>
-                            <label for="" class="col-1 col-form-label">: </label>
-                            <div class="col-7">
-                                <input type="text" id="IPK" name="IPK" class="form-control bg-transparent border-0"
-                                value="{{ auth()->user()->ipk }}" disabled>
-                            </div>
-                        </div>
-                    </form>
+                    <table class="table table-borderless text-start" style="margin: 0">
+                        <tr>
+                            <td>Total Sks
+                            </td>
+                            <td>:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>IPK</td>
+                            <td>:</td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </main>

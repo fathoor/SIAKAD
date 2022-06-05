@@ -1,6 +1,6 @@
 @extends('dashboard')
 
-@section('title', 'UKT')
+@section('title', 'Historis Pembayaran')
 
 {{-- Content --}}
 @section('main')
@@ -12,16 +12,14 @@
             <div class="content">
                 {{-- Isi disini --}}
                 <div class="container text-center">
-                    <h2 class="fw-bold">Data Pembayaran SPP</h2>
-
-
+                    <h2 class="fw-bold">Historis Pembayaran Mahasiswa</h2>
                 </div>
-                <div class="my-4">
+                <div class="mt-4">
                     <table class="table table-hover table-bordered align-middle text-center">
                         <tr class="table-secondary">
-                            <th width="150px">Tahun Semester</th>
-                            <th width="150px">Total Tagihan</th>
-                            <th width="150px">Status</th>
+                            <th width="170px">Tahun Semester</th>
+                            <th width="160px">Total Tagihan</th>
+                            <th width="110px">Status</th>
                             <th width="100px">Detail</th>
                         </tr>
                         @foreach ($tagihan as $t)
@@ -32,18 +30,18 @@
                                 </td>
                                 @switch($t->status)
                                     @case(1)
-                                        <td style="color: green">Lunas</td>
+                                        <td><span class="badge text-bg-success shadow-sm">Lunas</span></td>
                                     @break
 
                                     @case(0)
-                                        <td style="color: red">Belum Dibayar</td>
+                                        <td><span class="badge text-bg-danger shadow-sm">Belum Lunas</span></td>
                                     @break
                                 @endswitch
                                 <td>
-                                    <form action="/detail" method="POST">
+                                    <form action="/ukt/detail" method="POST">
                                         @csrf
                                         <input type="hidden" name="periode" value="{{ $t->periodeTagihan }}">
-                                        <button type="submit" class="btn btn-primary">Detail</button>
+                                        <button type="submit" class="btn btn-primary btn-sm"><i class="bi bi-search"></i></button>
                                     </form>
                                 </td>
                             </tr>

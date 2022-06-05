@@ -16,9 +16,11 @@
                     <h2 class="fw-bold">Kuesioner Evaluasi Mata Kuliah</h2>
                 </div>
                 <div class="d-flex flex-row">
+                    <h5 class="fw-semibold mx-2">
+                        Periode
+                    </h5>
                     <div class="d-flex flex-col mx-3">
-                        <h5 class="fw-semibold my-2">
-                            Periode
+
                             <form name="period" action="/dosen/kuesioner/gantiPeriode" method="POST">
                                 @csrf
                                 <select id="periode" name="periode" onchange="this.form.submit();">
@@ -43,7 +45,6 @@
                                     @endforeach
                                 </select>
                             </form>
-                        </h5>
                     </div>
                 </div>
 

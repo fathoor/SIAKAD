@@ -77,9 +77,9 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::post('/isi-kuesioner', [KuesionerController::class, 'isi']);
     Route::post('/submit-kuesioner', [KuesionerController::class, 'submit']);
 
-    // Tagihan Route
+    // Finansial Route
     Route::get('/ukt', [TagihanController::class, 'index']);
-    Route::post('/detail', [TagihanController::class, 'detail']);
+    Route::post('/ukt/detail', [TagihanController::class, 'detail']);
 
     // Layanan Route
     Route::get('/surat{type}', [SuratController::class, 'index']);
@@ -137,10 +137,7 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::get('/staff/civitas/delete/{NRP}', [CivitasController::class, 'delete']);
 
     // Finansial
-    Route::get('staff/ukt', function () {
-        return view('contents.staff.ukt');
-    });
-    Route::get('staff/ukt-2', function () {
-        return view('contents.staff.ukt-2');
-    });
+    Route::get('/staff/ukt', [TagihanController::class, 'indexStaff']);
+    Route::post('staff/ukt/detail', [TagihanController::class, 'detailStaff']);
+    Route::post('staff/ukt/verificate/{NRP}/{periode}', [TagihanController::class, 'verificate']);
 });
