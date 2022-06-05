@@ -46,52 +46,52 @@
                             </tr>
                             <tr>
                                 <td>Rencana materi dan tujuan mata kuliah diberikan di awal perkuliahan</td>
-                                <td>{{ $j1 }}</td>
+                                <td>{{ round($j1, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Capaian pembelajaran dijelaskan setiap pergantian kuliah</td>
-                                <td>{{ $j2 }}</td>
+                                <td>{{ round($j2, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Kesesuaian Sumber Belajar yang digunakan untuk mendukung capaian pembelajaran</td>
-                                <td>{{ $j3 }}</td>
+                                <td>{{ round($j3, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Kesesuaian waktu untuk mengerjakan tugas dengan beban SKS</td>
-                                <td>{{ $j4 }}</td>
+                                <td>{{ round($j4, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Kesesuaian jenis asesmen dengan pemenuhan capaian pembelajaran</td>
-                                <td>{{ $j5 }}</td>
+                                <td>{{ round($j5, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Dosen memberikan umpan balik untuk hasil asesmen</td>
-                                <td>{{ $j6 }}</td>
+                                <td>{{ round($j6, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Dosen melakukan remidi untuk perbaikan hasil asesmen</td>
-                                <td>{{ $j7 }}</td>
+                                <td>{{ round($j7, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Dosen membantu meningkatkan kemampuan mahasiswa untuk mencapai capaian pembelajaran</td>
-                                <td>{{ $j8 }}</td>
+                                <td>{{ round($j8, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Dosen mampu berinteraksi secara aktif dalam pembelajaran</td>
-                                <td>{{ $j9 }}</td>
+                                <td>{{ round($j9, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Dosen menggunakan alokasi waktu sesuai dengan SKS</td>
-                                <td>{{ $j10 }}</td>
+                                <td>{{ round($j10, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Dosen memberikan tugas yang terkait dengan keprofesionalan dan meningkatkan kemampuan
                                     kolaboratif</td>
-                                <td>{{ $j11 }}</td>
+                                <td>{{ round($j11, 2) }}</td>
                             </tr>
                             <tr>
                                 <td>Dosen membantu mahasiswa untuk meningkatkan rasa percaya diri</td>
-                                <td>{{ $j12 }}</td>
+                                <td>{{ round($j12, 2) }}</td>
                             </tr>
                         </table>
                     </div>

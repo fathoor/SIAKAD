@@ -61,7 +61,12 @@ class TranskripController extends Controller
                 $totalPoinPersiapan += 0;
             }
         }
-        $ipPersiapan = $totalPoinPersiapan / $sksPersiapan;
+        if ($sksPersiapan == 0) {
+            $ipPersiapan = 0;
+        } else {
+            $ipPersiapan = $totalPoinPersiapan / $sksPersiapan;
+        }
+
         $mkSarjana = DB::table('frs')
             ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
             ->join('dosen', 'frs.dosenNRP', '=', 'dosen.dosenNRP')
@@ -109,7 +114,11 @@ class TranskripController extends Controller
                 $totalPoinSarjana += 0;
             }
         }
-        $ipSarjana = $totalPoinSarjana / $sksSarjana;
+        if ($sksSarjana == 0) {
+            $ipSarjana = 0;
+        } else {
+            $ipSarjana = $totalPoinSarjana / $sksSarjana;
+        }
         $sksTempuh = $matkul->sum('sks');
         $sksLulus = $matkul->where('nilai', '>', '0')->sum('sks');
         switch ($format) {

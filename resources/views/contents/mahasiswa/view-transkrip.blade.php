@@ -52,6 +52,34 @@
                                 <th width="150px">Historis Nilai</th>
                                 <th width="100px">Nilai</th>
                             </tr>
+                            @foreach ($mkPersiapan as $mkp)
+                                <?php
+                                $semester = $mkp->periode;
+                                $smt = explode(' ', $semester);
+                                if (86 <= $mkp->nilai) {
+                                    $nilaiAngka = 'A';
+                                } elseif (76 <= $mkp->nilai && $mkp->nilai <= 85) {
+                                    $nilaiAngka = 'AB';
+                                } elseif (66 <= $mkp->nilai && $mkp->nilai <= 75) {
+                                    $nilaiAngka = 'B';
+                                } elseif (61 <= $mkp->nilai && $mkp->nilai <= 65) {
+                                    $nilaiAngka = 'BC';
+                                } elseif (56 <= $mkp->nilai && $mkp->nilai <= 60) {
+                                    $nilaiAngka = 'C';
+                                } elseif (41 <= $mkp->nilai && $mkp->nilai <= 55) {
+                                    $nilaiAngka = 'D';
+                                } else {
+                                    $nilaiAngka = 'E';
+                                }
+                                ?>
+                                <tr>
+                                    <td>{{ $mkp->kodeMataKuliah }}</td>
+                                    <td>{{ $mkp->namaMataKuliah }}</td>
+                                    <td>{{ $mkp->sks }}</td>
+                                    <td>{{ $smt[0] . '/' . $smt[1] . $nilaiAngka }}</td>
+                                    <td>{{ $nilaiAngka }}</td>
+                                </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
@@ -60,12 +88,12 @@
                         <tr>
                             <td>Total Sks Tahap Persiapan</td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $mkPersiapan->sum('sks') }}</td>
                         </tr>
                         <tr>
                             <td>IP Tahap Persiapan</td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $ipPersiapan }}</td>
                         </tr>
                     </table>
                 </div>
@@ -82,6 +110,34 @@
                                 <th width="150px">Historis Nilai</th>
                                 <th width="100px">Nilai</th>
                             </tr>
+                            @foreach ($mkSarjana as $mkp)
+                                <?php
+                                $semester = $mkp->periode;
+                                $smt = explode(' ', $semester);
+                                if (86 <= $mkp->nilai) {
+                                    $nilaiAngka = 'A';
+                                } elseif (76 <= $mkp->nilai && $mkp->nilai <= 85) {
+                                    $nilaiAngka = 'AB';
+                                } elseif (66 <= $mkp->nilai && $mkp->nilai <= 75) {
+                                    $nilaiAngka = 'B';
+                                } elseif (61 <= $mkp->nilai && $mkp->nilai <= 65) {
+                                    $nilaiAngka = 'BC';
+                                } elseif (56 <= $mkp->nilai && $mkp->nilai <= 60) {
+                                    $nilaiAngka = 'C';
+                                } elseif (41 <= $mkp->nilai && $mkp->nilai <= 55) {
+                                    $nilaiAngka = 'D';
+                                } else {
+                                    $nilaiAngka = 'E';
+                                }
+                                ?>
+                                <tr>
+                                    <td>{{ $mkp->kodeMataKuliah }}</td>
+                                    <td>{{ $mkp->namaMataKuliah }}</td>
+                                    <td>{{ $mkp->sks }}</td>
+                                    <td>{{ $smt[0] . '/' . $smt[1] . $nilaiAngka }}</td>
+                                    <td>{{ $nilaiAngka }}</td>
+                                </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
@@ -90,27 +146,26 @@
                         <tr>
                             <td>Total Sks Tahap Sarjana</td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $mkSarjana->sum('sks') }}</td>
                         </tr>
                         <tr>
                             <td>IP Tahap Sarjana</td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $ipSarjana }}</td>
                         </tr>
                     </table>
                 </div>
                 <div class="row mb-4 bg-secondary bg-opacity-25">
                     <table class="table table-borderless text-start" style="margin: 0">
                         <tr>
-                            <td>Total Sks
-                            </td>
+                            <td>Total Sks</td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $mkPersiapan->sum('sks') + $mkSarjana->sum('sks') }}</td>
                         </tr>
                         <tr>
                             <td>IPK</td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ auth()->user()->ipk }}</td>
                         </tr>
                     </table>
                 </div>
