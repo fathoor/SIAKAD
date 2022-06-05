@@ -14,25 +14,18 @@
                 <div class="container-fluid text-center">
                     <h2><strong>Formulir Rencana Studi (FRS)</strong></h2>
                     <div class="row g-3 my-2">
-                        <div class="col-3 text-end">
+                        <div class="col-4 text-end">
                             <label for="inputTahunKurikulum" class="col-form-label"><strong>Tahun Kurikulum:</strong></label>
                         </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <select class="form-select" aria-label="Default select example">
-                                <option value="1">Gasal</option>
-                                <option value="2">Genap</option>
+                                <option value="1">Ganjil - 2020</option>
+                                <option value="2">Genap - 2020</option>
+                                <option value="3">Ganjil - 2021</option>
+                                <option value="4">Genap - 2021</option>
                             </select>
                         </div>
-                        <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">2018</option>
-                                <option value="2">2019</option>
-                                <option value="3">2020</option>
-                                <option value="4">2021</option>
-                                <option value="5">2022</option>
-                            </select>
-                        </div>
-                        <div class="col-3 text-start">
+                        <div class="col-4 text-start">
                             <button type="button" class="btn btn-primary">Ganti</button>
                         </div>
                     </div>
@@ -147,7 +140,7 @@
                                 @if ($n -> NRP == $f -> NRP &&  $n->kodeMK == $f->kodeMK)
                                     <td>{{ $n -> nilaiAngka }}</td>
                                 @endif
-                                    
+
                                 @endforeach
                             </tr>
                         @endif
