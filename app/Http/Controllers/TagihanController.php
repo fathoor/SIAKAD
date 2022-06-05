@@ -10,7 +10,10 @@ class TagihanController extends Controller
 {
     public function index()
     {
-        $tagihan = Tagihan::where('NRP', auth()->user()->NRP)->get();
+        $tagihan = Tagihan::where('NRP', auth()->user()->NRP)
+        ->orderBy('status', 'ASC')
+        ->orderBy('periodeTagihan', 'DESC')
+        ->get();
         return view('contents.mahasiswa.ukt', ['tagihan' => $tagihan]);
     }
 
