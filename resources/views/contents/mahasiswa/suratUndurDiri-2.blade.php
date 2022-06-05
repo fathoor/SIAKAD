@@ -11,7 +11,7 @@
         {{-- /view/contents/ --}}
         <div class="content">
             {{-- Isi disini --}}
-            <div class="row mb-4">
+            <div class="container mb-3">
                 <h2 class="fw-bold">Surat Mengundurkan Diri</h2>
             </div>
             <div class="row mb-4">
