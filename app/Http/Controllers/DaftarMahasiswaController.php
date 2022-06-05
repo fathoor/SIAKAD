@@ -9,7 +9,7 @@ class DaftarMahasiswaController extends Controller
 {
     public function index()
     {
-        $mahasiswa = User::where('type', 0)->orderBy('NRP', 'asc')->get();
+        $mahasiswa = User::where('type', 0)->orderBy('NRP', 'asc')->paginate(10);
 
         return view('contents.dosen.daftarMahasiswa', ['mahasiswa' => $mahasiswa]);
     }
@@ -20,7 +20,7 @@ class DaftarMahasiswaController extends Controller
 
         $mahasiswa = User::where([['type', '=', 0], ['nama', 'LIKE', "%{$search}%"]])
         ->orWhere([['type', '=', 0], ['NRP', 'LIKE', "%{$search}%"]])
-        ->orderBy('NRP', 'asc')->get();
+        ->orderBy('NRP', 'asc')->paginate(10);
 
 		return view('contents.dosen.daftarMahasiswa', ['mahasiswa' => $mahasiswa]);
     }

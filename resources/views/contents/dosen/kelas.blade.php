@@ -11,10 +11,8 @@
         {{-- /view/contents/ --}}
         <div class="content">
             {{-- Isi disini --}}
-            <div class="row text-center">
+            <div class="container mb-4">
                 <h2 class="fw-bold">{{ $mk->namaMataKuliah }} [{{ $kelas }}]</h2>
-            </div>
-            <div class="mb-4">
                 <span class="badge text-bg-light shadow-sm">{{ $mk->dosenNama }}</span>
             </div>
             <div>
@@ -37,7 +35,7 @@
                     </tbody>
                 </table>
             </div>
-            <div>
+            <div class="mt-2">
                 @switch(auth()->user()->type)
                     @case('mahasiswa')
                         <a href="/dashboard">
