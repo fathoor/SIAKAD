@@ -1,20 +1,20 @@
 @extends('dashboard')
 
-@section('title', 'Biodata')
+@section('title', 'Edit Biodata')
 
 {{-- Content --}}
 @section('main')
 
-<div class="container justify-content-start">
+<div class="container">
     {{-- Content --}}
     <main>
         {{-- /view/contents/ --}}
         <div class="content">
             {{-- Isi disini --}}
-            <div class="row mb-4">
+            <div class="container text-center">
                 <h2 class="fw-bold">Biodata</h2>
             </div>
-            <div class="row mb-4">
+            <div class="row mt-2">
                 <div class="col-lg-4 text-center">
                     <i class="bi bi-person-circle" style="font-size: 10rem"></i>
                 </div>
@@ -57,11 +57,11 @@
                     </form>
                     <div class="mt-4">
                         <button class="btn btn-primary" type="submit" form="biodata">
-                            <i class="bi bi-save fs-5"></i><span class="fs-5 ms-2">Update</span>
+                            <i class="bi bi-save fs-6"></i><span class="fs-6 ms-2">Update</span>
                         </button>
                         <a href="/biodata">
                             <button class="btn btn-danger">
-                                <i class="bi bi-arrow-counterclockwise fs-5"></i>
+                                <i class="bi bi-arrow-counterclockwise fs-6"></i>
                             </button>
                         </a>
                     </div>
