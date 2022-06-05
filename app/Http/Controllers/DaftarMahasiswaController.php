@@ -19,6 +19,7 @@ class DaftarMahasiswaController extends Controller
         $search = $request->input('search');
 
         $mahasiswa = User::where([['type', '=', 0], ['nama', 'LIKE', "%{$search}%"]])
+        ->orWhere([['type', '=', 0], ['NRP', 'LIKE', "%{$search}%"]])
         ->orderBy('NRP', 'asc')->get();
 
 		return view('contents.dosen.daftarMahasiswa', ['mahasiswa' => $mahasiswa]);

@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Kyslik\ColumnSortable\Sortable;
 
-
-
 class KurikulumController extends Controller
 {
-    public function     indexMahasiswa()
+    public function indexMahasiswa()
     {
         $mk1 = DB::table('mata_kuliah')->where('semester', '1')->get();
         $mk2 = DB::table('mata_kuliah')->where('semester', '2')->get();
@@ -21,7 +19,7 @@ class KurikulumController extends Controller
         $mk7 = DB::table('mata_kuliah')->where('semester', '7')->get();
 
         return view(
-            'contents.kurikulum',
+            'contents.mahasiswa.kurikulum',
             [
                 'mk1' => $mk1,
                 'mk2' => $mk2,

@@ -23,7 +23,7 @@ class KuesionerController extends Controller
                 ['mata_kuliah.semester', '=', $smt]
             ])
             ->get();
-        return view('contents.kuesioner', ['smtper' => $smtper, 'periode' => $periode, 'matkul' => $matkul, 'kuesioner' => $kuesioner]);
+        return view('contents.mahasiswa.kuesioner', ['smtper' => $smtper, 'periode' => $periode, 'matkul' => $matkul, 'kuesioner' => $kuesioner]);
     }
 
     public function ganti(Request $request)
@@ -40,7 +40,7 @@ class KuesionerController extends Controller
                 ['mata_kuliah.semester', '=', $smt]
             ])
             ->get();
-        return view('contents.kuesioner', ['smtper' => $smtper, 'kuesioner' => $kuesioner, 'matkul' => $matkul, 'periode' => $periode]);
+        return view('contents.mahasiswa.kuesioner', ['smtper' => $smtper, 'kuesioner' => $kuesioner, 'matkul' => $matkul, 'periode' => $periode]);
     }
 
     public function isi(Request $request)
@@ -51,7 +51,7 @@ class KuesionerController extends Controller
             ->where('dosen.dosenNRP', $dosenNRP)
             ->first();
         $periode = $request->periode;
-        return view('contents.isi-kuesioner', ['dosen' => $dosen, 'periode' => $periode]);
+        return view('contents.mahasiswa.isi-kuesioner', ['dosen' => $dosen, 'periode' => $periode]);
     }
 
     public function submit(Request $request)

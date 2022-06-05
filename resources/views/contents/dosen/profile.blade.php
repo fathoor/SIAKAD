@@ -28,7 +28,7 @@
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
                         <li><a class="dropdown-item" href="/dosen/mataKuliah">Mata Kuliah</a></li>
                         <li><a class="dropdown-item" href="/dosen/kurikulum">Kurikulum Semester</a></li>
-                        <li><a class="dropdown-item" href="#">Kuesioner Dosen & MK</a></li>
+                        <li><a class="dropdown-item" href="/dosen/kuesioner">Kuesioner Dosen & MK</a></li>
                     </ul>
                 </span>
                 <span class="d-flex flex-col my-2 mx-3">

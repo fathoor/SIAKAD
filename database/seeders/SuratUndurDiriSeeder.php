@@ -19,15 +19,15 @@ class SuratUndurDiriSeeder extends Seeder
             [
                 'suratUndurDiriNRP' => '5026201000',
                 'type' => 'Surat Mengundurkan Diri',
-                'periodeMundur' => 'Genap 2022',
+                'periodeMundur' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-10',
                 'alasanMundur' => 'Kerja',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratUndurDiriNRP' => '5026201139',
                 'type' => 'Surat Mengundurkan Diri',
-                'periodeMundur' => 'Genap 2022',
+                'periodeMundur' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-10',
                 'alasanMundur' => 'Kerja',
                 'status' => false

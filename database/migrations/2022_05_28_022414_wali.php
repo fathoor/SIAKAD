@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('wali', function (Blueprint $table) {
             $table->id();
-            $table->string('mahasiswaNRP');
-            $table->string('dosenNRP');
+            $table->bigInteger('mahasiswaNRP');
+            $table->bigInteger('dosenNRP');
         });
     }
 

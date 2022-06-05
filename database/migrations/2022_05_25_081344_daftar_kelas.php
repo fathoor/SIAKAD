@@ -18,7 +18,8 @@ return new class extends Migration
             $table->char('kodeKelas', 6);
             $table->integer('kapasitas');
             $table->char('kodeMK', 8);
-            $table->char('Kelas', 1);
+            $table->char('kelas', 1);
+            $table->integer('dosenNRP');
         });
     }
 
