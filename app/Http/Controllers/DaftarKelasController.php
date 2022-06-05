@@ -14,7 +14,9 @@ class DaftarKelasController extends Controller
 {
     public function index()
     {
-        $mk = MataKuliah::orderByRaw('semester ASC, kodeMataKuliah ASC')->paginate(6);
+        $mk = MataKuliah::orderBy('semester', 'ASC')
+        ->orderBy('kodeMataKuliah', 'ASC')
+        ->paginate(6);
 
         $peserta = FRSStatus::where([['frs_status.periode', 'Genap 2021'], ['status', true]])
         ->join('frs', 'frs.NRP', '=', 'frs_status.NRP')

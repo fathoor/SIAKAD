@@ -14,7 +14,9 @@ class KelasController extends Controller
         ->join('dosen', function($join){
             $join->on('dosen.dosenKodeMK', '=', 'daftar_kelas.kodeMK');
             $join->on('dosen.dosenNRP', '=', 'daftar_kelas.dosenNRP');})
-        ->orderByRaw('semester ASC, kodeMK ASC, kelas ASC')
+        ->orderBy('semester', 'ASC')
+        ->orderBy('kodeMK', 'ASC')
+        ->orderBy('kelas', 'ASC')
         ->paginate(10);
         return view('contents.staff.kelas', [
             'kelas' => $kelas,
