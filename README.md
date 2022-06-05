@@ -7,6 +7,15 @@
 
 <p align="center"> Website <strong>Sistem Informasi Akademik</strong> yang dibuat oleh <strong>Kelompok 1</strong> sebagai proyek <i>tugas akhir</i> dari mata kuliah <code>Rancang Bangun Perangkat Lunak [C]</code> </p>
 
+***
+
+### <p align="center"> Available on Heroku! </p>
+<p align="center"> <strong>SIAKAD ITS</strong> is available at https://siakadits.herokuapp.com/ </p>
+
+[![Website Preview](/public/img/siakad_login.png)](https://siakadits.herokuapp.com/)
+
+***
+
 ## Authors
 | No | NRP | Nama |
 | :---: | :---: | --- |
