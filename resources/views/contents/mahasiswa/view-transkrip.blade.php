@@ -39,7 +39,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="card text-bg-light mb-3">
+                <div class="card text-bg-light mb-4">
                     <div class="card-body">
                         <h4 class="card-title text-center">Tahap: <span
                                 class="text-blue"><strong>Persiapan</strong></span></h4>
@@ -69,7 +69,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="card text-bg-light mb-3">
+                <div class="card text-bg-light mb-4">
                     <div class="card-body">
                         <h4 class="card-title text-center">Tahap: <span
                                 class="text-blue"><strong>Sarjana</strong></span></h4>
