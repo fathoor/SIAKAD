@@ -269,7 +269,7 @@ class TranskripController extends Controller
                 $xmlWriter->save("php://output");
                 break;
             case '4':
-                return Excel::download(new InvoicesExport, 'invoices.xlsx');
+                return Excel::download(new ExportController, 'Transkrip_Mata_Kuliah.xlsx');
                 break;
         }
     }
