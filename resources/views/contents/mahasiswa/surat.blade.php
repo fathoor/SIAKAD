@@ -28,10 +28,10 @@
                 <form>
                     @csrf
                     <div class="form-group row mb-3">
-                        <label for="jurusan" class="col-2 col-form-label">Jurusan</label>
-                        <label for="jurusan" class="col-1 col-form-label">:</label>
+                        <label for="departemen" class="col-2 col-form-label">Departemen</label>
+                        <label for="departemen" class="col-1 col-form-label">:</label>
                         <div class="col-9">
-                            <input type="text" id="jurusan" name="jurusan" class="form-control bg-transparent border-white" value="{{ auth()->user()->jurusan }}" disabled>
+                            <input type="text" id="departemen" name="departemen" class="form-control bg-transparent border-white" value="{{ auth()->user()->departemen }}" disabled>
                         </div>
                     </div>
                     <div class="form-group row mb-3">
@@ -78,10 +78,10 @@
                 <form>
                     @csrf
                     <div class="form-group row mb-3">
-                        <label for="jurusan" class="col-2 col-form-label">Jurusan</label>
-                        <label for="jurusan" class="col-1 col-form-label">:</label>
+                        <label for="departemen" class="col-2 col-form-label">Departemen</label>
+                        <label for="departemen" class="col-1 col-form-label">:</label>
                         <div class="col-9">
-                            <input type="text" id="jurusan" name="jurusan" class="form-control bg-transparent border-white" value="{{ auth()->user()->jurusan }}" disabled>
+                            <input type="text" id="departemen" name="departemen" class="form-control bg-transparent border-white" value="{{ auth()->user()->departemen }}" disabled>
                         </div>
                     </div>
                     <div class="form-group row mb-3">
@@ -128,10 +128,10 @@
                 <form>
                     @csrf
                     <div class="form-group row mb-3">
-                        <label for="jurusan" class="col-2 col-form-label">Jurusan</label>
-                        <label for="jurusan" class="col-1 col-form-label">:</label>
+                        <label for="departemen" class="col-2 col-form-label">Departemen</label>
+                        <label for="departemen" class="col-1 col-form-label">:</label>
                         <div class="col-9">
-                            <input type="text" id="jurusan" name="jurusan" class="form-control bg-transparent border-white" value="{{ auth()->user()->jurusan }}" disabled>
+                            <input type="text" id="departemen" name="departemen" class="form-control bg-transparent border-white" value="{{ auth()->user()->departemen }}" disabled>
                         </div>
                     </div>
                     <div class="form-group row mb-3">
