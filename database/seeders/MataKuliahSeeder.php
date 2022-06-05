@@ -102,7 +102,7 @@ class MataKuliahSeeder extends Seeder
                 'namaMataKuliah' => 'Desain & Manajemen Jaringan Komputer',
                 'sks' => 4,
                 'tahunKurikulum' => 2018,
-                'semester' => 3
+                'semester' => 4
             ],
             [
                 'kodeMataKuliah' => 'IS184621',
@@ -110,7 +110,7 @@ class MataKuliahSeeder extends Seeder
                 'namaMataKuliah' => 'Manajemen Basis Data',
                 'sks' => 4,
                 'tahunKurikulum' => 2018,
-                'semester' => 3
+                'semester' => 4
             ],
             [
                 'kodeMataKuliah' => 'IS184412',
