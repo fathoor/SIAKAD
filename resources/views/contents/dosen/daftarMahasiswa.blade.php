@@ -10,15 +10,15 @@
     <main>
         {{-- /view/contents/ --}}
         <div class="content">
-            <div class="text-center">
+            <div class="container">
                 <h2 class="fw-bold">Daftar Mahasiswa</h2>
             </div>
-            <div class="row mt-1">
+            <div class="row mt-1 mb-3">
                 <form class="form" action="/dosen/daftarMahasiswa/search" method="GET">
                     <input type="search" class="form-control" placeholder="&#xF52A;" style="font-family:'bootstrap-icons', Arial" name="search" value="{{ old('search') }}">
                 </form>
             </div>
-            <div class="container">
+            <div class="mt-4">
                 <table class="table table-bordered table-hover table-striped align-middle text-center">
                     <thead>
                         <tr class="table-secondary">
@@ -39,7 +39,8 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div>
+                {{ $mahasiswa->links('pagination::bootstrap-5') }}
+                <div class="text-center mt-2">
                     <a href="/dosen/daftarMahasiswa">
                         <button class="btn btn-danger">
                             <i class="bi bi-arrow-counterclockwise fs-6"></i>
