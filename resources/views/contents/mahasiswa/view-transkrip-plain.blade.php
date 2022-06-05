@@ -20,17 +20,17 @@
                         <tr>
                             <td>Nama</td>
                             <td>:</td>
-                            <td>{{ auth()->user()->nama }}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>NRP</td>
                             <td>:</td>
-                            <td>{{ auth()->user()->NRP }}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>SKS Tempuh / SKS Lulus</td>
                             <td>:</td>
-                            <td>{{ $sksTempuh }}/{{ $sksLulus }}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Status</td>
@@ -55,8 +55,6 @@
                     </div>
                 </div>
                 <div>
-                    <form id="input">
-                        @csrf
                         <div>
                             <label>Total Sks Tahap Persiapan</label>
                             <label>: </label>
@@ -67,7 +65,6 @@
                             <label>: </label>
                             <div></div>
                         </div>
-                    </form>
                 </div>
                 <div>
                     <div>
@@ -85,8 +82,6 @@
                     </div>
                 </div>
                 <div>
-                    <form>
-                        @csrf
                         <div>
                             <label>Total Sks Tahap Sarjana</label>
                             <label>: </label>
@@ -97,11 +92,9 @@
                             <label>: </label>
                             <div></div>
                         </div>
-                    </form>
+
                 </div>
                 <div>
-                    <form>
-                        @csrf
                         <div>
                             <label>Total Sks</label>
                             <label>: </label>
@@ -111,14 +104,10 @@
                             <label>IPK</label>
                             <label>: </label>
                             <div>
-                                <input type="text" id="IPK" name="IPK" class="form-control bg-transparent border-0"
-                                value="{{ auth()->user()->ipk }}" disabled>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </main>
     </div>
 
-@endsection
