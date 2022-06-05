@@ -17,9 +17,9 @@
                 </div>
                 <div class="d-flex flex-row">
                     <div class=" d-flex flex-col mx-3">
-                            <form name="period" action="/dosen/kuesioner/gantiPeriode" method="POST">
-                                @csrf
-                                <div class="form-floating">
+                        <form name="period" action="/dosen/kuesioner/gantiPeriode" method="POST">
+                            @csrf
+                            <div class="form-floating">
                                 <select class="form-select" id="periode" name="periode" onchange="this.form.submit();">
                                     @foreach ($kuesioner as $k)
                                         <?php
@@ -43,7 +43,7 @@
                                 </select>
                                 <label for="periode" class="form-label">Periode</label>
                             </div>
-                            </form>
+                        </form>
                     </div>
                 </div>
 
@@ -73,6 +73,13 @@
                                             @endforeach
                                         </select>
                                         <input type="hidden" name="kodeMK" value="{{ $mk->kodeMataKuliah }}">
+                                        <?php
+                                        if ($hasil->where('kodeMK', $mk->kodeMataKuliah)->count() > 0) {
+                                            $tersedia = true;
+                                        } else {
+                                            $tersedia = false;
+                                        }
+                                        ?>
                                         <button type="submit" {{ $tersedia == false ? 'disabled' : '' }}
                                             class="btn btn-warning btn-sm">
                                             Hasil

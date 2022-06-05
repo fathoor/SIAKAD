@@ -11,6 +11,7 @@ class HasilKuesionerController extends Controller
 {
     public function index()
     {
+        $hasil = HasilKuesioner::where('dosenNRP', auth()->user()->NRP)->get();
         $periode = Periode::orderBy('id', 'desc')->first();
         $kuesioner = Periode::all();
         $smtper = Periode::latest('id')->first();
@@ -28,11 +29,12 @@ class HasilKuesionerController extends Controller
         } else {
             $tersedia = false;
         }
-        return view('contents.dosen.kuesioner', ['tersedia' => $tersedia, 'kuesioner' => $kuesioner, 'smtper' => $smtper, 'matkul' => $matkul, 'periode' => $periode]);
+        return view('contents.dosen.kuesioner', ['hasil' => $hasil, 'tersedia' => $tersedia, 'kuesioner' => $kuesioner, 'smtper' => $smtper, 'matkul' => $matkul, 'periode' => $periode]);
     }
 
     public function ganti(Request $request)
     {
+        $hasil = HasilKuesioner::where('dosenNRP', auth()->user()->NRP)->get();
         $periode = Periode::orderBy('id', 'desc')->first();
         $kuesioner = Periode::all();
         $smtper = Periode::where('periode', $request->periode)->first();
@@ -50,7 +52,7 @@ class HasilKuesionerController extends Controller
         } else {
             $tersedia = false;
         }
-        return view('contents.dosen.kuesioner', ['tersedia' => $tersedia, 'kuesioner' => $kuesioner, 'smtper' => $smtper, 'matkul' => $matkul, 'periode' => $periode]);
+        return view('contents.dosen.kuesioner', ['hasil' => $hasil, 'tersedia' => $tersedia, 'kuesioner' => $kuesioner, 'smtper' => $smtper, 'matkul' => $matkul, 'periode' => $periode]);
     }
 
     public function hasil(Request $request)

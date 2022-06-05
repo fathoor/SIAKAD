@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
-use App\Exports\InvoicesExport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class TranskripController extends Controller
