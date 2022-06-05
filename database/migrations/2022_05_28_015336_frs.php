@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('NRP');
             $table->string('kodeMK');
             $table->string('kelas');
-            $table->string('dosenNRP');
+            $table->bigInteger('dosenNRP');
             $table->integer('nilai');
             $table->string('periode');
             $table->boolean('matkulAtas')->default(false);
