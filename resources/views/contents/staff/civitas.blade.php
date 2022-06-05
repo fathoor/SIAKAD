@@ -11,10 +11,10 @@
         {{-- /view/contents/ --}}
         <div class="content">
             {{-- Isi disini --}}
-            <div class="text-center mb-1">
+            <div class="container text-center">
                 <h2 class="fw-bold">Daftar Civitas</h2>
             </div>
-            <div>
+            <div class="mb-3">
                 <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal">
                     <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Create</span>
                 </button>
@@ -123,7 +123,7 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="badge text-bg-danger shadow-sm"><a href="/staff/civitas/delete/{{ $a->NRP }}"><i class="bi bi-trash-fill"></i></a></div>
+                                <div class="badge text-bg-danger shadow-sm"><a href="/staff/civitas/delete/{{ $a->NRP }}" onclick="return confirm('Yakin untuk menghapus?')"><i class="bi bi-trash-fill"></i></a></div>
                             </td>
                         </tr>
                         @endforeach
