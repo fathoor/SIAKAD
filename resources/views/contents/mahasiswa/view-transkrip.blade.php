@@ -76,7 +76,7 @@
                                     <td>{{ $mkp->kodeMataKuliah }}</td>
                                     <td>{{ $mkp->namaMataKuliah }}</td>
                                     <td>{{ $mkp->sks }}</td>
-                                    <td>{{ $smt[0] . '/' . $smt[1] . $nilaiAngka }}</td>
+                                    <td>{{ $smt[0] . '/' . $smt[1] . '/' . $nilaiAngka }}</td>
                                     <td>{{ $nilaiAngka }}</td>
                                 </tr>
                             @endforeach
@@ -134,7 +134,7 @@
                                     <td>{{ $mkp->kodeMataKuliah }}</td>
                                     <td>{{ $mkp->namaMataKuliah }}</td>
                                     <td>{{ $mkp->sks }}</td>
-                                    <td>{{ $smt[0] . '/' . $smt[1] . $nilaiAngka }}</td>
+                                    <td>{{ $smt[0] . '/' . $smt[1] . '/' . $nilaiAngka }}</td>
                                     <td>{{ $nilaiAngka }}</td>
                                 </tr>
                             @endforeach
@@ -165,7 +165,7 @@
                         <tr>
                             <td>IPK</td>
                             <td>:</td>
-                            <td>{{ auth()->user()->ipk }}</td>
+                            <td>{{ $ipk }}</td>
                         </tr>
                     </table>
                 </div>

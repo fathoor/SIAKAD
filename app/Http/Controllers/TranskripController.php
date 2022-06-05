@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class TranskripController extends Controller
 {
@@ -119,14 +120,21 @@ class TranskripController extends Controller
         } else {
             $ipSarjana = $totalPoinSarjana / $sksSarjana;
         }
+
+        if ($sksSarjana == 0 && $sksPersiapan == 0) {
+            $ipk = 0;
+        } else {
+            $ipk = ($totalPoinPersiapan + $totalPoinSarjana) / ($sksPersiapan + $sksSarjana);
+        }
+
         $sksTempuh = $matkul->sum('sks');
         $sksLulus = $matkul->where('nilai', '>', '0')->sum('sks');
         switch ($format) {
             case '1':
-                return view('contents.mahasiswa.view-transkrip', ['sksTempuh' => $sksTempuh, 'sksLulus' => $sksLulus, 'mkPersiapan' => $mkPersiapan, 'mkSarjana' => $mkSarjana, 'ipPersiapan' => $ipPersiapan, 'ipSarjana' => $ipSarjana]);
+                return view('contents.mahasiswa.view-transkrip', ['sksTempuh' => $sksTempuh, 'sksLulus' => $sksLulus, 'mkPersiapan' => $mkPersiapan, 'mkSarjana' => $mkSarjana, 'ipPersiapan' => $ipPersiapan, 'ipSarjana' => $ipSarjana, 'ipk' => $ipk]);
                 break;
             case '2':
-                return view('contents.mahasiswa.transkrip-plain');
+                return view('contents.mahasiswa.view-transkrip-plain', ['sksTempuh' => $sksTempuh, 'sksLulus' => $sksLulus, 'mkPersiapan' => $mkPersiapan, 'mkSarjana' => $mkSarjana, 'ipPersiapan' => $ipPersiapan, 'ipSarjana' => $ipSarjana, 'ipk' => $ipk]);
                 break;
             case '3':
                 $nrp = auth()->user()->NRP;
@@ -160,14 +168,35 @@ class TranskripController extends Controller
                 $table2->addCell(500, $styleCell)->addText('SKS', $fontStyle);
                 $table2->addCell(1500, $styleCell)->addText('Historis Nilai', $fontStyle);
                 $table2->addCell(500, $styleCell)->addText('Nilai', $fontStyle);
-                $table2->addRow();
-                $table2->addCell(1000, $styleCell)->addText('is', $fontStyle);
-                $table2->addCell(4000, $styleCell)->addText('alpro', $fontStyle);
-                $table2->addCell(500, $styleCell)->addText('3', $fontStyle);
-                $table2->addCell(1500, $styleCell)->addText('2020/Gn/A', $fontStyle);
-                $table2->addCell(500, $styleCell)->addText('A', $fontStyle);
-                $section->addText('Total Sks Tahap Persiapan : 36');
-                $section->addText('IP Tahap Persiapan : 3.79');
+
+                foreach ($mkPersiapan as $mkp) {
+                    $semester = $mkp->periode;
+                    $smt = explode(' ', $semester);
+                    if (86 <= $mkp->nilai) {
+                        $nilaiAngka = 'A';
+                    } elseif (76 <= $mkp->nilai && $mkp->nilai <= 85) {
+                        $nilaiAngka = 'AB';
+                    } elseif (66 <= $mkp->nilai && $mkp->nilai <= 75) {
+                        $nilaiAngka = 'B';
+                    } elseif (61 <= $mkp->nilai && $mkp->nilai <= 65) {
+                        $nilaiAngka = 'BC';
+                    } elseif (56 <= $mkp->nilai && $mkp->nilai <= 60) {
+                        $nilaiAngka = 'C';
+                    } elseif (41 <= $mkp->nilai && $mkp->nilai <= 55) {
+                        $nilaiAngka = 'D';
+                    } else {
+                        $nilaiAngka = 'E';
+                    }
+                    $table2->addRow();
+                    $table2->addCell(1000, $styleCell)->addText($mkp->kodeMataKuliah, $fontStyle);
+                    $table2->addCell(4000, $styleCell)->addText($mkp->namaMataKuliah, $fontStyle);
+                    $table2->addCell(500, $styleCell)->addText($mkp->sks, $fontStyle);
+                    $table2->addCell(1500, $styleCell)->addText($smt[0] . '/' . $smt[1] . '/' . $nilaiAngka, $fontStyle);
+                    $table2->addCell(500, $styleCell)->addText($nilaiAngka, $fontStyle);
+                }
+
+                $section->addText('Total Sks Tahap Persiapan : ' . $mkPersiapan->sum('sks'));
+                $section->addText('IP Tahap Persiapan : ' . $ipPersiapan);
 
                 $section->addText('<w:br/> --- Tahap: Sarjana ---');
                 $table3 = $section->addTable($tableStyle);
@@ -177,22 +206,43 @@ class TranskripController extends Controller
                 $table3->addCell(500, $styleCell)->addText('SKS', $fontStyle);
                 $table3->addCell(1500, $styleCell)->addText('Historis Nilai', $fontStyle);
                 $table3->addCell(500, $styleCell)->addText('Nilai', $fontStyle);
-                $table3->addRow();
-                $table3->addCell(1000, $styleCell)->addText('is', $fontStyle);
-                $table3->addCell(4000, $styleCell)->addText('alpro', $fontStyle);
-                $table3->addCell(500, $styleCell)->addText('3', $fontStyle);
-                $table3->addCell(1500, $styleCell)->addText('2020/Gn/A', $fontStyle);
-                $table3->addCell(500, $styleCell)->addText('A', $fontStyle);
-                $section->addText('Total Sks Tahap Sarjana : 36');
-                $section->addText('IP Tahap Sarjana : 3.79 <w:br/>');
+
+                foreach ($mkSarjana as $mkp) {
+                    $semester = $mkp->periode;
+                    $smt = explode(' ', $semester);
+                    if (86 <= $mkp->nilai) {
+                        $nilaiAngka = 'A';
+                    } elseif (76 <= $mkp->nilai && $mkp->nilai <= 85) {
+                        $nilaiAngka = 'AB';
+                    } elseif (66 <= $mkp->nilai && $mkp->nilai <= 75) {
+                        $nilaiAngka = 'B';
+                    } elseif (61 <= $mkp->nilai && $mkp->nilai <= 65) {
+                        $nilaiAngka = 'BC';
+                    } elseif (56 <= $mkp->nilai && $mkp->nilai <= 60) {
+                        $nilaiAngka = 'C';
+                    } elseif (41 <= $mkp->nilai && $mkp->nilai <= 55) {
+                        $nilaiAngka = 'D';
+                    } else {
+                        $nilaiAngka = 'E';
+                    }
+                    $table3->addRow();
+                    $table3->addCell(1000, $styleCell)->addText($mkp->kodeMataKuliah, $fontStyle);
+                    $table3->addCell(4000, $styleCell)->addText($mkp->namaMataKuliah, $fontStyle);
+                    $table3->addCell(500, $styleCell)->addText($mkp->sks, $fontStyle);
+                    $table3->addCell(1500, $styleCell)->addText($smt[0] . '/' . $smt[1] . '/' . $nilaiAngka, $fontStyle);
+                    $table3->addCell(500, $styleCell)->addText($nilaiAngka, $fontStyle);
+                }
+
+                $section->addText('Total Sks Tahap Sarjana : ' . $mkSarjana->sum('sks'));
+                $section->addText('IP Tahap Sarjana : ' . $ipSarjana . '<w:br/>');
 
                 $table4 = $section->addTable($tableStyle);
                 $table4->addRow(-0.5, array('exactHeight' => -5));
                 $table4->addCell(1000, $styleCell)->addText('Total SKS', $fontStyle);
-                $table4->addCell(1000, $styleCell)->addText('62', $TfontStyle);
+                $table4->addCell(1000, $styleCell)->addText($mkPersiapan->sum('sks') + $mkSarjana->sum('sks'), $TfontStyle);
                 $table4->addRow();
                 $table4->addCell(1000, $styleCell)->addText('IPK', $fontStyle);
-                $table4->addCell(1000, $styleCell)->addText('3.77', $TfontStyle);
+                $table4->addCell(1000, $styleCell)->addText($ipk, $TfontStyle);
                 $section->addText('<w:br/> Judul Tugas Akhir / Thesis / Disertasi <w:br/>');
 
                 $section->addText('CATATAN');
@@ -203,7 +253,8 @@ class TranskripController extends Controller
                 $section->addText('4. Tunjangan Gaji');
                 $section->addText('5. ........................................................... (tuliskan keperluannya)');
 
-                $section->addText('<w:br/> Tanggal Cetak: 04 Juni 2022 ');
+                $section->addText('<w:br/> Tanggal Cetak: ' . Carbon::now()->locale('id')
+                    ->isoFormat('DD MMMM YYYY'));
 
                 $file = 'Transkrip_Mata_Kuliah.docx';
                 header("Content-Description: File Transfer");
