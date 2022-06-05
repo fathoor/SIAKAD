@@ -16,14 +16,11 @@
                     <h2 class="fw-bold">Kuesioner Evaluasi Mata Kuliah</h2>
                 </div>
                 <div class="d-flex flex-row">
-                    <h5 class="fw-semibold mx-2">
-                        Periode
-                    </h5>
-                    <div class="d-flex flex-col mx-3">
-
+                    <div class=" d-flex flex-col mx-3">
                             <form name="period" action="/dosen/kuesioner/gantiPeriode" method="POST">
                                 @csrf
-                                <select id="periode" name="periode" onchange="this.form.submit();">
+                                <div class="form-floating">
+                                <select class="form-select" id="periode" name="periode" onchange="this.form.submit();">
                                     @foreach ($kuesioner as $k)
                                         <?php
                                         $period = $k->periode;
@@ -44,6 +41,8 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                <label for="periode" class="form-label">Periode</label>
+                            </div>
                             </form>
                     </div>
                 </div>
