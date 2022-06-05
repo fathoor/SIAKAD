@@ -25,6 +25,7 @@
                     Surabaya <br>
                 </p>
 
+                @foreach($surat_aktif as $sa)
                 <form>
                     @csrf
                     <div class="form-group row mb-3">
@@ -59,8 +60,11 @@
                 </form>
 
                 <p>
-                    Mengajukan permohonan keterangan aktif pada dengan alasan:
+                    Mengajukan permohonan keterangan aktif pada <input type="text" id="periodeAktif" name="periodeAktif" class="form-control bg-transparent border-white" value="{{ $sa->periodeAktif }}" disabled> dengan alasan:<input type="text" id="keperluan" name="keperluan" class="form-control bg-transparent border-white" value="{{ $sa->keperluanSurat }}" disabled>
                 </p>
+
+                @endforeach
+
 
                 @elseif($type == 'Cuti')
 
