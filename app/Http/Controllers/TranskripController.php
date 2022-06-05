@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use App\Exports\InvoicesExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TranskripController extends Controller
 {
@@ -267,7 +269,7 @@ class TranskripController extends Controller
                 $xmlWriter->save("php://output");
                 break;
             case '4':
-                return view('contents.mahasiswa.transkrip.word');
+                return Excel::download(new InvoicesExport, 'invoices.xlsx');
                 break;
         }
     }
