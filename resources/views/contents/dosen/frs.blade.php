@@ -11,25 +11,21 @@
         {{-- /view/contents/ --}}
         <div class="content">
             {{-- Isi disini --}}
-            <div class="row text-center mb-2">
+            <div class="container mb-2">
                 <h2 class="fw-bold">Formulir Rencana Studi</h2>
-            </div>
-            <div class="row mb-4">
                 <span class="badge text-bg-light shadow-sm">{{ $dosen->dosenNama }}</span>
             </div>
-            <form class="row mb-4 justify-content-center" action="/dosen/FRS" method="POST">
+            <form class="mb-4" action="/dosen/FRS" method="POST">
                 @csrf
-                <div class="col-9">
-                    <select class="form-select" name="periode">
-                        <option value="" disabled selected>Periode</option>
-                        <option value="Genap 2021">Genap 2021</option>
-                        <option value="Ganjil 2021">Ganjil 2021</option>
+                <div class="form-floating">
+                    <select class="form-select" id="periode" name="periode" onchange="this.form.submit()">
+                        <option value="" disabled>Periode</option>
+                        <option value="Genap 2021" {{ $periode == 'Genap 2021' ? 'selected' : '' }}>Genap 2021</option>
+                        <option value="Ganjil 2021" {{ $periode == 'Ganjil 2021' ? 'selected' : '' }}>Ganjil 2021</option>
+                        <option value="Genap 2020" {{ $periode == 'Genap 2020' ? 'selected' : '' }}>Genap 2020</option>
+                        <option value="Ganjil 2020" {{ $periode == 'Ganjil 2020' ? 'selected' : '' }}>Ganjil 2020</option>
                     </select>
-                </div>
-                <div class="col-3">
-                    <button type="submit" class="btn btn-primary">
-                        Ganti
-                    </button>
+                    <label for="periode" class="form-label">Periode</label>
                 </div>
             </form>
             @foreach($mahasiswa as $m)
@@ -58,12 +54,12 @@
                 <div class="collapse" id="collapse{{ $m->NRP }}">
                     <table class="table table-responsive table-striped table-bordered table-fixed text-center">
                         <tr class="table-secondary">
-                            <th>Kode</th>
-                            <th>Mata Kuliah</th>
-                            <th>SKS</th>
-                            <th>Kelas</th>
-                            <th>Dosen</th>
-                            <th>Nilai</th>
+                            <th width="100px">Kode</th>
+                            <th width="350px">Mata Kuliah</th>
+                            <th width="50px">SKS</th>
+                            <th width="50px">Kelas</th>
+                            <th width="400px">Dosen</th>
+                            <th width="50px">Nilai</th>
                         </tr>
                         @foreach($frs as $f)
                         @if($f->NRP == $m->NRP)
