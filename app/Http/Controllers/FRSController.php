@@ -57,6 +57,51 @@ class FRSController extends Controller
         return redirect('/dosen/FRS');
     }
 
+    public function ips($periode)
+    {
+        $sks = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
+        ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
+        ->sum('sks');
+
+        $ips = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
+        ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
+        ->get();
+
+        $nilai = 0;
+        foreach($ips as $s){
+            if(0 < $s->nilai && $s->nilai <= 40){
+                $nilai += 0*$s->sks;
+            }elseif(40 < $s->nilai && $s->nilai <= 55){
+                $nilai += 1*$s->sks;
+            }elseif(55 < $s->nilai && $s->nilai <= 60){
+                $nilai += 2*$s->sks;
+            }elseif(60 < $s->nilai && $s->nilai <= 65){
+                $nilai += 2.5*$s->sks;
+            }elseif(65 < $s->nilai && $s->nilai <= 75){
+                $nilai += 3*$s->sks;
+            }elseif(75 < $s->nilai && $s->nilai <= 85){
+                $nilai += 3.5*$s->sks;
+            }elseif(85 < $s->nilai){
+                $nilai += 4*$s->sks;
+            }
+        }
+
+        return ($nilai/$sks);
+    }
+
+    public function ipk()
+    {
+        $ipk = FRS::where('frs.NRP', auth()->user()->NRP)
+        ->select('periode')->groupBy('periode')->get();
+
+        $nilai = 0;
+        foreach($ipk as $k){
+            $nilai += $this->ips($k->periode);
+        }
+
+        return ($nilai/$ipk->count());
+    }
+
     public function index(Request $request)
     {
         $startDate = Carbon::createFromFormat('Y-m-d','2022-01-31');
@@ -83,13 +128,9 @@ class FRSController extends Controller
         ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->sum('sks');
 
-        $ips = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
-        ->selectRaw('avg((nilai / 20) - 1) as rata')
-        ->first();
+        $ips = $this->ips($periode);
 
-        $ipk = FRS::where('frs.NRP', auth()->user()->NRP)
-        ->selectRaw('avg((nilai / 20) - 1) as rata')
-        ->first();
+        $ipk = $this->ipk();
 
         $kelas = DaftarKelas::join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'daftar_kelas.kodeMK')
         ->orderBy('semester', 'ASC')

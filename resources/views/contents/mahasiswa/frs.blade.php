@@ -51,7 +51,7 @@
                             <tr>
                                 <td width="150px">IPK / IPS</td>
                                 <td width="10px">:</td>
-                                <td width="350px">{{ number_format($ipk->rata, 2) }} / {{ number_format($ips->rata, 2) }}</td>
+                                <td width="350px">{{ number_format($ipk, 2) }} / {{ number_format($ips, 2) }}</td>
                                 <td width="150px">Batas / Sisa</td>
                                 <td width="10px">:</td>
                                 <td width="350px">24 / {{ 24 - $sks }} SKS</td>
