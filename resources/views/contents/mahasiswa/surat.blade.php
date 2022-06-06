@@ -13,167 +13,76 @@
 <div class="container">
     <main>
         <div class="content">
+            <div class="container">
                 @if($type == 'Aktif')
                 <h2 class="fw-bold">
                     Permohonan Keterangan Aktif
-                </h2> <br>
-
-                <p>
-                    Kepada <br>
-                    Yth. Rektor ITS <br>
-                    Kampus ITS Sukolilo <br>
-                    Surabaya <br>
-                </p>
-
-                @foreach($surat_aktif as $sa)
-                <form>
-                    @csrf
-                    <div class="form-group row mb-3">
-                        <label for="departemen" class="col-2 col-form-label">Departemen</label>
-                        <label for="departemen" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="departemen" name="departemen" class="form-control bg-transparent border-white" value="{{ auth()->user()->departemen }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="namaMahasiswa" class="col-2 col-form-label">Nama</label>
-                        <label for="namaMahasiswa" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="nama" name="nama" class="form-control bg-transparent border-white" value="{{ auth()->user()->nama }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="NRP" class="col-2 col-form-label">NRP</label>
-                        <label for="NRP" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-white" value="{{ auth()->user()->NRP }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="alamat" class="col-2 col-form-label">Alamat</label>
-                        <label for="alamat" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="alamat" name="alamat" class="form-control bg-transparent border-white" value="{{ auth()->user()->alamat }}" disabled>
-                        </div>
-                    </div>
-
-                </form>
-
-                <p>
-                    Mengajukan permohonan keterangan aktif pada <input type="text" id="periodeAktif" name="periodeAktif" class="form-control bg-transparent border-white" value="{{ $sa->periodeAktif }}" disabled> dengan alasan:<input type="text" id="keperluan" name="keperluan" class="form-control bg-transparent border-white" value="{{ $sa->keperluanSurat }}" disabled>
-                </p>
-
-                @endforeach
-
-
+                </h2>
                 @elseif($type == 'Cuti')
-
                 <h2 class="fw-bold">
                     Permohonan Keterangan Berhenti Studi Sementara
-                </h2> <br>
-
-                <p>
-                    Kepada <br>
-                    Yth. Rektor ITS <br>
-                    Kampus ITS Sukolilo <br>
-                    Surabaya <br>
-                </p>
-
-                <form>
-                    @csrf
-                    <div class="form-group row mb-3">
-                        <label for="departemen" class="col-2 col-form-label">Departemen</label>
-                        <label for="departemen" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="departemen" name="departemen" class="form-control bg-transparent border-white" value="{{ auth()->user()->departemen }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="namaMahasiswa" class="col-2 col-form-label">Nama</label>
-                        <label for="namaMahasiswa" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="nama" name="nama" class="form-control bg-transparent border-white" value="{{ auth()->user()->nama }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="NRP" class="col-2 col-form-label">NRP</label>
-                        <label for="NRP" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-white" value="{{ auth()->user()->NRP }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="alamat" class="col-2 col-form-label">Alamat</label>
-                        <label for="alamat" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="alamat" name="alamat" class="form-control bg-transparent border-white" value="{{ auth()->user()->alamat }}" disabled>
-                        </div>
-                    </div>
-
-                </form>
-
-                <p>
-                    Mengajukan permohonan keterangan berhenti studi sementara pada dengan alasan:
-                </p>
-
+                </h2>
                 @elseif($type == 'UndurDiri')
-
                 <h2 class="fw-bold">
                     Permohonan Keterangan Berhenti Kuliah
-                </h2> <br>
-
-                <p>
-                    Kepada <br>
-                    Yth. Rektor ITS <br>
-                    Kampus ITS Sukolilo <br>
-                    Surabaya <br>
-                </p>
-
-                <form>
-                    @csrf
-                    <div class="form-group row mb-3">
-                        <label for="departemen" class="col-2 col-form-label">Departemen</label>
-                        <label for="departemen" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="departemen" name="departemen" class="form-control bg-transparent border-white" value="{{ auth()->user()->departemen }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="namaMahasiswa" class="col-2 col-form-label">Nama</label>
-                        <label for="namaMahasiswa" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="nama" name="nama" class="form-control bg-transparent border-white" value="{{ auth()->user()->nama }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="NRP" class="col-2 col-form-label">NRP</label>
-                        <label for="NRP" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="NRP" name="NRP" class="form-control bg-transparent border-white" value="{{ auth()->user()->NRP }}" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-3">
-                        <label for="alamat" class="col-2 col-form-label">Alamat</label>
-                        <label for="alamat" class="col-1 col-form-label">:</label>
-                        <div class="col-9">
-                            <input type="text" id="alamat" name="alamat" class="form-control bg-transparent border-white" value="{{ auth()->user()->alamat }}" disabled>
-                        </div>
-                    </div>
-
-                </form>
-
-                <p>
-                    Mengajukan permohonan keterangan berhenti kuliah dengan alasan:
-                </p>
-
+                </h2>
                 @endif
-
-        </div>
-        <div>
-
+            </div>
+            <div class="container align-items-start text-start">
+                <table class="table table-borderless align-middle text-start mb-4" style="box-shadow: 0 0; margin-bottom: -0.1em">
+                    <tbody>
+                        <tr>
+                            <td>Kepada</td>
+                        </tr>
+                        <tr>
+                            <td>Yth. Rektor ITS</td>
+                        </tr>
+                        <tr>
+                            <td>Kampus ITS Sukolilo</td>
+                        </tr>
+                        <tr>
+                            <td>Surabaya</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-borderless align-middle text-start mb-4" style="box-shadow: 0 0; margin-bottom: -0.1em">
+                    <tbody>
+                        <tr>
+                            <td>Departemen</td>
+                            <td>:</td>
+                            <td>{{ auth()->user()->departemen }}</td>
+                        </tr>
+                        <tr>
+                            <td>Nama</td>
+                            <td>:</td>
+                            <td>{{ auth()->user()->nama }}</td>
+                        </tr>
+                        <tr>
+                            <td>NRP</td>
+                            <td>:</td>
+                            <td>{{ auth()->user()->NRP }}</td>
+                        </tr>
+                        <tr>
+                            <td>Alamat</td>
+                            <td>:</td>
+                            <td>{{ auth()->user()->alamat }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-borderless align-middle text-start" style="box-shadow: 0 0; margin-bottom: -0.1em">
+                    <tbody>
+                        <tr>
+                            @if($type == 'Aktif')
+                            <td>Mengajukan permohonan keterangan aktif pada</td>
+                            @elseif($type == 'Cuti')
+                            <td>Mengajukan permohonan keterangan berhenti studi sementara pada</td>
+                            @elseif($type == 'UndurDiri')
+                            <td>Mengajukan permohonan keterangan berhenti kuliah pada</td>
+                            @endif
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 </div>
-
-{{-- Footer --}}
-@include('components.footer')

@@ -61,7 +61,7 @@
                         @if($a->status == true)
                         <td><span class="badge text-bg-success shadow-sm">Disetujui</span></td>
                         <td>
-                            <a href="/suratAktif/cetak">
+                            <a href="/suratAktif/cetak/{{ $a->id }}">
                                 <span><i class="bi bi-printer-fill fs-4"></i></span>
                             </a>
                         </td>

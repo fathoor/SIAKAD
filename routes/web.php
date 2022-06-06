@@ -85,7 +85,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::get('/surat{type}', [SuratController::class, 'index']);
     Route::get('/surat{type}/add', [SuratController::class, 'add']);
     Route::post('/surat{type}/store', [SuratController::class, 'store']);
-    Route::get('/surat{type}/cetak', [SuratController::class, 'cetak']);
+    Route::get('/surat{type}/cetak/{id}', [SuratController::class, 'cetak']);
 });
 
 // Dosen Route

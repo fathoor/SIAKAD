@@ -99,8 +99,20 @@ class SuratController extends Controller
         }
     }
 
-    public function cetak($type)
+    public function cetak($type, $id)
     {
+        switch($type){
+            case 'Aktif':
+                $surat = SuratAktif::find($id)->first();
+                break;
+            case 'Cuti':
+                $surat = SuratCuti::find($id)->first();
+                break;
+            case 'UndurDiri':
+                $surat = SuratUndurDiri::find($id)->first();
+                break;
+        }
+
         return view('contents.mahasiswa.surat', ['type' => $type]);
     }
 }
