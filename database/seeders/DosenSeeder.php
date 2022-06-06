@@ -371,6 +371,12 @@ class DosenSeeder extends Seeder
                 'dosenNama' => 'Reny Nadlifatin, S.Kom., MBA., Ph.D',
                 'dosenKodeMK' => 'IS184946'
             ],
+            //Tambahan
+            [
+                'dosenNRP' => 5026210,
+                'dosenNama' => 'Nisfu Asrul Sani, S.Kom., M.Sc.',
+                'dosenKodeMK' => 'IS184516'
+            ]
         ]);
     }
 }
