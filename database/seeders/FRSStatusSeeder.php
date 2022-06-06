@@ -17,14 +17,29 @@ class FRSStatusSeeder extends Seeder
     {
         FRSStatus::insert([
             [
-                'NRP' => 5026201139,
-                'periode' => 'Genap 2021',
-                'status' => false
+                'NRP' => 5026201000,
+                'periode' => 'Ganjil 2020',
+                'status' => true
+            ],
+            [
+                'NRP' => 5026201000,
+                'periode' => 'Genap 2020',
+                'status' => true
+            ],
+            [
+                'NRP' => 5026201000,
+                'periode' => 'Ganjil 2021',
+                'status' => true
             ],
             [
                 'NRP' => 5026201000,
                 'periode' => 'Genap 2021',
                 'status' => true
+            ],
+            [
+                'NRP' => 5026201139,
+                'periode' => 'Genap 2021',
+                'status' => false
             ],
             [
                 'NRP' => 5026201007,

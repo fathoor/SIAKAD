@@ -83,10 +83,12 @@ class FRSController extends Controller
         ->sum('sks');
 
         $ips = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
-        ->avg('nilai');
+        ->selectRaw('avg((nilai / 20) - 1) as rata')
+        ->first();
 
         $ipk = FRS::where('frs.NRP', auth()->user()->NRP)
-        ->avg('nilai');
+        ->selectRaw('avg((nilai / 20) - 1) as rata')
+        ->first();
 
         $kelas = DaftarKelas::join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'daftar_kelas.kodeMK')
         ->orderBy('semester', 'ASC')

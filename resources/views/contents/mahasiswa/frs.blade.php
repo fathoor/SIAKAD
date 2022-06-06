@@ -51,7 +51,7 @@
                             <tr>
                                 <td width="150px">IPK / IPS</td>
                                 <td width="10px">:</td>
-                                <td width="350px">{{ number_format($ipk, 2) }} / {{ number_format($ips, 2) }}</td>
+                                <td width="350px">{{ number_format($ipk->rata, 2) }} / {{ number_format($ips->rata, 2) }}</td>
                                 <td width="150px">Batas / Sisa</td>
                                 <td width="10px">:</td>
                                 <td width="350px">24 / {{ 24 - $sks }} SKS</td>
@@ -76,11 +76,11 @@
                             @foreach($kelas as $k)
                             @if($k->matkulAtas == true)
                             <option value="{{ $k->kodeMK }}/{{ $k->kelas }}/{{ $k->dosenNRP }}/1/{{ $periode }}">
-                                {{ $k->namaMataKuliah }} [{{ $k->kelas }}] - {{ $peserta->where('kodeMK', $k->kodeMK)->where('kelas', $k->kelas)->count() }}/{{ $k->kapasitas }}
+                                {{ $k->namaMataKuliah }} [{{ $k->kelas }}] - {{ $peserta->where('kodeMK', $k->kodeMK)->where('kelas', $k->kelas)->where('periode', $periode)->count() }}/{{ $k->kapasitas }}
                             </option>
                             @else
                             <option value="{{ $k->kodeMK }}/{{ $k->kelas }}/{{ $k->dosenNRP }}/0/{{ $periode }}">
-                                {{ $k->namaMataKuliah }} [{{ $k->kelas }}] - {{ $peserta->where('kodeMK', $k->kodeMK)->where('kelas', $k->kelas)->count() }}/{{ $k->kapasitas }}
+                                {{ $k->namaMataKuliah }} [{{ $k->kelas }}] - {{ $peserta->where('kodeMK', $k->kodeMK)->where('kelas', $k->kelas)->where('periode', $periode)->count() }}/{{ $k->kapasitas }}
                             </option>
                             @endif
                             @endforeach
