@@ -108,7 +108,7 @@ class MataKuliahSeeder extends Seeder
                 'kodeMataKuliah' => 'IS184621',
                 'kodeKelas' => 'SI4102',
                 'namaMataKuliah' => 'Manajemen Basis Data',
-                'sks' => 4,
+                'sks' => 3,
                 'tahunKurikulum' => 2018,
                 'semester' => 4
             ],

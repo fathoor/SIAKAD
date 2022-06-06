@@ -38,7 +38,7 @@
             <div class="mt-2">
                 @switch(auth()->user()->type)
                     @case('mahasiswa')
-                        <a href="/dashboard">
+                        <a href="/frs">
                             <button class="btn btn-danger">
                                 <i class="bi bi-arrow-counterclockwise fs-6"></i>
                             </button>
