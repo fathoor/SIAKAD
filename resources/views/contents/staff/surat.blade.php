@@ -25,6 +25,38 @@
                 </div>
             </div>
 
+            <?php
+            if($n->nilaiangka <=40){
+                echo "E";
+            } elseif ($n->nilaiangka >=41 && $n->nilaiangka <=55) {
+                echo "D";
+            } elseif ($n->nilaiangka >=56 && $n->nilaiangka <=60) {
+                echo "C";
+            } elseif ($n->nilaiangka >=61 && $n->nilaiangka <=65) {
+                echo "BC";
+            } elseif ($n->nilaiangka >=66 && $n->nilaiangka <=75) {
+                echo "B";
+            } elseif ($n->nilaiangka >=76 && $n->nilaiangka <=85) {
+                echo "AB";
+            } else{
+                echo "A";
+            }
+            ?>
+            
+                @if($type == 'Aktif')
+                <h2 class="fw-bold">
+                    Permohonan Keterangan Aktif
+                </h2>
+                @elseif($type == 'Cuti')
+                <h2 class="fw-bold">
+                    Permohonan Keterangan Berhenti Studi Sementara
+                </h2>
+                @elseif($type == 'UndurDiri')
+                <h2 class="fw-bold">
+                    Permohonan Keterangan Berhenti Kuliah
+                </h2>
+                @endif
+
             <div class="row mb-4">
                 <h2 class="fw-bold">Surat Keterangan Aktif</h2>
             </div>

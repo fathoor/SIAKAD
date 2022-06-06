@@ -16,7 +16,7 @@
                     <h2 class="fw-bold">Nilai Mahasiswa</h2>
                 </div>
                 <div>
-                    <form class="form-inline" id="input" action="" method="POST">
+                    <form class="form-inline" id="input" action="/dosen/suratMahasiswa2" method="POST">
                         @csrf
                         <div class="form-group row mb-3">
                             <label for="nrp" class="col-3 col-form-label">NRP</label>

@@ -13,7 +13,7 @@
             {{-- Isi disini --}}
             <div class="container">
                 <div class="row mb-5">
-                    <a href="">
+                    <a href="/dosen/nilaiMahasiswa2">
                         <button class="btn btn-primary">
                             <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Input Nilai</span>
                         </button>
@@ -31,7 +31,7 @@
                             <th>Bobot</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    {{-- <tbody>
                         @foreach($nilaikuliah as $n)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
@@ -75,7 +75,7 @@
                             </td>
                         </tr>
                         @endforeach
-                    </tbody>
+                    </tbody> --}}
                 </table>
             </div>
         </div>

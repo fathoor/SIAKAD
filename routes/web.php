@@ -19,6 +19,8 @@ use App\Http\Controllers\HasilKuesionerController;
 use App\Http\Controllers\SuratUndurDiriController;
 use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\NilaiMahasiswaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,12 +44,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/restricted', function () {
         return view('restricted');
     })->name('error');
-    
+
     // Profile Route
     Route::get('/biodata', [BiodataController::class, 'index']);
     Route::get('/biodata/edit', [BiodataController::class, 'edit']);
     Route::post('/biodata/update', [BiodataController::class, 'update']);
-    
+
     // Peserta Route
     Route::get('/peserta/{kodeMK}/{kelas}', [DaftarKelasController::class, 'kelas']);
 });
@@ -110,7 +112,16 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     Route::post('/dosen/FRS/accept{NRP}', [FRSController::class, 'accept']);
 
     //Nilai Mahasiswa
+    Route::get('dosen/nilaiMahasiswa', function () {
+        return view('contents.dosen.nilaiMahasiswa');
+    });
+    Route::post('dosen/nilaiMahasiswa', function () {
+        return view('contents.dosen.nilaiMahasiswa');
+    });
     Route::get('dosen/nilaiMahasiswa2', function () {
+        return view('contents.dosen.nilaiMahasiswa2');
+    });
+    Route::post('dosen/nilaiMahasiswa2', function () {
         return view('contents.dosen.nilaiMahasiswa2');
     });
 });
