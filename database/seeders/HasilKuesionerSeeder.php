@@ -18,7 +18,7 @@ class HasilKuesionerSeeder extends Seeder
         DB::table('hasil_kuesioner')->insert([
             [
                 'dosenNRP' => '5026201',
-                'periode' => '2021B',
+                'periode' => 'Genap 2021',
                 'kodeMK' => 'IS184412',
                 'jawaban1' => 5,
                 'jawaban2' => 5,
@@ -36,7 +36,7 @@ class HasilKuesionerSeeder extends Seeder
             ],
             [
                 'dosenNRP' => '5026202',
-                'periode' => '2021B',
+                'periode' => 'Genap 2021',
                 'kodeMK' => 'IS184410',
                 'jawaban1' => 4,
                 'jawaban2' => 4,
@@ -54,7 +54,7 @@ class HasilKuesionerSeeder extends Seeder
             ],
             [
                 'dosenNRP' => '5026203',
-                'periode' => '2021B',
+                'periode' => 'Genap 2021',
                 'kodeMK' => 'IS184411',
                 'jawaban1' => 5,
                 'jawaban2' => 5,
@@ -72,7 +72,7 @@ class HasilKuesionerSeeder extends Seeder
             ],
             [
                 'dosenNRP' => '5026204',
-                'periode' => '2021B',
+                'periode' => 'Genap 2021',
                 'kodeMK' => 'IS184413',
                 'jawaban1' => 5,
                 'jawaban2' => 5,
@@ -90,7 +90,7 @@ class HasilKuesionerSeeder extends Seeder
             ],
             [
                 'dosenNRP' => '5026205',
-                'periode' => '2021B',
+                'periode' => 'Genap 2021',
                 'kodeMK' => 'IS184414',
                 'jawaban1' => 5,
                 'jawaban2' => 4,
@@ -108,7 +108,7 @@ class HasilKuesionerSeeder extends Seeder
             ],
             [
                 'dosenNRP' => '5026206',
-                'periode' => '2021B',
+                'periode' => 'Genap 2021',
                 'kodeMK' => 'IS184415',
                 'jawaban1' => 5,
                 'jawaban2' => 5,

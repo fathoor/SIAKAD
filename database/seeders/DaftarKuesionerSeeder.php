@@ -17,54 +17,9 @@ class DaftarKuesionerSeeder extends Seeder
     {
         DB::table('daftar_kuesioner')->insert([
             [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IS184101',
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IS184203',
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IS184204',
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IS184308',
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IS184310',
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IS184307',
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IS184309',
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IW184301',
-                'status' => true
-            ],
-            [
-                'NRP' => '5026201130',
+                'dosenNRP' => '5026201',
                 'kodeMK' => 'IS184412',
-                'status' => false
-            ],
-            [
-                'NRP' => '5026201130',
-                'kodeMK' => 'IS184414',
-                'status' => false
+                'periode' => 'Genap 2021'
             ],
         ]);
     }

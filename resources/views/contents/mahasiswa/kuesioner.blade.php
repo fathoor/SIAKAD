@@ -33,11 +33,11 @@
                                         {{ $k->periode == $smtper->periode ? 'selected' : '' }}>
                                         @switch($semester)
                                             @case('A')
-                                                Ganjil - {{ $tahun }}
+                                                Ganjil {{ $tahun }}
                                             @break
 
                                             @case('B')
-                                                Genap - {{ $tahun }}
+                                                Genap {{ $tahun }}
                                             @break
                                         @endswitch
                                     </option>
@@ -68,10 +68,10 @@
                     <tbody>
                         @foreach ($matkul as $mk)
                         <tr>
-                            <td>{{ $mk->namaMataKuliah }}</td>
+                            <td>{{ $mk->namaMataKuliah }} ({{ $mk->kelas }})</td>
                             <td>{{ $mk->dosenNama }}</td>
                             <td>
-                                @if($mk->status == '0')
+                                @if($mk->kuesioner == '0')
                                 <span class="badge text-bg-danger shadow-sm">Belum Terisi</span>
                                 @else
                                 <span class="badge text-bg-success shadow-sm">Sudah Terisi</span>
@@ -88,7 +88,7 @@
                                         </option>
                                         @endforeach
                                     </select>
-                                    @if ($mk->status == '0')
+                                    @if ($mk->kuesioner == '0')
                                         <button type="submit" class="btn btn-warning btn-sm">
                                             <i class="bi bi-inboxes-fill"></i>
                                         </button>

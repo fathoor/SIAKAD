@@ -30,11 +30,11 @@
                                         {{ $k->periode == $smtper->periode ? 'selected' : '' }}>
                                         @switch($semester)
                                             @case('A')
-                                                Ganjil - {{ $tahun }}
+                                                Ganjil {{ $tahun }}
                                             @break
 
                                             @case('B')
-                                                Genap - {{ $tahun }}
+                                                Genap {{ $tahun }}
                                             @break
                                         @endswitch
                                     </option>

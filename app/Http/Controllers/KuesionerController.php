@@ -6,41 +6,61 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Periode;
 use App\Models\Dosen;
+use App\Models\FRS;
+use Illuminate\Support\Str;
 
 class KuesionerController extends Controller
 {
     public function index()
     {
         $periode = Periode::orderBy('id', 'desc')->first();
+        $period = $periode->periode;
+        $tahun = Str::substr($period, 0, 4);
+        $semester = Str::substr($period, 4, 1);
+        switch ($semester) {
+            case 'A':
+                $periods = 'Ganjil ' . $tahun;
+                break;
+            case 'B':
+                $periods = 'Genap ' . $tahun;
+                break;
+        }
         $kuesioner = Periode::all();
         $smtper = Periode::latest('id')->first();
-        $smt = $smtper->id;
-        $matkul = DB::table('daftar_kuesioner')
-            ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->join('dosen', 'daftar_kuesioner.kodeMK', '=', 'dosen.dosenKodeMK')
-            ->where([
-                ['daftar_kuesioner.NRP', auth()->user()->NRP],
-                ['mata_kuliah.semester', '=', $smt]
-            ])
-            ->get();
+        $matkul = FRS::where([
+            ['NRP', auth()->user()->NRP],
+            ['periode', $periods]
+        ])
+        ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+        ->join('dosen', [['frs.dosenNRP', '=', 'dosen.dosenNRP'], ['frs.kodeMK', '=', 'dosen.dosenKodeMK']])
+        ->get();
         return view('contents.mahasiswa.kuesioner', ['smtper' => $smtper, 'periode' => $periode, 'matkul' => $matkul, 'kuesioner' => $kuesioner]);
     }
 
     public function ganti(Request $request)
     {
         $periode = Periode::orderBy('id', 'desc')->first();
+        $period = $request->periode;
+        $tahun = Str::substr($period, 0, 4);
+        $semester = Str::substr($period, 4, 1);
+        switch ($semester) {
+            case 'A':
+                $periods = 'Ganjil ' . $tahun;
+                break;
+            case 'B':
+                $periods = 'Genap ' . $tahun;
+                break;
+        }
         $kuesioner = Periode::all();
-        $smtper = Periode::where('periode', $request->periode)->first();
-        $smt = $smtper->id;
-        $matkul = DB::table('daftar_kuesioner')
-            ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->join('dosen', 'daftar_kuesioner.kodeMK', '=', 'dosen.dosenKodeMK')
-            ->where([
-                ['daftar_kuesioner.NRP', auth()->user()->NRP],
-                ['mata_kuliah.semester', '=', $smt]
-            ])
-            ->get();
-        return view('contents.mahasiswa.kuesioner', ['smtper' => $smtper, 'kuesioner' => $kuesioner, 'matkul' => $matkul, 'periode' => $periode]);
+        $smtper = Periode::where('periode', $period)->first();
+        $matkul = FRS::where([
+            ['NRP', auth()->user()->NRP],
+            ['periode', $periods]
+        ])
+        ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+        ->join('dosen', [['frs.dosenNRP', '=', 'dosen.dosenNRP'], ['frs.kodeMK', '=', 'dosen.dosenKodeMK']])
+        ->get();
+        return view('contents.mahasiswa.kuesioner', ['smtper' => $smtper, 'periode' => $periode, 'matkul' => $matkul, 'kuesioner' => $kuesioner]);
     }
 
     public function isi(Request $request)
@@ -50,7 +70,17 @@ class KuesionerController extends Controller
             ->join('mata_kuliah', 'dosen.dosenKodeMK', '=', 'mata_kuliah.kodeMataKuliah')
             ->where('dosen.dosenNRP', $dosenNRP)
             ->first();
-        $periode = $request->periode;
+        $period = $request->periode;
+        $tahun = Str::substr($period, 0, 4);
+        $semester = Str::substr($period, 4, 1);
+        switch ($semester) {
+            case 'A':
+                $periode = 'Ganjil ' . $tahun;
+                break;
+            case 'B':
+                $periode = 'Genap ' . $tahun;
+                break;
+        }
         return view('contents.mahasiswa.isi-kuesioner', ['dosen' => $dosen, 'periode' => $periode]);
     }
 
@@ -76,9 +106,8 @@ class KuesionerController extends Controller
                 'komentar' => $request->komen
             ]);
 
-        DB::table('daftar_kuesioner')
-            ->where([['NRP', auth()->user()->NRP], ['kodeMK', $request->kodeMK]])
-            ->update(['status' => '1']);
+        FRS::where([['NRP', auth()->user()->NRP], ['kodeMK', $request->kodeMK], ['periode', $request->periode]])
+            ->update(['kuesioner' => '1']);
 
         return redirect('/kuesioner');
     }
