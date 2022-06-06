@@ -74,7 +74,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201007,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
             [
                 'NRP' => 5026201045,
@@ -94,7 +94,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201045,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
             [
                 'NRP' => 5026201054,
@@ -114,7 +114,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201054,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
             [
                 'NRP' => 5026201068,
@@ -134,7 +134,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201068,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
             [
                 'NRP' => 5026201091,
@@ -154,7 +154,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201091,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
             [
                 'NRP' => 5026201096,
@@ -174,7 +174,27 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201096,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
+            ],
+            [
+                'NRP' => 5026201109,
+                'periode' => 'Ganjil 2020',
+                'status' => true
+            ],
+            [
+                'NRP' => 5026201109,
+                'periode' => 'Genap 2020',
+                'status' => true
+            ],
+            [
+                'NRP' => 5026201109,
+                'periode' => 'Ganjil 2021',
+                'status' => true
+            ],
+            [
+                'NRP' => 5026201109,
+                'periode' => 'Genap 2021',
+                'status' => true
             ],
             [
                 'NRP' => 5026201115,
@@ -194,7 +214,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201115,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
             [
                 'NRP' => 5026201130,
@@ -214,7 +234,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201130,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
             [
                 'NRP' => 5026201141,
@@ -234,7 +254,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201141,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
         ]);
     }
