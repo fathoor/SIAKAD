@@ -112,18 +112,7 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     Route::post('/dosen/FRS/accept{NRP}', [FRSController::class, 'accept']);
 
     //Nilai Mahasiswa
-    Route::get('dosen/nilaiMahasiswa', function () {
-        return view('contents.dosen.nilaiMahasiswa');
-    });
-    Route::post('dosen/nilaiMahasiswa', function () {
-        return view('contents.dosen.nilaiMahasiswa');
-    });
-    Route::get('dosen/nilaiMahasiswa2', function () {
-        return view('contents.dosen.nilaiMahasiswa2');
-    });
-    Route::post('dosen/nilaiMahasiswa2', function () {
-        return view('contents.dosen.nilaiMahasiswa2');
-    });
+    Route::get('/dosen/nilai', [NilaiMahasiswaController::class, 'index']);
 });
 
 // Staff Route
