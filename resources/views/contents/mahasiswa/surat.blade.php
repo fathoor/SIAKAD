@@ -73,11 +73,11 @@
                     <tbody>
                         <tr>
                             @if($type == 'Aktif')
-                            <td>Mengajukan permohonan keterangan aktif pada</td>
+                            <td>Mengajukan permohonan keterangan aktif pada {{ $surat->periodeAktif }} dengan alasan {{ $surat->keperluanSurat }}.</td>
                             @elseif($type == 'Cuti')
-                            <td>Mengajukan permohonan keterangan berhenti studi sementara pada</td>
+                            <td>Mengajukan permohonan keterangan berhenti studi sementara pada {{ $surat->periodeCuti }} dengan alasan {{ $surat->alasanCuti }}.</td>
                             @elseif($type == 'UndurDiri')
-                            <td>Mengajukan permohonan keterangan berhenti kuliah pada</td>
+                            <td>Mengajukan permohonan keterangan berhenti kuliah pada {{ $surat->periodeMundur }} dengan alasan {{ $surat->alasanMundur }}.</td>
                             @endif
                         </tr>
                     </tbody>
