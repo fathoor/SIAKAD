@@ -24,7 +24,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026226,
                 'nilai' => 86,
                 'periode' => 'Ganjil 2020',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             [
                 'NRP' => 5026201000,
@@ -33,7 +34,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026213,
                 'nilai' => 86,
                 'periode' => 'Ganjil 2020',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             // 5026201000 - Genap 2020
             [
@@ -43,7 +45,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026202,
                 'nilai' => 86,
                 'periode' => 'Genap 2020',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             [
                 'NRP' => 5026201000,
@@ -52,7 +55,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026223,
                 'nilai' => 86,
                 'periode' => 'Genap 2020',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             // 5026201000 - Ganjil 2021
             [
@@ -62,7 +66,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026213,
                 'nilai' => 86,
                 'periode' => 'Ganjil 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             [
                 'NRP' => 5026201000,
@@ -71,7 +76,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026234,
                 'nilai' => 76,
                 'periode' => 'Ganjil 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             [
                 'NRP' => 5026201000,
@@ -80,7 +86,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026211,
                 'nilai' => 86,
                 'periode' => 'Ganjil 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             [
                 'NRP' => 5026201000,
@@ -89,7 +96,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026221,
                 'nilai' => 76,
                 'periode' => 'Ganjil 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             [
                 'NRP' => 5026201000,
@@ -98,7 +106,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026202,
                 'nilai' => 86,
                 'periode' => 'Ganjil 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             // 5026201000 - Genap 2021
             [
@@ -108,7 +117,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026212,
                 'nilai' => 90,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201000,
@@ -117,7 +127,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026203,
                 'nilai' => 90,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201000,
@@ -126,7 +137,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026207,
                 'nilai' => 90,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201000,
@@ -135,7 +147,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026234,
                 'nilai' => 90,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201000,
@@ -144,7 +157,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026226,
                 'nilai' => 90,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             // 5026201139 - Genap 2021
             [
@@ -154,7 +168,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026201,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201139,
@@ -163,7 +178,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026214,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201139,
@@ -172,7 +188,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026234,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201139,
@@ -181,7 +198,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026221,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201139,
@@ -190,7 +208,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026237,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => true
+                'matkulAtas' => true,
+                'kuesioner' => false
             ],
             // 5026201054 - Genap 2021
             [
@@ -200,7 +219,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026201,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201054,
@@ -209,7 +229,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026214,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201054,
@@ -218,7 +239,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026234,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201054,
@@ -227,7 +249,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026221,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201054,
@@ -236,7 +259,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026237,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => true
+                'matkulAtas' => true,
+                'kuesioner' => false
             ],
             // 5026201115 - Genap 2021
             [
@@ -246,7 +270,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026201,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201115,
@@ -255,7 +280,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026207,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201115,
@@ -264,7 +290,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026234,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201115,
@@ -273,7 +300,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026226,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => false
+                'matkulAtas' => false,
+                'kuesioner' => false
             ],
             [
                 'NRP' => 5026201115,
@@ -282,7 +310,8 @@ class FRSSeeder extends Seeder
                 'dosenNRP' => 5026237,
                 'nilai' => 0,
                 'periode' => 'Genap 2021',
-                'matkulAtas' => true
+                'matkulAtas' => true,
+                'kuesioner' => false
             ],
         ]);
     }

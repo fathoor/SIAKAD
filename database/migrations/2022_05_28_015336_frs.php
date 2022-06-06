@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('nilai');
             $table->string('periode');
             $table->boolean('matkulAtas')->default(false);
+            $table->boolean('kuesioner')->default(false);
         });
     }
 
