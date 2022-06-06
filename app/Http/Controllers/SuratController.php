@@ -113,6 +113,6 @@ class SuratController extends Controller
                 break;
         }
 
-        return view('contents.mahasiswa.surat', ['type' => $type]);
+        return view('contents.mahasiswa.surat', ['type' => $type, 'surat' => $surat]);
     }
 }
