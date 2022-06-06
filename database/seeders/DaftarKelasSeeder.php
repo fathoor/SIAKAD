@@ -470,7 +470,42 @@ class DaftarKelasSeeder extends Seeder
                 'kodeMK' => 'IS184621',
                 'kelas' => 'I',
                 'dosenNRP' => '5026226',
-            ]
+            ],
+            [
+                'kodeKelas' => 'SI4102',
+                'kapasitas' => '40',
+                'kodeMK' => 'IS184413',
+                'kelas' => 'A',
+                'dosenNRP' => '5026210',
+            ],
+            [
+                'kodeKelas' => 'SI4102',
+                'kapasitas' => '40',
+                'kodeMK' => 'IS184413',
+                'kelas' => 'B',
+                'dosenNRP' => '5026210',
+            ],
+            [
+                'kodeKelas' => 'SI4102',
+                'kapasitas' => '40',
+                'kodeMK' => 'IS184413',
+                'kelas' => 'C',
+                'dosenNRP' => '5026210',
+            ],
+            [
+                'kodeKelas' => 'SI4102',
+                'kapasitas' => '40',
+                'kodeMK' => 'IS184413',
+                'kelas' => 'D',
+                'dosenNRP' => '5026210',
+            ],
+            [
+                'kodeKelas' => 'SI4102',
+                'kapasitas' => '40',
+                'kodeMK' => 'IS184413',
+                'kelas' => 'I',
+                'dosenNRP' => '5026210',
+            ],
         ]);
     }
 }
