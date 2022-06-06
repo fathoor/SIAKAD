@@ -58,7 +58,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Akademik Route
-    Route::get('/frs',  [FRSController::class, 'indexMahasiswa']);
+    Route::get('/frs',  [FRSController::class, 'index']);
+    Route::post('/frs',  [FRSController::class, 'index']);
 
     // Transkrip Route
     Route::get('/transkrip', function () {

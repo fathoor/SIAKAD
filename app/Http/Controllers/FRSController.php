@@ -8,6 +8,7 @@ use App\Models\Dosen;
 use App\Models\Wali;
 use App\Models\FRS;
 use App\Models\FRSStatus;
+use App\Models\DaftarKelas;
 
 class FRSController extends Controller
 {
@@ -54,28 +55,55 @@ class FRSController extends Controller
         return redirect('/dosen/FRS');
     }
 
-
-    public function indexMahasiswa()
+    public function index(Request $request)
     {
-        // $mahasiswa = DB::table('wali')
-        // ->where('dosenNRP', auth()->user()->NRP)
-        // ->leftjoin('akun', 'akun.NRP', '=', 'wali.mahasiswaNRP')
-        // ->get();
+        if ($request->periode != ''){
+            $periode = $request->periode;
+        }else{
+            $periode = 'Genap 2021';
+        }
 
-        $frs = DB::table('frs')
-        ->leftjoin('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
-        ->leftjoin('dosen', 'dosen.dosenKodeMK', '=', 'frs.kodeMK')
+        $frs = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
+        ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
+        ->join('dosen', function($join){
+            $join->on('dosen.dosenKodeMK', '=', 'frs.kodeMK');
+            $join->on('dosen.dosenNRP', '=', 'frs.dosenNRP');})
         ->orderBy('kodeMK', 'asc')
         ->get();
 
-        $nilai = DB::table('nilai_mk')->get();
+        $sks = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
+        ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
+        ->sum('sks');
 
-        $matakuliah = DB::table('mata_kuliah')->get();
+        $ips = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
+        ->avg('nilai');
+
+        $ipk = FRS::where('frs.NRP', auth()->user()->NRP)
+        ->avg('nilai');
+
+        $kelas = DaftarKelas::join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'daftar_kelas.kodeMK')
+        ->orderBy('semester', 'ASC')
+        ->orderBy('kodeMK', 'ASC')
+        ->orderBy('kelas', 'ASC')
+        ->get();
+
+        $peserta = FRSStatus::where([['frs_status.periode', 'Genap 2021'], ['status', true]])
+        ->join('frs', 'frs.NRP', '=', 'frs_status.NRP')
+        ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
+        ->select('kodeMK', 'kelas', DB::raw('count(*) as total'))
+        ->groupBy('kodeMK', 'kelas')
+        ->get();
+        
+        $mahasiswa = Wali::where('mahasiswaNRP', auth()->user()->NRP)
+        ->join('akun', 'akun.NRP', '=', 'wali.dosenNRP')
+        ->join('frs_status', 'frs_status.NRP', '=', 'wali.mahasiswaNRP')
+        ->first();
 
         return view('contents.mahasiswa.frs', [
-            'frs' => $frs,
-            'nilai' => $nilai,
-            'matakuliah' => $matakuliah
+            'frs' => $frs, 'sks' => $sks, 'periode' => $periode,
+            'ips' => $ips, 'ipk' => $ipk,
+            'kelas' => $kelas, 'peserta' => $peserta,
+            'mahasiswa' => $mahasiswa
         ]);
         
     }
