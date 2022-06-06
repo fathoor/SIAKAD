@@ -38,11 +38,7 @@
                                     @endforeach
                                     <div>
                                         <span class="badge bg-blue shadow-sm"><i class="bi bi-door-open-fill me-1"></i>{{ $m->kodeKelas }}</span>
-                                        @foreach($peserta as $p)
-                                        @if($p->kodeMK == $m->kodeMataKuliah)
-                                        <span class="badge text-bg-warning shadow-sm"><i class="bi bi-people-fill me-1"></i>{{ $p->total }}</span>
-                                        @endif
-                                        @endforeach
+                                        <span class="badge text-bg-light shadow-sm"><i class="bi bi-people-fill me-1"></i>{{ $peserta->where('kodeMK', $m->kodeMataKuliah)->where('periode', 'Genap 2021')->count() }}</span>
                                     </div>
                                 </div>
                             </div>

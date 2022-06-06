@@ -125,7 +125,7 @@ class FRSSeeder extends Seeder
                 'kodeMK' => 'IS184412',
                 'kelas' => 'A',
                 'dosenNRP' => 5026203,
-                'nilai' => 90,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -159,6 +159,27 @@ class FRSSeeder extends Seeder
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
+            ],
+            // 5026201130 - Ganjil 2020
+            [
+                'NRP' => 5026201130,
+                'kodeMK' => 'IS184102',
+                'kelas' => 'A',
+                'dosenNRP' => 5026207,
+                'nilai' => 90,
+                'periode' => 'Ganjil 2020',
+                'matkulAtas' => false,
+                'kuesioner' => true
+            ],
+            [
+                'NRP' => 5026201130,
+                'kodeMK' => 'IS184101',
+                'kelas' => 'A',
+                'dosenNRP' => 5026213,
+                'nilai' => 88,
+                'periode' => 'Ganjil 2020',
+                'matkulAtas' => false,
+                'kuesioner' => true
             ],
             // 5026201130 - Genap 2020
             [
@@ -246,9 +267,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201130,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'A',
-                'dosenNRP' => 5026203,
-                'nilai' => 90,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -288,7 +309,7 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201141,
                 'kodeMK' => 'IS184102',
                 'kelas' => 'B',
-                'dosenNRP' => 5026226,
+                'dosenNRP' => 5026207,
                 'nilai' => 78,
                 'periode' => 'Ganjil 2020',
                 'matkulAtas' => false,
@@ -390,9 +411,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201141,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'A',
-                'dosenNRP' => 5026203,
-                'nilai' => 80,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -534,9 +555,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201007,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'D',
-                'dosenNRP' => 5026203,
-                'nilai' => 90,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -678,9 +699,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201045,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'D',
-                'dosenNRP' => 5026203,
-                'nilai' => 98,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -822,9 +843,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201054,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'B',
-                'dosenNRP' => 5026203,
-                'nilai' => 78,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -966,9 +987,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201068,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'A',
-                'dosenNRP' => 5026203,
-                'nilai' => 78,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -1110,9 +1131,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201091,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'D',
-                'dosenNRP' => 5026203,
-                'nilai' => 91,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -1254,9 +1275,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201096,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'A',
-                'dosenNRP' => 5026203,
-                'nilai' => 87,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -1398,9 +1419,9 @@ class FRSSeeder extends Seeder
             [
                 'NRP' => 5026201109,
                 'kodeMK' => 'IS184412',
-                'kelas' => 'A',
-                'dosenNRP' => 5026203,
-                'nilai' => 82,
+                'kelas' => 'C',
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -1543,8 +1564,8 @@ class FRSSeeder extends Seeder
                 'NRP' => 5026201115,
                 'kodeMK' => 'IS184412',
                 'kelas' => 'C',
-                'dosenNRP' => 5026203,
-                'nilai' => 90,
+                'dosenNRP' => 5026201,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false
@@ -1621,6 +1642,16 @@ class FRSSeeder extends Seeder
                 'matkulAtas' => false,
                 'kuesioner' => true
             ],
+            [
+                'NRP' => 5026201139,
+                'kodeMK' => 'IW184301',
+                'kelas' => 'A',
+                'dosenNRP' => 5026221,
+                'nilai' => 78,
+                'periode' => 'Genap 2020',
+                'matkulAtas' => true,
+                'kuesioner' => true
+            ],
             // 5026201139 - Ganjil 2021
             [
                 'NRP' => 5026201139,
@@ -1654,16 +1685,6 @@ class FRSSeeder extends Seeder
             ],
             [
                 'NRP' => 5026201139,
-                'kodeMK' => 'IW184301',
-                'kelas' => 'A',
-                'dosenNRP' => 5026221,
-                'nilai' => 78,
-                'periode' => 'Ganjil 2021',
-                'matkulAtas' => false,
-                'kuesioner' => true
-            ],
-            [
-                'NRP' => 5026201139,
                 'kodeMK' => 'IS184305',
                 'kelas' => 'A',
                 'dosenNRP' => 5026202,
@@ -1672,13 +1693,33 @@ class FRSSeeder extends Seeder
                 'matkulAtas' => false,
                 'kuesioner' => true
             ],
+            [
+                'NRP' => 5026201139,
+                'kodeMK' => 'IS184411',
+                'kelas' => 'A',
+                'dosenNRP' => 5026212,
+                'nilai' => 100,
+                'periode' => 'Ganjil 2021',
+                'matkulAtas' => true,
+                'kuesioner' => true
+            ],
+            [
+                'NRP' => 5026201139,
+                'kodeMK' => 'IS184515',
+                'kelas' => 'A',
+                'dosenNRP' => 5026223,
+                'nilai' => 100,
+                'periode' => 'Ganjil 2021',
+                'matkulAtas' => true,
+                'kuesioner' => true
+            ],
             // 5026201139 - Genap 2021
             [
                 'NRP' => 5026201139,
                 'kodeMK' => 'IS184412',
                 'kelas' => 'C',
                 'dosenNRP' => 5026201,
-                'nilai' => 88,
+                'nilai' => 100,
                 'periode' => 'Genap 2021',
                 'matkulAtas' => false,
                 'kuesioner' => false

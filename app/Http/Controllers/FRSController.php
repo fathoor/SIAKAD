@@ -28,7 +28,8 @@ class FRSController extends Controller
         ->join('frs_status', 'frs_status.NRP', '=', 'wali.mahasiswaNRP')
         ->get();
 
-        $frs = FRS::join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
+        $frs = FRS::where('periode', $periode)
+        ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->join('dosen', function($join){
             $join->on('dosen.dosenKodeMK', '=', 'frs.kodeMK');
             $join->on('dosen.dosenNRP', '=', 'frs.dosenNRP');})

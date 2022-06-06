@@ -170,11 +170,6 @@ class DosenSeeder extends Seeder
                 'dosenKodeMK' => 'IS184939'
             ],
             [
-                'dosenNRP' => 5026218,
-                'dosenNama' => 'Hanim Maria Astuti, S.Kom., M.Sc.',
-                'dosenKodeMK' => 'IS184940'
-            ],
-            [
                 'dosenNRP' => 5026219,
                 'dosenNama' => 'Anisah Herdiyanti, S.Kom., M.Sc.',
                 'dosenKodeMK' => 'IS184519'
@@ -350,11 +345,6 @@ class DosenSeeder extends Seeder
                 'dosenNRP' => 5026236,
                 'dosenNama' => 'Ika Nurkasanah, S.Kom, M.Sc.',
                 'dosenKodeMK' => 'IS184310'
-            ],
-            [
-                'dosenNRP' => 5026236,
-                'dosenNama' => 'Ika Nurkasanah, S.Kom, M.Sc.',
-                'dosenKodeMK' => 'IS184516'
             ],
             [
                 'dosenNRP' => 5026236,

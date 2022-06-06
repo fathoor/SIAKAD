@@ -21,8 +21,6 @@ class DaftarKelasController extends Controller
         $peserta = FRSStatus::where([['frs_status.periode', 'Genap 2021'], ['status', true]])
         ->join('frs', 'frs.NRP', '=', 'frs_status.NRP')
         ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
-        ->select('kodeMK', DB::raw('count(*) as total'))
-        ->groupBy('kodeMK')
         ->get();
 
         $dosen = Dosen::get();
@@ -38,7 +36,7 @@ class DaftarKelasController extends Controller
     {
         $peserta = FRS::join('akun', 'akun.NRP', '=', 'frs.NRP')
         ->join('frs_status', 'frs_status.NRP', '=', 'frs.NRP')
-        ->where([['kodeMK', $kodeMK], ['kelas', $kelas], ['frs_status.periode', 'Genap 2021'], ['status', true]])
+        ->where([['kodeMK', $kodeMK], ['kelas', $kelas], ['frs.periode', 'Genap 2021'], ['frs_status.periode', 'Genap 2021'], ['status', true]])
         ->orderBy('frs.NRP', 'asc')
         ->get();
 
