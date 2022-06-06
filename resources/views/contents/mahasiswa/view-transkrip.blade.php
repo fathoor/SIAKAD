@@ -169,6 +169,22 @@
                         </tr>
                     </table>
                 </div>
+                <div class="bg-warning bg-opacity-10 p-3 mb-4">
+                    <small>
+                        <strong>CATATAN</strong>
+                        <br>
+                        Transkrip Akademik ini hanya berlaku untuk keperluan:
+                        <ol class="mb-2">
+                            <li>Pengajuan Beasiswa</li>
+                            <li>Melamar Pekerjaan</li>
+                            <li>Persyaratan Yudisium</li>
+                            <li>Tunjangan Gaji</li>
+                            <li>........................................................... (tuliskan keperluannya)</li>
+                        </ol>
+                        <strong>Tanggal Cetak: </strong>{{Carbon::now()->locale('id')
+                            ->isoFormat('DD MMMM YYYY')}}
+                    </small>
+                </div>
             </div>
         </main>
     </div>
