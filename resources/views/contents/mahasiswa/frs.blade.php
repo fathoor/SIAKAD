@@ -1,6 +1,6 @@
 @extends('dashboard')
 
-@section('title', 'FRS')
+@section('title', 'Formulir Rencana Studi')
 
 {{-- Content --}}
 @section('main')
@@ -13,7 +13,7 @@
             {{-- Isi disini --}}
             <div class="container mb-2">
                 <h2 class="fw-bold">Formulir Rencana Studi</h2>
-                <span class="badge text-bg-light shadow-sm">{{ auth()->user()->nama }}</span>
+                <span class="badge text-bg-light shadow-sm">Pengisian: 31 Januari 2022 s/d 05 Februari 2022</span>
             </div>
             <form class="mb-4" action="/frs" method="POST">
                 @csrf
@@ -60,19 +60,26 @@
                     </table>
                 </div>
             </div>
-            <div class="mt-4 text-center">
-                <form class="form-inline" id="input">
+            <div class="mt-3">
+                @if($check == true)
+                <span class="badge text-bg-success shadow-sm">Masa FRS</span>
+                @else
+                <span class="badge text-bg-danger shadow-sm">Belum Masa FRS</span>
+                @endif
+            </div>
+            <div class="mt-3 text-center">
+                <form action="/frs/store" id="store" method="POST">
                     @csrf
                     <div class="form-floating">
                         <select class="form-select" id="matakuliah" name="matakuliah">
                             <option value="" disabled>Daftar Mata Kuliah</option>
                             @foreach($kelas as $k)
-                            @if($k->kelas == 'I')
-                            <option value="{{ $k->kodeMK }}/{{ $k->kelas }}">
-                                {{ $k->namaMataKuliah }} [IUP] - {{ $peserta->where('kodeMK', $k->kodeMK)->where('kelas', $k->kelas)->count() }}/{{ $k->kapasitas }}
+                            @if($k->matkulAtas == true)
+                            <option value="{{ $k->kodeMK }}/{{ $k->kelas }}/{{ $k->dosenNRP }}/1/{{ $periode }}">
+                                {{ $k->namaMataKuliah }} [{{ $k->kelas }}] - {{ $peserta->where('kodeMK', $k->kodeMK)->where('kelas', $k->kelas)->count() }}/{{ $k->kapasitas }}
                             </option>
                             @else
-                            <option value="{{ $k->kodeMK }}/{{ $k->kelas }}">
+                            <option value="{{ $k->kodeMK }}/{{ $k->kelas }}/{{ $k->dosenNRP }}/0/{{ $periode }}">
                                 {{ $k->namaMataKuliah }} [{{ $k->kelas }}] - {{ $peserta->where('kodeMK', $k->kodeMK)->where('kelas', $k->kelas)->count() }}/{{ $k->kapasitas }}
                             </option>
                             @endif
@@ -82,11 +89,23 @@
                     </div>
                 </form>
                 <div class="mt-4">
-                    <button class="btn btn-light shadow-sm me-2" type="button">Ambil</button>
-                    <button class="btn btn-light shadow-sm" type="button">Peserta</button>
+                    @if($check == true)
+                    <button class="btn btn-light shadow-sm me-2" type="submit" form="store" name="action" value="ambil"><i class="bi bi-inboxes-fill me-2"></i>Ambil</button>
+                    <button class="btn btn-light shadow-sm" type="submit" form="store" name="action" value="peserta"><i class="bi bi-people-fill me-2"></i>Peserta</button>
+                    @else
+                    <button class="btn btn-light shadow-sm me-2" type="submit" disabled><i class="bi bi-inboxes-fill me-2"></i>Ambil</button>
+                    <button class="btn btn-light shadow-sm" type="submit" form="store" name="action" value="peserta"><i class="bi bi-people-fill me-2"></i>Peserta</button>
+                    @endif
                 </div>
             </div>
-            <div class="mt-4">
+            <div class="mt-4 text-center">
+                <div class="mb-4">
+                    @if($status->status == false)
+                    <div class="badge text-bg-danger shadow-sm">FRS Belum Disetujui</div>
+                    @else
+                    <div class="badge text-bg-success shadow-sm">FRS Telah Disetujui</div>
+                    @endif
+                </div>
                 <table class="table table-responsive table-hover table-striped table-bordered table-fixed text-center">
                     <thead>
                         <tr class="table-secondary">
@@ -94,14 +113,14 @@
                             <th width="350px">Mata Kuliah</th>
                             <th width="50px">SKS</th>
                             <th width="50px">Kelas</th>
-                            <th width="350px">Dosen</th>
+                            <th width="400px">Dosen</th>
                             <th width="50px">Nilai</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($frs as $f )
                         @if($f->NRP == auth()->user()->NRP)
-                        <tr>
+                        <tr class="{{ $f->matkulAtas == true ? 'table-warning' : '' }}">
                             <td>{{ $f->kodeMataKuliah }}</td>
                             <td>{{ $f->namaMataKuliah }}</td>
                             <td>{{ $f->sks }}</td>
@@ -130,6 +149,13 @@
                         @endif
                         @endforeach
                     </tbody>
+                    <tfoot>
+                        <tr class="table-secondary">
+                            <th colspan="2">Total SKS</th>
+                            <th>{{ $sks }}</th>
+                            <th colspan="3"></th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

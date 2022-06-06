@@ -60,6 +60,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     // Akademik Route
     Route::get('/frs',  [FRSController::class, 'index']);
     Route::post('/frs',  [FRSController::class, 'index']);
+    Route::post('/frs/store',  [FRSController::class, 'store']);
 
     // Transkrip Route
     Route::get('/transkrip', function () {
