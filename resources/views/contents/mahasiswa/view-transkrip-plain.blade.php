@@ -135,6 +135,33 @@
                 <td>{{ $ipk }}</td>
             </tr>
         </table>
+        <br>
+        <br>
+        <table border="1" cellspacing="0">
+            <tr>
+                <td>
+                    <small>
+                        <strong>CATATAN</strong>
+                        <br>
+                        Transkrip Akademik ini hanya berlaku untuk keperluan:
+                        <ol class="mb-2">
+                            <li>Pengajuan Beasiswa</li>
+                            <li>Melamar Pekerjaan</li>
+                            <li>Persyaratan Yudisium</li>
+                            <li>Tunjangan Gaji</li>
+                            <li>........................................................... (tuliskan keperluannya)</li>
+                        </ol>
+                </td>
+                </small>
+            </tr>
+            <tr>
+                <td>
+                    <small>
+                        <strong>Tanggal Cetak: </strong>{{ Carbon::now()->locale('id')->isoFormat('DD MMMM YYYY') }}
+                    </small>
+                </td>
+            </tr>
+        </table>
     </center>
 </body>
 
