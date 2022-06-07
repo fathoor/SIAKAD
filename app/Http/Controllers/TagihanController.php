@@ -40,7 +40,7 @@ class TagihanController extends Controller
     public function detailStaff(Request $request)
     {
         $detail = Tagihan::join('akun', 'akun.NRP', '=', 'tagihan.NRP')
-        ->where('periodeTagihan', $request->periode)
+        ->where([['periodeTagihan', $request->periode], ['tagihan.NRP', $request->NRP]])
         ->first();
 
         return view('contents.staff.ukt-2', ['detail' => $detail]);

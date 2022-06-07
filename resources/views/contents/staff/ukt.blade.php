@@ -12,10 +12,10 @@
         <div class="content">
             {{-- Isi disini --}}
             <div class="container text-center">
-                <h2 class="fw-bold">Data Pembayaran SPP</h2>
+                <h2 class="fw-bold">Historis Pembayaran Mahasiswa</h2>
             </div>
             <div class="my-4">
-                <table class="table table-hover table-bordered align-middle text-center">
+                <table class="table table-hover table-striped table-bordered align-middle text-center">
                     <thead>
                         <tr class="table-secondary">
                             <th width="150px">NRP</th>
@@ -44,6 +44,7 @@
                                 <form action="/staff/ukt/detail" method="POST">
                                     @csrf
                                     <input type="hidden" name="periode" value="{{ $t->periodeTagihan }}">
+                                    <input type="hidden" name="NRP" value="{{ $t->NRP }}">
                                     <button type="submit" class="btn btn-warning btn-sm"><i class="bi bi-envelope-paper-fill"></i></button>
                                 </form>
                             </td>
