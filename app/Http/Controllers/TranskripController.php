@@ -6,27 +6,23 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Models\FRS;
 
 class TranskripController extends Controller
 {
     public function view(Request $request)
     {
         $format = $request->input('format');
-        $matkul = DB::table('frs')
-            ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+        $matkul = FRS::join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
             ->where('frs.NRP', auth()->user()->NRP)
             ->get();
-        $mkPersiapan = DB::table('frs')
-            ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->join('dosen', 'frs.dosenNRP', '=', 'dosen.dosenNRP')
-            ->where([
-                ['frs.NRP', auth()->user()->NRP],
-                ['nilai', '>', '0'],
-                ['mata_kuliah.semester', '<', '3'],
-            ])
+        $sksTempuh = $matkul->sum('sks');
+        $sksLulus = $matkul->where('nilai', '>', '0')->sum('sks');
+        $mkPersiapan = FRS::join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+            ->where([['NRP', auth()->user()->NRP], ['semester', '<', '3'], ['nilai', '>', '0']])
             ->get();
         $nilaiAngkaPersiapan = array();
-        $sksPersiapan = $mkPersiapan->sum('sks');
+        $sksPersiapan = array();
         foreach ($mkPersiapan as $mkp) {
             if (86 <= $mkp->nilai) {
                 $nilaiAngka = 'A';
@@ -44,42 +40,39 @@ class TranskripController extends Controller
                 $nilaiAngka = 'E';
             }
             array_push($nilaiAngkaPersiapan, $nilaiAngka);
+            array_push($sksPersiapan, $mkp->sks);
         }
         $totalPoinPersiapan = 0;
-        foreach ($nilaiAngkaPersiapan as $na) {
-            if ($na == 'A') {
-                $totalPoinPersiapan += 4;
-            } elseif ($na == 'AB') {
-                $totalPoinPersiapan += 3.5;
-            } elseif ($na == 'B') {
-                $totalPoinPersiapan += 3;
-            } elseif ($na == 'BC') {
-                $totalPoinPersiapan += 2.5;
-            } elseif ($na == 'C') {
-                $totalPoinPersiapan += 2;
-            } elseif ($na == 'D') {
-                $totalPoinPersiapan += 1;
+        for ($i = 0; $i < count($nilaiAngkaPersiapan); $i++) {
+            if ($nilaiAngkaPersiapan[$i] == 'A') {
+                $poinPersiapan = 4;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'AB') {
+                $poinPersiapan = 3.5;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'B') {
+                $poinPersiapan = 3;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'BC') {
+                $poinPersiapan = 2.5;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'C') {
+                $poinPersiapan = 2;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'D') {
+                $poinPersiapan = 1;
             } else {
-                $totalPoinPersiapan += 0;
+                $poinPersiapan = 0;
             }
+            $totalPoinPersiapan += ($poinPersiapan * $sksPersiapan[$i]);
         }
-        if ($sksPersiapan == 0) {
+        $totalSksPersiapan = $mkPersiapan->sum('sks');
+        if ($totalSksPersiapan == 0) {
             $ipPersiapan = 0;
         } else {
-            $ipPersiapan = $totalPoinPersiapan / $sksPersiapan;
+            $ipPersiapan = $totalPoinPersiapan / $totalSksPersiapan;
         }
 
-        $mkSarjana = DB::table('frs')
-            ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->join('dosen', 'frs.dosenNRP', '=', 'dosen.dosenNRP')
-            ->where([
-                ['frs.NRP', auth()->user()->NRP],
-                ['nilai', '>', '0'],
-                ['mata_kuliah.semester', '>', '2'],
-            ])
+        $mkSarjana = FRS::join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+            ->where([['NRP', auth()->user()->NRP], ['semester', '>', '2'], ['nilai', '>', '0']])
             ->get();
         $nilaiAngkaSarjana = array();
-        $sksSarjana = $mkSarjana->sum('sks');
+        $sksSarjana = array();
         foreach ($mkSarjana as $mkp) {
             if (86 <= $mkp->nilai) {
                 $nilaiAngka = 'A';
@@ -97,39 +90,40 @@ class TranskripController extends Controller
                 $nilaiAngka = 'E';
             }
             array_push($nilaiAngkaSarjana, $nilaiAngka);
+            array_push($sksSarjana, $mkp->sks);
         }
         $totalPoinSarjana = 0;
-        foreach ($nilaiAngkaSarjana as $na) {
-            if ($na == 'A') {
-                $totalPoinSarjana += 4;
-            } elseif ($na == 'AB') {
-                $totalPoinSarjana += 3.5;
-            } elseif ($na == 'B') {
-                $totalPoinSarjana += 3;
-            } elseif ($na == 'BC') {
-                $totalPoinSarjana += 2.5;
-            } elseif ($na == 'C') {
-                $totalPoinSarjana += 2;
-            } elseif ($na == 'D') {
-                $totalPoinSarjana += 1;
+        for ($i = 0; $i < count($nilaiAngkaSarjana); $i++) {
+            if ($nilaiAngkaSarjana[$i] == 'A') {
+                $poinPersiapan = 4;
+            } elseif ($nilaiAngkaSarjana[$i] == 'AB') {
+                $poinPersiapan = 3.5;
+            } elseif ($nilaiAngkaSarjana[$i] == 'B') {
+                $poinPersiapan = 3;
+            } elseif ($nilaiAngkaSarjana[$i] == 'BC') {
+                $poinPersiapan = 2.5;
+            } elseif ($nilaiAngkaSarjana[$i] == 'C') {
+                $poinPersiapan = 2;
+            } elseif ($nilaiAngkaSarjana[$i] == 'D') {
+                $poinPersiapan = 1;
             } else {
-                $totalPoinSarjana += 0;
+                $poinPersiapan = 0;
             }
+            $totalPoinSarjana += ($poinPersiapan * $sksSarjana[$i]);
         }
-        if ($sksSarjana == 0) {
+        $totalSksSarjana = $mkSarjana->sum('sks');
+        if ($totalSksSarjana == 0) {
             $ipSarjana = 0;
         } else {
-            $ipSarjana = $totalPoinSarjana / $sksSarjana;
+            $ipSarjana = $totalPoinSarjana / $totalSksSarjana;
         }
 
-        if ($sksSarjana == 0 && $sksPersiapan == 0) {
+        if ($totalSksSarjana == 0 && $totalSksPersiapan == 0) {
             $ipk = 0;
         } else {
-            $ipk = ($totalPoinPersiapan + $totalPoinSarjana) / ($sksPersiapan + $sksSarjana);
+            $ipk = ($totalPoinPersiapan + $totalPoinSarjana) / ($totalSksPersiapan + $totalSksSarjana);
         }
 
-        $sksTempuh = $matkul->sum('sks');
-        $sksLulus = $matkul->where('nilai', '>', '0')->sum('sks');
         switch ($format) {
             case '1':
                 return view('contents.mahasiswa.view-transkrip', ['sksTempuh' => $sksTempuh, 'sksLulus' => $sksLulus, 'mkPersiapan' => $mkPersiapan, 'mkSarjana' => $mkSarjana, 'ipPersiapan' => $ipPersiapan, 'ipSarjana' => $ipSarjana, 'ipk' => $ipk]);
@@ -142,7 +136,7 @@ class TranskripController extends Controller
                 $nama = auth()->user()->nama;
                 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
-                $section = $phpWord->createSection();
+                $section = $phpWord->addSection();
                 $section->addText('TRANSKRIP MATA KULIAH <w:br/>');
 
                 $tableStyle = array('borderSize' => 1, 'borderColor' => 'black');
@@ -188,16 +182,18 @@ class TranskripController extends Controller
                     } else {
                         $nilaiAngka = 'E';
                     }
+                    $namaMK = $mkp->namaMataKuliah;
+                    $namaMK = preg_replace( '/&/', '&amp;', $namaMK );
                     $table2->addRow();
                     $table2->addCell(1000, $styleCell)->addText($mkp->kodeMataKuliah, $fontStyle);
-                    $table2->addCell(4000, $styleCell)->addText($mkp->namaMataKuliah, $fontStyle);
+                    $table2->addCell(4000, $styleCell)->addText($namaMK, $fontStyle);
                     $table2->addCell(500, $styleCell)->addText($mkp->sks, $fontStyle);
                     $table2->addCell(1500, $styleCell)->addText($smt[0] . '/' . $smt[1] . '/' . $nilaiAngka, $fontStyle);
                     $table2->addCell(500, $styleCell)->addText($nilaiAngka, $fontStyle);
                 }
 
                 $section->addText('Total Sks Tahap Persiapan : ' . $mkPersiapan->sum('sks'));
-                $section->addText('IP Tahap Persiapan : ' . $ipPersiapan);
+                $section->addText('IP Tahap Persiapan : ' . round($ipPersiapan, 2));
 
                 $section->addText('<w:br/> --- Tahap: Sarjana ---');
                 $table3 = $section->addTable($tableStyle);
@@ -226,16 +222,18 @@ class TranskripController extends Controller
                     } else {
                         $nilaiAngka = 'E';
                     }
+                    $namaMK = $mkp->namaMataKuliah;
+                    $namaMK = preg_replace( '/&/', '&amp;', $namaMK );
                     $table3->addRow();
                     $table3->addCell(1000, $styleCell)->addText($mkp->kodeMataKuliah, $fontStyle);
-                    $table3->addCell(4000, $styleCell)->addText($mkp->namaMataKuliah, $fontStyle);
+                    $table3->addCell(4000, $styleCell)->addText($namaMK, $fontStyle);
                     $table3->addCell(500, $styleCell)->addText($mkp->sks, $fontStyle);
                     $table3->addCell(1500, $styleCell)->addText($smt[0] . '/' . $smt[1] . '/' . $nilaiAngka, $fontStyle);
                     $table3->addCell(500, $styleCell)->addText($nilaiAngka, $fontStyle);
                 }
 
                 $section->addText('Total Sks Tahap Sarjana : ' . $mkSarjana->sum('sks'));
-                $section->addText('IP Tahap Sarjana : ' . $ipSarjana . '<w:br/>');
+                $section->addText('IP Tahap Sarjana : ' . round($ipSarjana, 2) . '<w:br/>');
 
                 $table4 = $section->addTable($tableStyle);
                 $table4->addRow(-0.5, array('exactHeight' => -5));
@@ -243,7 +241,7 @@ class TranskripController extends Controller
                 $table4->addCell(1000, $styleCell)->addText($mkPersiapan->sum('sks') + $mkSarjana->sum('sks'), $TfontStyle);
                 $table4->addRow();
                 $table4->addCell(1000, $styleCell)->addText('IPK', $fontStyle);
-                $table4->addCell(1000, $styleCell)->addText($ipk, $TfontStyle);
+                $table4->addCell(1000, $styleCell)->addText(round($ipk, 2), $TfontStyle);
                 $section->addText('<w:br/> Judul Tugas Akhir / Thesis / Disertasi <w:br/>');
 
                 $section->addText('CATATAN');
@@ -254,8 +252,7 @@ class TranskripController extends Controller
                 $section->addText('4. Tunjangan Gaji');
                 $section->addText('5. ........................................................... (tuliskan keperluannya)');
 
-                $section->addText('<w:br/> Tanggal Cetak: ' . Carbon::now()->locale('id')
-                    ->isoFormat('DD MMMM YYYY'));
+                $section->addText('<w:br/> Tanggal Cetak: ' . Carbon::now()->locale('id')->isoFormat('DD MMMM YYYY'));
 
                 $file = 'Transkrip_Mata_Kuliah.docx';
                 header("Content-Description: File Transfer");

@@ -93,7 +93,7 @@
                         <tr>
                             <td>IP Tahap Persiapan</td>
                             <td>:</td>
-                            <td>{{ $ipPersiapan }}</td>
+                            <td>{{ round($ipPersiapan, 2) }}</td>
                         </tr>
                     </table>
                 </div>
@@ -151,7 +151,7 @@
                         <tr>
                             <td>IP Tahap Sarjana</td>
                             <td>:</td>
-                            <td>{{ $ipSarjana }}</td>
+                            <td>{{ round($ipSarjana, 2) }}</td>
                         </tr>
                     </table>
                 </div>
@@ -165,7 +165,7 @@
                         <tr>
                             <td>IPK</td>
                             <td>:</td>
-                            <td>{{ $ipk }}</td>
+                            <td>{{ round($ipk, 2)    }}</td>
                         </tr>
                     </table>
                 </div>
@@ -181,8 +181,7 @@
                             <li>Tunjangan Gaji</li>
                             <li>........................................................... (tuliskan keperluannya)</li>
                         </ol>
-                        <strong>Tanggal Cetak: </strong>{{Carbon::now()->locale('id')
-                            ->isoFormat('DD MMMM YYYY')}}
+                        <strong>Tanggal Cetak: </strong>{{ Carbon::now()->locale('id')->isoFormat('DD MMMM YYYY') }}
                     </small>
                 </div>
             </div>

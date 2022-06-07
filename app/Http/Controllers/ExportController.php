@@ -5,28 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
-use Illuminate\Support\Facades\DB;
+use App\Models\FRS;
 
 class ExportController implements FromView
 {
 
     public function view(): View
     {
-        $matkul = DB::table('frs')
-            ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+        $matkul = FRS::join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
             ->where('frs.NRP', auth()->user()->NRP)
             ->get();
-        $mkPersiapan = DB::table('frs')
-            ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->join('dosen', 'frs.dosenNRP', '=', 'dosen.dosenNRP')
-            ->where([
-                ['frs.NRP', auth()->user()->NRP],
-                ['nilai', '>', '0'],
-                ['mata_kuliah.semester', '<', '3'],
-            ])
+        $sksTempuh = $matkul->sum('sks');
+        $sksLulus = $matkul->where('nilai', '>', '0')->sum('sks');
+        $mkPersiapan = FRS::join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+            ->where([['NRP', auth()->user()->NRP], ['semester', '<', '3'], ['nilai', '>', '0']])
             ->get();
         $nilaiAngkaPersiapan = array();
-        $sksPersiapan = $mkPersiapan->sum('sks');
+        $sksPersiapan = array();
         foreach ($mkPersiapan as $mkp) {
             if (86 <= $mkp->nilai) {
                 $nilaiAngka = 'A';
@@ -44,42 +39,39 @@ class ExportController implements FromView
                 $nilaiAngka = 'E';
             }
             array_push($nilaiAngkaPersiapan, $nilaiAngka);
+            array_push($sksPersiapan, $mkp->sks);
         }
         $totalPoinPersiapan = 0;
-        foreach ($nilaiAngkaPersiapan as $na) {
-            if ($na == 'A') {
-                $totalPoinPersiapan += 4;
-            } elseif ($na == 'AB') {
-                $totalPoinPersiapan += 3.5;
-            } elseif ($na == 'B') {
-                $totalPoinPersiapan += 3;
-            } elseif ($na == 'BC') {
-                $totalPoinPersiapan += 2.5;
-            } elseif ($na == 'C') {
-                $totalPoinPersiapan += 2;
-            } elseif ($na == 'D') {
-                $totalPoinPersiapan += 1;
+        for ($i = 0; $i < count($nilaiAngkaPersiapan); $i++) {
+            if ($nilaiAngkaPersiapan[$i] == 'A') {
+                $poinPersiapan = 4;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'AB') {
+                $poinPersiapan = 3.5;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'B') {
+                $poinPersiapan = 3;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'BC') {
+                $poinPersiapan = 2.5;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'C') {
+                $poinPersiapan = 2;
+            } elseif ($nilaiAngkaPersiapan[$i] == 'D') {
+                $poinPersiapan = 1;
             } else {
-                $totalPoinPersiapan += 0;
+                $poinPersiapan = 0;
             }
+            $totalPoinPersiapan += ($poinPersiapan * $sksPersiapan[$i]);
         }
-        if ($sksPersiapan == 0) {
+        $totalSksPersiapan = $mkPersiapan->sum('sks');
+        if ($totalSksPersiapan == 0) {
             $ipPersiapan = 0;
         } else {
-            $ipPersiapan = $totalPoinPersiapan / $sksPersiapan;
+            $ipPersiapan = $totalPoinPersiapan / $totalSksPersiapan;
         }
 
-        $mkSarjana = DB::table('frs')
-            ->join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->join('dosen', 'frs.dosenNRP', '=', 'dosen.dosenNRP')
-            ->where([
-                ['frs.NRP', auth()->user()->NRP],
-                ['nilai', '>', '0'],
-                ['mata_kuliah.semester', '>', '2'],
-            ])
+        $mkSarjana = FRS::join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+            ->where([['NRP', auth()->user()->NRP], ['semester', '>', '2'], ['nilai', '>', '0']])
             ->get();
         $nilaiAngkaSarjana = array();
-        $sksSarjana = $mkSarjana->sum('sks');
+        $sksSarjana = array();
         foreach ($mkSarjana as $mkp) {
             if (86 <= $mkp->nilai) {
                 $nilaiAngka = 'A';
@@ -97,39 +89,39 @@ class ExportController implements FromView
                 $nilaiAngka = 'E';
             }
             array_push($nilaiAngkaSarjana, $nilaiAngka);
+            array_push($sksSarjana, $mkp->sks);
         }
         $totalPoinSarjana = 0;
-        foreach ($nilaiAngkaSarjana as $na) {
-            if ($na == 'A') {
-                $totalPoinSarjana += 4;
-            } elseif ($na == 'AB') {
-                $totalPoinSarjana += 3.5;
-            } elseif ($na == 'B') {
-                $totalPoinSarjana += 3;
-            } elseif ($na == 'BC') {
-                $totalPoinSarjana += 2.5;
-            } elseif ($na == 'C') {
-                $totalPoinSarjana += 2;
-            } elseif ($na == 'D') {
-                $totalPoinSarjana += 1;
+        for ($i = 0; $i < count($nilaiAngkaSarjana); $i++) {
+            if ($nilaiAngkaSarjana[$i] == 'A') {
+                $poinPersiapan = 4;
+            } elseif ($nilaiAngkaSarjana[$i] == 'AB') {
+                $poinPersiapan = 3.5;
+            } elseif ($nilaiAngkaSarjana[$i] == 'B') {
+                $poinPersiapan = 3;
+            } elseif ($nilaiAngkaSarjana[$i] == 'BC') {
+                $poinPersiapan = 2.5;
+            } elseif ($nilaiAngkaSarjana[$i] == 'C') {
+                $poinPersiapan = 2;
+            } elseif ($nilaiAngkaSarjana[$i] == 'D') {
+                $poinPersiapan = 1;
             } else {
-                $totalPoinSarjana += 0;
+                $poinPersiapan = 0;
             }
+            $totalPoinSarjana += ($poinPersiapan * $sksSarjana[$i]);
         }
-        if ($sksSarjana == 0) {
+        $totalSksSarjana = $mkSarjana->sum('sks');
+        if ($totalSksSarjana == 0) {
             $ipSarjana = 0;
         } else {
-            $ipSarjana = $totalPoinSarjana / $sksSarjana;
+            $ipSarjana = $totalPoinSarjana / $totalSksSarjana;
         }
 
-        if ($sksSarjana == 0 && $sksPersiapan == 0) {
+        if ($totalSksSarjana == 0 && $totalSksPersiapan == 0) {
             $ipk = 0;
         } else {
-            $ipk = ($totalPoinPersiapan + $totalPoinSarjana) / ($sksPersiapan + $sksSarjana);
+            $ipk = ($totalPoinPersiapan + $totalPoinSarjana) / ($totalSksPersiapan + $totalSksSarjana);
         }
-
-        $sksTempuh = $matkul->sum('sks');
-        $sksLulus = $matkul->where('nilai', '>', '0')->sum('sks');
         return view('contents.mahasiswa.view-transkrip-excel', ['sksTempuh' => $sksTempuh, 'sksLulus' => $sksLulus, 'mkPersiapan' => $mkPersiapan, 'mkSarjana' => $mkSarjana, 'ipPersiapan' => $ipPersiapan, 'ipSarjana' => $ipSarjana, 'ipk' => $ipk]);
     }
 }

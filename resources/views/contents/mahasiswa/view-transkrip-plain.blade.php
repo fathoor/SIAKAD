@@ -70,7 +70,7 @@
                 <td colspan="5">Total Sks Tahap Persiapan: {{ $mkPersiapan->sum('sks') }}</td>
             </tr>
             <tr align="center">
-                <td colspan="5">IP Tahap Persiapan: {{ $ipPersiapan }}</td>
+                <td colspan="5">IP Tahap Persiapan: {{ round($ipPersiapan, 2) }}</td>
             </tr>
         </table>
         <br>
@@ -120,7 +120,7 @@
                 <td colspan="5">Total Sks Tahap Sarjana: {{ $mkSarjana->sum('sks') }}</td>
             </tr>
             <tr align="center">
-                <td colspan="5">IP Tahap Sarjana: {{ $ipSarjana }}</td>
+                <td colspan="5">IP Tahap Sarjana: {{ round($ipSarjana, 2) }}</td>
             </tr>
         </table>
         <br>
@@ -132,7 +132,7 @@
             </tr>
             <tr>
                 <td>IPK</td>
-                <td>{{ $ipk }}</td>
+                <td>{{ round($ipk, 2) }}</td>
             </tr>
         </table>
         <br>
