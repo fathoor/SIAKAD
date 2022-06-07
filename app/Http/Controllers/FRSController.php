@@ -10,6 +10,7 @@ use App\Models\Wali;
 use App\Models\FRS;
 use App\Models\FRSStatus;
 use App\Models\DaftarKelas;
+use App\Models\MataKuliah;
 
 class FRSController extends Controller
 {
@@ -168,10 +169,12 @@ class FRSController extends Controller
         $sks = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
         ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->sum('sks');
+    
+        $insertSKS = MataKuliah::where('KodeMatakuliah',$kodeMK)->first()->sks;
 
         switch($request->action){
             case 'ambil':
-                if($sks < 24){
+                if($sks + $insertSKS <= 24){
                     FRS::insert([
                         'NRP' => auth()->user()->NRP,
                         'kodeMK' => $kodeMK,

@@ -15,6 +15,11 @@
                 <h2 class="fw-bold">Formulir Rencana Studi</h2>
                 <span class="badge text-bg-light shadow-sm">Pengisian: 31 Januari 2022 s/d 05 Februari 2022</span>
             </div>
+            @if (session('message'))
+                <div class="alert alert-danger" role="alert">
+                     {{ session('message') }}
+                </div>
+            @endif
             <form class="mb-4" action="/frs" method="POST">
                 @csrf
                 <div class="form-floating">
