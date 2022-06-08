@@ -12,8 +12,7 @@ class SuratController extends Controller
 {
     public function index($type)
     {
-        switch ($type)
-        {
+        switch ($type) {
             case 'Aktif':
                 $aktif = SuratAktif::where('suratAktifNRP', auth()->user()->NRP)->get();
 
@@ -35,8 +34,7 @@ class SuratController extends Controller
 
     public function add($type)
     {
-        switch ($type)
-        {
+        switch ($type) {
             case 'Aktif':
                 return view('contents.mahasiswa.suratMahasiswa');
                 break;
@@ -51,8 +49,7 @@ class SuratController extends Controller
 
     public function store(Request $request, $type)
     {
-        switch ($type)
-        {
+        switch ($type) {
             case 'Aktif':
                 $today = Carbon::now()->format('Y-m-d');
 
@@ -90,7 +87,7 @@ class SuratController extends Controller
                     'type' => 'Surat Mengundurkan Diri',
                     'periodeMundur' => $request->periode,
                     'tanggalAjuan' => $today,
-                    'alasanCuti' => $request->alasan,
+                    'alasanMundur' => $request->alasan,
                     'status' => false
                 ]);
 
@@ -101,7 +98,7 @@ class SuratController extends Controller
 
     public function cetak($type, $id)
     {
-        switch($type){
+        switch ($type) {
             case 'Aktif':
                 $surat = SuratAktif::find($id)->first();
                 break;
