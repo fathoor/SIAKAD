@@ -12,7 +12,7 @@
             <div class="content">
                 {{-- Isi disini --}}
                 <div class="container mb-3">
-                    <h2 class="fw-bold">Surat Permohonan Cuti</h2>
+                    <h2 class="fw-bold">Surat Cuti</h2>
                 </div>
                 <div class="mt-2">
                     <div class="card text-bg-light">
@@ -55,8 +55,8 @@
                                 <h5 class="modal-title" id="exampleModalLabel">Surat Permohonan Cuti</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
-                            <div class="modal-body">
-                                <form class="form-inline" id="input" action="/suratUndurDiri/store" method="POST">
+                            <form class="form-inline" id="input" action="/surat/UndurDiri/store" method="POST">
+                                <div class="modal-body">
                                     @csrf
                                     <div class="form-floating mb-3">
                                         <select class="form-select" id="type" name="periode" required>
@@ -85,27 +85,26 @@
                                         </select>
                                         <label for="type">Alasan Cuti</label>
                                     </div>
-
-                                    <div class="modal-footer justify-content-center">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="bi bi-save"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-save"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <table class="table table-responsive table-striped table-hover table-bordered text-center align-middle">
                     <thead>
                         <tr class="table-secondary">
-                            <th style="width: 50px">No</th>
-                            <th style="width: 100px">Periode</th>
-                            <th style="width: 150px">Jumlah Semester</th>
-                            <th style="width: 150px">Diajukan</th>
-                            <th style="width: 300px">Alasan</th>
-                            <th style="width: 100px">Status</th>
-                            <th style="width: 100px">Cetak</th>
+                            <th width="50px">No</th>
+                            <th width="100px">Periode</th>
+                            <th width="100px">Semester</th>
+                            <th width="150px">Pengajuan</th>
+                            <th width="300px">Alasan</th>
+                            <th width="100px">Status</th>
+                            <th width="100px">Cetak</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -114,12 +113,12 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $c->periodeCuti }}</td>
                                 <td>{{ $c->jumlahSemesterCuti }}</td>
-                                <td>{{ $c->tanggalAjuan }}</td>
+                                <td>{{ Carbon::parse($c->tanggalAjuan)->locale('id')->isoFormat('DD MMMM YYYY') }}</td>
                                 <td>{{ $c->alasanCuti }}</td>
                                 @if ($c->status == true)
                                     <td><span class="badge text-bg-success shadow-sm">Disetujui</span></td>
                                     <td>
-                                        <a href="/suratCuti/cetak/{{ $c->id }}">
+                                        <a href="/surat/Cuti/cetak/{{ $c->id }}">
                                             <span><i class="bi bi-printer-fill fs-4"></i></span>
                                         </a>
                                     </td>

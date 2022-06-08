@@ -10,13 +10,18 @@ use Carbon\Carbon;
 
 class SuratController extends Controller
 {
+    public function tanggal($tanggal)
+    {
+        return Carbon::parse($tanggal)->locale('id')->isoFormat('DD MMMM YYYY');
+    }
+
     public function index($type)
     {
         switch ($type) {
             case 'Aktif':
                 $aktif = SuratAktif::where('suratAktifNRP', auth()->user()->NRP)->get();
 
-                return view('contents.mahasiswa.suratMahasiswa-2', ['aktif' => $aktif]);
+                return view('contents.mahasiswa.suratMahasiswa', ['aktif' => $aktif]);
                 break;
             case 'Cuti':
                 $cuti = SuratCuti::where('suratCutiNRP', auth()->user()->NRP)->get();
@@ -27,22 +32,7 @@ class SuratController extends Controller
                 $undur = SuratUndurDiri::where('suratUndurDiriNRP', auth()->user()->NRP)->get();
                 $ada = SuratUndurDiri::where('suratUndurDiriNRP', auth()->user()->NRP)->exists();
 
-                return view('contents.mahasiswa.suratUndurDiri-2', ['undur' => $undur, 'ada' => $ada]);
-                break;
-        }
-    }
-
-    public function add($type)
-    {
-        switch ($type) {
-            case 'Aktif':
-                return view('contents.mahasiswa.suratMahasiswa');
-                break;
-            case 'Cuti':
-                return view('contents.mahasiswa.suratCuti-2');
-                break;
-            case 'UndurDiri':
-                return view('contents.mahasiswa.suratUndurDiri');
+                return view('contents.mahasiswa.suratUndurDiri', ['undur' => $undur, 'ada' => $ada]);
                 break;
         }
     }
@@ -62,7 +52,7 @@ class SuratController extends Controller
                     'status' => false
                 ]);
 
-                return redirect('/suratAktif');
+                return redirect('/surat/Aktif');
                 break;
             case 'Cuti':
                 $today = Carbon::now()->format('Y-m-d');
@@ -77,7 +67,7 @@ class SuratController extends Controller
                     'status' => false
                 ]);
 
-                return redirect('/suratCuti');
+                return redirect('/surat/Cuti');
                 break;
             case 'UndurDiri':
                 $today = Carbon::now()->format('Y-m-d');
@@ -91,7 +81,7 @@ class SuratController extends Controller
                     'status' => false
                 ]);
 
-                return redirect('/suratUndurDiri');
+                return redirect('/surat/UndurDiri');
                 break;
         }
     }

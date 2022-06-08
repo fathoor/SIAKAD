@@ -42,9 +42,9 @@
                         <i class="bi bi-megaphone fs-1"></i>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="layananDropdown">
-                        <li><a class="dropdown-item" href="/suratAktif">Surat Keterangan Aktif</a></li>
-                        <li><a class="dropdown-item" href="/suratCuti">Surat Cuti</a></li>
-                        <li><a class="dropdown-item" href="/suratUndurDiri">Surat Mengundurkan Diri</a></li>
+                        <li><a class="dropdown-item" href="/surat/Aktif">Surat Keterangan Aktif</a></li>
+                        <li><a class="dropdown-item" href="/surat/Cuti">Surat Cuti</a></li>
+                        <li><a class="dropdown-item" href="/surat/UndurDiri">Surat Mengundurkan Diri</a></li>
                     </ul>
                 </span>
             </div>
