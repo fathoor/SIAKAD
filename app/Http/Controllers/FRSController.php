@@ -106,7 +106,7 @@ class FRSController extends Controller
     public function index(Request $request)
     {
         $startDate = Carbon::createFromFormat('Y-m-d','2022-01-31');
-        $endDate = Carbon::createFromFormat('Y-m-d','2022-02-05');
+        $endDate = Carbon::createFromFormat('Y-m-d','2022-07-05');
         $check = Carbon::now()->between($startDate,$endDate);
 
         if ($request->periode != ''){
@@ -171,10 +171,16 @@ class FRSController extends Controller
         ->sum('sks');
     
         $insertSKS = MataKuliah::where('KodeMataKuliah',$kodeMK)->first()->sks;
-
+        $insertMK  = MataKuliah::where('KodeMataKuliah',$kodeMK)->first()->kodeMataKuliah;
+        $existedMK = FRS::where([['NRP', auth()->user()->NRP],['periode', $periode]])->get()->implode('kodeMK',',');
+        
         switch($request->action){
             case 'ambil':
-                if($sks + $insertSKS <= 24){
+                if(str_contains($existedMK,$insertMK)){
+                    return redirect('/frs')->with('message', 'Mata Kuliah Telah Diambil');
+                }elseif ($sks + $insertSKS > 24){
+                    return redirect('/frs')->with('message', 'SKS Melebihi Batas!');
+                }else{
                     FRS::insert([
                         'NRP' => auth()->user()->NRP,
                         'kodeMK' => $kodeMK,
@@ -184,10 +190,7 @@ class FRSController extends Controller
                         'periode' => $periode,
                         'matkulAtas' => filter_var($matkulAtas, FILTER_VALIDATE_BOOLEAN)
                     ]);
-
                     return redirect('/frs');
-                }else{
-                    return redirect('/frs')->with('message', 'SKS Melebihi Batas!');
                 }
                 break;
             case 'peserta':
