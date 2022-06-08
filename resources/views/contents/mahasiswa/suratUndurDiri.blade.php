@@ -31,7 +31,7 @@
                     <label for="alasan" class="col-4 col-form-label">Alasan Mundur</label>
                     <label for="alasan" class="col-1 col-form-label">:</label>
                     <div class="col-7">
-                        <textarea class="form-control" id="alasan" rows="3">Alasan...</textarea>
+                        <textarea class="form-control" id="alasan" rows="3" placeholder="Alasan..."></textarea>
                     </div>
                 </div>
             </form>
