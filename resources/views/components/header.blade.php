@@ -28,7 +28,7 @@
                 @if(auth()->user()->type == 'dosen')
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('dosen/mataKuliah*', 'dosen/kurikulum*', 'dosen/kuesioner*') ? 'active' : '' }}" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('dosen/mataKuliah*', 'dosen/kurikulum*', 'dosen/kuesioner*', 'peserta*') ? 'active' : '' }}" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-mortarboard fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">
@@ -75,7 +75,7 @@
                 </li>
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('staff/kurikulum*', 'staff/kelas*') ? 'active' : '' }}" id="staffDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('staff/kurikulum*', 'staff/kelas*', 'peserta*') ? 'active' : '' }}" id="staffDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-mortarboard fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="staffDropdown">
@@ -116,7 +116,7 @@
                 @else
                 {{-- Akademik --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link mx-3 {{ request()->is('frs*', 'kurikulum*', 'transkrip*', 'kuesioner*') ? 'active' : '' }}" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link mx-3 {{ request()->is('frs*', 'kurikulum*', 'transkrip*', 'kuesioner*', 'peserta*') ? 'active' : '' }}" id="akademikDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-mortarboard fs-5"></i> <span class="fs-5 ms-2">Akademik</span>
                     </a>
                     <ul class="dropdown-menu text-left" aria-labelledby="akademikDropdown">

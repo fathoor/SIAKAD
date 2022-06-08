@@ -65,10 +65,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     Route::post('/frs/store',  [FRSController::class, 'store']);
 
     // Transkrip Route
-    Route::get('/transkrip', function () {
-        return view('contents.mahasiswa.transkrip');
-    });
-    Route::post('/view-transkrip', [TranskripController::class, 'view']);
+    Route::get('/transkrip', [TranskripController::class, 'index']);
+    Route::post('/transkrip/view', [TranskripController::class, 'view']);
 
     // Kurikulum Route
     Route::get('/kurikulum', [KurikulumController::class, 'indexMahasiswa']);
@@ -137,6 +135,6 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
 
     // Finansial
     Route::get('/staff/ukt', [TagihanController::class, 'indexStaff']);
-    Route::post('staff/ukt/detail', [TagihanController::class, 'detailStaff']);
-    Route::post('staff/ukt/verificate/{NRP}/{periode}', [TagihanController::class, 'verificate']);
+    Route::post('/staff/ukt/detail', [TagihanController::class, 'detailStaff']);
+    Route::post('/staff/ukt/verificate/{NRP}/{periode}', [TagihanController::class, 'verificate']);
 });

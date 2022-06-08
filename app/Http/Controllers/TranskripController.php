@@ -10,6 +10,11 @@ use App\Models\FRS;
 
 class TranskripController extends Controller
 {
+    public function index()
+    {
+        return view('contents.mahasiswa.transkrip');
+    }
+
     public function view(Request $request)
     {
         $format = $request->input('format');
