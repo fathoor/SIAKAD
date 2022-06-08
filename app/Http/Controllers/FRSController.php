@@ -170,7 +170,7 @@ class FRSController extends Controller
         ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->sum('sks');
     
-        $insertSKS = MataKuliah::where('KodeMatakuliah',$kodeMK)->first()->sks;
+        $insertSKS = MataKuliah::where('KodeMataKuliah',$kodeMK)->first()->sks;
 
         switch($request->action){
             case 'ambil':
