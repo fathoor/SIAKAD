@@ -14,23 +14,10 @@
                 <div class="container">
                     <h2 class="fw-bold">Kuesioner Evaluasi Mata Kuliah</h2>
                 </div>
-                <?php
-                $periode;
-                $tahun = Str::substr($periode, 0, 4);
-                $semester = Str::substr($periode, 4, 1);
-                ?>
                 <div class="d-flex flex-row mb-3">
                     <div class="d-flex flex-col">
                         <h5 class="fw-semibold">
-                            @switch($semester)
-                                @case('A')
-                                    Ganjil - {{ $tahun }}
-                                @break
-
-                                @case('B')
-                                    Genap - {{ $tahun }}
-                                @break
-                            @endswitch
+                            {{ $periode }}
                         </h5>
                     </div>
                 </div>
@@ -61,11 +48,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan1"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -80,11 +72,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan2"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -99,11 +96,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan3"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -118,11 +120,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan4"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -137,11 +144,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan5"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -156,11 +168,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan6"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -175,11 +192,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan7"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -188,17 +210,23 @@
                                 </tr>
                                 <tr>
                                     <td>8</td>
-                                    <td>Dosen membantu meningkatkan kemampuan mahasiswa untuk mencapai capaian pembelajaran</td>
+                                    <td>Dosen membantu meningkatkan kemampuan mahasiswa untuk mencapai capaian pembelajaran
+                                    </td>
                                     <td>
                                         <div class="form-group">
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan8"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -213,11 +241,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan9"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -232,11 +265,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan10"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -245,7 +283,8 @@
                                 </tr>
                                 <tr>
                                     <td>11</td>
-                                    <td>Dosen memberikan tugas yang terkait dengan keprofesionalan dan meningkatkan kemampuan
+                                    <td>Dosen memberikan tugas yang terkait dengan keprofesionalan dan meningkatkan
+                                        kemampuan
                                         kolaboratif
                                     </td>
                                     <td>
@@ -253,11 +292,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan11"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -272,11 +316,16 @@
                                             <div class="row text-center">
                                                 <div class="col-sm">Sangat Kurang</div>
                                                 <div class="col-sm-5 my-3">
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12" id="pertanyaan1nilai1" value="1" required></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12" id="pertanyaan1nilai2" value="2"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12" id="pertanyaan1nilai3" value="3"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12" id="pertanyaan1nilai4" value="4"></label>
-                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12" id="pertanyaan1nilai5" value="5"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12"
+                                                            id="pertanyaan1nilai1" value="1" required></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12"
+                                                            id="pertanyaan1nilai2" value="2"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12"
+                                                            id="pertanyaan1nilai3" value="3"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12"
+                                                            id="pertanyaan1nilai4" value="4"></label>
+                                                    <label class="radio-inline"> <input type="radio" name="pertanyaan12"
+                                                            id="pertanyaan1nilai5" value="5"></label>
                                                 </div>
                                                 <div class="col-sm">Sangat Baik</div>
                                             </div>
@@ -287,7 +336,8 @@
                         </table>
                         <div class="form-group">
                             <label for="komen">Komentar</label>
-                            <textarea class="form-control" id="komen" rows="3" name="komen" required placeholder="Berikan komentar untuk mata kuliah dan dosen pengampu"></textarea>
+                            <textarea class="form-control" id="komen" rows="3" name="komen" required
+                                placeholder="Berikan komentar untuk mata kuliah dan dosen pengampu"></textarea>
                         </div>
                         <div class="col text-center my-3">
                             <button type="submit" class="btn btn-primary">Submit</button>

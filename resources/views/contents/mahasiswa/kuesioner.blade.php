@@ -81,6 +81,7 @@
                                 <form action="/isi-kuesioner" method="POST">
                                     @csrf
                                     <input name="isiDosen" type="hidden" value={{ $mk->dosenNRP }}>
+                                    <input name="isiMK" type="hidden" value={{ $mk->kodeMK }}>
                                     <select name="periode" hidden>
                                         @foreach ($kuesioner as $k)
                                         <option value="{{ $k->periode }}"

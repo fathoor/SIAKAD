@@ -66,9 +66,8 @@ class KuesionerController extends Controller
     public function isi(Request $request)
     {
         $dosenNRP = $request->input('isiDosen');
-        $dosen = DB::table('dosen')
-            ->join('mata_kuliah', 'dosen.dosenKodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->where('dosen.dosenNRP', $dosenNRP)
+        $dosen = Dosen::join('mata_kuliah', 'dosen.dosenKodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+            ->where([['dosen.dosenNRP', $dosenNRP], ['mata_kuliah.kodeMataKuliah', $request->isiMK]])
             ->first();
         $period = $request->periode;
         $tahun = Str::substr($period, 0, 4);
