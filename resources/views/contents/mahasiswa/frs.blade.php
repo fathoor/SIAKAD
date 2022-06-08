@@ -19,6 +19,10 @@
                 <div class="alert alert-danger" role="alert">
                      {{ session('message') }}
                 </div>
+            @elseif (session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
             @endif
             <form class="mb-4" action="/frs" method="POST">
                 @csrf

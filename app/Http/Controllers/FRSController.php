@@ -173,6 +173,7 @@ class FRSController extends Controller
         $insertSKS = MataKuliah::where('KodeMataKuliah',$kodeMK)->first()->sks;
         $insertMK  = MataKuliah::where('KodeMataKuliah',$kodeMK)->first()->kodeMataKuliah;
         $existedMK = FRS::where([['NRP', auth()->user()->NRP],['periode', $periode]])->get()->implode('kodeMK',',');
+        $insertedMK = MataKuliah::where('KodeMataKuliah',$kodeMK)->first()->namaMataKuliah;
         
         switch($request->action){
             case 'ambil':
@@ -190,7 +191,7 @@ class FRSController extends Controller
                         'periode' => $periode,
                         'matkulAtas' => filter_var($matkulAtas, FILTER_VALIDATE_BOOLEAN)
                     ]);
-                    return redirect('/frs');
+                    return redirect('/frs')->with('success', "Mata Kuliah ".$insertedMK." Berhasil Diambil !");
                 }
                 break;
             case 'peserta':
