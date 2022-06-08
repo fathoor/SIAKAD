@@ -56,6 +56,14 @@ class WaliSeeder extends Seeder
                 'mahasiswaNRP' => 5026201000,
                 'dosenNRP' => 5026202
             ],
+            [
+                'mahasiswaNRP' => 5026201068,
+                'dosenNRP' => 5026202
+            ],
+            [
+                'mahasiswaNRP' => 5026201091,
+                'dosenNRP' => 5026202
+            ],
         ]);
     }
 }

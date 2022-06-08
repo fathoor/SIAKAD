@@ -159,6 +159,34 @@ class AkunSeeder extends Seeder
                 'alamat' => 'Jln Gunung Krakatau no 18, HOP 2',
                 'type' => 0
             ],
+            [
+                'NRP' => 5026201068,
+                'nama' => 'Cecilia Melva Natania',
+                'password' => Hash::make('admin'),
+                'NIK' => 6474056705020006,
+                'tempatLahir' => 'Bontang',
+                'tanggalLahir' => '2002-05-17',
+                'nomorTelp' => 82299795389,
+                'email' => 'melva.205026@mhs.its.ac.id',
+                'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Jln Gunung Krakatau no 18, HOP 2',
+                'type' => 0
+            ],
+            [
+                'NRP' => 5026201091,
+                'nama' => 'Aliyya Zahra Nurulhusna',
+                'password' => Hash::make('admin'),
+                'NIK' => 6474056705020006,
+                'tempatLahir' => 'Bontang',
+                'tanggalLahir' => '2002-05-17',
+                'nomorTelp' => 82299795389,
+                'email' => 'melva.205026@mhs.its.ac.id',
+                'departemen' => 'Sistem Informasi',
+                'tahunMasuk' => 2020,
+                'alamat' => 'Jln Gunung Krakatau no 18, HOP 2',
+                'type' => 0
+            ],
             // Dosen
             // ADDI
             [
