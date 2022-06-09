@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
             HasilKuesionerSeeder::class,
             DaftarKuesionerSeeder::class,
             PeriodeSeeder::class,
-            NilaiMKSeeder::class,
             DaftarKelasSeeder::class,
             FRSSeeder::class,
             FRSStatusSeeder::class,

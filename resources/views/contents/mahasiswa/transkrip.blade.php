@@ -11,13 +11,21 @@
             {{-- /view/contents/ --}}
             <div class="content">
                 {{-- Isi disini --}}
+
+                @if (session('message'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('message') }}
+                    </div>
+                @endif
+
                 <div class="container mb-2">
                     <h2 class="fw-bold">Transkrip Mata Kuliah</h2>
                 </div>
                 <div class="mt-2">
                     <div class="card text-bg-light">
                         <div class="card-body">
-                            <table class="table table-borderless align-middle text-start small table-responsive-sm" style="box-shadow: 0 0; margin-bottom: -0.1em">
+                            <table class="table table-borderless align-middle text-start small table-responsive-sm"
+                                style="box-shadow: 0 0; margin-bottom: -0.1em">
                                 <tbody>
                                     <tr>
                                         <td width="130px"><strong>NRP</strong></td>
@@ -63,5 +71,4 @@
             </div>
         </main>
     </div>
-
 @endsection
