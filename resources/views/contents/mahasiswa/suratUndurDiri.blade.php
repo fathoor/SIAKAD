@@ -1,6 +1,6 @@
 @extends('dashboard')
 
-@section('title', 'Transkrip')
+@section('title', 'Surat Mengundurkan Diri')
 
 {{-- Content --}}
 @section('main')
