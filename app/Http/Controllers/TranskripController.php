@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\FRS;
-use Illuminate\Support\Facades\Redirect;
 
 class TranskripController extends Controller
 {
