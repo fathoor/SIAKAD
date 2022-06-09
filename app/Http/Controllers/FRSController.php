@@ -106,7 +106,7 @@ class FRSController extends Controller
     public function index(Request $request)
     {
         $startDate = Carbon::createFromFormat('Y-m-d','2022-01-31');
-        $endDate = Carbon::createFromFormat('Y-m-d','2022-07-05');
+        $endDate = Carbon::createFromFormat('Y-m-d','2022-02-05');
         $check = Carbon::now()->between($startDate,$endDate);
 
         if ($request->periode != ''){
@@ -192,7 +192,7 @@ class FRSController extends Controller
         ->first()
         ->kapasitas;
   
-        // dd($existedKapasitas);
+        
         
         switch($request->action){
             case 'ambil':
