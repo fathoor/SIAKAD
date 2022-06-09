@@ -13,7 +13,7 @@
             {{-- Isi disini --}}
             <div class="container mb-2">
                 <h2 class="fw-bold">Formulir Rencana Studi</h2>
-                <span class="badge text-bg-light shadow-sm">Pengisian: 31 Januari 2022 s/d 05 Februari 2022</span>
+                <span class="badge text-bg-light shadow-sm">Pengisian: {{ Carbon::parse($awal)->locale('id')->isoFormat('DD MMMM YYYY') }} s/d {{ Carbon::parse($akhir)->locale('id')->isoFormat('DD MMMM YYYY') }}</span>
             </div>
             @if (session('message'))
                 <div class="alert alert-danger" role="alert">
@@ -101,9 +101,12 @@
                     @if($check == true)
                     <button class="btn btn-light shadow-sm me-2" type="submit" form="store" name="action" value="ambil"><i class="bi bi-inboxes-fill me-2"></i>Ambil</button>
                     <button class="btn btn-light shadow-sm" type="submit" form="store" name="action" value="peserta"><i class="bi bi-people-fill me-2"></i>Peserta</button>
-                    @else
+                    @elseif($check != true && $periode == 'Genap 2021')
                     <button class="btn btn-light shadow-sm me-2" type="submit" disabled><i class="bi bi-inboxes-fill me-2"></i>Ambil</button>
                     <button class="btn btn-light shadow-sm" type="submit" form="store" name="action" value="peserta"><i class="bi bi-people-fill me-2"></i>Peserta</button>
+                    @else
+                    <button class="btn btn-light shadow-sm me-2" type="submit" disabled><i class="bi bi-inboxes-fill me-2"></i>Ambil</button>
+                    <button class="btn btn-light shadow-sm" type="submit" disabled><i class="bi bi-people-fill me-2"></i>Peserta</button>
                     @endif
                 </div>
             </div>

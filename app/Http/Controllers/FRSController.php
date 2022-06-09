@@ -150,6 +150,7 @@ class FRSController extends Controller
         ->first();
 
         return view('contents.mahasiswa.frs', [
+            'awal' => $startDate, 'akhir' => $endDate,
             'check' => $check, 'status' => $status,
             'frs' => $frs, 'sks' => $sks, 'periode' => $periode,
             'ips' => $ips, 'ipk' => $ipk,
@@ -170,10 +171,10 @@ class FRSController extends Controller
         ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->sum('sks');
     
-        $insertSKS = MataKuliah::where('KodeMataKuliah',$kodeMK)
+        $insertSKS = MataKuliah::where('kodeMataKuliah',$kodeMK)
         ->first()->sks;
 
-        $insertMK  = MataKuliah::where('KodeMataKuliah',$kodeMK)
+        $insertMK  = MataKuliah::where('kodeMataKuliah',$kodeMK)
         ->first()
         ->kodeMataKuliah;
 
@@ -181,7 +182,7 @@ class FRSController extends Controller
         ->get()
         ->implode('kodeMK',',');
 
-        $insertedMK = MataKuliah::where('KodeMataKuliah',$kodeMK)
+        $insertedMK = MataKuliah::where('kodeMataKuliah',$kodeMK)
         ->first()
         ->namaMataKuliah;
 

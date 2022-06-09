@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\DaftarKelas;
 
 class DaftarKelasSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class DaftarKelasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('daftar_kelas')->insert([
+        DaftarKelas::insert([
             [
                 'kodeKelas' => 'SI4102',
                 'kapasitas' => '40',
@@ -333,7 +333,7 @@ class DaftarKelasSeeder extends Seeder
             ],
             [
                 'kodeKelas' => 'SI2201',
-                'kapasitas' => '2',
+                'kapasitas' => '40',
                 'kodeMK' => 'IS184101',
                 'kelas' => 'A',
                 'dosenNRP' => '5026213',
