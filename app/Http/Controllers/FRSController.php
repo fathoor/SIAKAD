@@ -106,7 +106,7 @@ class FRSController extends Controller
     public function index(Request $request)
     {
         $startDate = Carbon::createFromFormat('Y-m-d','2022-01-31');
-        $endDate = Carbon::createFromFormat('Y-m-d','2022-02-05');
+        $endDate = Carbon::createFromFormat('Y-m-d','2022-07-05');
         $check = Carbon::now()->between($startDate,$endDate);
 
         if ($request->periode != ''){
@@ -170,10 +170,29 @@ class FRSController extends Controller
         ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->sum('sks');
     
-        $insertSKS = MataKuliah::where('kodeMataKuliah',$kodeMK)->first()->sks;
-        $insertMK  = MataKuliah::where('kodeMataKuliah',$kodeMK)->first()->kodeMataKuliah;
-        $existedMK = FRS::where([['NRP', auth()->user()->NRP],['periode', $periode]])->get()->implode('kodeMK',',');
-        $insertedMK = MataKuliah::where('kodeMataKuliah',$kodeMK)->first()->namaMataKuliah;
+        $insertSKS = MataKuliah::where('KodeMataKuliah',$kodeMK)
+        ->first()->sks;
+
+        $insertMK  = MataKuliah::where('KodeMataKuliah',$kodeMK)
+        ->first()
+        ->kodeMataKuliah;
+
+        $existedMK = FRS::where([['NRP', auth()->user()->NRP],['periode', $periode]])
+        ->get()
+        ->implode('kodeMK',',');
+
+        $insertedMK = MataKuliah::where('KodeMataKuliah',$kodeMK)
+        ->first()
+        ->namaMataKuliah;
+
+        $existedmahasiswa = FRS::where([['kodeMK', $kodeMK],['periode', $periode],['kelas',$kelas]])
+        ->count('NRP');
+
+        $existedKapasitas = DaftarKelas::where([['kodeMK', $kodeMK],['kelas',$kelas]])
+        ->first()
+        ->kapasitas;
+  
+        // dd($existedKapasitas);
         
         switch($request->action){
             case 'ambil':
@@ -181,6 +200,8 @@ class FRSController extends Controller
                     return redirect('/frs')->with('message', 'Mata Kuliah Telah Diambil');
                 }elseif ($sks + $insertSKS > 24){
                     return redirect('/frs')->with('message', 'SKS Melebihi Batas!');
+                }elseif ( $existedmahasiswa >= $existedKapasitas){
+                    return redirect('/frs')->with('message', 'Kelas Telah Penuh !');
                 }else{
                     FRS::insert([
                         'NRP' => auth()->user()->NRP,

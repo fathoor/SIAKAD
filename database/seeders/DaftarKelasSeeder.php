@@ -333,7 +333,7 @@ class DaftarKelasSeeder extends Seeder
             ],
             [
                 'kodeKelas' => 'SI2201',
-                'kapasitas' => '40',
+                'kapasitas' => '2',
                 'kodeMK' => 'IS184101',
                 'kelas' => 'A',
                 'dosenNRP' => '5026213',
