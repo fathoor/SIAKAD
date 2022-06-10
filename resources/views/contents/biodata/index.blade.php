@@ -19,7 +19,7 @@
                     <i class="bi bi-person-circle" style="font-size: 10rem"></i>
                 </div>
                 <div class="col-lg-8 text-center">
-                    <div class="text-start text-muted mb-3">
+                    <div class="text-center text-muted mb-3">
                         Updated: {{ Carbon\Carbon::now() }} WIB
                         <a class="ms-2" href="/biodata">
                             <i class="bi bi-arrow-repeat"></i>
