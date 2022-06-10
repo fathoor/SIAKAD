@@ -143,7 +143,7 @@ class FRSController extends Controller
         ->join('frs', 'frs.NRP', '=', 'frs_status.NRP')
         ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->get();
-        
+
         $mahasiswa = Wali::where('mahasiswaNRP', auth()->user()->NRP)
         ->join('akun', 'akun.NRP', '=', 'wali.dosenNRP')
         ->join('frs_status', 'frs_status.NRP', '=', 'wali.mahasiswaNRP')
@@ -170,7 +170,7 @@ class FRSController extends Controller
         $sks = FRS::where([['frs.NRP', auth()->user()->NRP], ['periode', $periode]])
         ->join('mata_kuliah', 'mata_kuliah.kodeMataKuliah', '=', 'frs.kodeMK')
         ->sum('sks');
-    
+
         $insertSKS = MataKuliah::where('kodeMataKuliah',$kodeMK)
         ->first()->sks;
 
@@ -192,9 +192,9 @@ class FRSController extends Controller
         $existedKapasitas = DaftarKelas::where([['kodeMK', $kodeMK],['kelas',$kelas]])
         ->first()
         ->kapasitas;
-  
-        
-        
+
+
+
         switch($request->action){
             case 'ambil':
                 if(str_contains($existedMK,$insertMK)){
