@@ -41,14 +41,7 @@ class CivitasController extends Controller
             'NRP' => $request->NRP,
             'nama' => $request->nama,
             'password' => Hash::make($request->password),
-            'NIK' => null,
-            'tempatLahir' => null,
-            'tanggalLahir' => null,
-            'nomorTelp' => null,
             'email' => $request->email,
-            'departemen' => 'Sistem Informasi',
-            'tahunMasuk' => null,
-            'alamat' => null,
             'type' => $request->type
         ]);
 
