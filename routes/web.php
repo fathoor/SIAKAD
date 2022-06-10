@@ -110,6 +110,8 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
 
     //Nilai Mahasiswa
     Route::get('/dosen/nilai', [NilaiMahasiswaController::class, 'index']);
+    Route::post('/dosen/nilai', [NilaiMahasiswaController::class, 'index']);
+    Route::post('/dosen/nilai/{NRP}', [NilaiMahasiswaController::class, 'update']);
 });
 
 // Staff Route
