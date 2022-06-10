@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\DaftarKelas;
 use App\Models\Dosen;
 
@@ -18,6 +17,7 @@ class KelasController extends Controller
         ->orderBy('kodeMK', 'ASC')
         ->orderBy('kelas', 'ASC')
         ->paginate(10);
+
         return view('contents.staff.kelas', [
             'kelas' => $kelas,
         ]);
@@ -26,11 +26,24 @@ class KelasController extends Controller
     public function store(Request $request) {
         DaftarKelas::create([
             'kodeKelas' => $request->kodeKelas,
-            'kapasitas' => '40',
+            'kapasitas' => $request->kapasitas,
             'kodeMK' => $request->kodeMK,
             'kelas' => $request->kelas,
-            'dosenNRP' => $request->dosen,
+            'dosenNRP' => $request->dosenNRP,
         ]);
+
+        return redirect('/staff/kelas');
+    }
+
+    public function update(Request $request, $kodeMK, $kelas)
+    {
+        DaftarKelas::where([['kodeMK', $kodeMK], ['kelas', $kelas]])->update([
+            'kodeKelas' => $request->kodeKelas,
+            'kapasitas' => $request->kapasitas,
+            'dosenNRP' => $request->dosenNRP,
+        ]);
+
+        return redirect('/staff/kelas');
     }
 
     public function delete($kodeMK, $kelas)

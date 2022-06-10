@@ -126,7 +126,7 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     //Akademik
     Route::get('/staff/kelas', [KelasController::class, 'index']);
     Route::post('/staff/kelas/store', [KelasController::class, 'store']);
-    Route::post('/staff/kelas/update/{kodeMK}', [KelasController::class, 'update']);
+    Route::post('/staff/kelas/update/{kodeMK}/{kelas}', [KelasController::class, 'update']);
     Route::get('/staff/kelas/delete/{kodeMK}/{kelas}', [KelasController::class, 'delete']);
 
     // Civitas
