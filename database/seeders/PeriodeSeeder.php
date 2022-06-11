@@ -41,9 +41,9 @@ class PeriodeSeeder extends Seeder
                 [
                     'periode' => '2021B',
                     'tglAwal' => '2022-01-31',
-                    'tglAkhir' => '2022-06-08',
+                    'tglAkhir' => '2022-06-29',
                     'awalPengisian' => '2022-05-23',
-                    'akhirPengisian' => '2022-06-08',
+                    'akhirPengisian' => '2022-06-01',
                 ]
             ]
         );
