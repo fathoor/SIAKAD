@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tagihan;
 use Carbon\Carbon;
+use App\Models\Tagihan;
 
 class TagihanController extends Controller
 {
@@ -14,6 +14,7 @@ class TagihanController extends Controller
         ->orderBy('status', 'ASC')
         ->orderBy('periodeTagihan', 'DESC')
         ->get();
+
         return view('contents.mahasiswa.ukt', ['tagihan' => $tagihan]);
     }
 
@@ -23,6 +24,7 @@ class TagihanController extends Controller
             ['NRP', auth()->user()->NRP],
             ['periodeTagihan', $request->periode]
         ])->first();
+        
         return view('contents.mahasiswa.detail-ukt', ['detail' => $detail]);
     }
 

@@ -12,13 +12,15 @@ class TranskripController extends Controller
     public function index()
     {
         $adaNilai = true;
+
         return view('contents.mahasiswa.transkrip', ['adaNilai' => $adaNilai]);
     }
 
     public function view(Request $request)
     {
         $adaNilai = FRS::where([['NRP', auth()->user()->NRP], ['nilai', '>', 0]])->exists();
-        if ($adaNilai == true) {
+
+        if($adaNilai == true){
             $format = $request->input('format');
             $matkul = FRS::join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
                 ->where('frs.NRP', auth()->user()->NRP)
@@ -30,108 +32,119 @@ class TranskripController extends Controller
                 ->get();
             $nilaiAngkaPersiapan = array();
             $sksPersiapan = array();
-            foreach ($mkPersiapan as $mkp) {
-                if (86 <= $mkp->nilai) {
+
+            foreach($mkPersiapan as $mkp){
+                if(86 <= $mkp->nilai){
                     $nilaiAngka = 'A';
-                } elseif (76 <= $mkp->nilai && $mkp->nilai <= 85) {
+                }elseif(76 <= $mkp->nilai && $mkp->nilai <= 85){
                     $nilaiAngka = 'AB';
-                } elseif (66 <= $mkp->nilai && $mkp->nilai <= 75) {
+                }elseif(66 <= $mkp->nilai && $mkp->nilai <= 75){
                     $nilaiAngka = 'B';
-                } elseif (61 <= $mkp->nilai && $mkp->nilai <= 65) {
+                }elseif(61 <= $mkp->nilai && $mkp->nilai <= 65){
                     $nilaiAngka = 'BC';
-                } elseif (56 <= $mkp->nilai && $mkp->nilai <= 60) {
+                }elseif(56 <= $mkp->nilai && $mkp->nilai <= 60){
                     $nilaiAngka = 'C';
-                } elseif (41 <= $mkp->nilai && $mkp->nilai <= 55) {
+                }elseif(41 <= $mkp->nilai && $mkp->nilai <= 55){
                     $nilaiAngka = 'D';
-                } else {
+                }else{
                     $nilaiAngka = 'E';
                 }
                 array_push($nilaiAngkaPersiapan, $nilaiAngka);
                 array_push($sksPersiapan, $mkp->sks);
             }
+
             $totalPoinPersiapan = 0;
-            for ($i = 0; $i < count($nilaiAngkaPersiapan); $i++) {
-                if ($nilaiAngkaPersiapan[$i] == 'A') {
+
+            for($i = 0; $i < count($nilaiAngkaPersiapan); $i++){
+                if($nilaiAngkaPersiapan[$i] == 'A'){
                     $poinPersiapan = 4;
-                } elseif ($nilaiAngkaPersiapan[$i] == 'AB') {
+                }elseif ($nilaiAngkaPersiapan[$i] == 'AB'){
                     $poinPersiapan = 3.5;
-                } elseif ($nilaiAngkaPersiapan[$i] == 'B') {
+                }elseif ($nilaiAngkaPersiapan[$i] == 'B'){
                     $poinPersiapan = 3;
-                } elseif ($nilaiAngkaPersiapan[$i] == 'BC') {
+                }elseif ($nilaiAngkaPersiapan[$i] == 'BC'){
                     $poinPersiapan = 2.5;
-                } elseif ($nilaiAngkaPersiapan[$i] == 'C') {
+                }elseif ($nilaiAngkaPersiapan[$i] == 'C'){
                     $poinPersiapan = 2;
-                } elseif ($nilaiAngkaPersiapan[$i] == 'D') {
+                }elseif ($nilaiAngkaPersiapan[$i] == 'D'){
                     $poinPersiapan = 1;
-                } else {
+                }else{
                     $poinPersiapan = 0;
                 }
+
                 $totalPoinPersiapan += ($poinPersiapan * $sksPersiapan[$i]);
             }
+
             $totalSksPersiapan = $mkPersiapan->sum('sks');
-            if ($totalSksPersiapan == 0) {
+
+            if($totalSksPersiapan == 0){
                 $ipPersiapan = 0;
-            } else {
+            }else{
                 $ipPersiapan = $totalPoinPersiapan / $totalSksPersiapan;
             }
 
             $mkSarjana = FRS::join('mata_kuliah', 'frs.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-                ->where([['NRP', auth()->user()->NRP], ['semester', '>', '2'], ['nilai', '>', '0']])
-                ->get();
+            ->where([['NRP', auth()->user()->NRP], ['semester', '>', '2'], ['nilai', '>', '0']])
+            ->get();
             $nilaiAngkaSarjana = array();
             $sksSarjana = array();
-            foreach ($mkSarjana as $mkp) {
-                if (86 <= $mkp->nilai) {
+
+            foreach($mkSarjana as $mkp){
+                if(86 <= $mkp->nilai){
                     $nilaiAngka = 'A';
-                } elseif (76 <= $mkp->nilai && $mkp->nilai <= 85) {
+                }elseif(76 <= $mkp->nilai && $mkp->nilai <= 85){
                     $nilaiAngka = 'AB';
-                } elseif (66 <= $mkp->nilai && $mkp->nilai <= 75) {
+                }elseif(66 <= $mkp->nilai && $mkp->nilai <= 75){
                     $nilaiAngka = 'B';
-                } elseif (61 <= $mkp->nilai && $mkp->nilai <= 65) {
+                }elseif(61 <= $mkp->nilai && $mkp->nilai <= 65){
                     $nilaiAngka = 'BC';
-                } elseif (56 <= $mkp->nilai && $mkp->nilai <= 60) {
+                }elseif(56 <= $mkp->nilai && $mkp->nilai <= 60){
                     $nilaiAngka = 'C';
-                } elseif (41 <= $mkp->nilai && $mkp->nilai <= 55) {
+                }elseif(41 <= $mkp->nilai && $mkp->nilai <= 55){
                     $nilaiAngka = 'D';
-                } else {
+                }else{
                     $nilaiAngka = 'E';
                 }
                 array_push($nilaiAngkaSarjana, $nilaiAngka);
                 array_push($sksSarjana, $mkp->sks);
             }
+
             $totalPoinSarjana = 0;
-            for ($i = 0; $i < count($nilaiAngkaSarjana); $i++) {
-                if ($nilaiAngkaSarjana[$i] == 'A') {
+
+            for($i = 0; $i < count($nilaiAngkaSarjana); $i++){
+                if($nilaiAngkaSarjana[$i] == 'A'){
                     $poinPersiapan = 4;
-                } elseif ($nilaiAngkaSarjana[$i] == 'AB') {
+                }elseif($nilaiAngkaSarjana[$i] == 'AB'){
                     $poinPersiapan = 3.5;
-                } elseif ($nilaiAngkaSarjana[$i] == 'B') {
+                }elseif($nilaiAngkaSarjana[$i] == 'B'){
                     $poinPersiapan = 3;
-                } elseif ($nilaiAngkaSarjana[$i] == 'BC') {
+                }elseif($nilaiAngkaSarjana[$i] == 'BC'){
                     $poinPersiapan = 2.5;
-                } elseif ($nilaiAngkaSarjana[$i] == 'C') {
+                }elseif($nilaiAngkaSarjana[$i] == 'C'){
                     $poinPersiapan = 2;
-                } elseif ($nilaiAngkaSarjana[$i] == 'D') {
+                }elseif($nilaiAngkaSarjana[$i] == 'D'){
                     $poinPersiapan = 1;
-                } else {
+                }else{
                     $poinPersiapan = 0;
                 }
                 $totalPoinSarjana += ($poinPersiapan * $sksSarjana[$i]);
             }
+
             $totalSksSarjana = $mkSarjana->sum('sks');
-            if ($totalSksSarjana == 0) {
+
+            if($totalSksSarjana == 0){
                 $ipSarjana = 0;
-            } else {
+            }else{
                 $ipSarjana = $totalPoinSarjana / $totalSksSarjana;
             }
 
-            if ($totalSksSarjana == 0 && $totalSksPersiapan == 0) {
+            if($totalSksSarjana == 0 && $totalSksPersiapan == 0){
                 $ipk = 0;
-            } else {
+            }else{
                 $ipk = ($totalPoinPersiapan + $totalPoinSarjana) / ($totalSksPersiapan + $totalSksSarjana);
             }
 
-            switch ($format) {
+            switch($format){
                 case '1':
                     return view('contents.mahasiswa.view-transkrip', ['sksTempuh' => $sksTempuh, 'sksLulus' => $sksLulus, 'mkPersiapan' => $mkPersiapan, 'mkSarjana' => $mkSarjana, 'ipPersiapan' => $ipPersiapan, 'ipSarjana' => $ipSarjana, 'ipk' => $ipk]);
                     break;
@@ -171,22 +184,23 @@ class TranskripController extends Controller
                     $table2->addCell(1500, $styleCell)->addText('Historis Nilai', $fontStyle);
                     $table2->addCell(500, $styleCell)->addText('Nilai', $fontStyle);
 
-                    foreach ($mkPersiapan as $mkp) {
+                    foreach($mkPersiapan as $mkp){
                         $semester = $mkp->periode;
                         $smt = explode(' ', $semester);
-                        if (86 <= $mkp->nilai) {
+
+                        if(86 <= $mkp->nilai){
                             $nilaiAngka = 'A';
-                        } elseif (76 <= $mkp->nilai && $mkp->nilai <= 85) {
+                        }elseif(76 <= $mkp->nilai && $mkp->nilai <= 85){
                             $nilaiAngka = 'AB';
-                        } elseif (66 <= $mkp->nilai && $mkp->nilai <= 75) {
+                        }elseif(66 <= $mkp->nilai && $mkp->nilai <= 75){
                             $nilaiAngka = 'B';
-                        } elseif (61 <= $mkp->nilai && $mkp->nilai <= 65) {
+                        }elseif(61 <= $mkp->nilai && $mkp->nilai <= 65){
                             $nilaiAngka = 'BC';
-                        } elseif (56 <= $mkp->nilai && $mkp->nilai <= 60) {
+                        }elseif(56 <= $mkp->nilai && $mkp->nilai <= 60){
                             $nilaiAngka = 'C';
-                        } elseif (41 <= $mkp->nilai && $mkp->nilai <= 55) {
+                        }elseif(41 <= $mkp->nilai && $mkp->nilai <= 55){
                             $nilaiAngka = 'D';
-                        } else {
+                        }else{
                             $nilaiAngka = 'E';
                         }
                         $namaMK = $mkp->namaMataKuliah;
@@ -211,22 +225,23 @@ class TranskripController extends Controller
                     $table3->addCell(1500, $styleCell)->addText('Historis Nilai', $fontStyle);
                     $table3->addCell(500, $styleCell)->addText('Nilai', $fontStyle);
 
-                    foreach ($mkSarjana as $mkp) {
+                    foreach($mkSarjana as $mkp){
                         $semester = $mkp->periode;
                         $smt = explode(' ', $semester);
-                        if (86 <= $mkp->nilai) {
+
+                        if(86 <= $mkp->nilai){
                             $nilaiAngka = 'A';
-                        } elseif (76 <= $mkp->nilai && $mkp->nilai <= 85) {
+                        }elseif(76 <= $mkp->nilai && $mkp->nilai <= 85){
                             $nilaiAngka = 'AB';
-                        } elseif (66 <= $mkp->nilai && $mkp->nilai <= 75) {
+                        }elseif(66 <= $mkp->nilai && $mkp->nilai <= 75){
                             $nilaiAngka = 'B';
-                        } elseif (61 <= $mkp->nilai && $mkp->nilai <= 65) {
+                        }elseif(61 <= $mkp->nilai && $mkp->nilai <= 65){
                             $nilaiAngka = 'BC';
-                        } elseif (56 <= $mkp->nilai && $mkp->nilai <= 60) {
+                        }elseif(56 <= $mkp->nilai && $mkp->nilai <= 60){
                             $nilaiAngka = 'C';
-                        } elseif (41 <= $mkp->nilai && $mkp->nilai <= 55) {
+                        }elseif(41 <= $mkp->nilai && $mkp->nilai <= 55){
                             $nilaiAngka = 'D';
-                        } else {
+                        }else{
                             $nilaiAngka = 'E';
                         }
                         $namaMK = $mkp->namaMataKuliah;
@@ -275,7 +290,7 @@ class TranskripController extends Controller
                     return Excel::download(new ExportController, 'Transkrip_Mata_Kuliah.xlsx');
                     break;
             }
-        } else {
+        }else{
             return redirect('/transkrip')->with('message', 'Anda belum memiliki nilai');
         }
     }

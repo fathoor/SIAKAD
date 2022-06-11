@@ -3,21 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\SuratAktif;
 use App\Models\SuratCuti;
 use App\Models\SuratUndurDiri;
-use Carbon\Carbon;
 
 class SuratController extends Controller
 {
-    public function tanggal($tanggal)
-    {
-        return Carbon::parse($tanggal)->locale('id')->isoFormat('DD MMMM YYYY');
-    }
-
     public function index($type)
     {
-        switch ($type) {
+        switch($type){
             case 'Aktif':
                 $aktif = SuratAktif::where('suratAktifNRP', auth()->user()->NRP)->get();
 
@@ -30,16 +25,15 @@ class SuratController extends Controller
                 break;
             case 'UndurDiri':
                 $undur = SuratUndurDiri::where('suratUndurDiriNRP', auth()->user()->NRP)->get();
-                $ada = SuratUndurDiri::where('suratUndurDiriNRP', auth()->user()->NRP)->exists();
 
-                return view('contents.mahasiswa.suratUndurDiri', ['undur' => $undur, 'ada' => $ada]);
+                return view('contents.mahasiswa.suratUndurDiri', ['undur' => $undur]);
                 break;
         }
     }
 
     public function store(Request $request, $type)
     {
-        switch ($type) {
+        switch($type){
             case 'Aktif':
                 $today = Carbon::now()->format('Y-m-d');
 
@@ -88,7 +82,7 @@ class SuratController extends Controller
 
     public function cetak($type, $id)
     {
-        switch ($type) {
+        switch($type){
             case 'Aktif':
                 $surat = SuratAktif::find($id)->first();
                 break;
@@ -105,13 +99,13 @@ class SuratController extends Controller
 
     public function indexStaff(Request $request)
     {
-        if ($request->type != ''){
+        if($request->type != ''){
             $type = $request->type;
         }else{
             $type = 'Surat Keterangan Aktif';
         }
 
-        switch ($type) {
+        switch($type){
             case 'Surat Keterangan Aktif':
                 $surat = SuratAktif::leftjoin('akun', 'akun.NRP', '=', 'surat_aktif.suratAktifNRP')->orderBy('tanggalAjuan', 'ASC')->orderBy('suratAktifNRP', 'ASC')->paginate(10);
                 break;
@@ -130,7 +124,7 @@ class SuratController extends Controller
     {
         $type = $request->type;
 
-        switch ($type) {
+        switch($type){
             case 'Surat Keterangan Aktif':
                 SuratAktif::where([['suratAktifNRP', $request->nrpAktif], ['tanggalAjuan', $request->tanggalAktif]])->update([
                     'status' => filter_var($request->accept, FILTER_VALIDATE_BOOLEAN)

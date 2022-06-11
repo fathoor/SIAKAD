@@ -10,7 +10,7 @@ class CivitasController extends Controller
 {
     public function index()
     {
-        $akun = User::orderBy('NRP', 'asc')->paginate(10);
+        $akun = User::orderBy('NRP', 'ASC')->paginate(10);
 
         return view('contents.staff.civitas', ['akun' => $akun]);
     }

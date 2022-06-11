@@ -5,14 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\FRS;
 use App\Models\FRSStatus;
-use App\Models\Wali;
 use App\Models\Dosen;
 
 class NilaiMahasiswaController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->periode != ''){
+        if($request->periode != ''){
             $periode = $request->periode;
         }else{
             $periode = 'Genap 2021';
@@ -36,6 +35,7 @@ class NilaiMahasiswaController extends Controller
         ->get();
 
         $status = FRSStatus::where('periode', $periode)->get();
+
         return view('contents.dosen.nilaiMahasiswa', [
             'periode' => $periode,
             'matakuliah' => $matakuliah,

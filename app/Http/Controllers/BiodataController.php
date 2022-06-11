@@ -3,27 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class BiodataController extends Controller
 {
     public function index()
     {
-        $akun = DB::table('akun')->get();
+        $akun = User::get();
 
         return view('contents.biodata.index', ['akun' => $akun]);
     }
 
     public function edit()
     {
-        $akun = DB::table('akun')->where('NRP', auth()->user()->NRP)->get();
+        $akun = User::where('NRP', auth()->user()->NRP)->get();
 
         return view('contents.biodata.edit', ['akun' => $akun]);
     }
 
     public function update(Request $request)
 	{
-		DB::table('akun')->where('NRP', auth()->user()->NRP)->update([
+		User::where('NRP', auth()->user()->NRP)->update([
             'NIK' => $request->NIK,
             'nama' => $request->nama,
             'tempatLahir' => $request->tempatLahir,

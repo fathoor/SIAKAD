@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\Periode;
 use App\Models\HasilKuesioner;
-use Illuminate\Support\Facades\DB;
 use App\Models\FRS;
-use Illuminate\Support\Str;
 use App\Models\DaftarKuesioner;
 
 class HasilKuesionerController extends Controller
@@ -15,10 +14,11 @@ class HasilKuesionerController extends Controller
     public function index()
     {
         $hasil = FRS::where('dosenNRP', auth()->user()->NRP)->get();
-        $periode = Periode::orderBy('id', 'desc')->first();
+        $periode = Periode::orderBy('id', 'DESC')->first();
         $period = $periode->periode;
         $tahun = Str::substr($period, 0, 4);
         $semester = Str::substr($period, 4, 1);
+
         switch ($semester) {
             case 'A':
                 $periods = 'Ganjil ' . $tahun;
@@ -27,19 +27,22 @@ class HasilKuesionerController extends Controller
                 $periods = 'Genap ' . $tahun;
                 break;
         }
+
         $kuesioner = Periode::all();
         $smtper = Periode::latest('id')->first();
         $matkul = DaftarKuesioner::where([
             ['dosenNRP', auth()->user()->NRP],
             ['periode', $periods]
         ])
-            ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->get();
+        ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+        ->get();
+
         if (HasilKuesioner::where('dosenNRP', auth()->user()->NRP)->exists()) {
             $tersedia = true;
         } else {
             $tersedia = false;
         }
+
         return view('contents.dosen.kuesioner', ['hasil' => $hasil, 'tersedia' => $tersedia, 'kuesioner' => $kuesioner, 'smtper' => $smtper, 'matkul' => $matkul, 'periode' => $periode]);
     }
 
@@ -50,6 +53,7 @@ class HasilKuesionerController extends Controller
         $period = $request->periode;
         $tahun = Str::substr($period, 0, 4);
         $semester = Str::substr($period, 4, 1);
+
         switch ($semester) {
             case 'A':
                 $periods = 'Ganjil ' . $tahun;
@@ -58,19 +62,22 @@ class HasilKuesionerController extends Controller
                 $periods = 'Genap ' . $tahun;
                 break;
         }
+
         $kuesioner = Periode::all();
         $smtper = Periode::where('periode', $period)->first();
         $matkul = DaftarKuesioner::where([
             ['dosenNRP', auth()->user()->NRP],
             ['periode', $periods]
         ])
-            ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->get();
+        ->join('mata_kuliah', 'daftar_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
+        ->get();
+
         if (HasilKuesioner::where('dosenNRP', auth()->user()->NRP)->exists()) {
             $tersedia = true;
         } else {
             $tersedia = false;
         }
+
         return view('contents.dosen.kuesioner', ['hasil' => $hasil, 'tersedia' => $tersedia, 'kuesioner' => $kuesioner, 'smtper' => $smtper, 'matkul' => $matkul, 'periode' => $periode]);
     }
 
@@ -78,6 +85,7 @@ class HasilKuesionerController extends Controller
     {
         $tahun = Str::substr($request->periode, 0, 4);
         $semester = Str::substr($request->periode, 4, 1);
+
         switch ($semester) {
             case 'A':
                 $periode = 'Ganjil ' . $tahun;
@@ -86,6 +94,7 @@ class HasilKuesionerController extends Controller
                 $periode = 'Genap ' . $tahun;
                 break;
         }
+
         $hasil = HasilKuesioner::where([
             ['dosenNRP', auth()->user()->NRP],
             ['periode', $periode],
@@ -165,12 +174,12 @@ class HasilKuesionerController extends Controller
         ])->avg('jawaban12');
 
         $matkul = HasilKuesioner::join('mata_kuliah', 'hasil_kuesioner.kodeMK', '=', 'mata_kuliah.kodeMataKuliah')
-            ->where([
-                ['hasil_kuesioner.dosenNRP', auth()->user()->NRP],
-                ['hasil_kuesioner.periode', $periode],
-                ['hasil_kuesioner.kodeMK', $request->kodeMK]
-            ])
-            ->first();
+        ->where([
+            ['hasil_kuesioner.dosenNRP', auth()->user()->NRP],
+            ['hasil_kuesioner.periode', $periode],
+            ['hasil_kuesioner.kodeMK', $request->kodeMK]
+        ])
+        ->first();
 
         return view('contents.dosen.hasil-kuesioner', ['hasil' => $hasil, 'matkul' => $matkul, 'j1' => $j1, 'j2' => $j2, 'j3' => $j3, 'j4' => $j4, 'j5' => $j5, 'j6' => $j6, 'j7' => $j7, 'j8' => $j8, 'j9' => $j9, 'j10' => $j10, 'j11' => $j11, 'j12' => $j12]);
     }
