@@ -16,7 +16,7 @@
             </div>
             <div class="mb-3">
                 <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal">
-                    <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Create</span>
+                    <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Tambah</span>
                 </button>
             </div>
             <div class="modal fade" id="modal" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">

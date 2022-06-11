@@ -18,7 +18,7 @@
             <div>
                 <div class="mb-4 text-center">
                     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#createData">
-                        <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Create</span>
+                        <i class="bi bi-plus-lg fs-6"></i><span class="fs-6 ms-2">Tambah</span>
                     </button>
                 </div>
                 <div>
@@ -51,62 +51,46 @@
                                     </a>
                                     <div class="modal fade" id="editModal{{ $p->id }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
-                                            <div class="modal-content">
+                                            <div class="modal-content text-center">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="editModalLabel">Edit Mata Kuliah</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                 </div>
-                                                <div class="modal-body text-start">
-                                                    <form class="form-inline" id="input" action="/staff/kurikulum/update{{ $p->id }}" method="POST">
+                                                <form action="/staff/kurikulum/update{{ $p->id }}" method="POST">
+                                                    <div class="modal-body">
                                                         @csrf
-                                                        <div class="form-group row mb-3">
-                                                            <label for="kodeMataKuliah" class="col-2 col-form-label">Kode</label>
-                                                            <label for="kodeMataKuliah" class="col-1 col-form-label">:</label>
-                                                            <div class="col-9">
-                                                                <input type="text" id="kodeMataKuliah" name="kodeMataKuliah" class="form-control bg-transparent border-white" value="{{ $p->kodeMataKuliah }}">
-                                                            </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" id="kodeMataKuliah" name="kodeMataKuliah" class="form-control" value="{{ $p->kodeMataKuliah }}" required>
+                                                            <label for="kodeMataKuliah" class="form-label">Kode Mata Kuliah</label>
                                                         </div>
-                                                        <div class="form-group row mb-3">
-                                                            <label for="namaMataKuliah" class="col-2 col-form-label">Nama</label>
-                                                            <label for="namaMataKuliah" class="col-1 col-form-label">:</label>
-                                                            <div class="col-9">
-                                                                <input type="text" id="namaMataKuliah" name="namaMataKuliah" class="form-control bg-transparent border-white" value="{{ $p->namaMataKuliah }}">
-                                                            </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" id="namaMataKuliah" name="namaMataKuliah" class="form-control" value="{{ $p->namaMataKuliah }}" required>
+                                                            <label for="namaMataKuliah" class="form-label">Nama Mata Kuliah</label>
                                                         </div>
-                                                        <div class="form-group row mb-3">
-                                                            <label for="sks" class="col-2 col-form-label">SKS</label>
-                                                            <label for="sks" class="col-1 col-form-label">:</label>
-                                                            <div class="col-9">
-                                                                <input type="text" id="sks" name="sks" class="form-control bg-transparent border-white" value="{{ $p->sks }}">
-                                                            </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="number" id="sks" name="sks" class="form-control" value="{{ $p->sks }}" min="0" max="4" required>
+                                                            <label for="sks" class="form-label">SKS</label>
                                                         </div>
-                                                        <div class="form-group row mb-3">
-                                                            <label for="tahunKurikulum" class="col-2 col-form-label">Tahun</label>
-                                                            <label for="tahunKurikulum" class="col-1 col-form-label">:</label>
-                                                            <div class="col-9">
-                                                                <input type="text" id="tahunKurikulum" name="tahunKurikulum" class="form-control bg-transparent border-white" value="{{ $p->tahunKurikulum }}">
-                                                            </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="number" id="tahunKurikulum" name="tahunKurikulum" class="form-control" value="{{ $p->tahunKurikulum }}" min="0" required>
+                                                            <label for="tahunKurikulum" class="form-label">Tahun Kurikulum</label>
                                                         </div>
-                                                        <div class="form-group row mb-3">
-                                                            <label for="semester" class="col-2 col-form-label">Semester</label>
-                                                            <label for="semester" class="col-1 col-form-label">:</label>
-                                                            <div class="col-9">
-                                                                <input type="text" id="semester" name="semester" class="form-control bg-transparent border-white" value="{{ $p->semester }}">
-                                                            </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="number" id="semester" name="semester" class="form-control" value="{{ $p->semester }}" min="0" max="8" required>
+                                                            <label for="semester" class="form-label">Semester</label>
                                                         </div>
-                                                        <div class="form-group row mb-3">
-                                                            <label for="kodeKelas" class="col-2 col-form-label">Kelas</label>
-                                                            <label for="kodeKelas" class="col-1 col-form-label">:</label>
-                                                            <div class="col-9">
-                                                                <input type="text" id="kodeKelas" name="kodeKelas" class="form-control bg-transparent border-white" value="{{ $p->kodeKelas }}">
-                                                            </div>
+                                                        <div class="form-floating">
+                                                            <input type="text" id="kodeKelas" name="kodeKelas" class="form-control" value="{{ $p->kodeKelas }}" required>
+                                                            <label for="kodeKelas" class="form-label">Kode Kelas</label>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-primary">
-                                                                <i class="bi bi-save"></i>
-                                                            </button>
-                                                        </div>
-                                                    </form>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-center">
+                                                        <button type="submit" class="btn btn-primary">
+                                                            <i class="bi bi-save"></i>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                                
                                                 </div>
                                             </div>
                                         </div>
@@ -126,63 +110,45 @@
                 </div>
                 <div class="modal fade" id="createData" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
+                        <div class="modal-content text-center">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Tambah Mata Kuliah</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
-                            <div class="modal-body">
-                                <form action="/staff/kurikulum/add" method="POST">
+                            <form action="/staff/kurikulum/add" method="POST">
+                                <div class="modal-body">
                                     @csrf
-                                    <div class="form-group row mb-3">
-                                        <label for="kodeMataKuliah" class="col-2 col-form-label">Kode</label>
-                                        <label for="kodeMataKuliah" class="col-1 col-form-label">:</label>
-                                        <div class="col-9">
-                                            <input type="text" id="kodeMataKuliah" name="kodeMataKuliah" class="form-control bg-transparent border-white" value="">
-                                        </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" id="kodeMataKuliah" name="kodeMataKuliah" class="form-control" placeholder="Kode Mata Kuliah" required>
+                                        <label for="kodeMataKuliah" class="form-label">Kode Mata Kuliah</label>
                                     </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="namaMataKuliah" class="col-2 col-form-label">Nama</label>
-                                        <label for="namaMataKuliah" class="col-1 col-form-label">:</label>
-                                        <div class="col-9">
-                                            <input type="text" id="namaMataKuliah" name="namaMataKuliah" class="form-control bg-transparent border-white" value="">
-                                        </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" id="namaMataKuliah" name="namaMataKuliah" class="form-control" placeholder="Nama Mata Kuliah" required>
+                                        <label for="namaMataKuliah" class="form-label">Nama Mata Kuliah</label>
                                     </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="sks" class="col-2 col-form-label">SKS</label>
-                                        <label for="sks" class="col-1 col-form-label">:</label>
-                                        <div class="col-9">
-                                            <input type="text" id="sks" name="sks" class="form-control bg-transparent border-white" value="">
-                                        </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="number" id="sks" name="sks" class="form-control" placeholder="SKS" min="0" max="4" required>
+                                        <label for="sks" class="form-label">SKS</label>
                                     </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="tahunKurikulum" class="col-2 col-form-label">Tahun</label>
-                                        <label for="tahunKurikulum" class="col-1 col-form-label">:</label>
-                                        <div class="col-9">
-                                            <input type="text" id="tahunKurikulum" name="tahunKurikulum" class="form-control bg-transparent border-white" value="">
-                                        </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="number" id="tahunKurikulum" name="tahunKurikulum" class="form-control" placeholder="Tahun Kurikulum" min="0" required>
+                                        <label for="tahunKurikulum" class="form-label">Tahun Kurikulum</label>
                                     </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="semester" class="col-2 col-form-label">Semester</label>
-                                        <label for="semester" class="col-1 col-form-label">:</label>
-                                        <div class="col-9">
-                                            <input type="text" id="semester" name="semester" class="form-control bg-transparent border-white" value="">
-                                        </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="number" id="semester" name="semester" class="form-control" placeholder="Semester" min="0" max="8" required>
+                                        <label for="semester" class="form-label">Semester</label>
                                     </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="kodeKelas" class="col-2 col-form-label">Kelas</label>
-                                        <label for="kodeKelas" class="col-1 col-form-label">:</label>
-                                        <div class="col-9">
-                                            <input type="text" id="kodeKelas" name="kodeKelas" class="form-control bg-transparent border-white" value="">
-                                        </div>
+                                    <div class="form-floating">
+                                        <input type="text" id="kodeKelas" name="kodeKelas" class="form-control" placeholder="Kode Kelas" required>
+                                        <label for="kodeKelas" class="form-label">Kode Kelas</label>
                                     </div>
-                                    <div class="modal-footer justify-content-center">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="bi bi-save"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-save"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
