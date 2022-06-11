@@ -102,4 +102,52 @@ class SuratController extends Controller
 
         return view('contents.mahasiswa.surat', ['type' => $type, 'surat' => $surat]);
     }
+
+    public function indexStaff(Request $request)
+    {
+        if ($request->type != ''){
+            $type = $request->type;
+        }else{
+            $type = 'Surat Keterangan Aktif';
+        }
+
+        switch ($type) {
+            case 'Surat Keterangan Aktif':
+                $surat = SuratAktif::leftjoin('akun', 'akun.NRP', '=', 'surat_aktif.suratAktifNRP')->orderBy('tanggalAjuan', 'ASC')->orderBy('suratAktifNRP', 'ASC')->paginate(10);
+                break;
+            case 'Surat Cuti':
+                $surat = SuratCuti::join('akun', 'akun.NRP', '=', 'surat_cuti.suratCutiNRP')->orderBy('tanggalAjuan', 'ASC')->orderBy('suratCutiNRP', 'ASC')->paginate(10);
+                break;
+            case 'Surat Mengundurkan Diri':
+                $surat = SuratUndurDiri::join('akun', 'akun.NRP', '=', 'surat_undur_diri.suratUndurDiriNRP')->orderBy('tanggalAjuan', 'ASC')->orderBy('suratUndurDiriNRP', 'ASC')->paginate(10);
+                break;
+        }
+
+        return view('contents.staff.surat', ['surat' => $surat, 'type' => $type]);
+    }
+
+    public function verificate(Request $request)
+    {
+        $type = $request->type;
+
+        switch ($type) {
+            case 'Surat Keterangan Aktif':
+                SuratAktif::where([['suratAktifNRP', $request->nrpAktif], ['tanggalAjuan', $request->tanggalAktif]])->update([
+                    'status' => filter_var($request->accept, FILTER_VALIDATE_BOOLEAN)
+                ]);
+                break;
+            case 'Surat Cuti':
+                SuratCuti::where([['suratCutiNRP', $request->nrpCuti], ['tanggalAjuan', $request->tanggalCuti]])->update([
+                    'status' => filter_var($request->accept, FILTER_VALIDATE_BOOLEAN)
+                ]);
+                break;
+            case 'Surat Mengundurkan Diri':
+                SuratUndurDiri::where([['suratUndurDiriNRP', $request->nrpUndurDiri], ['tanggalAjuan', $request->tanggalUndurDiri]])->update([
+                    'status' => filter_var($request->accept, FILTER_VALIDATE_BOOLEAN)
+                ]);
+                break;
+        }
+
+        return redirect('/staff/surat');
+    }
 }

@@ -139,4 +139,9 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::get('/staff/ukt', [TagihanController::class, 'indexStaff']);
     Route::post('/staff/ukt/detail', [TagihanController::class, 'detailStaff']);
     Route::post('/staff/ukt/verificate/{NRP}/{periode}', [TagihanController::class, 'verificate']);
+
+    // Layanan
+    Route::get('/staff/surat', [SuratController::class, 'indexStaff']);
+    Route::post('/staff/surat', [SuratController::class, 'indexStaff']);
+    Route::post('/staff/surat/verifikasi', [SuratController::class, 'verificate']);
 });
