@@ -55,7 +55,7 @@
                                 <h5 class="modal-title" id="exampleModalLabel">Surat Permohonan Cuti</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
-                            <form class="form-inline" id="input" action="/surat/UndurDiri/store" method="POST">
+                            <form class="form-inline" id="input" action="/surat/Cuti/store" method="POST">
                                 <div class="modal-body">
                                     @csrf
                                     <div class="form-floating mb-3">
