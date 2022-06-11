@@ -51,8 +51,10 @@
             <div class="mt-2" style="color: red">
                 @if ($periode->awalPengisian < date('Y-m-d') && $periode->akhirPengisian > date('Y-m-d'))
                     Mohon mengisi kuesioner sebelum {{ $akhir }}
+                    <?php $masa = true; ?>
                 @else
                     Belum dalam masa pengisian
+                    <?php $masa = false; ?>
                 @endif
             </div>
             <div class="mt-4">
@@ -89,7 +91,7 @@
                                         </option>
                                         @endforeach
                                     </select>
-                                    @if ($mk->kuesioner == '0')
+                                    @if ($mk->kuesioner == '0' && $masa)
                                         <button type="submit" class="btn btn-warning btn-sm">
                                             <i class="bi bi-inboxes-fill"></i>
                                         </button>
