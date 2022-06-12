@@ -74,8 +74,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
     // Kuesioner Route
     Route::get('/kuesioner', [KuesionerController::class, 'index']);
     Route::post('/kuesioner/gantiPeriode', [KuesionerController::class, 'ganti']);
-    Route::post('/isi-kuesioner', [KuesionerController::class, 'isi']);
-    Route::post('/submit-kuesioner', [KuesionerController::class, 'submit']);
+    Route::post('/kuesioner/isi', [KuesionerController::class, 'isi']);
+    Route::post('/kuesioner/submit', [KuesionerController::class, 'submit']);
 
     // Finansial Route
     Route::get('/ukt', [TagihanController::class, 'index']);
@@ -99,7 +99,7 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     // Kuesioner
     Route::get('/dosen/kuesioner', [HasilKuesionerController::class, 'index']);
     Route::post('/dosen/kuesioner/gantiPeriode', [HasilKuesionerController::class, 'ganti']);
-    Route::post('/hasil-kuesioner', [HasilKuesionerController::class, 'hasil']);
+    Route::post('/dosen/kuesioner/hasil', [HasilKuesionerController::class, 'hasil']);
 
     // Mahasiswa
     Route::get('/dosen/daftarMahasiswa', [DaftarMahasiswaController::class, 'index']);
