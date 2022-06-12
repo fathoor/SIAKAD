@@ -1,16 +1,16 @@
-# <p align="center"> IS184412 - Rancang Bangun Perangkat Lunak [C] </p>
-<p align="center"> Dosen Pengampu<br><i><strong>Radityo Prasetianto Wibowo, S.Kom., M.Kom.</strong></i> </p>
+# <p align="center">IS184412 - Rancang Bangun Perangkat Lunak [C]</p>
+<p align="center">Dosen Pengampu<br><i><strong>Radityo Prasetianto Wibowo, S.Kom., M.Kom.</strong></i></p><br>
 
-<br><p align="center"> [![SIAKAD ITS](/public/img/siakad_putih.png)](https://github.com/fathoor/SIAKAD) </p>
+<p align="center"><img href="https://github.com/fathoor/SIAKAD" src="/public/img/siakad_logo_putih.svg" width="720"></p>
 
-## <p align="center"> Sistem Informasi Akademik </p>
+## <p align="center">Sistem Informasi Akademik</p>
 
-<p align="center"> Website <strong>Sistem Informasi Akademik</strong> yang dibuat oleh <strong>Kelompok 1</strong> sebagai proyek <i>tugas akhir</i> dari mata kuliah <code>Rancang Bangun Perangkat Lunak [C]</code> </p>
+<p align="center">Website <strong>Sistem Informasi Akademik</strong> yang dibuat oleh <strong>Kelompok 1</strong> sebagai proyek <i>tugas akhir</i> dari mata kuliah <code>Rancang Bangun Perangkat Lunak [C]</code></p>
 
 ***
 
-### <p align="center"> Available on Heroku! </p>
-<p align="center"> <strong>SIAKAD ITS</strong> is available at https://siakadits.herokuapp.com/ </p>
+### <p align="center">Available on Heroku!</p>
+<p align="center"><strong>SIAKAD ITS</strong> is available at https://siakadits.herokuapp.com/</p>
 
 [![Website Preview](/public/img/siakad_login.png)](https://siakadits.herokuapp.com/)
 
@@ -30,6 +30,13 @@
 | 9 | 5026201130  | Ellion Blessan |
 | 10 | 5026201139  | Muhammad Fathurrahman |
 | 11 | 5026201141  | Abraham Mauritz Talakua |
+
+## Documents
+1. [Requirement & Design](./DokumenLaporan/Requirements%20&%20Design.pdf)
+2. [Test Plan & Results](./DokumenLaporan/Test%20Plan.xlsx)
+3. [User Manual](./DokumenLaporan/User%20Manual.pdf)
+
+***
 
 ## Prerequisites
 - **PHP** `8.1.5` or above, get it from [here](https://www.apachefriends.org/download.html)
