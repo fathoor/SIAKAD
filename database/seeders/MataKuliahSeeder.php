@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\MataKuliah;
 
 class MataKuliahSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class MataKuliahSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mata_kuliah')->insert([
+        MataKuliah::insert([
             [
                 'kodeMataKuliah' => 'IS184102',
                 'kodeKelas' => 'SI1101',

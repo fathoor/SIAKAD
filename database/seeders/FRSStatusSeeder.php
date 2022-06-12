@@ -54,7 +54,7 @@ class FRSStatusSeeder extends Seeder
             [
                 'NRP' => 5026201139,
                 'periode' => 'Genap 2021',
-                'status' => false
+                'status' => true
             ],
             [
                 'NRP' => 5026201007,

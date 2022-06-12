@@ -30,7 +30,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201007',
@@ -38,7 +38,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201045',
@@ -46,7 +46,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201054',
@@ -54,7 +54,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201068',
@@ -62,7 +62,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201091',
@@ -70,7 +70,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201096',
@@ -78,7 +78,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201115',
@@ -86,7 +86,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201130',
@@ -94,7 +94,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
             [
                 'suratAktifNRP' => '5026201141',
@@ -102,7 +102,7 @@ class SuratAktifSeeder extends Seeder
                 'periodeAktif' => 'Genap 2021',
                 'tanggalAjuan' => '2022-05-12',
                 'keperluanSurat' => 'Beasiswa',
-                'status' => false
+                'status' => true
             ],
         ]);
     }

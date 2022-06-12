@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Periode;
 
 class PeriodeSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class PeriodeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('periode')->insert(
+        Periode::insert(
             [
                 [
                     'periode' => '2020A',

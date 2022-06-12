@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\HasilKuesioner;
 
 class HasilKuesionerSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class HasilKuesionerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('hasil_kuesioner')->insert([
+        HasilKuesioner::insert([
             [
                 'dosenNRP' => '5026201',
                 'periode' => 'Genap 2021',

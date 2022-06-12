@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\DaftarKuesioner;
 
 class DaftarKuesionerSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class DaftarKuesionerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('daftar_kuesioner')->insert([
+        DaftarKuesioner::insert([
             [
                 'dosenNRP' => '5026201',
                 'kodeMK' => 'IS184412',

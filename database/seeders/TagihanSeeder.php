@@ -17,7 +17,7 @@ class TagihanSeeder extends Seeder
     {
         Tagihan::insert([
             [
-                'NRP' => 502620100,
+                'NRP' => 5026201000,
                 'periodeTagihan' => '2020 - Ganjil',
                 'status' => true,
                 'bank' => 'BCA',
@@ -34,7 +34,7 @@ class TagihanSeeder extends Seeder
                 'tunggakPenyegaran' => 0
             ],
             [
-                'NRP' => 502620100,
+                'NRP' => 5026201000,
                 'periodeTagihan' => '2020 - Genap',
                 'status' => true,
                 'bank' => 'BCA',
@@ -51,7 +51,7 @@ class TagihanSeeder extends Seeder
                 'tunggakPenyegaran' => 0
             ],
             [
-                'NRP' => 502620100,
+                'NRP' => 5026201000,
                 'periodeTagihan' => '2021 - Ganjil',
                 'status' => true,
                 'bank' => 'BCA',
