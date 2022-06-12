@@ -14,19 +14,23 @@
     <main>
         <div class="content">
             <div class="container">
-                @if($type == 'Aktif')
-                <h2 class="fw-bold">
-                    Permohonan Keterangan Aktif
-                </h2>
-                @elseif($type == 'Cuti')
-                <h2 class="fw-bold">
-                    Permohonan Keterangan Berhenti Studi Sementara
-                </h2>
-                @elseif($type == 'UndurDiri')
-                <h2 class="fw-bold">
-                    Permohonan Keterangan Berhenti Kuliah
-                </h2>
-                @endif
+                @switch($type)
+                    @case('Aktif')
+                        <h2 class="fw-bold">
+                            Permohonan Keterangan Mahasiswa Aktif
+                        </h2>
+                        @break
+                    @case('Cuti')
+                        <h2 class="fw-bold">
+                            Permohonan Keterangan Berhenti Studi Sementara
+                        </h2>
+                        @break
+                    @case('UndurDiri')
+                        <h2 class="fw-bold">
+                            Permohonan Keterangan Berhenti Kuliah
+                        </h2>
+                        @break
+                @endswitch
             </div>
             <div class="container align-items-start text-start">
                 <table class="table table-borderless align-middle text-start mb-4" style="box-shadow: 0 0; margin-bottom: -0.1em">
@@ -72,13 +76,17 @@
                 <table class="table table-borderless align-middle text-start" style="box-shadow: 0 0; margin-bottom: -0.1em">
                     <tbody>
                         <tr>
-                            @if($type == 'Aktif')
-                            <td>Mengajukan permohonan keterangan aktif pada {{ $surat->periodeAktif }} dengan alasan {{ $surat->keperluanSurat }}.</td>
-                            @elseif($type == 'Cuti')
-                            <td>Mengajukan permohonan keterangan berhenti studi sementara pada {{ $surat->periodeCuti }} dengan alasan {{ $surat->alasanCuti }}.</td>
-                            @elseif($type == 'UndurDiri')
-                            <td>Mengajukan permohonan keterangan berhenti kuliah pada {{ $surat->periodeMundur }} dengan alasan {{ $surat->alasanMundur }}.</td>
-                            @endif
+                            @switch($type)
+                                @case('Aktif')
+                                    <td>Mengajukan permohonan keterangan mahasiswa aktif pada {{ Carbon::parse($surat->tanggalAjuan)->locale('id')->isoFormat('DD MMMM YYYY') }} untuk keperluan {{ $surat->keperluanSurat }}.</td>
+                                    @break
+                                @case('Cuti')
+                                    <td>Mengajukan permohonan keterangan berhenti studi sementara pada {{ Carbon::parse($surat->tanggalAjuan)->locale('id')->isoFormat('DD MMMM YYYY') }} selama {{ $surat->jumlahSemesterCuti }} semester dengan alasan {{ $surat->alasanCuti }}.</td>
+                                    @break
+                                @case('UndurDiri')
+                                    <td>Mengajukan permohonan keterangan berhenti kuliah pada {{ Carbon::parse($surat->tanggalAjuan)->locale('id')->isoFormat('DD MMMM YYYY') }} dengan alasan {{ $surat->alasanMundur }}.</td>
+                                    @break
+                            @endswitch
                         </tr>
                     </tbody>
                 </table>

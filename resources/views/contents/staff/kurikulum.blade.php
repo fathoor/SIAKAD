@@ -50,10 +50,10 @@
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
                                     <div class="modal fade" id="editModal{{ $p->id }}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
+                                        <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content text-center">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="editModalLabel">Edit Mata Kuliah</h5>
+                                                    <h5 class="modal-title" id="editModalLabel">Ubah Data Mata Kuliah</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                 </div>
                                                 <form action="/staff/kurikulum/update{{ $p->id }}" method="POST">

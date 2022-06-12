@@ -15,7 +15,7 @@
             </div>
             <div class="row mt-1 mb-3">
                 <form class="form" action="/dosen/daftarMahasiswa/search" method="GET">
-                    <input type="search" class="form-control" placeholder="&#xF52A;" style="font-family:'bootstrap-icons', Arial" name="search" value="{{ old('search') }}">
+                    <input type="search" class="form-control" placeholder="Cari..." name="search" value="{{ old('search') }}">
                 </form>
             </div>
             <div class="mt-4">
@@ -31,7 +31,7 @@
                     <tbody>
                         @foreach($mahasiswa as $m)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $mahasiswa->firstItem() + $loop->index }}</td>
                             <td>{{ $m->NRP }}</td>
                             <td>{{ $m->nama }}</td>
                             <td>{{ $m->departemen }}</td>
@@ -40,13 +40,6 @@
                     </tbody>
                 </table>
                 {{ $mahasiswa->links('pagination::bootstrap-5') }}
-                <div class="text-center mt-2">
-                    <a href="/dosen/daftarMahasiswa">
-                        <button class="btn btn-danger">
-                            <i class="bi bi-arrow-counterclockwise fs-6"></i>
-                        </button>
-                    </a>
-                </div>
             </div>
         </div>
     </main>

@@ -80,7 +80,7 @@
                                 @endif
                             </td>
                             <td>
-                                <form action="/isi-kuesioner" method="POST">
+                                <form action="/kuesioner/isi" method="POST">
                                     @csrf
                                     <input name="isiDosen" type="hidden" value={{ $mk->dosenNRP }}>
                                     <input name="isiMK" type="hidden" value={{ $mk->kodeMK }}>

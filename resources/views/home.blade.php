@@ -19,7 +19,7 @@
         <div class="form">
             {{-- Logo --}}
             <a href="/">
-                <img src="/img/siakad_putih.png" class="img-fluid">
+                <img src="/img/siakad_logo_putih.svg" width="300px" class="img-fluid">
             </a>
             <div>
                 <form action="/" method="POST">
@@ -32,7 +32,7 @@
                         <input type="password" name="password" id="password" class="form-control shadow-p bg-transparent text-white" placeholder="Password" required>
                         <label for="password">Password</label>
                     </div>
-                    <div class="d-grid mt-3 shadow">
+                    <div class="d-grid mt-4 shadow">
                         <button class="btn btn-light btn-lg shadow-p" type="submit">Login</button>
                     </div>
                 </form>

@@ -63,7 +63,7 @@
                         <tr>
                             <td>{{ $mk->namaMataKuliah }}</td>
                             <td>
-                                <form action="/hasil-kuesioner" method="POST">
+                                <form action="/dosen/kuesioner/hasil" method="POST">
                                     @csrf
                                     <select name="periode" hidden>
                                         @foreach ($kuesioner as $k)

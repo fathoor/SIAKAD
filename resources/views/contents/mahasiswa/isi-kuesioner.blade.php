@@ -26,7 +26,7 @@
                     <h6>{{ $dosen->namaMataKuliah }} - {{ $dosen->dosenNama }}</h6>
                 </div>
                 <div>
-                    <form action="/submit-kuesioner" method="POST">
+                    <form action="/kuesioner/submit" method="POST">
                         @csrf
                         <input type="hidden" name="dosenNRP" value="{{ $dosen->dosenNRP }}">
                         <input type="hidden" name="periode" value="{{ $periode }}">

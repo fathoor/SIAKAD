@@ -25,24 +25,24 @@
                     <form action="/biodata/update" id="biodata" method="POST">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="number" id="NIK" name="NIK" class="form-control" value="{{ auth()->user()->NIK }}" required>
+                            <input type="number" id="NIK" name="NIK" class="form-control" value="{{ auth()->user()->NIK }}" placeholder="NIK" required>
                             <label for="NIK" class="form-label">NIK</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" id="nama" name="nama" class="form-control" value="{{ auth()->user()->nama }}" required>
+                            <input type="text" id="nama" name="nama" class="form-control" value="{{ auth()->user()->nama }}" placeholder="Nama Lengkap" required>
                             <label for="nama" class="form-label">Nama Lengkap</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" id="email" name="email" class="form-control" value="{{ auth()->user()->email }}" required>
+                            <input type="email" id="email" name="email" class="form-control" value="{{ auth()->user()->email }}" placeholder="Email" required>
                             <label for="email" class="form-label">Email</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="number" id="nomorTelp" name="nomorTelp" class="form-control" value="{{ auth()->user()->nomorTelp }}" required>
+                            <input type="number" id="nomorTelp" name="nomorTelp" class="form-control" value="{{ auth()->user()->nomorTelp }}" placeholder="Nomor Telepon" required>
                             <label for="nomorTelp" class="form-label">Nomor Telepon</label>
                         </div>
                         <div class="input-group mb-3">
                             <div class="form-floating col me-2">
-                                <input type="text" id="tempatLahir" name="tempatLahir" class="form-control" value="{{ auth()->user()->tempatLahir }}" required>
+                                <input type="text" id="tempatLahir" name="tempatLahir" class="form-control" value="{{ auth()->user()->tempatLahir }}" placeholder="Tempat Lahir" required>
                                 <label for="tempatLahir" class="form-label">Tempat Lahir</label>
                             </div>
                             <div class="form-floating col ms-2">
@@ -51,13 +51,13 @@
                             </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" name="alamat" required>{{ auth()->user()->alamat }}</textarea>
+                            <textarea class="form-control" name="alamat" placeholder="Alamat" required>{{ auth()->user()->alamat }}</textarea>
                             <label for="alamat" class="form-label">Alamat</label>
                         </div>
                     </form>
                     <div class="mt-4">
                         <button class="btn btn-primary" type="submit" form="biodata">
-                            <i class="bi bi-save fs-6"></i><span class="fs-6 ms-2">Update</span>
+                            <i class="bi bi-save fs-6"></i><span class="fs-6 ms-2">Simpan</span>
                         </button>
                         <a href="/biodata">
                             <button class="btn btn-danger">

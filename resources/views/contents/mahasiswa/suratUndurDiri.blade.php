@@ -82,13 +82,13 @@
                         </div>
                     </div>
                 </div>
-                @if ($ada)
+                @if($undur->count())
                     <table class="table table-responsive table-striped table-hover table-bordered text-center align-middle">
                         <thead>
                             <tr class="table-secondary">
                                 <th width="50px">No</th>
                                 <th width="100px">Periode</th>
-                                <th width="150px">Pengajuan</th>
+                                <th width="200px">Pengajuan</th>
                                 <th width="300px">Alasan</th>
                                 <th width="100px">Status</th>
                                 <th width="100px">Cetak</th>

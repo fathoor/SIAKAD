@@ -22,6 +22,10 @@
             <div class="modal fade" id="modal" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content text-center">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Tambah Kelas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
                         <form action="/staff/kelas/store" method="POST">
                             <div class="modal-body">
                                 @csrf
@@ -93,6 +97,10 @@
                                 <div class="modal fade"id="edit{{ $k->kodeMK }}" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Ubah Data Kelas</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
                                             <form action="/staff/kelas/update/{{ $k->kodeMK }}/{{ $k->kelas }}" id="input" method="POST">
                                                 <div class="modal-body">
                                                     @csrf

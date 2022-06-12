@@ -9,7 +9,7 @@
     {{-- Content --}}
     <main>
         {{-- /view/contents/ --}}
-        <div class="content">
+        <div class="content" style="max-width: 1200px;">
             {{-- Isi disini --}}
             <div class="container mb-2">
                 <h2 class="fw-bold">Surat Mahasiswa</h2>
@@ -32,10 +32,10 @@
                         @case('Surat Keterangan Aktif')
                             <thead>
                                 <tr class="table-secondary">
-                                    <th width="100px">NRP</th>
+                                    <th width="150px">NRP</th>
                                     <th width="300px">Nama Mahasiswa</th>
                                     <th width="100px">Periode</th>
-                                    <th width="150px">Pengajuan</th>
+                                    <th width="200px">Pengajuan</th>
                                     <th width="200px">Keperluan</th>
                                     <th width="100px">Status</th>
                                     <th width="100px">Verifikasi</th>
@@ -78,12 +78,12 @@
                         @case('Surat Cuti')
                             <thead>
                                 <tr class="table-secondary">
-                                    <th width="100px">NRP</th>
+                                    <th width="150px">NRP</th>
                                     <th width="300px">Nama Mahasiswa</th>
                                     <th width="100px">Periode</th>
                                     <th width="100px">Semester</th>
-                                    <th width="150px">Pengajuan</th>
-                                    <th width="150px">Alasan</th>
+                                    <th width="200px">Pengajuan</th>
+                                    <th width="200px">Alasan</th>
                                     <th width="100px">Status</th>
                                     <th width="100px">Verifikasi</th>
                                 </tr>
@@ -126,11 +126,11 @@
                         @case('Surat Mengundurkan Diri')
                             <thead>
                                 <tr class="table-secondary">
-                                    <th width="100px">NRP</th>
+                                    <th width="150px">NRP</th>
                                     <th width="300px">Nama Mahasiswa</th>
                                     <th width="100px">Periode</th>
-                                    <th width="150px">Pengajuan</th>
-                                    <th width="150px">Alasan</th>
+                                    <th width="200px">Pengajuan</th>
+                                    <th width="200px">Alasan</th>
                                     <th width="100px">Status</th>
                                     <th width="100px">Verifikasi</th>
                                 </tr>

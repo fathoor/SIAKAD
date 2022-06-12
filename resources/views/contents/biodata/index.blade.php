@@ -61,7 +61,7 @@
                     <div class="mt-4">
                         <a href="/biodata/edit">
                             <button class="btn btn-warning">
-                                <i class="bi bi-pencil-square fs-6"></i><span class="fs-6 ms-2">Edit</span>
+                                <i class="bi bi-pencil-square fs-6"></i><span class="fs-6 ms-2">Ubah</span>
                             </button>
                         </a>
                     </div>

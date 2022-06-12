@@ -22,19 +22,23 @@
             <div class="modal fade" id="modal" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content text-center">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Tambah Civitas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
                         <div class="modal-body">
                             <form action="/staff/civitas/store" id="akun" method="POST">
                                 @csrf
                                 <div class="form-floating mb-3">
-                                    <input type="number" id="NRP" name="NRP" class="form-control" required>
+                                    <input type="number" id="NRP" name="NRP" class="form-control" placeholder="NRP" required>
                                     <label for="NRP" class="form-label">NRP</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" id="nama" name="nama" class="form-control" required>
+                                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Lengkap" required>
                                     <label for="nama" class="form-label">Nama Lengkap</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" id="password" name="password" class="form-control" required>
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                                     <label for="password" class="form-label">Password</label>
                                 </div>
                                 <div class="form-floating mb-3">
@@ -83,6 +87,10 @@
                                 <div class="modal fade"id="edit{{ $a->NRP }}" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content text-center">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Ubah Data Civitas</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
                                             <form action="/staff/civitas/update/{{ $a->NRP }}" id="input" method="POST">
                                                 <div class="modal-body">
                                                     @csrf
@@ -95,7 +103,7 @@
                                                         <label for="nama" class="form-label">Nama Lengkap</label>
                                                     </div>
                                                     <div class="form-floating mb-3">
-                                                        <input type="password" id="password" name="password" class="form-control" required>
+                                                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                                                         <label for="password" class="form-label">Password</label>
                                                     </div>
                                                     <div class="form-floating mb-3">

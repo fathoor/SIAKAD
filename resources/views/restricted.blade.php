@@ -19,23 +19,26 @@
         <div>
             <h1 class="display-5 fw-bold">Anda tidak memiliki akses</h1>
         </div>
-        <div>
-            @if(auth()->user()->type == 'mahasiswa')
-            <a href="/dashboard">
-                <i class="bi bi-house" style="font-size: 3rem"></i>
-            </a>
-            @elseif(auth()->user()->type == 'staff')
-            <a href="/dashboard/staff">
-                <i class="bi bi-house" style="font-size: 3rem"></i>
-            </a>
-            @else
-            <a href="/dashboard/dosen">
-                <i class="bi bi-house" style="font-size: 3rem"></i>
-            </a>
-            @endif
+        <div class="mt-4">
+            @switch(auth()->user()->type)
+                @case('dosen')
+                    <a href="/dashboard/dosen">
+                        <i class="bi bi-house" style="font-size: 3rem"></i>
+                    </a>
+                    @break
+                @case('staff')
+                    <a href="/dashboard/staff">
+                        <i class="bi bi-house" style="font-size: 3rem"></i>
+                    </a>
+                    @break
+                @case('mahasiswa')
+                    <a href="/dashboard">
+                        <i class="bi bi-house" style="font-size: 3rem"></i>
+                    </a>
+                    @break
+            @endswitch
         </div>
     </div>
-
 </div>
 
 {{-- Footer --}}
