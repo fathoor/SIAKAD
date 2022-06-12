@@ -20,7 +20,7 @@
 | No | NRP | Nama |
 | :---: | :---: | --- |
 | 1 | 5026201007  | Faraz Nurdini |
-| 2 | 5026201045  | Theodorus Revonso Prananta |
+| 2 | 5026201045  | Theodorus Revonsio Prananta |
 | 3 | 5026201054  | Ernando Taufiq Nur Hidayat |
 | 4 | 5026201068  | Cecilia Melva Natania |
 | 5 | 5026201091  | Aliyya Zahra Nurulhusna |
